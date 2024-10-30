@@ -1,0 +1,72 @@
+﻿Imports System.IO
+Imports Microsoft.VisualBasic.FileIO.FileSystem
+
+Public Class Form1
+    Protected Overrides Sub WndProc(ByRef m As Message)
+        Const WM_NCHITTEST As Integer = &H84
+        Const HTBOTTOM As Integer = 15
+        Const HTBOTTOMLEFT As Integer = 16
+        Const HTBOTTOMRIGHT As Integer = 17
+        Const HTLEFT As Integer = 10
+        Const HTRIGHT As Integer = 11
+        Const HTTOP As Integer = 12
+        Const HTTOPLEFT As Integer = 13
+        Const HTTOPRIGHT As Integer = 14
+
+        MyBase.WndProc(m)
+        If m.Msg = WM_NCHITTEST Then
+            Dim result As Integer = m.Result.ToInt32()
+            Select Case result
+                Case HTBOTTOM, HTBOTTOMLEFT, HTBOTTOMRIGHT, HTLEFT, HTRIGHT, HTTOP, HTTOPLEFT, HTTOPRIGHT
+                    m.Result = IntPtr.Zero
+            End Select
+        End If
+    End Sub
+
+    Public Shared Property DPI As Single = Form1.CreateGraphics.DpiX / 96
+
+    Public 界面图层_主层 As Control = Nothing
+    Public 界面图层_二层 As Control = Nothing
+    Public 界面图层_三层 As Control = Nothing
+    Public 界面图层_顶层 As Control = Nothing
+
+    Public 加载时间计时器 As New Stopwatch()
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        游戏设置.加载()
+        If 游戏设置.实例对象.FullScreenNoBorders Then
+            Me.FormBorderStyle = FormBorderStyle.None
+            Me.WindowState = FormWindowState.Maximized
+        End If
+        Steam通讯维持.开始初始化Steam接口()
+    End Sub
+
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        控制台界面实例.禁用可操作区域()
+        界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
+
+        Application.DoEvents()
+
+        加载时间计时器.Start()
+        DebugPrint($"开始启动", Color.Silver)
+        模组管理.启动时扫描模组()
+    End Sub
+
+    Private Sub Form1_DpiChanged(sender As Object, e As DpiChangedEventArgs) Handles Me.DpiChanged
+        DPI = e.DeviceDpiNew / 96
+        Me.MinimumSize = New Size(0, 0)
+        Me.ClientSize = New Size(1280 * DPI, 720 * DPI)
+        Me.MinimumSize = Me.Size
+    End Sub
+
+    Public Sub 重新创建句柄()
+        If Not Me.IsHandleCreated Then Me.CreateHandle()
+    End Sub
+
+
+
+
+
+
+
+End Class
