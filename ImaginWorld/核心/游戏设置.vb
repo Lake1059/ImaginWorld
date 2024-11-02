@@ -12,8 +12,8 @@ Public Class 游戏设置
         Public Property Font As String = "微软雅黑"
         Public Property WindowSize As Size = New Size(1280, 720)
         Public Property FullScreenNoBorders As Boolean = False
-        Public Property BgmVolume As Integer = 75
-        Public Property EsVolume As Integer = 75
+        Public Property BgmVolume As Single = 0.75F
+        Public Property EsVolume As Single = 0.75F
         Public Property ColonyCalculationThreads As Integer = 1
         Public Property WorldStateCalculationThreads As Integer = 1
         Public Property RandomEventsTriggerCalculationThreads As Integer = 1

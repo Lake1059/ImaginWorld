@@ -7,6 +7,9 @@ Public Class 界面主层_殖民地
     Private Sub 模板_殖民地_Load(sender As Object, e As EventArgs) Handles Me.Load
         'AddHandler UiTabControlMenu1.SelectedIndexChanged, AddressOf 触发主选项卡切换事件
 
+        SetControlFont(Me)
+
+
         是否已初始化 = True
         DPI = Form1.DPI
         调整界面()
@@ -42,6 +45,10 @@ Public Class 界面主层_殖民地
 
     Public Sub 设置殖民地名称(文本 As String)
         '界面控制.根据宽度显示单行文本(Label殖民地名称, 文本, Panel2.Width)
+    End Sub
+
+    Private Sub Label19_Click(sender As Object, e As EventArgs) Handles Label19.Click
+
     End Sub
 
     'Public Sub 触发主选项卡切换事件()

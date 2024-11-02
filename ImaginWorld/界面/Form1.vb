@@ -49,6 +49,9 @@ Public Class Form1
 
         加载时间计时器.Start()
         DebugPrint($"开始启动", Color.Silver)
+
+        指令系统.初始化()
+
         模组管理.启动时扫描模组()
     End Sub
 

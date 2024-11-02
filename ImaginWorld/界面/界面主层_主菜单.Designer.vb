@@ -37,6 +37,7 @@ Partial Class 界面主层_主菜单
         Panel29 = New Panel()
         Panel44 = New Panel()
         Panel49 = New Panel()
+        Label127 = New Label()
         Label118 = New Label()
         Label128 = New Label()
         Panel48 = New Panel()
@@ -76,6 +77,7 @@ Partial Class 界面主层_主菜单
         Label88 = New Label()
         Label85 = New Label()
         Panel45 = New Panel()
+        Label126 = New Label()
         Label116 = New Label()
         Label114 = New Label()
         Label102 = New Label()
@@ -212,13 +214,15 @@ Partial Class 界面主层_主菜单
         UiComboBox1 = New Sunny.UI.UIComboBox()
         TabPageDLC = New TabPage()
         Panel3 = New Panel()
-        Label14 = New Label()
-        LinkLabel3 = New LinkLabel()
         Label12 = New Label()
         LinkLabel2 = New LinkLabel()
+        Label14 = New Label()
         Label10 = New Label()
         LinkLabel1 = New LinkLabel()
+        Label125 = New Label()
         Label3 = New Label()
+        Label123 = New Label()
+        Label124 = New Label()
         TabPage创意工坊 = New TabPage()
         Panel36 = New Panel()
         Panel43 = New Panel()
@@ -547,6 +551,7 @@ Partial Class 界面主层_主菜单
         ' 
         ' Panel49
         ' 
+        Panel49.Controls.Add(Label127)
         Panel49.Controls.Add(Label118)
         Panel49.Controls.Add(Label128)
         Panel49.Dock = DockStyle.Fill
@@ -554,6 +559,18 @@ Partial Class 界面主层_主菜单
         Panel49.Name = "Panel49"
         Panel49.Size = New Size(348, 522)
         Panel49.TabIndex = 4
+        ' 
+        ' Label127
+        ' 
+        Label127.AutoSize = True
+        Label127.Dock = DockStyle.Top
+        Label127.ForeColor = Color.Tomato
+        Label127.Location = New Point(0, 62)
+        Label127.Name = "Label127"
+        Label127.Padding = New Padding(0, 0, 0, 10)
+        Label127.Size = New Size(147, 31)
+        Label127.TabIndex = 6
+        Label127.Text = "[0%] P2：远征之门"
         ' 
         ' Label118
         ' 
@@ -563,9 +580,9 @@ Partial Class 界面主层_主菜单
         Label118.Location = New Point(0, 31)
         Label118.Name = "Label118"
         Label118.Padding = New Padding(0, 0, 0, 10)
-        Label118.Size = New Size(227, 31)
+        Label118.Size = New Size(131, 31)
         Label118.TabIndex = 5
-        Label118.Text = "[0%] P1：从新家园到中立派系"
+        Label118.Text = "[0%] P1：新家园"
         ' 
         ' Label128
         ' 
@@ -1028,6 +1045,7 @@ Partial Class 界面主层_主菜单
         ' 
         ' Panel45
         ' 
+        Panel45.Controls.Add(Label126)
         Panel45.Controls.Add(Label116)
         Panel45.Controls.Add(Label114)
         Panel45.Controls.Add(Label102)
@@ -1046,6 +1064,18 @@ Partial Class 界面主层_主菜单
         Panel45.Name = "Panel45"
         Panel45.Size = New Size(180, 522)
         Panel45.TabIndex = 0
+        ' 
+        ' Label126
+        ' 
+        Label126.AutoSize = True
+        Label126.Dock = DockStyle.Top
+        Label126.ForeColor = Color.Tomato
+        Label126.Location = New Point(0, 423)
+        Label126.Name = "Label126"
+        Label126.Padding = New Padding(0, 0, 0, 10)
+        Label126.Size = New Size(137, 31)
+        Label126.TabIndex = 14
+        Label126.Text = "[未制作] 脚本系统"
         ' 
         ' Label116
         ' 
@@ -1099,13 +1129,13 @@ Partial Class 界面主层_主菜单
         ' 
         Label69.AutoSize = True
         Label69.Dock = DockStyle.Top
-        Label69.ForeColor = Color.Tomato
+        Label69.ForeColor = Color.LimeGreen
         Label69.Location = New Point(0, 268)
         Label69.Name = "Label69"
         Label69.Padding = New Padding(0, 0, 0, 10)
         Label69.Size = New Size(137, 31)
         Label69.TabIndex = 8
-        Label69.Text = "[未制作] 指令系统"
+        Label69.Text = "[已完成] 指令系统"
         ' 
         ' Label68
         ' 
@@ -1134,13 +1164,13 @@ Partial Class 界面主层_主菜单
         ' 
         Label83.AutoSize = True
         Label83.Dock = DockStyle.Top
-        Label83.ForeColor = Color.Orange
+        Label83.ForeColor = Color.LimeGreen
         Label83.Location = New Point(0, 155)
         Label83.Name = "Label83"
         Label83.Padding = New Padding(0, 0, 0, 10)
         Label83.Size = New Size(104, 31)
         Label83.TabIndex = 5
-        Label83.Text = "[才开始] DLC"
+        Label83.Text = "[已完成] DLC"
         ' 
         ' Label82
         ' 
@@ -2973,13 +3003,15 @@ Partial Class 界面主层_主菜单
         ' 
         ' Panel3
         ' 
-        Panel3.Controls.Add(Label14)
-        Panel3.Controls.Add(LinkLabel3)
         Panel3.Controls.Add(Label12)
         Panel3.Controls.Add(LinkLabel2)
+        Panel3.Controls.Add(Label14)
         Panel3.Controls.Add(Label10)
         Panel3.Controls.Add(LinkLabel1)
+        Panel3.Controls.Add(Label125)
         Panel3.Controls.Add(Label3)
+        Panel3.Controls.Add(Label123)
+        Panel3.Controls.Add(Label124)
         Panel3.Dock = DockStyle.Fill
         Panel3.Location = New Point(0, 0)
         Panel3.Name = "Panel3"
@@ -2987,103 +3019,119 @@ Partial Class 界面主层_主菜单
         Panel3.Size = New Size(1128, 659)
         Panel3.TabIndex = 11
         ' 
-        ' Label14
-        ' 
-        Label14.AutoSize = True
-        Label14.Dock = DockStyle.Top
-        Label14.ForeColor = Color.DarkGray
-        Label14.Location = New Point(30, 289)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(362, 21)
-        Label14.TabIndex = 13
-        Label14.Text = "黑暗力量降临世界，恐惧笼罩大地，生命逐渐消逝"
-        Label14.Visible = False
-        ' 
-        ' LinkLabel3
-        ' 
-        LinkLabel3.ActiveLinkColor = Color.ForestGreen
-        LinkLabel3.AutoSize = True
-        LinkLabel3.Dock = DockStyle.Top
-        LinkLabel3.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold)
-        LinkLabel3.LinkBehavior = LinkBehavior.HoverUnderline
-        LinkLabel3.LinkColor = Color.Chocolate
-        LinkLabel3.Location = New Point(30, 223)
-        LinkLabel3.Name = "LinkLabel3"
-        LinkLabel3.Padding = New Padding(0, 30, 0, 10)
-        LinkLabel3.Size = New Size(108, 66)
-        LinkLabel3.TabIndex = 16
-        LinkLabel3.TabStop = True
-        LinkLabel3.Text = "DarkCrisis"
-        LinkLabel3.Visible = False
-        ' 
         ' Label12
         ' 
         Label12.AutoSize = True
         Label12.Dock = DockStyle.Top
         Label12.ForeColor = Color.DarkGray
-        Label12.Location = New Point(30, 202)
+        Label12.Location = New Point(30, 357)
         Label12.Name = "Label12"
-        Label12.Size = New Size(362, 21)
+        Label12.Size = New Size(74, 21)
         Label12.TabIndex = 12
-        Label12.Text = "在旧城发现了地下通道，穿越无尽的岩石前往地心"
-        Label12.Visible = False
+        Label12.Text = "敬请期待"
         ' 
         ' LinkLabel2
         ' 
         LinkLabel2.ActiveLinkColor = Color.ForestGreen
         LinkLabel2.AutoSize = True
         LinkLabel2.Dock = DockStyle.Top
-        LinkLabel2.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold)
+        LinkLabel2.Font = New Font("微软雅黑", 15.75F)
         LinkLabel2.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel2.LinkColor = Color.Chocolate
-        LinkLabel2.Location = New Point(30, 136)
+        LinkLabel2.Location = New Point(30, 279)
         LinkLabel2.Name = "LinkLabel2"
-        LinkLabel2.Padding = New Padding(0, 30, 0, 10)
-        LinkLabel2.Size = New Size(146, 66)
+        LinkLabel2.Padding = New Padding(0, 40, 0, 10)
+        LinkLabel2.Size = New Size(54, 78)
         LinkLabel2.TabIndex = 15
         LinkLabel2.TabStop = True
-        LinkLabel2.Text = "UnderJourney"
-        LinkLabel2.Visible = False
+        LinkLabel2.Text = "? ? ?"
+        ' 
+        ' Label14
+        ' 
+        Label14.AutoSize = True
+        Label14.Dock = DockStyle.Top
+        Label14.ForeColor = Color.DarkGray
+        Label14.Location = New Point(30, 248)
+        Label14.Name = "Label14"
+        Label14.Padding = New Padding(1, 10, 0, 0)
+        Label14.Size = New Size(491, 31)
+        Label14.TabIndex = 31
+        Label14.Text = "从新家园开始重建，壮大你的势力，与其他派系交涉并做出战争选择"
         ' 
         ' Label10
         ' 
         Label10.AutoSize = True
         Label10.Dock = DockStyle.Top
-        Label10.ForeColor = Color.DarkGray
-        Label10.Location = New Point(30, 115)
+        Label10.ForeColor = Color.CornflowerBlue
+        Label10.Location = New Point(30, 217)
         Label10.Name = "Label10"
-        Label10.Size = New Size(474, 21)
+        Label10.Padding = New Padding(1, 10, 0, 0)
+        Label10.Size = New Size(235, 31)
         Label10.TabIndex = 11
-        Label10.Text = "故事基础内容，经营你的殖民地，联系其他势力，发掘世界的秘密"
+        Label10.Text = "此内容免费，包含在游戏本体中"
         ' 
         ' LinkLabel1
         ' 
         LinkLabel1.ActiveLinkColor = Color.ForestGreen
         LinkLabel1.AutoSize = True
         LinkLabel1.Dock = DockStyle.Top
-        LinkLabel1.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold)
+        LinkLabel1.Font = New Font("微软雅黑", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel1.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel1.LinkColor = Color.Chocolate
-        LinkLabel1.Location = New Point(30, 79)
+        LinkLabel1.Location = New Point(30, 149)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Padding = New Padding(0, 0, 0, 10)
-        LinkLabel1.Size = New Size(110, 36)
+        LinkLabel1.Padding = New Padding(0, 40, 0, 0)
+        LinkLabel1.Size = New Size(115, 68)
         LinkLabel1.TabIndex = 14
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "FinalTown"
+        ' 
+        ' Label125
+        ' 
+        Label125.AutoSize = True
+        Label125.Dock = DockStyle.Top
+        Label125.ForeColor = Color.DarkGray
+        Label125.Location = New Point(30, 118)
+        Label125.Name = "Label125"
+        Label125.Padding = New Padding(1, 10, 0, 0)
+        Label125.Size = New Size(539, 31)
+        Label125.TabIndex = 30
+        Label125.Text = "这些是我发布的内容，它们的主要目的是教学，而并非打造一个完整的世界"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Dock = DockStyle.Top
-        Label3.Font = New Font("微软雅黑", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         Label3.ForeColor = Color.DarkGray
-        Label3.Location = New Point(30, 30)
+        Label3.Location = New Point(30, 87)
         Label3.Name = "Label3"
-        Label3.Padding = New Padding(0, 0, 0, 30)
-        Label3.Size = New Size(516, 49)
-        Label3.TabIndex = 17
-        Label3.Text = "注意：游戏实际内容取决于模组配置，如果我的内容不好玩，可以尽情创建您自己的故事"
+        Label3.Padding = New Padding(1, 10, 0, 0)
+        Label3.Size = New Size(507, 31)
+        Label3.TabIndex = 29
+        Label3.Text = "即便不加载任何模组，游戏依旧可以正常启动，不过我会阻止你这样做"
+        ' 
+        ' Label123
+        ' 
+        Label123.AutoSize = True
+        Label123.Dock = DockStyle.Top
+        Label123.ForeColor = Color.DarkGray
+        Label123.Location = New Point(30, 56)
+        Label123.Name = "Label123"
+        Label123.Padding = New Padding(1, 10, 0, 0)
+        Label123.Size = New Size(383, 31)
+        Label123.TabIndex = 28
+        Label123.Text = "DLC 本质上就是标准的模组，游戏自身只是一个框架"
+        ' 
+        ' Label124
+        ' 
+        Label124.AutoSize = True
+        Label124.Dock = DockStyle.Top
+        Label124.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        Label124.Location = New Point(30, 30)
+        Label124.Name = "Label124"
+        Label124.Size = New Size(201, 26)
+        Label124.TabIndex = 27
+        Label124.Text = "ImaginWorld 的内容"
         ' 
         ' TabPage创意工坊
         ' 
@@ -3845,8 +3893,6 @@ Partial Class 界面主层_主菜单
     Friend WithEvents TabPage创意工坊 As TabPage
     Friend WithEvents TabPage关于 As TabPage
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label14 As Label
-    Friend WithEvents LinkLabel3 As LinkLabel
     Friend WithEvents Label12 As Label
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents Label10 As Label
@@ -3967,7 +4013,6 @@ Partial Class 界面主层_主菜单
     Friend WithEvents UiRadioButton1 As Sunny.UI.UIRadioButton
     Friend WithEvents Label23 As Label
     Friend WithEvents UiRadioButton2 As Sunny.UI.UIRadioButton
-    Friend WithEvents Label3 As Label
     Friend WithEvents UiButton下移 As Sunny.UI.UIButton
     Friend WithEvents Label57 As Label
     Friend WithEvents UiButton上移 As Sunny.UI.UIButton
@@ -4075,5 +4120,12 @@ Partial Class 界面主层_主菜单
     Friend WithEvents Label119 As Label
     Friend WithEvents 控件_暗黑文本框1 As 控件_暗黑文本框
     Friend WithEvents 控件_暗黑文本框2 As 控件_暗黑文本框
+    Friend WithEvents Label123 As Label
+    Friend WithEvents Label124 As Label
+    Friend WithEvents Label125 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label126 As Label
+    Friend WithEvents Label127 As Label
 
 End Class

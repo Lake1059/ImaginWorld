@@ -15,9 +15,9 @@ Public Class 声音控制
         If BGM输出设备 IsNot Nothing Then
             If BGM输出设备.PlaybackState = PlaybackState.Playing Then
                 Await Task.Run(Sub()
-                                   Do Until BGM输出设备.Volume = 0
-                                       BGM输出设备.Volume -= 0.01
-                                       Threading.Thread.Sleep(100)
+                                   Do Until BGM音量控制器.Volume <= 0.01F
+                                       BGM音量控制器.Volume -= 0.01F
+                                       Threading.Thread.Sleep(50)
                                    Loop
                                End Sub)
             End If
@@ -26,7 +26,7 @@ Public Class 声音控制
         Dim audioFile = New AudioFileReader(BGMPath)
 
         BGM音量控制器 = New VolumeSampleProvider(audioFile) With {
-            .Volume = 游戏设置.实例对象.BgmVolume / 100
+            .Volume = 游戏设置.实例对象.BgmVolume
         }
         If BGM输出设备 IsNot Nothing Then BGM输出设备.Dispose()
         BGM输出设备 = New WaveOut
@@ -43,7 +43,7 @@ Public Class 声音控制
         Dim waveProvider = New WaveFileReader(audioStream)
         Dim sampleProvider = waveProvider.ToSampleProvider()
         特效声音音量控制器 = New VolumeSampleProvider(sampleProvider) With {
-            .Volume = 游戏设置.实例对象.EsVolume / 100
+            .Volume = 游戏设置.实例对象.EsVolume
         }
         If 特效声音输出设备 IsNot Nothing Then 特效声音输出设备.Dispose()
         特效声音输出设备 = New WaveOut

@@ -202,8 +202,8 @@ Public Class 界面主层_主菜单
         UiComboBox7.Text = 游戏设置.实例对象.Font
         UiComboBox2.Text = 游戏设置.实例对象.WindowSize.Width & "x" & 游戏设置.实例对象.WindowSize.Height
         UiCheckBox1.Checked = 游戏设置.实例对象.FullScreenNoBorders
-        UiTrackBar1.Value = 游戏设置.实例对象.BgmVolume
-        UiTrackBar2.Value = 游戏设置.实例对象.EsVolume
+        UiTrackBar1.Value = 游戏设置.实例对象.BgmVolume * 100
+        UiTrackBar2.Value = 游戏设置.实例对象.EsVolume * 100
         UiTrackBar3.Value = 游戏设置.实例对象.ColonyCalculationThreads
         UiTrackBar4.Value = 游戏设置.实例对象.WorldStateCalculationThreads
         UiTrackBar5.Value = 游戏设置.实例对象.RandomEventsTriggerCalculationThreads
@@ -219,8 +219,8 @@ Public Class 界面主层_主菜单
         游戏设置.实例对象.Font = UiComboBox7.Text
         游戏设置.实例对象.WindowSize = New Size(UiComboBox2.Text.Split("x"c)(0), UiComboBox2.Text.Split("x"c)(1))
         游戏设置.实例对象.FullScreenNoBorders = UiCheckBox1.Checked
-        游戏设置.实例对象.BgmVolume = UiTrackBar1.Value
-        游戏设置.实例对象.EsVolume = UiTrackBar2.Value
+        游戏设置.实例对象.BgmVolume = UiTrackBar1.Value / 100
+        游戏设置.实例对象.EsVolume = UiTrackBar2.Value / 100
         游戏设置.实例对象.ColonyCalculationThreads = UiTrackBar3.Value
         游戏设置.实例对象.WorldStateCalculationThreads = UiTrackBar4.Value
         游戏设置.实例对象.RandomEventsTriggerCalculationThreads = UiTrackBar5.Value
