@@ -14,7 +14,7 @@
                 Form1.界面图层_主层 = c
                 c.Dock = DockStyle.Fill
                 Form1.Controls.Add(c)
-                Form1.界面图层_主层.SendToBack()
+                Form1.界面图层_主层?.SendToBack()
             Case 主界面图层.二层
                 If Form1.界面图层_二层 IsNot Nothing Then Form1.界面图层_二层.Dispose()
                 Form1.界面图层_二层 = c

@@ -143,7 +143,7 @@ Class 创意工坊
 
     Private Sub UpdateItemResult(param As SubmitItemUpdateResult_t, bIOFailure As Boolean)
         If param.m_eResult = EResult.k_EResultOK Then
-            DebugPrint($"{当前创意工坊物品ID对象} 上传成功：{当前创意工坊物品对象.Title}", Color.Silver)
+            DebugPrint($"{当前创意工坊物品ID对象} 上传成功", Color.Silver)
             SteamFriends.ActivateGameOverlayToWebPage($"steam://url/CommunityFilePage/{当前创意工坊物品ID对象}")
         Else
             DebugPrint("上传失败，错误类型为：" & param.m_eResult.ToString, Color.Tomato)

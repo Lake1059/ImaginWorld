@@ -2,7 +2,7 @@
 
     Public Shared Sub 初始化()
         指令字典.Add("bgm", AddressOf 切换BGM)
-
+        指令字典.Add("listbgm", AddressOf 列出BGM)
         DebugPrint($"指令系统初始化完成，共 {指令字典.Count} 条原生命令", Color.Silver)
     End Sub
 
@@ -26,7 +26,7 @@
 
     Shared Sub 切换BGM(Args As List(Of String))
         If Args.Count <> 1 Then
-            DebugPrint("错误参数，示例：bgm [Name]", Color.Tomato)
+            DebugPrint("参数错误，格式：bgm [Name]", Color.Tomato)
             Exit Sub
         End If
         If 数据中心.所有背景音乐.ContainsKey(Args(0)) Then
@@ -35,6 +35,13 @@
         Else
             DebugPrint($"未找到此音乐：{Args(0)}", Color.Tomato)
         End If
+    End Sub
+
+    Shared Sub 列出BGM()
+        For Each item In 数据中心.所有背景音乐.Keys
+            DebugPrint(item, Color.Gray)
+        Next
+
     End Sub
 
 End Class
