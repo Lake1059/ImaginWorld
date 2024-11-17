@@ -13,21 +13,19 @@
         调整界面()
     End Sub
 
-
     Private Sub 界面顶层_控制台_Load(sender As Object, e As EventArgs) Handles Me.Load
-        AddHandler Me.控件_暗黑文本框1.TextBox1.KeyDown, Sub(s1, e1)
-                                                      Select Case e1.KeyData
-                                                          Case Keys.Enter
-                                                              If e1.KeyData = Keys.Enter Then UiButton发送指令.PerformClick()
-                                                          Case Keys.W, Keys.Up
-                                                              Me.控件_暗黑文本框1.Text = 上一次发送的指令
-                                                      End Select
-                                                      e1.Handled = True
-                                                  End Sub
-
-
-
-
+        SetControlFont(Me)
+        AddHandler Me.UiTextBox1.KeyDown, Sub(s1, e1)
+                                              Select Case e1.KeyData
+                                                  Case Keys.Enter
+                                                      If e1.KeyData = Keys.Enter Then UiButton发送指令.PerformClick()
+                                                      Me.UiTextBox1.Focus()
+                                                  Case Keys.W, Keys.Up
+                                                      Me.UiTextBox1.Text = 上一次发送的指令
+                                                      Me.UiTextBox1.SelectionStart = Me.UiTextBox1.Text.Length
+                                              End Select
+                                              e1.Handled = True
+                                          End Sub
     End Sub
 
     Private Sub 界面顶层_控制台_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
@@ -39,8 +37,6 @@
         Me.RichTextBox1.Height = Me.RichTextBox1.Parent.Height - Me.RichTextBox1.Parent.Padding.Top - Me.RichTextBox1.Parent.Padding.Bottom
     End Sub
 
-
-
     Private Sub UiButton关闭控制台_Click(sender As Object, e As EventArgs) Handles UiButton关闭控制台.Click
         Visible = False
     End Sub
@@ -48,11 +44,11 @@
     Dim 上一次发送的指令 As String = ""
 
     Private Sub UiButton发送指令_Click(sender As Object, e As EventArgs) Handles UiButton发送指令.Click
-        If Me.控件_暗黑文本框1.Text.Replace(" ", "") = "" Then Exit Sub
-        上一次发送的指令 = Me.控件_暗黑文本框1.Text
-        DebugPrint(Me.控件_暗黑文本框1.Text, Color.Silver)
-        指令系统.执行(Me.控件_暗黑文本框1.Text)
-        Me.控件_暗黑文本框1.Text = ""
+        If Me.UiTextBox1.Text.Replace(" ", "") = "" Then Exit Sub
+        上一次发送的指令 = Me.UiTextBox1.Text
+        DebugPrint(Me.UiTextBox1.Text, Color.Silver, False)
+        指令系统.执行(Me.UiTextBox1.Text)
+        Me.UiTextBox1.Text = ""
     End Sub
 
 

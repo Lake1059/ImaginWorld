@@ -24,9 +24,9 @@ Module Module1
         Return page1.Name = page2.Name
     End Function
 
-    Public Sub DebugPrint(文本 As String, 颜色 As Color)
+    Public Sub DebugPrint(文本 As String, 颜色 As Color, Optional 时间戳 As Boolean = True)
         If String.IsNullOrEmpty(文本) Then Exit Sub
-        文本 = $"{TimeString} " & 文本
+        If 时间戳 Then 文本 = $"{TimeString} " & 文本
         控制台界面实例.RichTextBox1.AppendText(vbCrLf & 文本)
         Dim textLen As Integer = Len(文本)
         Dim startPos As Integer = 控制台界面实例.RichTextBox1.TextLength - textLen

@@ -17,8 +17,6 @@ Public Class 暗黑列表视图自绘制
         AddHandler 哪个列表视图控件.ItemMouseHover, Sub(sender, e) sender.Invalidate(sender.ClientRectangle)
     End Sub
 
-
-
     Public Shared Sub Paint(哪个列表视图控件 As ListView, e As PaintEventArgs)
         If 哪个列表视图控件.BackgroundImage Is Nothing Then Exit Sub
         If 哪个列表视图控件.Items.Count = 0 Then Exit Sub

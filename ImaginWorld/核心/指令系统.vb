@@ -39,7 +39,7 @@
 
     Shared Sub 列出BGM()
         For Each item In 数据中心.所有背景音乐.Keys
-            DebugPrint(item, Color.Gray)
+            DebugPrint(item, Color.Gray, False)
         Next
 
     End Sub

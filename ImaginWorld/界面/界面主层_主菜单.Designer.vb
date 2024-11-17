@@ -95,19 +95,19 @@ Partial Class 界面主层_主菜单
         Label5 = New Label()
         TabPage新游戏 = New TabPage()
         Panel4 = New Panel()
+        Panel9 = New Panel()
+        Label129 = New Label()
+        UiButton9 = New Sunny.UI.UIButton()
+        Label130 = New Label()
         Panel6 = New Panel()
         Label21 = New Label()
         UiButton1 = New Sunny.UI.UIButton()
-        Panel9 = New Panel()
-        Panel15 = New Panel()
-        UiRadioButton2 = New Sunny.UI.UIRadioButton()
-        UiRadioButton1 = New Sunny.UI.UIRadioButton()
         Label7 = New Label()
         Panel7 = New Panel()
-        控件_暗黑文本框2 = New 控件_暗黑文本框()
+        UiTextBox2 = New Sunny.UI.UITextBox()
         Label6 = New Label()
         Panel5 = New Panel()
-        控件_暗黑文本框1 = New 控件_暗黑文本框()
+        UiTextBox1 = New Sunny.UI.UITextBox()
         Label18 = New Label()
         Label15 = New Label()
         Label16 = New Label()
@@ -269,6 +269,7 @@ Partial Class 界面主层_主菜单
         Label65 = New Label()
         Label26 = New Label()
         Label27 = New Label()
+        ColumnHeader6 = New ColumnHeader()
         Panel1.SuspendLayout()
         Panel模组管理顶部功能区.SuspendLayout()
         UiTabControlMenu1.SuspendLayout()
@@ -283,9 +284,8 @@ Partial Class 界面主层_主菜单
         Panel45.SuspendLayout()
         TabPage新游戏.SuspendLayout()
         Panel4.SuspendLayout()
-        Panel6.SuspendLayout()
         Panel9.SuspendLayout()
-        Panel15.SuspendLayout()
+        Panel6.SuspendLayout()
         Panel7.SuspendLayout()
         Panel5.SuspendLayout()
         TabPage载入存档.SuspendLayout()
@@ -1269,8 +1269,9 @@ Partial Class 界面主层_主菜单
         ' 
         ' Panel4
         ' 
-        Panel4.Controls.Add(Panel6)
         Panel4.Controls.Add(Panel9)
+        Panel4.Controls.Add(Label130)
+        Panel4.Controls.Add(Panel6)
         Panel4.Controls.Add(Label7)
         Panel4.Controls.Add(Panel7)
         Panel4.Controls.Add(Label6)
@@ -1285,12 +1286,73 @@ Partial Class 界面主层_主菜单
         Panel4.Size = New Size(1128, 659)
         Panel4.TabIndex = 0
         ' 
+        ' Panel9
+        ' 
+        Panel9.Controls.Add(Label129)
+        Panel9.Controls.Add(UiButton9)
+        Panel9.Dock = DockStyle.Top
+        Panel9.Location = New Point(30, 405)
+        Panel9.Name = "Panel9"
+        Panel9.Padding = New Padding(5, 0, 0, 0)
+        Panel9.Size = New Size(1068, 35)
+        Panel9.TabIndex = 25
+        ' 
+        ' Label129
+        ' 
+        Label129.Dock = DockStyle.Fill
+        Label129.ForeColor = Color.DimGray
+        Label129.Location = New Point(155, 0)
+        Label129.Name = "Label129"
+        Label129.Padding = New Padding(10, 0, 0, 0)
+        Label129.Size = New Size(913, 35)
+        Label129.TabIndex = 23
+        Label129.Text = "仅限开发测试"
+        Label129.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiButton9
+        ' 
+        UiButton9.Dock = DockStyle.Left
+        UiButton9.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton9.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton9.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton9.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton9.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton9.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton9.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton9.ForeColor = Color.Tomato
+        UiButton9.ForeDisableColor = Color.Tomato
+        UiButton9.ForeHoverColor = Color.Tomato
+        UiButton9.ForePressColor = Color.Tomato
+        UiButton9.ForeSelectedColor = Color.Tomato
+        UiButton9.Location = New Point(5, 0)
+        UiButton9.MinimumSize = New Size(1, 1)
+        UiButton9.Name = "UiButton9"
+        UiButton9.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton9.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton9.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton9.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton9.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton9.Size = New Size(150, 35)
+        UiButton9.TabIndex = 22
+        UiButton9.Text = "快速调试"
+        UiButton9.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' Label130
+        ' 
+        Label130.Dock = DockStyle.Top
+        Label130.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        Label130.Location = New Point(30, 385)
+        Label130.Name = "Label130"
+        Label130.Padding = New Padding(0, 20, 0, 10)
+        Label130.Size = New Size(1068, 20)
+        Label130.TabIndex = 26
+        ' 
         ' Panel6
         ' 
         Panel6.Controls.Add(Label21)
         Panel6.Controls.Add(UiButton1)
         Panel6.Dock = DockStyle.Top
-        Panel6.Location = New Point(30, 456)
+        Panel6.Location = New Point(30, 350)
         Panel6.Name = "Panel6"
         Panel6.Padding = New Padding(5, 0, 0, 0)
         Panel6.Size = New Size(1068, 35)
@@ -1304,7 +1366,7 @@ Partial Class 界面主层_主菜单
         Label21.Padding = New Padding(10, 0, 0, 0)
         Label21.Size = New Size(913, 35)
         Label21.TabIndex = 23
-        Label21.Text = "目前仅测试，点击跳转殖民地界面，无法跳回"
+        Label21.Text = "即将运行的开局脚本数量：？"
         Label21.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' UiButton1
@@ -1335,70 +1397,19 @@ Partial Class 界面主层_主菜单
         UiButton1.Text = "开始游戏"
         UiButton1.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
-        ' Panel9
-        ' 
-        Panel9.Controls.Add(Panel15)
-        Panel9.Dock = DockStyle.Top
-        Panel9.Location = New Point(30, 356)
-        Panel9.Name = "Panel9"
-        Panel9.Size = New Size(1068, 100)
-        Panel9.TabIndex = 25
-        ' 
-        ' Panel15
-        ' 
-        Panel15.Controls.Add(UiRadioButton2)
-        Panel15.Controls.Add(UiRadioButton1)
-        Panel15.Dock = DockStyle.Left
-        Panel15.Location = New Point(0, 0)
-        Panel15.Name = "Panel15"
-        Panel15.Size = New Size(500, 100)
-        Panel15.TabIndex = 0
-        ' 
-        ' UiRadioButton2
-        ' 
-        UiRadioButton2.Dock = DockStyle.Top
-        UiRadioButton2.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiRadioButton2.ForeColor = Color.FromArgb(CByte(230), CByte(80), CByte(80))
-        UiRadioButton2.Location = New Point(0, 35)
-        UiRadioButton2.MinimumSize = New Size(1, 1)
-        UiRadioButton2.Name = "UiRadioButton2"
-        UiRadioButton2.RadioButtonColor = Color.FromArgb(CByte(230), CByte(80), CByte(80))
-        UiRadioButton2.RadioButtonSize = 21
-        UiRadioButton2.Size = New Size(500, 35)
-        UiRadioButton2.Style = Sunny.UI.UIStyle.Custom
-        UiRadioButton2.TabIndex = 2
-        UiRadioButton2.Text = "高难生存"
-        ' 
-        ' UiRadioButton1
-        ' 
-        UiRadioButton1.Dock = DockStyle.Top
-        UiRadioButton1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiRadioButton1.ForeColor = Color.FromArgb(CByte(110), CByte(190), CByte(40))
-        UiRadioButton1.Location = New Point(0, 0)
-        UiRadioButton1.MinimumSize = New Size(1, 1)
-        UiRadioButton1.Name = "UiRadioButton1"
-        UiRadioButton1.RadioButtonColor = Color.FromArgb(CByte(110), CByte(190), CByte(40))
-        UiRadioButton1.RadioButtonSize = 21
-        UiRadioButton1.Size = New Size(500, 35)
-        UiRadioButton1.Style = Sunny.UI.UIStyle.Custom
-        UiRadioButton1.TabIndex = 0
-        UiRadioButton1.Text = "标准探索"
-        ' 
         ' Label7
         ' 
-        Label7.AutoSize = True
         Label7.Dock = DockStyle.Top
         Label7.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
         Label7.Location = New Point(30, 300)
         Label7.Name = "Label7"
         Label7.Padding = New Padding(0, 20, 0, 10)
-        Label7.Size = New Size(88, 56)
+        Label7.Size = New Size(1068, 50)
         Label7.TabIndex = 24
-        Label7.Text = "游戏难度"
         ' 
         ' Panel7
         ' 
-        Panel7.Controls.Add(控件_暗黑文本框2)
+        Panel7.Controls.Add(UiTextBox2)
         Panel7.Dock = DockStyle.Top
         Panel7.Location = New Point(30, 265)
         Panel7.Name = "Panel7"
@@ -1406,19 +1417,35 @@ Partial Class 界面主层_主菜单
         Panel7.Size = New Size(1068, 35)
         Panel7.TabIndex = 23
         ' 
-        ' 控件_暗黑文本框2
+        ' UiTextBox2
         ' 
-        控件_暗黑文本框2.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
-        控件_暗黑文本框2.Dock = DockStyle.Left
-        控件_暗黑文本框2.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        控件_暗黑文本框2.ForeColor = Color.Silver
-        控件_暗黑文本框2.Location = New Point(5, 0)
-        控件_暗黑文本框2.Name = "控件_暗黑文本框2"
-        控件_暗黑文本框2.Padding = New Padding(8, 6, 5, 0)
-        控件_暗黑文本框2.PasswordChar = vbNullChar
-        控件_暗黑文本框2.PlaceholderText = "在剧情中使用"
-        控件_暗黑文本框2.Size = New Size(250, 35)
-        控件_暗黑文本框2.TabIndex = 1
+        UiTextBox2.Dock = DockStyle.Left
+        UiTextBox2.FillColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox2.FillColor2 = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox2.FillDisableColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox2.FillReadOnlyColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox2.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiTextBox2.ForeColor = Color.DarkGray
+        UiTextBox2.ForeDisableColor = Color.DarkGray
+        UiTextBox2.ForeReadOnlyColor = Color.DarkGray
+        UiTextBox2.Location = New Point(5, 0)
+        UiTextBox2.Margin = New Padding(4, 5, 4, 5)
+        UiTextBox2.MinimumSize = New Size(1, 16)
+        UiTextBox2.Name = "UiTextBox2"
+        UiTextBox2.Padding = New Padding(5)
+        UiTextBox2.RectColor = Color.DimGray
+        UiTextBox2.RectDisableColor = Color.DimGray
+        UiTextBox2.RectReadOnlyColor = Color.DimGray
+        UiTextBox2.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiTextBox2.ScrollBarColor = Color.DimGray
+        UiTextBox2.ScrollBarStyleInherited = False
+        UiTextBox2.ShowText = False
+        UiTextBox2.Size = New Size(300, 35)
+        UiTextBox2.TabIndex = 1
+        UiTextBox2.TextAlignment = ContentAlignment.MiddleLeft
+        UiTextBox2.Watermark = "在剧情中调用"
+        UiTextBox2.WatermarkActiveColor = Color.DimGray
+        UiTextBox2.WatermarkColor = Color.DimGray
         ' 
         ' Label6
         ' 
@@ -1434,7 +1461,7 @@ Partial Class 界面主层_主菜单
         ' 
         ' Panel5
         ' 
-        Panel5.Controls.Add(控件_暗黑文本框1)
+        Panel5.Controls.Add(UiTextBox1)
         Panel5.Dock = DockStyle.Top
         Panel5.Location = New Point(30, 174)
         Panel5.Name = "Panel5"
@@ -1442,19 +1469,35 @@ Partial Class 界面主层_主菜单
         Panel5.Size = New Size(1068, 35)
         Panel5.TabIndex = 13
         ' 
-        ' 控件_暗黑文本框1
+        ' UiTextBox1
         ' 
-        控件_暗黑文本框1.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
-        控件_暗黑文本框1.Dock = DockStyle.Left
-        控件_暗黑文本框1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        控件_暗黑文本框1.ForeColor = Color.Silver
-        控件_暗黑文本框1.Location = New Point(5, 0)
-        控件_暗黑文本框1.Name = "控件_暗黑文本框1"
-        控件_暗黑文本框1.Padding = New Padding(8, 6, 5, 0)
-        控件_暗黑文本框1.PasswordChar = vbNullChar
-        控件_暗黑文本框1.PlaceholderText = "仅做文件夹名称"
-        控件_暗黑文本框1.Size = New Size(250, 35)
-        控件_暗黑文本框1.TabIndex = 0
+        UiTextBox1.Dock = DockStyle.Left
+        UiTextBox1.FillColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox1.FillColor2 = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox1.FillDisableColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox1.FillReadOnlyColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiTextBox1.ForeColor = Color.DarkGray
+        UiTextBox1.ForeDisableColor = Color.DarkGray
+        UiTextBox1.ForeReadOnlyColor = Color.DarkGray
+        UiTextBox1.Location = New Point(5, 0)
+        UiTextBox1.Margin = New Padding(4, 5, 4, 5)
+        UiTextBox1.MinimumSize = New Size(1, 16)
+        UiTextBox1.Name = "UiTextBox1"
+        UiTextBox1.Padding = New Padding(5)
+        UiTextBox1.RectColor = Color.DimGray
+        UiTextBox1.RectDisableColor = Color.DimGray
+        UiTextBox1.RectReadOnlyColor = Color.DimGray
+        UiTextBox1.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiTextBox1.ScrollBarColor = Color.DimGray
+        UiTextBox1.ScrollBarStyleInherited = False
+        UiTextBox1.ShowText = False
+        UiTextBox1.Size = New Size(300, 35)
+        UiTextBox1.TabIndex = 0
+        UiTextBox1.TextAlignment = ContentAlignment.MiddleLeft
+        UiTextBox1.Watermark = "仅做文件夹名称"
+        UiTextBox1.WatermarkActiveColor = Color.DimGray
+        UiTextBox1.WatermarkColor = Color.DimGray
         ' 
         ' Label18
         ' 
@@ -3405,10 +3448,10 @@ Partial Class 界面主层_主菜单
         Panel39.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
         Panel39.Controls.Add(ListView5)
         Panel39.Dock = DockStyle.Fill
-        Panel39.Location = New Point(30, 188)
+        Panel39.Location = New Point(30, 193)
         Panel39.Name = "Panel39"
         Panel39.Padding = New Padding(0, 10, 0, 10)
-        Panel39.Size = New Size(490, 441)
+        Panel39.Size = New Size(490, 436)
         Panel39.TabIndex = 18
         ' 
         ' ListView5
@@ -3424,7 +3467,7 @@ Partial Class 界面主层_主菜单
         ListView5.MultiSelect = False
         ListView5.Name = "ListView5"
         ListView5.OwnerDraw = True
-        ListView5.Size = New Size(330, 421)
+        ListView5.Size = New Size(371, 416)
         ListView5.StateImageList = ImageList1
         ListView5.TabIndex = 0
         ListView5.UseCompatibleStateImageBehavior = False
@@ -3442,7 +3485,7 @@ Partial Class 界面主层_主菜单
         LinkLabel4.Dock = DockStyle.Top
         LinkLabel4.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel4.LinkColor = Color.CornflowerBlue
-        LinkLabel4.Location = New Point(30, 147)
+        LinkLabel4.Location = New Point(30, 152)
         LinkLabel4.Name = "LinkLabel4"
         LinkLabel4.Padding = New Padding(0, 0, 0, 20)
         LinkLabel4.Size = New Size(308, 41)
@@ -3456,8 +3499,8 @@ Partial Class 界面主层_主菜单
         Panel37.Dock = DockStyle.Top
         Panel37.Location = New Point(30, 102)
         Panel37.Name = "Panel37"
-        Panel37.Padding = New Padding(0, 0, 0, 10)
-        Panel37.Size = New Size(490, 45)
+        Panel37.Padding = New Padding(0, 0, 0, 15)
+        Panel37.Size = New Size(490, 50)
         Panel37.TabIndex = 16
         ' 
         ' UiButton上传创意工坊
@@ -3789,6 +3832,10 @@ Partial Class 界面主层_主菜单
         Label27.TabIndex = 25
         Label27.Text = "关于 ImaginWorld"
         ' 
+        ' ColumnHeader6
+        ' 
+        ColumnHeader6.Width = 300
+        ' 
         ' 界面主层_主菜单
         ' 
         AutoScaleDimensions = New SizeF(96F, 96F)
@@ -3822,9 +3869,8 @@ Partial Class 界面主层_主菜单
         TabPage新游戏.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel4.PerformLayout()
-        Panel6.ResumeLayout(False)
         Panel9.ResumeLayout(False)
-        Panel15.ResumeLayout(False)
+        Panel6.ResumeLayout(False)
         Panel7.ResumeLayout(False)
         Panel5.ResumeLayout(False)
         TabPage载入存档.ResumeLayout(False)
@@ -3996,7 +4042,6 @@ Partial Class 界面主层_主菜单
     Friend WithEvents Label73 As Label
     Friend WithEvents Panel42 As Panel
     Friend WithEvents UiButton22 As Sunny.UI.UIButton
-    Friend WithEvents Label21 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel43 As Panel
     Friend WithEvents UiButton开发者群 As Sunny.UI.UIButton
@@ -4007,12 +4052,7 @@ Partial Class 界面主层_主菜单
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label6 As Label
-    Friend WithEvents Panel9 As Panel
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Panel15 As Panel
-    Friend WithEvents UiRadioButton1 As Sunny.UI.UIRadioButton
     Friend WithEvents Label23 As Label
-    Friend WithEvents UiRadioButton2 As Sunny.UI.UIRadioButton
     Friend WithEvents UiButton下移 As Sunny.UI.UIButton
     Friend WithEvents Label57 As Label
     Friend WithEvents UiButton上移 As Sunny.UI.UIButton
@@ -4118,8 +4158,6 @@ Partial Class 界面主层_主菜单
     Friend WithEvents Label118 As Label
     Friend WithEvents Label128 As Label
     Friend WithEvents Label119 As Label
-    Friend WithEvents 控件_暗黑文本框1 As 控件_暗黑文本框
-    Friend WithEvents 控件_暗黑文本框2 As 控件_暗黑文本框
     Friend WithEvents Label123 As Label
     Friend WithEvents Label124 As Label
     Friend WithEvents Label125 As Label
@@ -4127,5 +4165,14 @@ Partial Class 界面主层_主菜单
     Friend WithEvents Label14 As Label
     Friend WithEvents Label126 As Label
     Friend WithEvents Label127 As Label
+    Friend WithEvents UiTextBox1 As Sunny.UI.UITextBox
+    Friend WithEvents UiTextBox2 As Sunny.UI.UITextBox
+    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Label129 As Label
+    Friend WithEvents UiButton9 As Sunny.UI.UIButton
+    Friend WithEvents Label130 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label7 As Label
 
 End Class

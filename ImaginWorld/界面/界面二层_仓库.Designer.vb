@@ -41,9 +41,6 @@ Partial Class 界面二层_仓库
         Panel11 = New Panel()
         Panel15 = New Panel()
         Label21 = New Label()
-        Panel18 = New Panel()
-        Panel19 = New Panel()
-        Label13 = New Label()
         Panel16 = New Panel()
         Panel17 = New Panel()
         Label5 = New Label()
@@ -51,7 +48,6 @@ Partial Class 界面二层_仓库
         Panel7 = New Panel()
         Panel12 = New Panel()
         Panel5 = New Panel()
-        控件_暗黑文本框1 = New 控件_暗黑文本框()
         Label6 = New Label()
         UiButton11 = New Sunny.UI.UIButton()
         Label10 = New Label()
@@ -70,7 +66,6 @@ Partial Class 界面二层_仓库
         UiButton7 = New Sunny.UI.UIButton()
         UiTrackBar1 = New Sunny.UI.UITrackBar()
         Panel2 = New Panel()
-        控件_暗黑文本框2 = New 控件_暗黑文本框()
         Label25 = New Label()
         UiButton15 = New Sunny.UI.UIButton()
         Label24 = New Label()
@@ -101,7 +96,6 @@ Partial Class 界面二层_仓库
         Panel9.SuspendLayout()
         Panel11.SuspendLayout()
         Panel15.SuspendLayout()
-        Panel18.SuspendLayout()
         Panel16.SuspendLayout()
         Panel12.SuspendLayout()
         Panel5.SuspendLayout()
@@ -282,7 +276,6 @@ Partial Class 界面二层_仓库
         ' Panel15
         ' 
         Panel15.Controls.Add(Label21)
-        Panel15.Controls.Add(Panel18)
         Panel15.Controls.Add(Panel16)
         Panel15.Dock = DockStyle.Fill
         Panel15.Location = New Point(20, 208)
@@ -294,41 +287,12 @@ Partial Class 界面二层_仓库
         ' 
         Label21.Dock = DockStyle.Fill
         Label21.ForeColor = Color.Gray
-        Label21.Location = New Point(0, 220)
+        Label21.Location = New Point(0, 110)
         Label21.Name = "Label21"
         Label21.Padding = New Padding(0, 10, 0, 0)
-        Label21.Size = New Size(410, 217)
+        Label21.Size = New Size(410, 327)
         Label21.TabIndex = 40
         Label21.Text = "描述"
-        ' 
-        ' Panel18
-        ' 
-        Panel18.Controls.Add(Panel19)
-        Panel18.Controls.Add(Label13)
-        Panel18.Dock = DockStyle.Top
-        Panel18.Location = New Point(0, 110)
-        Panel18.Name = "Panel18"
-        Panel18.Size = New Size(410, 110)
-        Panel18.TabIndex = 39
-        ' 
-        ' Panel19
-        ' 
-        Panel19.Dock = DockStyle.Fill
-        Panel19.Location = New Point(0, 41)
-        Panel19.Name = "Panel19"
-        Panel19.Size = New Size(410, 69)
-        Panel19.TabIndex = 40
-        ' 
-        ' Label13
-        ' 
-        Label13.AutoSize = True
-        Label13.Dock = DockStyle.Top
-        Label13.Location = New Point(0, 0)
-        Label13.Name = "Label13"
-        Label13.Padding = New Padding(0, 10, 0, 10)
-        Label13.Size = New Size(74, 41)
-        Label13.TabIndex = 41
-        Label13.Text = "套装效果"
         ' 
         ' Panel16
         ' 
@@ -391,7 +355,6 @@ Partial Class 界面二层_仓库
         ' 
         ' Panel5
         ' 
-        Panel5.Controls.Add(控件_暗黑文本框1)
         Panel5.Controls.Add(Label6)
         Panel5.Controls.Add(UiButton11)
         Panel5.Controls.Add(Label10)
@@ -402,20 +365,6 @@ Partial Class 界面二层_仓库
         Panel5.Padding = New Padding(0, 10, 0, 0)
         Panel5.Size = New Size(410, 45)
         Panel5.TabIndex = 32
-        ' 
-        ' 控件_暗黑文本框1
-        ' 
-        控件_暗黑文本框1.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
-        控件_暗黑文本框1.Dock = DockStyle.Fill
-        控件_暗黑文本框1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        控件_暗黑文本框1.ForeColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        控件_暗黑文本框1.Location = New Point(140, 10)
-        控件_暗黑文本框1.Name = "控件_暗黑文本框1"
-        控件_暗黑文本框1.Padding = New Padding(8, 6, 5, 0)
-        控件_暗黑文本框1.PasswordChar = vbNullChar
-        控件_暗黑文本框1.PlaceholderText = "输入数量"
-        控件_暗黑文本框1.Size = New Size(130, 35)
-        控件_暗黑文本框1.TabIndex = 23
         ' 
         ' Label6
         ' 
@@ -737,7 +686,6 @@ Partial Class 界面二层_仓库
         ' 
         ' Panel2
         ' 
-        Panel2.Controls.Add(控件_暗黑文本框2)
         Panel2.Controls.Add(Label25)
         Panel2.Controls.Add(UiButton15)
         Panel2.Controls.Add(Label24)
@@ -748,20 +696,6 @@ Partial Class 界面二层_仓库
         Panel2.Padding = New Padding(0, 20, 0, 0)
         Panel2.Size = New Size(410, 55)
         Panel2.TabIndex = 36
-        ' 
-        ' 控件_暗黑文本框2
-        ' 
-        控件_暗黑文本框2.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
-        控件_暗黑文本框2.Dock = DockStyle.Fill
-        控件_暗黑文本框2.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        控件_暗黑文本框2.ForeColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        控件_暗黑文本框2.Location = New Point(140, 20)
-        控件_暗黑文本框2.Name = "控件_暗黑文本框2"
-        控件_暗黑文本框2.Padding = New Padding(8, 6, 5, 0)
-        控件_暗黑文本框2.PasswordChar = vbNullChar
-        控件_暗黑文本框2.PlaceholderText = "搜索物品"
-        控件_暗黑文本框2.Size = New Size(130, 35)
-        控件_暗黑文本框2.TabIndex = 24
         ' 
         ' Label25
         ' 
@@ -1113,8 +1047,6 @@ Partial Class 界面二层_仓库
         Panel11.ResumeLayout(False)
         Panel11.PerformLayout()
         Panel15.ResumeLayout(False)
-        Panel18.ResumeLayout(False)
-        Panel18.PerformLayout()
         Panel16.ResumeLayout(False)
         Panel16.PerformLayout()
         Panel12.ResumeLayout(False)
@@ -1150,7 +1082,6 @@ Partial Class 界面二层_仓库
     Friend WithEvents Label19 As Label
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents 控件_暗黑文本框1 As 控件_暗黑文本框
     Friend WithEvents UiButton11 As Sunny.UI.UIButton
     Friend WithEvents Panel4 As Panel
     Friend WithEvents UiButton10 As Sunny.UI.UIButton
@@ -1162,14 +1093,12 @@ Partial Class 界面二层_仓库
     Friend WithEvents UiButton7 As Sunny.UI.UIButton
     Friend WithEvents UiTrackBar1 As Sunny.UI.UITrackBar
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents 控件_暗黑文本框2 As 控件_暗黑文本框
     Friend WithEvents Label10 As Label
     Friend WithEvents UiButton4 As Sunny.UI.UIButton
     Friend WithEvents Label11 As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Panel15 As Panel
     Friend WithEvents TabPage成品物品 As TabPage
-    Friend WithEvents Panel19 As Panel
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Panel21 As Panel
@@ -1184,14 +1113,12 @@ Partial Class 界面二层_仓库
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents Panel16 As Panel
-    Friend WithEvents Panel18 As Panel
     Friend WithEvents Panel17 As Panel
     Friend WithEvents UiButton12 As Sunny.UI.UIButton
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel22 As Panel
-    Friend WithEvents Label13 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents UiButton5 As Sunny.UI.UIButton
     Friend WithEvents Label22 As Label

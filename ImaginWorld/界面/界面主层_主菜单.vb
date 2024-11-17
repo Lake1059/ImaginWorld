@@ -5,7 +5,8 @@ Imports Newtonsoft.Json
 Imports Windows.System
 
 Public Class 界面主层_主菜单
-    Public Property 是否已初始化 As Boolean = False
+
+    Public 是否已初始化 As Boolean = False
 
     Private Sub 模板_主菜单_Load(sender As Object, e As EventArgs) Handles Me.Load
         SetControlFont(Me)
@@ -14,6 +15,7 @@ Public Class 界面主层_主菜单
         暗黑列表视图自绘制.绑定模组列表的列表视图事件(ListView3)
         暗黑列表视图自绘制.绑定模组列表的列表视图事件(ListView4)
         暗黑列表视图自绘制.绑定列表视图事件(ListView5)
+
         AddHandler UiButton重新扫描.Click, AddressOf 刷新模组列表
         AddHandler UiButton启用模组.Click, AddressOf 启用选中模组
         AddHandler UiButton禁用模组.Click, AddressOf 禁用所选模组
@@ -33,6 +35,14 @@ Public Class 界面主层_主菜单
                                                            显示选中模组信息(已启用的模组列表(ListView4.SelectedIndices(0)), True)
                                                        End If
                                                    End Sub
+        AddHandler ListView4.KeyDown, Sub(s1, e1)
+                                          Select Case e1.KeyData
+                                              Case Keys.W
+                                                  上移模组()
+                                              Case Keys.S
+                                                  下移模组()
+                                          End Select
+                                      End Sub
         AddHandler UiButton打开文件夹.Click, Sub() Process.Start("explorer.exe", 当前正在查看的模组路径)
 
         AddHandler UiButton上移.Click, AddressOf 上移模组
@@ -58,7 +68,7 @@ Public Class 界面主层_主菜单
         AddHandler UiButton8.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://space.bilibili.com/319785096"))
 
 
-        AddHandler Me.UiButton1.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_殖民地)
+        AddHandler Me.UiButton1.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.二层, New 界面主层_殖民地)
         AddHandler Me.UiButton22.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
         AddHandler Me.UiButton上传创意工坊.Click, AddressOf 上传创意工坊
 
@@ -226,6 +236,7 @@ Public Class 界面主层_主菜单
         游戏设置.实例对象.RandomEventsTriggerCalculationThreads = UiTrackBar5.Value
         游戏设置.保存()
         SetControlFont(Me)
+        SetControlFont(控制台界面实例)
         Form1.ClientSize = 游戏设置.实例对象.WindowSize
     End Sub
 

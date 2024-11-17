@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 
+<ToolboxItem(True)>
 Public Class 控件_暗黑文本框
 
     Public Sub New()
@@ -18,7 +19,7 @@ Public Class 控件_暗黑文本框
     Private _ForeColor As Color = Color.Silver
     Private _Font As New Font("微软雅黑", 9.75)
 
-    <Browsable(True)>
+    <Browsable(True), EditorBrowsable(EditorBrowsableState.Always), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
     Public Overrides Property Text As String
         Get
             Return Me.TextBox1.Text
@@ -45,7 +46,7 @@ Public Class 控件_暗黑文本框
     '''  密码字符
     ''' </summary>
     ''' <returns></returns>
-    <Browsable(True)>
+    <Browsable(True), EditorBrowsable(EditorBrowsableState.Always), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
     Public Property PasswordChar As String
         Get
             Return Me.TextBox1.PasswordChar
@@ -59,7 +60,7 @@ Public Class 控件_暗黑文本框
     ''' 当文本框为空时显示的提示文本
     ''' </summary>
     ''' <returns></returns>
-    <Browsable(True)>
+    <Browsable(True), EditorBrowsable(EditorBrowsableState.Always), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
     Public Property PlaceholderText As String
         Get
             Return Me.TextBox1.PlaceholderText
@@ -81,7 +82,6 @@ Public Class 控件_暗黑文本框
             Invalidate()
         End Set
     End Property
-
 
     <Browsable(True), EditorBrowsable(EditorBrowsableState.Always), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
     Public Overrides Property ForeColor As Color
@@ -119,7 +119,6 @@ Public Class 控件_暗黑文本框
     Private Sub 控件_暗黑文本框_Load(sender As Object, e As EventArgs) Handles Me.Load
         调整()
     End Sub
-
 
     Public Shadows Event KeyDown(sender As Object, e As KeyEventArgs)
 

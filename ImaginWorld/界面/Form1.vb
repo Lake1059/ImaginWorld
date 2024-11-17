@@ -4,6 +4,7 @@ Imports Microsoft.VisualBasic.FileIO.FileSystem
 Public Class Form1
     Protected Overrides Sub WndProc(ByRef m As Message)
         Const WM_NCHITTEST As Integer = &H84
+        Const HTCAPTION As Integer = 2
         Const HTBOTTOM As Integer = 15
         Const HTBOTTOMLEFT As Integer = 16
         Const HTBOTTOMRIGHT As Integer = 17
@@ -18,12 +19,12 @@ Public Class Form1
             Dim result As Integer = m.Result.ToInt32()
             Select Case result
                 Case HTBOTTOM, HTBOTTOMLEFT, HTBOTTOMRIGHT, HTLEFT, HTRIGHT, HTTOP, HTTOPLEFT, HTTOPRIGHT
-                    m.Result = IntPtr.Zero
+                    m.Result = CType(HTCAPTION, IntPtr)
             End Select
         End If
     End Sub
 
-    Public Shared Property DPI As Single = Form1.CreateGraphics.DpiX / 96
+    Public Shared DPI As Single = Form1.CreateGraphics.DpiX / 96
 
     Public 界面图层_主层 As Control = Nothing
     Public 界面图层_二层 As Control = Nothing
@@ -33,6 +34,12 @@ Public Class Form1
     Public 加载时间计时器 As New Stopwatch()
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Screen.PrimaryScreen.Bounds.Width < 1280 Or Screen.PrimaryScreen.Bounds.Height < 720 Then
+            MsgBox($"主屏幕分辨率不足 1280x720，请更换或调整主显示器后再启动游戏！{vbCrLf & vbCrLf} The main screen resolution is less than 1280x720. Please change or adjust the main monitor before launching the game.", MsgBoxStyle.Critical)
+            End
+        End If
+
+        全局键盘钩子.SetHook()
         游戏设置.加载()
         If 游戏设置.实例对象.FullScreenNoBorders Then
             Me.FormBorderStyle = FormBorderStyle.None
@@ -66,10 +73,7 @@ Public Class Form1
         If Not Me.IsHandleCreated Then Me.CreateHandle()
     End Sub
 
-
-
-
-
-
-
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        全局键盘钩子.Unhook()
+    End Sub
 End Class

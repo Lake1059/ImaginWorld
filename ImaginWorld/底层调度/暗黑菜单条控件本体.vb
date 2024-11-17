@@ -1,4 +1,7 @@
-﻿Public Class 暗黑菜单条控件本体
+﻿Imports System.ComponentModel
+
+<ToolboxItem(True)>
+Public Class 暗黑菜单条控件本体
     Inherits ContextMenuStrip
 
     Public Sub New()

@@ -47,6 +47,22 @@ Public Class 全局键盘钩子
 
     Public Shared Event 自定义全局键盘事件(Key As Keys)
 
+    Public Shared Sub 初始化全局键盘事件()
+        AddHandler 自定义全局键盘事件, Sub(Key)
+                                  Select Case Key
+                                      Case Keys.Oemtilde
+                                          If 控制台界面实例.Visible Then
+                                              控制台界面实例.UiButton关闭控制台.PerformClick()
+                                          Else
+                                              界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
+                                          End If
 
+
+
+
+                                  End Select
+                              End Sub
+        DebugPrint($"全局键盘钩子已初始化", Color.CornflowerBlue)
+    End Sub
 
 End Class

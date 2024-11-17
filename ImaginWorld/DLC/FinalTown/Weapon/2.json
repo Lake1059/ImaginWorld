@@ -1,7 +1,7 @@
 [
     { // 原木剑
         "ID": "60001", // 武器对象名称
-        "Type": 0, // 类型
+        "Type": 1, // 类型
         "UseWeights": 1, // 消耗的负重
         "StarRating": 2, // 星级，仅影响显示颜色
         "CharacterProperty": {

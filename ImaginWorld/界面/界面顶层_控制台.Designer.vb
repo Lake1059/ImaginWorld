@@ -53,9 +53,10 @@ Partial Class 界面顶层_控制台
         Panel5 = New Panel()
         RichTextBox1 = New RichTextBox()
         Panel6 = New Panel()
-        控件_暗黑文本框1 = New 控件_暗黑文本框()
+        UiTextBox1 = New Sunny.UI.UITextBox()
         Label3 = New Label()
         UiButton发送指令 = New Sunny.UI.UIButton()
+        暗黑菜单条控件本体1 = New 暗黑菜单条控件本体()
         Panel1.SuspendLayout()
         Panel3.SuspendLayout()
         Panel12.SuspendLayout()
@@ -461,7 +462,7 @@ Partial Class 界面顶层_控制台
         ' Panel6
         ' 
         Panel6.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
-        Panel6.Controls.Add(控件_暗黑文本框1)
+        Panel6.Controls.Add(UiTextBox1)
         Panel6.Controls.Add(Label3)
         Panel6.Controls.Add(UiButton发送指令)
         Panel6.Dock = DockStyle.Bottom
@@ -471,19 +472,35 @@ Partial Class 界面顶层_控制台
         Panel6.Size = New Size(1030, 75)
         Panel6.TabIndex = 4
         ' 
-        ' 控件_暗黑文本框1
+        ' UiTextBox1
         ' 
-        控件_暗黑文本框1.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        控件_暗黑文本框1.Dock = DockStyle.Fill
-        控件_暗黑文本框1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        控件_暗黑文本框1.ForeColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        控件_暗黑文本框1.Location = New Point(20, 20)
-        控件_暗黑文本框1.Name = "控件_暗黑文本框1"
-        控件_暗黑文本框1.Padding = New Padding(6, 6, 0, 0)
-        控件_暗黑文本框1.PasswordChar = vbNullChar
-        控件_暗黑文本框1.PlaceholderText = "输入指令，按 Enter 键确认"
-        控件_暗黑文本框1.Size = New Size(855, 35)
-        控件_暗黑文本框1.TabIndex = 2
+        UiTextBox1.Dock = DockStyle.Fill
+        UiTextBox1.FillColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox1.FillColor2 = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox1.FillDisableColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox1.FillReadOnlyColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiTextBox1.ForeColor = Color.DarkGray
+        UiTextBox1.ForeDisableColor = Color.DarkGray
+        UiTextBox1.ForeReadOnlyColor = Color.DarkGray
+        UiTextBox1.Location = New Point(20, 20)
+        UiTextBox1.Margin = New Padding(4, 5, 4, 5)
+        UiTextBox1.MinimumSize = New Size(1, 16)
+        UiTextBox1.Name = "UiTextBox1"
+        UiTextBox1.Padding = New Padding(5)
+        UiTextBox1.RectColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiTextBox1.RectDisableColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiTextBox1.RectReadOnlyColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiTextBox1.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiTextBox1.ScrollBarColor = Color.DimGray
+        UiTextBox1.ScrollBarStyleInherited = False
+        UiTextBox1.ShowText = False
+        UiTextBox1.Size = New Size(855, 35)
+        UiTextBox1.TabIndex = 31
+        UiTextBox1.TextAlignment = ContentAlignment.MiddleLeft
+        UiTextBox1.Watermark = "输入指令，按 Enter 键确认，按 <上箭头> 键显示上一次的发送"
+        UiTextBox1.WatermarkActiveColor = Color.DimGray
+        UiTextBox1.WatermarkColor = Color.DimGray
         ' 
         ' Label3
         ' 
@@ -520,6 +537,14 @@ Partial Class 界面顶层_控制台
         UiButton发送指令.TabIndex = 29
         UiButton发送指令.Text = "发送"
         UiButton发送指令.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' 暗黑菜单条控件本体1
+        ' 
+        暗黑菜单条控件本体1.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        暗黑菜单条控件本体1.ForeColor = Color.Gainsboro
+        暗黑菜单条控件本体1.Name = "暗黑菜单条控件本体1"
+        暗黑菜单条控件本体1.ShowImageMargin = False
+        暗黑菜单条控件本体1.Size = New Size(156, 26)
         ' 
         ' 界面顶层_控制台
         ' 
@@ -572,12 +597,13 @@ Partial Class 界面顶层_控制台
     Friend WithEvents Label13 As Label
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents 控件_暗黑文本框1 As 控件_暗黑文本框
     Friend WithEvents Label3 As Label
     Friend WithEvents UiButton发送指令 As Sunny.UI.UIButton
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents UiButton1 As Sunny.UI.UIButton
+    Friend WithEvents UiTextBox1 As Sunny.UI.UITextBox
+    Friend WithEvents 暗黑菜单条控件本体1 As 暗黑菜单条控件本体
 
 End Class
