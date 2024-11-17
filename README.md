@@ -17,7 +17,7 @@
 + 售价：48 CNY
 + 预计发行：2025
 
-### [在 afdian 上预购或参与众筹](https://afdian.com/a/1059Studio)
+### [在 afdian 上预购](https://afdian.com/a/1059Studio)
 
 ### 也可以直接找我要序列号
 + 仅限经常有时间测试的玩家
