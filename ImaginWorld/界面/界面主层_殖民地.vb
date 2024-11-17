@@ -5,10 +5,7 @@ Public Class 界面主层_殖民地
     Public DPI As Single
 
     Private Sub 模板_殖民地_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'AddHandler UiTabControlMenu1.SelectedIndexChanged, AddressOf 触发主选项卡切换事件
-
         SetControlFont(Me)
-
 
         是否已初始化 = True
         DPI = Form1.DPI
@@ -28,40 +25,46 @@ Public Class 界面主层_殖民地
 
     Public Sub 调整界面()
         If Not 是否已初始化 Then Exit Sub
-        'Me.Panel1.Height = 90 * DPI
-        'Me.Panel1.Padding = New Padding(20 * DPI)
-        'Dim Panel1内部宽度 As Integer = Me.Panel1.Width - Me.Panel1.Padding.Left * 2
-        'Me.Panel2.Width = Panel1内部宽度 * 0.15
-        'Me.Panel4.Width = Panel1内部宽度 * 0.15
-        'Me.Panel3.Width = 22 * DPI : Me.Panel3.Padding = New Padding(10 * DPI, 0, 10 * DPI, 0)
-        'Me.Panel7.Width = Panel1内部宽度 * 0.15
-        'Me.Panel6.Width = 22 * DPI : Me.Panel6.Padding = New Padding(10 * DPI, 0, 10 * DPI, 0)
-        'Me.Panel9.Width = Panel1内部宽度 * 0.15
-        'Me.Panel10.Width = 22 * DPI : Me.Panel10.Padding = New Padding(10 * DPI, 0, 10 * DPI, 0)
-        'Me.UiButton1.Width = Panel1内部宽度 * 0.15
-        'Me.UiButton1.Parent.Width = Me.UiButton1.Width + 10 * DPI
-        '触发主选项卡切换事件()
-    End Sub
-
-    Public Sub 设置殖民地名称(文本 As String)
-        '界面控制.根据宽度显示单行文本(Label殖民地名称, 文本, Panel2.Width)
-    End Sub
-
-    Private Sub Label19_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    'Public Sub 触发主选项卡切换事件()
-    '    Me.UiTabControlMenu1.ItemSize = New Size(150 * DPI, 50 * DPI)
-    '    Dim 子选项卡 As TabPage = Me.UiTabControlMenu1.SelectedTab
-    '    Select Case True
-    '        Case 子选项卡.IsEqual(TabPage概览)
-    '            Me.Panel8.Width = 570 * DPI
+    Private Sub UiButton仓库_Click(sender As Object, e As EventArgs) Handles UiButton仓库.Click
+        界面控制.切换界面(界面控制.主界面图层.二层, New 界面二层_仓库)
+    End Sub
 
-    '        Case 子选项卡.IsEqual(TabPage仓库)
-    '            'Me.Label26.Width = 1 * DPI
+    Private Sub UiButton建筑_Click(sender As Object, e As EventArgs) Handles UiButton建筑.Click
+        界面控制.切换界面(界面控制.主界面图层.二层, New 界面二层_建筑和生产)
+    End Sub
 
-    '    End Select
-    'End Sub
+    Private Sub UiButton运输_Click(sender As Object, e As EventArgs) Handles UiButton运输.Click
 
+    End Sub
+
+    Private Sub UiButton角色_Click(sender As Object, e As EventArgs) Handles UiButton角色.Click
+        界面控制.切换界面(界面控制.主界面图层.二层, New 界面二层_角色详情)
+    End Sub
+
+    Private Sub UiButton载具_Click(sender As Object, e As EventArgs) Handles UiButton载具.Click
+
+    End Sub
+
+    Private Sub UiButton合成_Click(sender As Object, e As EventArgs) Handles UiButton合成.Click
+
+    End Sub
+
+    Private Sub UiButton科技_Click(sender As Object, e As EventArgs) Handles UiButton科技.Click
+
+    End Sub
+
+    Private Sub UiButton决策_Click(sender As Object, e As EventArgs) Handles UiButton决策.Click
+
+    End Sub
+
+    Private Sub UiButton田地_Click(sender As Object, e As EventArgs) Handles UiButton田地.Click
+
+    End Sub
+
+    Private Sub UiButton场景_Click(sender As Object, e As EventArgs) Handles UiButton场景.Click
+
+    End Sub
 End Class

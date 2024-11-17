@@ -68,7 +68,7 @@ Public Class 界面主层_主菜单
         AddHandler UiButton8.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://space.bilibili.com/319785096"))
 
 
-        AddHandler Me.UiButton1.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.二层, New 界面主层_殖民地)
+        AddHandler Me.UiButton1.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_殖民地)
         AddHandler Me.UiButton22.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
         AddHandler Me.UiButton上传创意工坊.Click, AddressOf 上传创意工坊
 

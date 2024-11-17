@@ -1306,7 +1306,7 @@ Partial Class 界面主层_主菜单
         Label129.Padding = New Padding(10, 0, 0, 0)
         Label129.Size = New Size(913, 35)
         Label129.TabIndex = 23
-        Label129.Text = "仅限开发测试"
+        Label129.Text = "仅限开发测试，点击直接跳转殖民地，无法跳回"
         Label129.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' UiButton9
@@ -1366,7 +1366,7 @@ Partial Class 界面主层_主菜单
         Label21.Padding = New Padding(10, 0, 0, 0)
         Label21.Size = New Size(913, 35)
         Label21.TabIndex = 23
-        Label21.Text = "即将运行的开局脚本数量：？"
+        Label21.Text = "即将运行的开局脚本数量：？目前没有作用"
         Label21.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' UiButton1

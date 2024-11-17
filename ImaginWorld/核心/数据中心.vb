@@ -109,8 +109,11 @@ Public Class 数据中心
         Public Property Skill_RT_TacticsToEnd_AddValue As Single = 0.1
 
         Public Property Talent1 As New List(Of 天赋单级结构)
+        Public Property Talent1Name As String = ""
         Public Property Talent2 As New List(Of 天赋单级结构)
+        Public Property Talent2Name As String = ""
         Public Property Talent3 As New List(Of 天赋单级结构)
+        Public Property Talent3Name As String = ""
 
         Public Property Story As New List(Of KeyValuePair(Of String, String))
 
