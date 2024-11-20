@@ -1,0 +1,15 @@
+[
+    {
+        "ID": "",
+        "DeliverCost": [
+            {
+                "Key": "",
+                "Value": 1
+            },
+            {}
+        ],
+        "ForcedUnlockCraftingRecipe": ["",""],
+        "ForcedUnlockBuildings": ["",""]
+    },
+    {}
+]

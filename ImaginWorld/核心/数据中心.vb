@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports System.Text.Json
 Imports Microsoft.VisualBasic.FileIO.FileSystem
 Imports Newtonsoft.Json
 
@@ -12,7 +11,7 @@ Public Class 数据中心
     Public Class 物品数据结构
         Public Property ID As String = ""
         Public Property Type As Integer = 0
-        Public Property UseWeights As Single = 0
+        Public Property UseSpace As Single = 0
         Public Property Effects As New List(Of 消耗品效果单片结构)
         Public Property ScriptKey As String = ""
         Public Property PlantingKey As String = ""
@@ -28,7 +27,7 @@ Public Class 数据中心
     Public Class 武器数据结构
         Public Property ID As String = ""
         Public Property Type As 武器类型 = 0
-        Public Property UseWeights As Single = 0
+        Public Property SpaceOccupied As Single = 0
         Public Property StarRating As Integer = 0
         Public Property CharacterProperty As New 角色基本属性数据结构
         Enum 武器类型
@@ -66,14 +65,14 @@ Public Class 数据中心
         Public Property MysticResistance As Single = 0
         Public Property MaterialResistance As Single = 0
         Public Property DarkResistance As Single = 0
-        Public Property WeightProvided As Integer = 0
+        Public Property SpaceProvided As Integer = 0
     End Class
 
     <Serializable>
     Public Class 装备数据结构
         Public Property ID As String = ""
         Public Property Type As 装备部件类型 = 0
-        Public Property UseWeights As Single = 0
+        Public Property UseSpace As Single = 0
         Public Property CharacterProperty As New 角色基本属性数据结构
         Enum 装备部件类型
             未指定 = 0
@@ -193,12 +192,74 @@ Public Class 数据中心
     Public Shared Property 所有角色 As New Dictionary(Of String, 角色数据结构)
 
     <Serializable>
+    Public Class 岗位数据结构
+        Public Property ID As String = ""
+        Public Property ResourcesProducedPerHour As New List(Of KeyValuePair(Of String, Single))
+        Public Property ResourcesConsumptionPerHour As New List(Of KeyValuePair(Of String, Single))
+    End Class
+    Public Shared Property 所有岗位 As New Dictionary(Of String, 岗位数据结构)
+
+    <Serializable>
     Public Class 建筑数据结构
         Public Property ID As String = ""
+        Public Property Jobs As New List(Of KeyValuePair(Of String, Integer))
+        Public Property ConstructionTimeHour As Integer = 0
+    End Class
+    Public Shared Property 所有建筑 As New Dictionary(Of String, 建筑数据结构)
+
+    <Serializable>
+    Public Class 环境数据结构
+        Public Property ID As String = ""
+        Public Property Jobs As New List(Of KeyValuePair(Of String, Integer))
+    End Class
+    Public Shared Property 所有环境 As New Dictionary(Of String, 环境数据结构)
+
+    <Serializable>
+    Public Class 物种数据结构
+        Public Property ID As String = ""
+        Public Property ProductionRatio As Single = 1
+        Public Property ConsumptionRatio As Single = 1
+        Public Property TotalWarHealthBonus As Single = 1
+        Public Property TotalWarAttackBonus As Single = 1
+        Public Property TotalWarDefenseBonus As Single = 1
+    End Class
+    Public Shared Property 所有物种 As New Dictionary(Of String, 物种数据结构)
+
+    <Serializable>
+    Public Class 科技数据结构
+        Public Property ID As String = ""
+        Public Property DeliverCost As New List(Of KeyValuePair(Of String, Integer))
+        Public Property ForcedUnlockCraftingRecipe As New List(Of String)
+        Public Property ForcedUnlockBuildings As New List(Of String)
+    End Class
+    Public Shared Property 所有科技 As New Dictionary(Of String, 科技数据结构)
+
+    <Serializable>
+    Public Class 合成配方数据结构
+        Public Property ID As String = ""
+        Public Property Cost As New List(Of KeyValuePair(Of String, Integer))
+    End Class
+    Public Shared Property 所有合成配方 As New Dictionary(Of String, 合成配方数据结构)
+
+    <Serializable>
+    Public Class 载具数据结构
+        Public Property ID As String = ""
+        Public Property SpaceProvided As Single = 100
+        Public Property ItemConsumed As String = ""
+        Public Property ConsumptionPerGrid As Single = 0.001
+
 
 
 
     End Class
+
+
+
+
+
+
+
+
 
 
 
@@ -361,7 +422,122 @@ Public Class 数据中心
 
         计时器.Stop()
         DebugPrint($"角色加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有角色.Count}", Color.ForestGreen)
-        '计时器.Restart()
+        计时器.Restart()
+
+        Await Task.Run(Sub()
+                           For Each ModString In 模组管理.实际加载的模组列表
+                               Dim 岗位文件路径 = Path.Combine(模组管理.所有模组列表(ModString).ModPath, "Production System", "Job.json")
+                               If Not FileExists(岗位文件路径) Then Exit For
+                               Try
+                                   Dim a As New List(Of 岗位数据结构)(JsonConvert.DeserializeObject(Of List(Of 岗位数据结构))(ReadAllText(岗位文件路径)))
+                                   For Each item In a
+                                       所有岗位(item.ID) = item
+                                   Next
+                               Catch ex As Exception
+                                   Form1.Invoke(Sub() DebugPrint($"加载岗位失败：{ex.Message}，位于文件：{岗位文件路径}", Color.Tomato))
+                               End Try
+                           Next
+                       End Sub)
+
+        计时器.Stop()
+        DebugPrint($"岗位加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有岗位.Count}", Color.ForestGreen)
+        计时器.Restart()
+
+        Await Task.Run(Sub()
+                           For Each ModString In 模组管理.实际加载的模组列表
+                               Dim 建筑文件路径 = Path.Combine(模组管理.所有模组列表(ModString).ModPath, "Production System", "Building.json")
+                               If Not FileExists(建筑文件路径) Then Exit For
+                               Try
+                                   Dim a As New List(Of 建筑数据结构)(JsonConvert.DeserializeObject(Of List(Of 建筑数据结构))(ReadAllText(建筑文件路径)))
+                                   For Each item In a
+                                       所有建筑(item.ID) = item
+                                   Next
+                               Catch ex As Exception
+                                   Form1.Invoke(Sub() DebugPrint($"加载建筑失败：{ex.Message}，位于文件：{建筑文件路径}", Color.Tomato))
+                               End Try
+                           Next
+                       End Sub)
+
+        计时器.Stop()
+        DebugPrint($"建筑加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有建筑.Count}", Color.ForestGreen)
+        计时器.Restart()
+
+        Await Task.Run(Sub()
+                           For Each ModString In 模组管理.实际加载的模组列表
+                               Dim 环境文件路径 = Path.Combine(模组管理.所有模组列表(ModString).ModPath, "Production System", "Environment.json")
+                               If Not FileExists(环境文件路径) Then Exit For
+                               Try
+                                   Dim a As New List(Of 环境数据结构)(JsonConvert.DeserializeObject(Of List(Of 环境数据结构))(ReadAllText(环境文件路径)))
+                                   For Each item In a
+                                       所有环境(item.ID) = item
+                                   Next
+                               Catch ex As Exception
+                                   Form1.Invoke(Sub() DebugPrint($"加载环境失败：{ex.Message}，位于文件：{环境文件路径}", Color.Tomato))
+                               End Try
+                           Next
+                       End Sub)
+
+        计时器.Stop()
+        DebugPrint($"环境加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有环境.Count}", Color.ForestGreen)
+        计时器.Restart()
+
+        Await Task.Run(Sub()
+                           For Each ModString In 模组管理.实际加载的模组列表
+                               Dim 物种文件路径 = Path.Combine(模组管理.所有模组列表(ModString).ModPath, "Production System", "Species.json")
+                               If Not FileExists(物种文件路径) Then Exit For
+                               Try
+                                   Dim a As New List(Of 物种数据结构)(JsonConvert.DeserializeObject(Of List(Of 物种数据结构))(ReadAllText(物种文件路径)))
+                                   For Each item In a
+                                       所有物种(item.ID) = item
+                                   Next
+                               Catch ex As Exception
+                                   Form1.Invoke(Sub() DebugPrint($"加载物种失败：{ex.Message}，位于文件：{物种文件路径}", Color.Tomato))
+                               End Try
+                           Next
+                       End Sub)
+
+        计时器.Stop()
+        DebugPrint($"物种加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有物种.Count}", Color.ForestGreen)
+        计时器.Restart()
+
+        Await Task.Run(Sub()
+                           For Each ModString In 模组管理.实际加载的模组列表
+                               Dim 科技文件路径 = Path.Combine(模组管理.所有模组列表(ModString).ModPath, "Production System", "Technology.json")
+                               If Not FileExists(科技文件路径) Then Exit For
+                               Try
+                                   Dim a As New List(Of 科技数据结构)(JsonConvert.DeserializeObject(Of List(Of 科技数据结构))(ReadAllText(科技文件路径)))
+                                   For Each item In a
+                                       所有科技(item.ID) = item
+                                   Next
+                               Catch ex As Exception
+                                   Form1.Invoke(Sub() DebugPrint($"加载科技失败：{ex.Message}，位于文件：{科技文件路径}", Color.Tomato))
+                               End Try
+                           Next
+                       End Sub)
+
+        计时器.Stop()
+        DebugPrint($"科技加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有科技.Count}", Color.ForestGreen)
+        计时器.Restart()
+
+        Await Task.Run(Sub()
+                           For Each ModString In 模组管理.实际加载的模组列表
+                               Dim 合成配方文件路径 = Path.Combine(模组管理.所有模组列表(ModString).ModPath, "Production System", "CraftingRecipe.json")
+                               If Not FileExists(合成配方文件路径) Then Exit For
+                               Try
+                                   Dim a As New List(Of 合成配方数据结构)(JsonConvert.DeserializeObject(Of List(Of 合成配方数据结构))(ReadAllText(合成配方文件路径)))
+                                   For Each item In a
+                                       所有合成配方(item.ID) = item
+                                   Next
+                               Catch ex As Exception
+                                   Form1.Invoke(Sub() DebugPrint($"加载合成配方失败：{ex.Message}，位于文件：{合成配方文件路径}", Color.Tomato))
+                               End Try
+                           Next
+                       End Sub)
+
+        计时器.Stop()
+        DebugPrint($"合成配方加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有合成配方.Count}", Color.ForestGreen)
+        计时器.Restart()
+
 
 
 
@@ -378,7 +554,6 @@ Public Class 数据中心
 
         控制台界面实例.Visible = False
         控制台界面实例.启用可操作区域()
-
 
         界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_主菜单)
         DebugPrint($"启动流程结束", Color.CornflowerBlue)

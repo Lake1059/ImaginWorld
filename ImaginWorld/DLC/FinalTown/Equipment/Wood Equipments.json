@@ -2,7 +2,7 @@
     { // 装备1
         "ID": "",
         "Type": 0,
-        "UseWeights": 0,
+        "UseSpace": 0,
         "StarRating": 2,
         "CharacterProperty": {
             "Health": 0, // 生命值，整数
@@ -27,7 +27,7 @@
     { // 装备2
         "ID": "",
         "Type": 0,
-        "UseWeights": 0,
+        "UseSpace": 0,
         "StarRating": 2,
         "CharacterProperty": {
             "Health": 0, // 生命值，整数
