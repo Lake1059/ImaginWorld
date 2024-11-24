@@ -82,8 +82,8 @@ Public Class 界面主层_主菜单
         Me.Panel29.BackgroundImage = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "WelcomePage.png"))
         是否已初始化 = True
 
-        声音控制.切换BGM("StarlitFade")
-
+        声音控制.自动选择下一首BGM进行播放(True)
+        声音控制.自动播放BGM定时器.Start()
     End Sub
 
     Private Sub 模板_主菜单_DpiChangedAfterParent(sender As Object, e As EventArgs) Handles Me.DpiChangedAfterParent
@@ -497,6 +497,7 @@ Public Class 界面主层_主菜单
         a.上传(Me.ListView5.SelectedItems(0).Text)
         界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
     End Sub
+
 #End Region
 
 End Class

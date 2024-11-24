@@ -48,15 +48,13 @@ Partial Class 界面顶层_控制台
         UiButton关闭控制台 = New Sunny.UI.UIButton()
         Panel2 = New Panel()
         Label4 = New Label()
-        Label1 = New Label()
-        UiButton1 = New Sunny.UI.UIButton()
         Panel5 = New Panel()
         RichTextBox1 = New RichTextBox()
         Panel6 = New Panel()
         UiTextBox1 = New Sunny.UI.UITextBox()
         Label3 = New Label()
         UiButton发送指令 = New Sunny.UI.UIButton()
-        暗黑菜单条控件本体1 = New 暗黑菜单条控件本体()
+        Label5 = New Label()
         Panel1.SuspendLayout()
         Panel3.SuspendLayout()
         Panel12.SuspendLayout()
@@ -230,7 +228,7 @@ Partial Class 界面顶层_控制台
         UiCheckBox1.Name = "UiCheckBox1"
         UiCheckBox1.Size = New Size(210, 35)
         UiCheckBox1.TabIndex = 22
-        UiCheckBox1.Text = "移除受伤判定"
+        UiCheckBox1.Text = "无敌模式"
         ' 
         ' Panel3
         ' 
@@ -244,8 +242,7 @@ Partial Class 界面顶层_控制台
         Panel3.Controls.Add(Label2)
         Panel3.Controls.Add(UiButton关闭控制台)
         Panel3.Controls.Add(Panel2)
-        Panel3.Controls.Add(Label1)
-        Panel3.Controls.Add(UiButton1)
+        Panel3.Controls.Add(Label5)
         Panel3.Dock = DockStyle.Top
         Panel3.Location = New Point(250, 0)
         Panel3.Name = "Panel3"
@@ -256,7 +253,7 @@ Partial Class 界面顶层_控制台
         ' Label17
         ' 
         Label17.Dock = DockStyle.Left
-        Label17.Location = New Point(672, 20)
+        Label17.Location = New Point(712, 20)
         Label17.Name = "Label17"
         Label17.Size = New Size(150, 35)
         Label17.TabIndex = 35
@@ -267,7 +264,7 @@ Partial Class 界面顶层_控制台
         ' 
         Panel12.Controls.Add(Label18)
         Panel12.Dock = DockStyle.Left
-        Panel12.Location = New Point(649, 20)
+        Panel12.Location = New Point(689, 20)
         Panel12.Name = "Panel12"
         Panel12.Padding = New Padding(10, 5, 10, 5)
         Panel12.Size = New Size(23, 35)
@@ -285,7 +282,7 @@ Partial Class 界面顶层_控制台
         ' Label15
         ' 
         Label15.Dock = DockStyle.Left
-        Label15.Location = New Point(499, 20)
+        Label15.Location = New Point(539, 20)
         Label15.Name = "Label15"
         Label15.Size = New Size(150, 35)
         Label15.TabIndex = 33
@@ -296,7 +293,7 @@ Partial Class 界面顶层_控制台
         ' 
         Panel11.Controls.Add(Label16)
         Panel11.Dock = DockStyle.Left
-        Panel11.Location = New Point(476, 20)
+        Panel11.Location = New Point(516, 20)
         Panel11.Name = "Panel11"
         Panel11.Padding = New Padding(10, 5, 10, 5)
         Panel11.Size = New Size(23, 35)
@@ -314,7 +311,7 @@ Partial Class 界面顶层_控制台
         ' Label14
         ' 
         Label14.Dock = DockStyle.Left
-        Label14.Location = New Point(326, 20)
+        Label14.Location = New Point(366, 20)
         Label14.Name = "Label14"
         Label14.Size = New Size(150, 35)
         Label14.TabIndex = 31
@@ -325,7 +322,7 @@ Partial Class 界面顶层_控制台
         ' 
         Panel10.Controls.Add(Label13)
         Panel10.Dock = DockStyle.Left
-        Panel10.Location = New Point(303, 20)
+        Panel10.Location = New Point(343, 20)
         Panel10.Name = "Panel10"
         Panel10.Padding = New Padding(10, 5, 10, 5)
         Panel10.Size = New Size(23, 35)
@@ -343,7 +340,7 @@ Partial Class 界面顶层_控制台
         ' Label2
         ' 
         Label2.Dock = DockStyle.Left
-        Label2.Location = New Point(153, 20)
+        Label2.Location = New Point(193, 20)
         Label2.Name = "Label2"
         Label2.Size = New Size(150, 35)
         Label2.TabIndex = 27
@@ -382,7 +379,7 @@ Partial Class 界面顶层_控制台
         ' 
         Panel2.Controls.Add(Label4)
         Panel2.Dock = DockStyle.Left
-        Panel2.Location = New Point(130, 20)
+        Panel2.Location = New Point(170, 20)
         Panel2.Name = "Panel2"
         Panel2.Padding = New Padding(10, 5, 10, 5)
         Panel2.Size = New Size(23, 35)
@@ -396,42 +393,6 @@ Partial Class 界面顶层_控制台
         Label4.Name = "Label4"
         Label4.Size = New Size(3, 25)
         Label4.TabIndex = 4
-        ' 
-        ' Label1
-        ' 
-        Label1.Dock = DockStyle.Left
-        Label1.Location = New Point(120, 20)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(10, 35)
-        Label1.TabIndex = 38
-        ' 
-        ' UiButton1
-        ' 
-        UiButton1.Dock = DockStyle.Left
-        UiButton1.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        UiButton1.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiButton1.ForeColor = Color.Silver
-        UiButton1.ForeDisableColor = Color.Silver
-        UiButton1.ForeHoverColor = Color.Silver
-        UiButton1.ForePressColor = Color.Silver
-        UiButton1.ForeSelectedColor = Color.Silver
-        UiButton1.Location = New Point(20, 20)
-        UiButton1.MinimumSize = New Size(1, 1)
-        UiButton1.Name = "UiButton1"
-        UiButton1.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.Size = New Size(100, 35)
-        UiButton1.TabIndex = 37
-        UiButton1.Text = "Code"
-        UiButton1.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
         ' Panel5
         ' 
@@ -538,13 +499,16 @@ Partial Class 界面顶层_控制台
         UiButton发送指令.Text = "发送"
         UiButton发送指令.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
-        ' 暗黑菜单条控件本体1
+        ' Label5
         ' 
-        暗黑菜单条控件本体1.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        暗黑菜单条控件本体1.ForeColor = Color.Gainsboro
-        暗黑菜单条控件本体1.Name = "暗黑菜单条控件本体1"
-        暗黑菜单条控件本体1.ShowImageMargin = False
-        暗黑菜单条控件本体1.Size = New Size(156, 26)
+        Label5.Dock = DockStyle.Left
+        Label5.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold)
+        Label5.Location = New Point(20, 20)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(150, 35)
+        Label5.TabIndex = 40
+        Label5.Text = "调试控制台"
+        Label5.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' 界面顶层_控制台
         ' 
@@ -601,9 +565,7 @@ Partial Class 界面顶层_控制台
     Friend WithEvents UiButton发送指令 As Sunny.UI.UIButton
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents UiButton1 As Sunny.UI.UIButton
     Friend WithEvents UiTextBox1 As Sunny.UI.UITextBox
-    Friend WithEvents 暗黑菜单条控件本体1 As 暗黑菜单条控件本体
+    Friend WithEvents Label5 As Label
 
 End Class

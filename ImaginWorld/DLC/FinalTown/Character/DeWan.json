@@ -26,7 +26,7 @@
         "MysticResistance": 0, // 神秘抗性，单精度值
         "MaterialResistance": 0, // 物质抗性，单精度值
         "DarkResistance": 0, // 黑暗抗性，单精度值
-        "WeightProvided": 30 // 提供的远行队负重，整数
+        "SpaceProvided": 30 // 提供的远行队容量，整数
     },
     "UseWeaponType": 0, // 使用的武器类型
     "Skill_TB_Normal": [ // 回合制普通攻击的数据，类型：技能数据单级结构，列表形式

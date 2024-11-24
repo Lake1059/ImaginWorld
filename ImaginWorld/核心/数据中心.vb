@@ -247,12 +247,8 @@ Public Class 数据中心
         Public Property SpaceProvided As Single = 100
         Public Property ItemConsumed As String = ""
         Public Property ConsumptionPerGrid As Single = 0.001
-
-
-
-
     End Class
-
+    Public Shared Property 所有载具 As New Dictionary(Of String, 载具数据结构)
 
 
 
@@ -538,7 +534,24 @@ Public Class 数据中心
         DebugPrint($"合成配方加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有合成配方.Count}", Color.ForestGreen)
         计时器.Restart()
 
+        Await Task.Run(Sub()
+                           For Each ModString In 模组管理.实际加载的模组列表
+                               Dim 载具文件路径 = Path.Combine(模组管理.所有模组列表(ModString).ModPath, "Production System", "Vehicle.json")
+                               If Not FileExists(载具文件路径) Then Exit For
+                               Try
+                                   Dim a As New List(Of 载具数据结构)(JsonConvert.DeserializeObject(Of List(Of 载具数据结构))(ReadAllText(载具文件路径)))
+                                   For Each item In a
+                                       所有载具(item.ID) = item
+                                   Next
+                               Catch ex As Exception
+                                   Form1.Invoke(Sub() DebugPrint($"加载载具失败：{ex.Message}，位于文件：{载具文件路径}", Color.Tomato))
+                               End Try
+                           Next
+                       End Sub)
 
+        计时器.Stop()
+        DebugPrint($"载具加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有载具.Count}", Color.ForestGreen)
+        计时器.Restart()
 
 
 

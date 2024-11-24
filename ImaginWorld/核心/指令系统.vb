@@ -1,8 +1,10 @@
 ﻿Public Class 指令系统
 
     Public Shared Sub 初始化()
+        指令字典.Add("help", AddressOf 列出全部指令)
         指令字典.Add("bgm", AddressOf 切换BGM)
         指令字典.Add("listbgm", AddressOf 列出BGM)
+        指令字典.Add("nextbgm", AddressOf 下一首BGM)
         DebugPrint($"指令系统初始化完成，共 {指令字典.Count} 条原生命令", Color.Silver)
     End Sub
 
@@ -24,6 +26,12 @@
 
     Public Shared Property 指令字典 As New Dictionary(Of String, Action(Of List(Of String)))
 
+    Shared Sub 列出全部指令()
+        For Each item In 指令字典.Keys
+            DebugPrint(item, Color.Gray, False)
+        Next
+    End Sub
+
     Shared Sub 切换BGM(Args As List(Of String))
         If Args.Count <> 1 Then
             DebugPrint("参数错误，格式：bgm [Name]", Color.Tomato)
@@ -31,7 +39,6 @@
         End If
         If 数据中心.所有背景音乐.ContainsKey(Args(0)) Then
             声音控制.切换BGM(Args(0))
-            DebugPrint($"已开始播放：{Args(0)}", Color.Silver)
         Else
             DebugPrint($"未找到此音乐：{Args(0)}", Color.Tomato)
         End If
@@ -41,7 +48,10 @@
         For Each item In 数据中心.所有背景音乐.Keys
             DebugPrint(item, Color.Gray, False)
         Next
+    End Sub
 
+    Shared Sub 下一首BGM()
+        声音控制.自动选择下一首BGM进行播放(True)
     End Sub
 
 End Class

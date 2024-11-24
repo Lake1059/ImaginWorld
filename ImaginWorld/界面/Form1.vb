@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports Microsoft.VisualBasic.FileIO.FileSystem
+Imports System.ComponentModel
 
 Public Class Form1
     Protected Overrides Sub WndProc(ByRef m As Message)
@@ -24,7 +25,8 @@ Public Class Form1
         End If
     End Sub
 
-    Public Shared DPI As Single = Form1.CreateGraphics.DpiX / 96
+    <DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)>
+    Public Shared Property DPI As Single = Form1.CreateGraphics.DpiX / 96
 
     Public 界面图层_主层 As Control = Nothing
     Public 界面图层_二层 As Control = Nothing
@@ -58,6 +60,7 @@ Public Class Form1
         DebugPrint($"开始启动", Color.Silver)
 
         指令系统.初始化()
+        声音控制.初始化()
 
         模组管理.启动时扫描模组()
     End Sub

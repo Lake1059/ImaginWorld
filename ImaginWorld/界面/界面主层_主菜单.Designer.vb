@@ -35,62 +35,15 @@ Partial Class 界面主层_主菜单
         TabPage欢迎 = New TabPage()
         Panel2 = New Panel()
         Panel29 = New Panel()
-        Panel44 = New Panel()
-        Panel49 = New Panel()
-        Label127 = New Label()
-        Label118 = New Label()
-        Label128 = New Label()
-        Panel48 = New Panel()
-        Label115 = New Label()
-        Label120 = New Label()
-        Label121 = New Label()
-        Label119 = New Label()
-        Label122 = New Label()
-        Label113 = New Label()
-        Label112 = New Label()
-        Label109 = New Label()
-        Label108 = New Label()
-        Panel47 = New Panel()
-        Label100 = New Label()
-        Label99 = New Label()
-        Label98 = New Label()
-        Label97 = New Label()
-        Label96 = New Label()
-        Label95 = New Label()
-        Label94 = New Label()
-        Label103 = New Label()
-        Label87 = New Label()
-        Label101 = New Label()
-        Panel46 = New Panel()
-        Label110 = New Label()
-        Label111 = New Label()
-        Label104 = New Label()
-        Label105 = New Label()
-        Label106 = New Label()
-        Label107 = New Label()
-        Label93 = New Label()
-        Label92 = New Label()
-        Label91 = New Label()
-        Label90 = New Label()
-        Label117 = New Label()
-        Label89 = New Label()
-        Label88 = New Label()
-        Label85 = New Label()
-        Panel45 = New Panel()
-        Label126 = New Label()
-        Label116 = New Label()
-        Label114 = New Label()
-        Label102 = New Label()
-        Label86 = New Label()
-        Label69 = New Label()
-        Label68 = New Label()
-        Label84 = New Label()
         Label83 = New Label()
         Label82 = New Label()
         Label81 = New Label()
         Label80 = New Label()
         Label79 = New Label()
         Label77 = New Label()
+        Label69 = New Label()
+        Label68 = New Label()
+        Label3 = New Label()
         Label78 = New Label()
         Label5 = New Label()
         TabPage新游戏 = New TabPage()
@@ -119,6 +72,7 @@ Partial Class 界面主层_主菜单
         Label38 = New Label()
         Label39 = New Label()
         Panel22 = New Panel()
+        Label84 = New Label()
         Label23 = New Label()
         Label2 = New Label()
         Label51 = New Label()
@@ -220,7 +174,6 @@ Partial Class 界面主层_主菜单
         Label10 = New Label()
         LinkLabel1 = New LinkLabel()
         Label125 = New Label()
-        Label3 = New Label()
         Label123 = New Label()
         Label124 = New Label()
         TabPage创意工坊 = New TabPage()
@@ -276,12 +229,6 @@ Partial Class 界面主层_主菜单
         TabPage欢迎.SuspendLayout()
         Panel2.SuspendLayout()
         Panel29.SuspendLayout()
-        Panel44.SuspendLayout()
-        Panel49.SuspendLayout()
-        Panel48.SuspendLayout()
-        Panel47.SuspendLayout()
-        Panel46.SuspendLayout()
-        Panel45.SuspendLayout()
         TabPage新游戏.SuspendLayout()
         Panel4.SuspendLayout()
         Panel9.SuspendLayout()
@@ -525,7 +472,15 @@ Partial Class 界面主层_主菜单
         ' Panel29
         ' 
         Panel29.BackgroundImageLayout = ImageLayout.None
-        Panel29.Controls.Add(Panel44)
+        Panel29.Controls.Add(Label83)
+        Panel29.Controls.Add(Label82)
+        Panel29.Controls.Add(Label81)
+        Panel29.Controls.Add(Label80)
+        Panel29.Controls.Add(Label79)
+        Panel29.Controls.Add(Label77)
+        Panel29.Controls.Add(Label69)
+        Panel29.Controls.Add(Label68)
+        Panel29.Controls.Add(Label3)
         Panel29.Controls.Add(Label78)
         Panel29.Controls.Add(Label5)
         Panel29.Dock = DockStyle.Fill
@@ -535,701 +490,122 @@ Partial Class 界面主层_主菜单
         Panel29.Size = New Size(1128, 659)
         Panel29.TabIndex = 8
         ' 
-        ' Panel44
-        ' 
-        Panel44.BackColor = Color.Transparent
-        Panel44.Controls.Add(Panel49)
-        Panel44.Controls.Add(Panel48)
-        Panel44.Controls.Add(Panel47)
-        Panel44.Controls.Add(Panel46)
-        Panel44.Controls.Add(Panel45)
-        Panel44.Dock = DockStyle.Fill
-        Panel44.Location = New Point(30, 107)
-        Panel44.Name = "Panel44"
-        Panel44.Size = New Size(1068, 522)
-        Panel44.TabIndex = 31
-        ' 
-        ' Panel49
-        ' 
-        Panel49.Controls.Add(Label127)
-        Panel49.Controls.Add(Label118)
-        Panel49.Controls.Add(Label128)
-        Panel49.Dock = DockStyle.Fill
-        Panel49.Location = New Point(720, 0)
-        Panel49.Name = "Panel49"
-        Panel49.Size = New Size(348, 522)
-        Panel49.TabIndex = 4
-        ' 
-        ' Label127
-        ' 
-        Label127.AutoSize = True
-        Label127.Dock = DockStyle.Top
-        Label127.ForeColor = Color.Tomato
-        Label127.Location = New Point(0, 62)
-        Label127.Name = "Label127"
-        Label127.Padding = New Padding(0, 0, 0, 10)
-        Label127.Size = New Size(147, 31)
-        Label127.TabIndex = 6
-        Label127.Text = "[0%] P2：远征之门"
-        ' 
-        ' Label118
-        ' 
-        Label118.AutoSize = True
-        Label118.Dock = DockStyle.Top
-        Label118.ForeColor = Color.Tomato
-        Label118.Location = New Point(0, 31)
-        Label118.Name = "Label118"
-        Label118.Padding = New Padding(0, 0, 0, 10)
-        Label118.Size = New Size(131, 31)
-        Label118.TabIndex = 5
-        Label118.Text = "[0%] P1：新家园"
-        ' 
-        ' Label128
-        ' 
-        Label128.AutoSize = True
-        Label128.Dock = DockStyle.Top
-        Label128.Location = New Point(0, 0)
-        Label128.Name = "Label128"
-        Label128.Padding = New Padding(0, 0, 0, 10)
-        Label128.Size = New Size(157, 31)
-        Label128.TabIndex = 3
-        Label128.Text = "FinalTown 剧本进度"
-        ' 
-        ' Panel48
-        ' 
-        Panel48.Controls.Add(Label115)
-        Panel48.Controls.Add(Label120)
-        Panel48.Controls.Add(Label121)
-        Panel48.Controls.Add(Label119)
-        Panel48.Controls.Add(Label122)
-        Panel48.Controls.Add(Label113)
-        Panel48.Controls.Add(Label112)
-        Panel48.Controls.Add(Label109)
-        Panel48.Controls.Add(Label108)
-        Panel48.Dock = DockStyle.Left
-        Panel48.Location = New Point(540, 0)
-        Panel48.Name = "Panel48"
-        Panel48.Size = New Size(180, 522)
-        Panel48.TabIndex = 3
-        ' 
-        ' Label115
-        ' 
-        Label115.AutoSize = True
-        Label115.Dock = DockStyle.Top
-        Label115.ForeColor = Color.Tomato
-        Label115.Location = New Point(0, 268)
-        Label115.Name = "Label115"
-        Label115.Padding = New Padding(0, 0, 0, 10)
-        Label115.Size = New Size(105, 31)
-        Label115.TabIndex = 23
-        Label115.Text = "[未制作] 抽卡"
-        ' 
-        ' Label120
-        ' 
-        Label120.AutoSize = True
-        Label120.Dock = DockStyle.Top
-        Label120.ForeColor = Color.Tomato
-        Label120.Location = New Point(0, 237)
-        Label120.Name = "Label120"
-        Label120.Padding = New Padding(0, 0, 0, 10)
-        Label120.Size = New Size(105, 31)
-        Label120.TabIndex = 22
-        Label120.Text = "[未制作] 商店"
-        ' 
-        ' Label121
-        ' 
-        Label121.AutoSize = True
-        Label121.Dock = DockStyle.Top
-        Label121.ForeColor = Color.Tomato
-        Label121.Location = New Point(0, 206)
-        Label121.Name = "Label121"
-        Label121.Padding = New Padding(0, 0, 0, 10)
-        Label121.Size = New Size(105, 31)
-        Label121.TabIndex = 21
-        Label121.Text = "[未制作] 任务"
-        ' 
-        ' Label119
-        ' 
-        Label119.AutoSize = True
-        Label119.Dock = DockStyle.Top
-        Label119.ForeColor = Color.Tomato
-        Label119.Location = New Point(0, 175)
-        Label119.Name = "Label119"
-        Label119.Padding = New Padding(0, 0, 0, 10)
-        Label119.Size = New Size(105, 31)
-        Label119.TabIndex = 24
-        Label119.Text = "[未制作] 剧情"
-        ' 
-        ' Label122
-        ' 
-        Label122.AutoSize = True
-        Label122.Dock = DockStyle.Top
-        Label122.Location = New Point(0, 124)
-        Label122.Name = "Label122"
-        Label122.Padding = New Padding(0, 20, 0, 10)
-        Label122.Size = New Size(74, 51)
-        Label122.TabIndex = 20
-        Label122.Text = "其他系统"
-        ' 
-        ' Label113
-        ' 
-        Label113.AutoSize = True
-        Label113.Dock = DockStyle.Top
-        Label113.ForeColor = Color.Tomato
-        Label113.Location = New Point(0, 93)
-        Label113.Name = "Label113"
-        Label113.Padding = New Padding(0, 0, 0, 10)
-        Label113.Size = New Size(137, 31)
-        Label113.TabIndex = 6
-        Label113.Text = "[未制作] 全面战争"
-        ' 
-        ' Label112
-        ' 
-        Label112.AutoSize = True
-        Label112.Dock = DockStyle.Top
-        Label112.ForeColor = Color.Tomato
-        Label112.Location = New Point(0, 62)
-        Label112.Name = "Label112"
-        Label112.Padding = New Padding(0, 0, 0, 10)
-        Label112.Size = New Size(153, 31)
-        Label112.TabIndex = 5
-        Label112.Text = "[未制作] 即时制战斗"
-        ' 
-        ' Label109
-        ' 
-        Label109.AutoSize = True
-        Label109.Dock = DockStyle.Top
-        Label109.ForeColor = Color.Tomato
-        Label109.Location = New Point(0, 31)
-        Label109.Name = "Label109"
-        Label109.Padding = New Padding(0, 0, 0, 10)
-        Label109.Size = New Size(153, 31)
-        Label109.TabIndex = 4
-        Label109.Text = "[未制作] 回合制战斗"
-        ' 
-        ' Label108
-        ' 
-        Label108.AutoSize = True
-        Label108.Dock = DockStyle.Top
-        Label108.Location = New Point(0, 0)
-        Label108.Name = "Label108"
-        Label108.Padding = New Padding(0, 0, 0, 10)
-        Label108.Size = New Size(74, 31)
-        Label108.TabIndex = 3
-        Label108.Text = "战斗系统"
-        ' 
-        ' Panel47
-        ' 
-        Panel47.Controls.Add(Label100)
-        Panel47.Controls.Add(Label99)
-        Panel47.Controls.Add(Label98)
-        Panel47.Controls.Add(Label97)
-        Panel47.Controls.Add(Label96)
-        Panel47.Controls.Add(Label95)
-        Panel47.Controls.Add(Label94)
-        Panel47.Controls.Add(Label103)
-        Panel47.Controls.Add(Label87)
-        Panel47.Controls.Add(Label101)
-        Panel47.Dock = DockStyle.Left
-        Panel47.Location = New Point(360, 0)
-        Panel47.Name = "Panel47"
-        Panel47.Size = New Size(180, 522)
-        Panel47.TabIndex = 2
-        ' 
-        ' Label100
-        ' 
-        Label100.AutoSize = True
-        Label100.Dock = DockStyle.Top
-        Label100.ForeColor = Color.Tomato
-        Label100.Location = New Point(0, 299)
-        Label100.Name = "Label100"
-        Label100.Padding = New Padding(0, 0, 0, 10)
-        Label100.Size = New Size(105, 31)
-        Label100.TabIndex = 21
-        Label100.Text = "[未制作] 资料"
-        ' 
-        ' Label99
-        ' 
-        Label99.AutoSize = True
-        Label99.Dock = DockStyle.Top
-        Label99.ForeColor = Color.Tomato
-        Label99.Location = New Point(0, 268)
-        Label99.Name = "Label99"
-        Label99.Padding = New Padding(0, 0, 0, 10)
-        Label99.Size = New Size(105, 31)
-        Label99.TabIndex = 20
-        Label99.Text = "[未制作] 天赋"
-        ' 
-        ' Label98
-        ' 
-        Label98.AutoSize = True
-        Label98.Dock = DockStyle.Top
-        Label98.ForeColor = Color.Tomato
-        Label98.Location = New Point(0, 237)
-        Label98.Name = "Label98"
-        Label98.Padding = New Padding(0, 0, 0, 10)
-        Label98.Size = New Size(105, 31)
-        Label98.TabIndex = 19
-        Label98.Text = "[未制作] 技能"
-        ' 
-        ' Label97
-        ' 
-        Label97.AutoSize = True
-        Label97.Dock = DockStyle.Top
-        Label97.ForeColor = Color.Tomato
-        Label97.Location = New Point(0, 206)
-        Label97.Name = "Label97"
-        Label97.Padding = New Padding(0, 0, 0, 10)
-        Label97.Size = New Size(105, 31)
-        Label97.TabIndex = 18
-        Label97.Text = "[未制作] 装备"
-        ' 
-        ' Label96
-        ' 
-        Label96.AutoSize = True
-        Label96.Dock = DockStyle.Top
-        Label96.ForeColor = Color.Tomato
-        Label96.Location = New Point(0, 175)
-        Label96.Name = "Label96"
-        Label96.Padding = New Padding(0, 0, 0, 10)
-        Label96.Size = New Size(105, 31)
-        Label96.TabIndex = 17
-        Label96.Text = "[未制作] 武器"
-        ' 
-        ' Label95
-        ' 
-        Label95.AutoSize = True
-        Label95.Dock = DockStyle.Top
-        Label95.ForeColor = Color.Tomato
-        Label95.Location = New Point(0, 144)
-        Label95.Name = "Label95"
-        Label95.Padding = New Padding(0, 0, 0, 10)
-        Label95.Size = New Size(137, 31)
-        Label95.TabIndex = 16
-        Label95.Text = "[未制作] 数据面板"
-        ' 
-        ' Label94
-        ' 
-        Label94.AutoSize = True
-        Label94.Dock = DockStyle.Top
-        Label94.Location = New Point(0, 93)
-        Label94.Name = "Label94"
-        Label94.Padding = New Padding(0, 20, 0, 10)
-        Label94.Size = New Size(74, 51)
-        Label94.TabIndex = 15
-        Label94.Text = "角色系统"
-        ' 
-        ' Label103
-        ' 
-        Label103.AutoSize = True
-        Label103.Dock = DockStyle.Top
-        Label103.ForeColor = Color.Tomato
-        Label103.Location = New Point(0, 62)
-        Label103.Name = "Label103"
-        Label103.Padding = New Padding(0, 0, 0, 10)
-        Label103.Size = New Size(137, 31)
-        Label103.TabIndex = 4
-        Label103.Text = "[未制作] 行为触发"
-        ' 
-        ' Label87
-        ' 
-        Label87.AutoSize = True
-        Label87.Dock = DockStyle.Top
-        Label87.ForeColor = Color.Tomato
-        Label87.Location = New Point(0, 31)
-        Label87.Name = "Label87"
-        Label87.Padding = New Padding(0, 0, 0, 10)
-        Label87.Size = New Size(137, 31)
-        Label87.TabIndex = 3
-        Label87.Text = "[未制作] 地图绘制"
-        ' 
-        ' Label101
-        ' 
-        Label101.AutoSize = True
-        Label101.Dock = DockStyle.Top
-        Label101.Location = New Point(0, 0)
-        Label101.Name = "Label101"
-        Label101.Padding = New Padding(0, 0, 0, 10)
-        Label101.Size = New Size(74, 31)
-        Label101.TabIndex = 2
-        Label101.Text = "世界地图"
-        ' 
-        ' Panel46
-        ' 
-        Panel46.Controls.Add(Label110)
-        Panel46.Controls.Add(Label111)
-        Panel46.Controls.Add(Label104)
-        Panel46.Controls.Add(Label105)
-        Panel46.Controls.Add(Label106)
-        Panel46.Controls.Add(Label107)
-        Panel46.Controls.Add(Label93)
-        Panel46.Controls.Add(Label92)
-        Panel46.Controls.Add(Label91)
-        Panel46.Controls.Add(Label90)
-        Panel46.Controls.Add(Label117)
-        Panel46.Controls.Add(Label89)
-        Panel46.Controls.Add(Label88)
-        Panel46.Controls.Add(Label85)
-        Panel46.Dock = DockStyle.Left
-        Panel46.Location = New Point(180, 0)
-        Panel46.Name = "Panel46"
-        Panel46.Size = New Size(180, 522)
-        Panel46.TabIndex = 1
-        ' 
-        ' Label110
-        ' 
-        Label110.AutoSize = True
-        Label110.Dock = DockStyle.Top
-        Label110.ForeColor = Color.Tomato
-        Label110.Location = New Point(0, 403)
-        Label110.Name = "Label110"
-        Label110.Padding = New Padding(0, 0, 0, 10)
-        Label110.Size = New Size(121, 31)
-        Label110.TabIndex = 13
-        Label110.Text = "[未制作] 数据板"
-        ' 
-        ' Label111
-        ' 
-        Label111.AutoSize = True
-        Label111.Dock = DockStyle.Top
-        Label111.ForeColor = Color.Tomato
-        Label111.Location = New Point(0, 372)
-        Label111.Name = "Label111"
-        Label111.Padding = New Padding(0, 0, 0, 10)
-        Label111.Size = New Size(105, 31)
-        Label111.TabIndex = 12
-        Label111.Text = "[未制作] 载具"
-        ' 
-        ' Label104
-        ' 
-        Label104.AutoSize = True
-        Label104.Dock = DockStyle.Top
-        Label104.ForeColor = Color.Tomato
-        Label104.Location = New Point(0, 341)
-        Label104.Name = "Label104"
-        Label104.Padding = New Padding(0, 0, 0, 10)
-        Label104.Size = New Size(105, 31)
-        Label104.TabIndex = 11
-        Label104.Text = "[未制作] 场景"
-        ' 
-        ' Label105
-        ' 
-        Label105.AutoSize = True
-        Label105.Dock = DockStyle.Top
-        Label105.ForeColor = Color.Tomato
-        Label105.Location = New Point(0, 310)
-        Label105.Name = "Label105"
-        Label105.Padding = New Padding(0, 0, 0, 10)
-        Label105.Size = New Size(105, 31)
-        Label105.TabIndex = 10
-        Label105.Text = "[未制作] 田地"
-        ' 
-        ' Label106
-        ' 
-        Label106.AutoSize = True
-        Label106.Dock = DockStyle.Top
-        Label106.ForeColor = Color.Tomato
-        Label106.Location = New Point(0, 279)
-        Label106.Name = "Label106"
-        Label106.Padding = New Padding(0, 0, 0, 10)
-        Label106.Size = New Size(121, 31)
-        Label106.TabIndex = 9
-        Label106.Text = "[未制作] 运输队"
-        ' 
-        ' Label107
-        ' 
-        Label107.AutoSize = True
-        Label107.Dock = DockStyle.Top
-        Label107.ForeColor = Color.Tomato
-        Label107.Location = New Point(0, 248)
-        Label107.Name = "Label107"
-        Label107.Padding = New Padding(0, 0, 0, 10)
-        Label107.Size = New Size(105, 31)
-        Label107.TabIndex = 8
-        Label107.Text = "[未制作] 合成"
-        ' 
-        ' Label93
-        ' 
-        Label93.AutoSize = True
-        Label93.Dock = DockStyle.Top
-        Label93.ForeColor = Color.Tomato
-        Label93.Location = New Point(0, 217)
-        Label93.Name = "Label93"
-        Label93.Padding = New Padding(0, 0, 0, 10)
-        Label93.Size = New Size(105, 31)
-        Label93.TabIndex = 7
-        Label93.Text = "[未制作] 决策"
-        ' 
-        ' Label92
-        ' 
-        Label92.AutoSize = True
-        Label92.Dock = DockStyle.Top
-        Label92.ForeColor = Color.Tomato
-        Label92.Location = New Point(0, 186)
-        Label92.Name = "Label92"
-        Label92.Padding = New Padding(0, 0, 0, 10)
-        Label92.Size = New Size(105, 31)
-        Label92.TabIndex = 6
-        Label92.Text = "[未制作] 科技"
-        ' 
-        ' Label91
-        ' 
-        Label91.AutoSize = True
-        Label91.Dock = DockStyle.Top
-        Label91.ForeColor = Color.Tomato
-        Label91.Location = New Point(0, 155)
-        Label91.Name = "Label91"
-        Label91.Padding = New Padding(0, 0, 0, 10)
-        Label91.Size = New Size(105, 31)
-        Label91.TabIndex = 5
-        Label91.Text = "[未制作] 图鉴"
-        ' 
-        ' Label90
-        ' 
-        Label90.AutoSize = True
-        Label90.Dock = DockStyle.Top
-        Label90.ForeColor = Color.Tomato
-        Label90.Location = New Point(0, 124)
-        Label90.Name = "Label90"
-        Label90.Padding = New Padding(0, 0, 0, 10)
-        Label90.Size = New Size(105, 31)
-        Label90.TabIndex = 4
-        Label90.Text = "[未制作] 岗位"
-        ' 
-        ' Label117
-        ' 
-        Label117.AutoSize = True
-        Label117.Dock = DockStyle.Top
-        Label117.ForeColor = Color.Tomato
-        Label117.Location = New Point(0, 93)
-        Label117.Name = "Label117"
-        Label117.Padding = New Padding(0, 0, 0, 10)
-        Label117.Size = New Size(105, 31)
-        Label117.TabIndex = 14
-        Label117.Text = "[未制作] 环境"
-        ' 
-        ' Label89
-        ' 
-        Label89.AutoSize = True
-        Label89.Dock = DockStyle.Top
-        Label89.ForeColor = Color.Tomato
-        Label89.Location = New Point(0, 62)
-        Label89.Name = "Label89"
-        Label89.Padding = New Padding(0, 0, 0, 10)
-        Label89.Size = New Size(105, 31)
-        Label89.TabIndex = 3
-        Label89.Text = "[未制作] 建筑"
-        ' 
-        ' Label88
-        ' 
-        Label88.AutoSize = True
-        Label88.Dock = DockStyle.Top
-        Label88.ForeColor = Color.Tomato
-        Label88.Location = New Point(0, 31)
-        Label88.Name = "Label88"
-        Label88.Padding = New Padding(0, 0, 0, 10)
-        Label88.Size = New Size(105, 31)
-        Label88.TabIndex = 2
-        Label88.Text = "[未制作] 仓库"
-        ' 
-        ' Label85
-        ' 
-        Label85.AutoSize = True
-        Label85.Dock = DockStyle.Top
-        Label85.Location = New Point(0, 0)
-        Label85.Name = "Label85"
-        Label85.Padding = New Padding(0, 0, 0, 10)
-        Label85.Size = New Size(58, 31)
-        Label85.TabIndex = 1
-        Label85.Text = "殖民地"
-        ' 
-        ' Panel45
-        ' 
-        Panel45.Controls.Add(Label126)
-        Panel45.Controls.Add(Label116)
-        Panel45.Controls.Add(Label114)
-        Panel45.Controls.Add(Label102)
-        Panel45.Controls.Add(Label86)
-        Panel45.Controls.Add(Label69)
-        Panel45.Controls.Add(Label68)
-        Panel45.Controls.Add(Label84)
-        Panel45.Controls.Add(Label83)
-        Panel45.Controls.Add(Label82)
-        Panel45.Controls.Add(Label81)
-        Panel45.Controls.Add(Label80)
-        Panel45.Controls.Add(Label79)
-        Panel45.Controls.Add(Label77)
-        Panel45.Dock = DockStyle.Left
-        Panel45.Location = New Point(0, 0)
-        Panel45.Name = "Panel45"
-        Panel45.Size = New Size(180, 522)
-        Panel45.TabIndex = 0
-        ' 
-        ' Label126
-        ' 
-        Label126.AutoSize = True
-        Label126.Dock = DockStyle.Top
-        Label126.ForeColor = Color.Tomato
-        Label126.Location = New Point(0, 423)
-        Label126.Name = "Label126"
-        Label126.Padding = New Padding(0, 0, 0, 10)
-        Label126.Size = New Size(137, 31)
-        Label126.TabIndex = 14
-        Label126.Text = "[未制作] 脚本系统"
-        ' 
-        ' Label116
-        ' 
-        Label116.AutoSize = True
-        Label116.Dock = DockStyle.Top
-        Label116.ForeColor = Color.Tomato
-        Label116.Location = New Point(0, 392)
-        Label116.Name = "Label116"
-        Label116.Padding = New Padding(0, 0, 0, 10)
-        Label116.Size = New Size(137, 31)
-        Label116.TabIndex = 13
-        Label116.Text = "[未制作] 时间控制"
-        ' 
-        ' Label114
-        ' 
-        Label114.AutoSize = True
-        Label114.Dock = DockStyle.Top
-        Label114.ForeColor = Color.Tomato
-        Label114.Location = New Point(0, 361)
-        Label114.Name = "Label114"
-        Label114.Padding = New Padding(0, 0, 0, 10)
-        Label114.Size = New Size(137, 31)
-        Label114.TabIndex = 12
-        Label114.Text = "[未制作] 存档数据"
-        ' 
-        ' Label102
-        ' 
-        Label102.AutoSize = True
-        Label102.Dock = DockStyle.Top
-        Label102.ForeColor = Color.Tomato
-        Label102.Location = New Point(0, 330)
-        Label102.Name = "Label102"
-        Label102.Padding = New Padding(0, 0, 0, 10)
-        Label102.Size = New Size(137, 31)
-        Label102.TabIndex = 11
-        Label102.Text = "[未制作] 后台计算"
-        ' 
-        ' Label86
-        ' 
-        Label86.AutoSize = True
-        Label86.Dock = DockStyle.Top
-        Label86.ForeColor = Color.LimeGreen
-        Label86.Location = New Point(0, 299)
-        Label86.Name = "Label86"
-        Label86.Padding = New Padding(0, 0, 0, 10)
-        Label86.Size = New Size(137, 31)
-        Label86.TabIndex = 9
-        Label86.Text = "[已完成] 音频控制"
-        ' 
-        ' Label69
-        ' 
-        Label69.AutoSize = True
-        Label69.Dock = DockStyle.Top
-        Label69.ForeColor = Color.LimeGreen
-        Label69.Location = New Point(0, 268)
-        Label69.Name = "Label69"
-        Label69.Padding = New Padding(0, 0, 0, 10)
-        Label69.Size = New Size(137, 31)
-        Label69.TabIndex = 8
-        Label69.Text = "[已完成] 指令系统"
-        ' 
-        ' Label68
-        ' 
-        Label68.AutoSize = True
-        Label68.Dock = DockStyle.Top
-        Label68.Location = New Point(0, 217)
-        Label68.Name = "Label68"
-        Label68.Padding = New Padding(0, 20, 0, 10)
-        Label68.Size = New Size(74, 51)
-        Label68.TabIndex = 7
-        Label68.Text = "关键系统"
-        ' 
-        ' Label84
-        ' 
-        Label84.AutoSize = True
-        Label84.Dock = DockStyle.Top
-        Label84.ForeColor = Color.LimeGreen
-        Label84.Location = New Point(0, 186)
-        Label84.Name = "Label84"
-        Label84.Padding = New Padding(0, 0, 0, 10)
-        Label84.Size = New Size(137, 31)
-        Label84.TabIndex = 6
-        Label84.Text = "[已完成] 创意工坊"
-        ' 
         ' Label83
         ' 
         Label83.AutoSize = True
+        Label83.BackColor = Color.Transparent
         Label83.Dock = DockStyle.Top
-        Label83.ForeColor = Color.LimeGreen
-        Label83.Location = New Point(0, 155)
+        Label83.ForeColor = Color.DarkGray
+        Label83.Location = New Point(30, 400)
         Label83.Name = "Label83"
-        Label83.Padding = New Padding(0, 0, 0, 10)
-        Label83.Size = New Size(104, 31)
-        Label83.TabIndex = 5
-        Label83.Text = "[已完成] DLC"
+        Label83.Padding = New Padding(1, 0, 0, 10)
+        Label83.Size = New Size(399, 31)
+        Label83.TabIndex = 39
+        Label83.Text = "截图功能不适配？按 P 键即可将窗口内容复制到剪贴板"
         ' 
         ' Label82
         ' 
         Label82.AutoSize = True
+        Label82.BackColor = Color.Transparent
         Label82.Dock = DockStyle.Top
-        Label82.ForeColor = Color.LimeGreen
-        Label82.Location = New Point(0, 124)
+        Label82.ForeColor = Color.DarkGray
+        Label82.Location = New Point(30, 369)
         Label82.Name = "Label82"
-        Label82.Padding = New Padding(0, 0, 0, 10)
-        Label82.Size = New Size(105, 31)
-        Label82.TabIndex = 4
-        Label82.Text = "[已完成] 设置"
+        Label82.Padding = New Padding(1, 0, 0, 10)
+        Label82.Size = New Size(317, 31)
+        Label82.TabIndex = 38
+        Label82.Text = "全屏模式怎么退出游戏？Alt + F4 放心使用"
         ' 
         ' Label81
         ' 
         Label81.AutoSize = True
+        Label81.BackColor = Color.Transparent
         Label81.Dock = DockStyle.Top
-        Label81.ForeColor = Color.LimeGreen
-        Label81.Location = New Point(0, 93)
+        Label81.ForeColor = Color.DarkGray
+        Label81.Location = New Point(30, 338)
         Label81.Name = "Label81"
-        Label81.Padding = New Padding(0, 0, 0, 10)
-        Label81.Size = New Size(105, 31)
-        Label81.TabIndex = 3
-        Label81.Text = "[已完成] 模组"
+        Label81.Padding = New Padding(1, 0, 0, 10)
+        Label81.Size = New Size(427, 31)
+        Label81.TabIndex = 37
+        Label81.Text = "不想留下痕迹？安装至可移动存储，存档和设置与游戏同在"
         ' 
         ' Label80
         ' 
         Label80.AutoSize = True
+        Label80.BackColor = Color.Transparent
         Label80.Dock = DockStyle.Top
-        Label80.ForeColor = Color.Tomato
-        Label80.Location = New Point(0, 62)
+        Label80.ForeColor = Color.DarkGray
+        Label80.Location = New Point(30, 307)
         Label80.Name = "Label80"
-        Label80.Padding = New Padding(0, 0, 0, 10)
-        Label80.Size = New Size(137, 31)
-        Label80.TabIndex = 2
-        Label80.Text = "[未制作] 载入存档"
+        Label80.Padding = New Padding(1, 0, 0, 10)
+        Label80.Size = New Size(459, 31)
+        Label80.TabIndex = 36
+        Label80.Text = "使用您喜欢的任何字体，编辑或删除设置文件来挽救错误的设置"
         ' 
         ' Label79
         ' 
         Label79.AutoSize = True
+        Label79.BackColor = Color.Transparent
         Label79.Dock = DockStyle.Top
-        Label79.ForeColor = Color.Tomato
-        Label79.Location = New Point(0, 31)
+        Label79.ForeColor = Color.DarkGray
+        Label79.Location = New Point(30, 276)
         Label79.Name = "Label79"
-        Label79.Padding = New Padding(0, 0, 0, 10)
-        Label79.Size = New Size(121, 31)
-        Label79.TabIndex = 1
-        Label79.Text = "[未制作] 新游戏"
+        Label79.Padding = New Padding(1, 0, 0, 10)
+        Label79.Size = New Size(331, 31)
+        Label79.TabIndex = 35
+        Label79.Text = "在主菜单中，您有机会听到所有被载入的音乐"
         ' 
         ' Label77
         ' 
         Label77.AutoSize = True
+        Label77.BackColor = Color.Transparent
         Label77.Dock = DockStyle.Top
-        Label77.Location = New Point(0, 0)
+        Label77.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        Label77.Location = New Point(30, 210)
         Label77.Name = "Label77"
-        Label77.Padding = New Padding(0, 0, 0, 10)
-        Label77.Size = New Size(58, 31)
-        Label77.TabIndex = 0
-        Label77.Text = "主菜单"
+        Label77.Padding = New Padding(0, 30, 0, 10)
+        Label77.Size = New Size(121, 66)
+        Label77.TabIndex = 34
+        Label77.Text = "注意到了吗~"
+        ' 
+        ' Label69
+        ' 
+        Label69.AutoSize = True
+        Label69.BackColor = Color.Transparent
+        Label69.Dock = DockStyle.Top
+        Label69.ForeColor = Color.DarkGray
+        Label69.Location = New Point(30, 179)
+        Label69.Name = "Label69"
+        Label69.Padding = New Padding(1, 0, 0, 10)
+        Label69.Size = New Size(571, 31)
+        Label69.TabIndex = 33
+        Label69.Text = "若您想游玩其他模组提供的完整世界，请确保先在本体内容中掌握操作后再尝试"
+        ' 
+        ' Label68
+        ' 
+        Label68.AutoSize = True
+        Label68.BackColor = Color.Transparent
+        Label68.Dock = DockStyle.Top
+        Label68.ForeColor = Color.DarkGray
+        Label68.Location = New Point(30, 148)
+        Label68.Name = "Label68"
+        Label68.Padding = New Padding(1, 0, 0, 10)
+        Label68.Size = New Size(395, 31)
+        Label68.TabIndex = 32
+        Label68.Text = "推荐在初期使用键鼠，这样易于理解，而后才使用触控"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
+        Label3.Dock = DockStyle.Top
+        Label3.ForeColor = Color.DarkGray
+        Label3.Location = New Point(30, 117)
+        Label3.Name = "Label3"
+        Label3.Padding = New Padding(1, 0, 0, 10)
+        Label3.Size = New Size(520, 31)
+        Label3.TabIndex = 31
+        Label3.Text = "本游戏由纯 .NET 桌面技术构建，没有游戏引擎，因此在展现形式上受限"
         ' 
         ' Label78
         ' 
@@ -1239,10 +615,10 @@ Partial Class 界面主层_主菜单
         Label78.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
         Label78.Location = New Point(30, 51)
         Label78.Name = "Label78"
-        Label78.Padding = New Padding(0, 20, 0, 10)
-        Label78.Size = New Size(88, 56)
+        Label78.Padding = New Padding(0, 30, 0, 10)
+        Label78.Size = New Size(88, 66)
         Label78.TabIndex = 30
-        Label78.Text = "进度追踪"
+        Label78.Text = "新手指引"
         ' 
         ' Label5
         ' 
@@ -1253,9 +629,9 @@ Partial Class 界面主层_主菜单
         Label5.Location = New Point(30, 30)
         Label5.Name = "Label5"
         Label5.Padding = New Padding(1, 0, 0, 0)
-        Label5.Size = New Size(435, 21)
+        Label5.Size = New Size(570, 21)
         Label5.TabIndex = 8
-        Label5.Text = "ImaginWorld 目前正处于早期开发中，可能会频繁改动设计"
+        Label5.Text = "ImaginWorld 目前正处于早期开发中，可能会频繁改动设计；当前总进度：5%"
         ' 
         ' TabPage新游戏
         ' 
@@ -1611,6 +987,7 @@ Partial Class 界面主层_主菜单
         ' 
         ' Panel22
         ' 
+        Panel22.Controls.Add(Label84)
         Panel22.Controls.Add(Label23)
         Panel22.Controls.Add(Label2)
         Panel22.Controls.Add(Label51)
@@ -1635,36 +1012,48 @@ Partial Class 界面主层_主菜单
         Panel22.Size = New Size(240, 659)
         Panel22.TabIndex = 2
         ' 
+        ' Label84
+        ' 
+        Label84.AutoSize = True
+        Label84.Dock = DockStyle.Top
+        Label84.ForeColor = Color.DarkGray
+        Label84.Location = New Point(30, 588)
+        Label84.Name = "Label84"
+        Label84.Padding = New Padding(0, 0, 0, 15)
+        Label84.Size = New Size(74, 36)
+        Label84.TabIndex = 40
+        Label84.Text = "存档大小"
+        ' 
         ' Label23
         ' 
         Label23.AutoSize = True
         Label23.Dock = DockStyle.Top
         Label23.ForeColor = Color.DarkGray
-        Label23.Location = New Point(30, 547)
+        Label23.Location = New Point(30, 552)
         Label23.Name = "Label23"
         Label23.Padding = New Padding(0, 0, 0, 15)
-        Label23.Size = New Size(74, 36)
+        Label23.Size = New Size(90, 36)
         Label23.TabIndex = 39
-        Label23.Text = "存档大小"
+        Label23.Text = "最后的任务"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Dock = DockStyle.Top
         Label2.ForeColor = Color.DarkGray
-        Label2.Location = New Point(30, 511)
+        Label2.Location = New Point(30, 516)
         Label2.Name = "Label2"
         Label2.Padding = New Padding(0, 0, 0, 15)
-        Label2.Size = New Size(74, 36)
+        Label2.Size = New Size(90, 36)
         Label2.TabIndex = 38
-        Label2.Text = "最后场景"
+        Label2.Text = "最后的场景"
         ' 
         ' Label51
         ' 
         Label51.AutoSize = True
         Label51.Dock = DockStyle.Top
         Label51.ForeColor = Color.DarkGray
-        Label51.Location = New Point(30, 475)
+        Label51.Location = New Point(30, 480)
         Label51.Name = "Label51"
         Label51.Padding = New Padding(0, 0, 0, 15)
         Label51.Size = New Size(90, 36)
@@ -1676,7 +1065,7 @@ Partial Class 界面主层_主菜单
         Label50.AutoSize = True
         Label50.Dock = DockStyle.Top
         Label50.ForeColor = Color.DarkGray
-        Label50.Location = New Point(30, 439)
+        Label50.Location = New Point(30, 444)
         Label50.Name = "Label50"
         Label50.Padding = New Padding(0, 0, 0, 15)
         Label50.Size = New Size(122, 36)
@@ -1688,7 +1077,7 @@ Partial Class 界面主层_主菜单
         Label49.AutoSize = True
         Label49.Dock = DockStyle.Top
         Label49.ForeColor = Color.DarkGray
-        Label49.Location = New Point(30, 403)
+        Label49.Location = New Point(30, 408)
         Label49.Name = "Label49"
         Label49.Padding = New Padding(0, 0, 0, 15)
         Label49.Size = New Size(74, 36)
@@ -1702,8 +1091,8 @@ Partial Class 界面主层_主菜单
         Label47.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
         Label47.Location = New Point(30, 337)
         Label47.Name = "Label47"
-        Label47.Padding = New Padding(0, 30, 0, 10)
-        Label47.Size = New Size(50, 66)
+        Label47.Padding = New Padding(0, 30, 0, 15)
+        Label47.Size = New Size(50, 71)
         Label47.TabIndex = 32
         Label47.Text = "信息"
         ' 
@@ -3052,7 +2441,6 @@ Partial Class 界面主层_主菜单
         Panel3.Controls.Add(Label10)
         Panel3.Controls.Add(LinkLabel1)
         Panel3.Controls.Add(Label125)
-        Panel3.Controls.Add(Label3)
         Panel3.Controls.Add(Label123)
         Panel3.Controls.Add(Label124)
         Panel3.Dock = DockStyle.Fill
@@ -3067,7 +2455,7 @@ Partial Class 界面主层_主菜单
         Label12.AutoSize = True
         Label12.Dock = DockStyle.Top
         Label12.ForeColor = Color.DarkGray
-        Label12.Location = New Point(30, 357)
+        Label12.Location = New Point(30, 326)
         Label12.Name = "Label12"
         Label12.Size = New Size(74, 21)
         Label12.TabIndex = 12
@@ -3081,7 +2469,7 @@ Partial Class 界面主层_主菜单
         LinkLabel2.Font = New Font("微软雅黑", 15.75F)
         LinkLabel2.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel2.LinkColor = Color.Chocolate
-        LinkLabel2.Location = New Point(30, 279)
+        LinkLabel2.Location = New Point(30, 248)
         LinkLabel2.Name = "LinkLabel2"
         LinkLabel2.Padding = New Padding(0, 40, 0, 10)
         LinkLabel2.Size = New Size(54, 78)
@@ -3094,7 +2482,7 @@ Partial Class 界面主层_主菜单
         Label14.AutoSize = True
         Label14.Dock = DockStyle.Top
         Label14.ForeColor = Color.DarkGray
-        Label14.Location = New Point(30, 248)
+        Label14.Location = New Point(30, 217)
         Label14.Name = "Label14"
         Label14.Padding = New Padding(1, 10, 0, 0)
         Label14.Size = New Size(491, 31)
@@ -3106,7 +2494,7 @@ Partial Class 界面主层_主菜单
         Label10.AutoSize = True
         Label10.Dock = DockStyle.Top
         Label10.ForeColor = Color.CornflowerBlue
-        Label10.Location = New Point(30, 217)
+        Label10.Location = New Point(30, 186)
         Label10.Name = "Label10"
         Label10.Padding = New Padding(1, 10, 0, 0)
         Label10.Size = New Size(235, 31)
@@ -3121,7 +2509,7 @@ Partial Class 界面主层_主菜单
         LinkLabel1.Font = New Font("微软雅黑", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         LinkLabel1.LinkBehavior = LinkBehavior.HoverUnderline
         LinkLabel1.LinkColor = Color.Chocolate
-        LinkLabel1.Location = New Point(30, 149)
+        LinkLabel1.Location = New Point(30, 118)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Padding = New Padding(0, 40, 0, 0)
         LinkLabel1.Size = New Size(115, 68)
@@ -3134,24 +2522,12 @@ Partial Class 界面主层_主菜单
         Label125.AutoSize = True
         Label125.Dock = DockStyle.Top
         Label125.ForeColor = Color.DarkGray
-        Label125.Location = New Point(30, 118)
+        Label125.Location = New Point(30, 87)
         Label125.Name = "Label125"
         Label125.Padding = New Padding(1, 10, 0, 0)
-        Label125.Size = New Size(539, 31)
+        Label125.Size = New Size(395, 31)
         Label125.TabIndex = 30
-        Label125.Text = "这些是我发布的内容，它们的主要目的是教学，而并非打造一个完整的世界"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Dock = DockStyle.Top
-        Label3.ForeColor = Color.DarkGray
-        Label3.Location = New Point(30, 87)
-        Label3.Name = "Label3"
-        Label3.Padding = New Padding(1, 10, 0, 0)
-        Label3.Size = New Size(507, 31)
-        Label3.TabIndex = 29
-        Label3.Text = "即便不加载任何模组，游戏依旧可以正常启动，不过我会阻止你这样做"
+        Label125.Text = "游戏本体内容的主要目的是教学，我会尽可能续写它们"
         ' 
         ' Label123
         ' 
@@ -3855,17 +3231,6 @@ Partial Class 界面主层_主菜单
         Panel2.ResumeLayout(False)
         Panel29.ResumeLayout(False)
         Panel29.PerformLayout()
-        Panel44.ResumeLayout(False)
-        Panel49.ResumeLayout(False)
-        Panel49.PerformLayout()
-        Panel48.ResumeLayout(False)
-        Panel48.PerformLayout()
-        Panel47.ResumeLayout(False)
-        Panel47.PerformLayout()
-        Panel46.ResumeLayout(False)
-        Panel46.PerformLayout()
-        Panel45.ResumeLayout(False)
-        Panel45.PerformLayout()
         TabPage新游戏.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel4.PerformLayout()
@@ -4103,68 +3468,11 @@ Partial Class 界面主层_主菜单
     Friend WithEvents Label60 As Label
     Friend WithEvents Label58 As Label
     Friend WithEvents Label65 As Label
-    Friend WithEvents Panel44 As Panel
-    Friend WithEvents Panel45 As Panel
-    Friend WithEvents Label77 As Label
     Friend WithEvents Label78 As Label
-    Friend WithEvents Label84 As Label
-    Friend WithEvents Label83 As Label
-    Friend WithEvents Label82 As Label
-    Friend WithEvents Label81 As Label
-    Friend WithEvents Label80 As Label
-    Friend WithEvents Label79 As Label
-    Friend WithEvents Panel48 As Panel
-    Friend WithEvents Panel47 As Panel
-    Friend WithEvents Panel46 As Panel
-    Friend WithEvents Label93 As Label
-    Friend WithEvents Label92 As Label
-    Friend WithEvents Label91 As Label
-    Friend WithEvents Label90 As Label
-    Friend WithEvents Label89 As Label
-    Friend WithEvents Label88 As Label
-    Friend WithEvents Label85 As Label
-    Friend WithEvents Label86 As Label
-    Friend WithEvents Label69 As Label
-    Friend WithEvents Label68 As Label
-    Friend WithEvents Label103 As Label
-    Friend WithEvents Label87 As Label
-    Friend WithEvents Label101 As Label
-    Friend WithEvents Label102 As Label
-    Friend WithEvents Label109 As Label
-    Friend WithEvents Label108 As Label
-    Friend WithEvents Label100 As Label
-    Friend WithEvents Label99 As Label
-    Friend WithEvents Label98 As Label
-    Friend WithEvents Label97 As Label
-    Friend WithEvents Label96 As Label
-    Friend WithEvents Label95 As Label
-    Friend WithEvents Label94 As Label
-    Friend WithEvents Label104 As Label
-    Friend WithEvents Label105 As Label
-    Friend WithEvents Label106 As Label
-    Friend WithEvents Label107 As Label
-    Friend WithEvents Label110 As Label
-    Friend WithEvents Label111 As Label
-    Friend WithEvents Label113 As Label
-    Friend WithEvents Label112 As Label
-    Friend WithEvents Label114 As Label
-    Friend WithEvents Label115 As Label
-    Friend WithEvents Label120 As Label
-    Friend WithEvents Label121 As Label
-    Friend WithEvents Label122 As Label
-    Friend WithEvents Label117 As Label
-    Friend WithEvents Label116 As Label
-    Friend WithEvents Panel49 As Panel
-    Friend WithEvents Label118 As Label
-    Friend WithEvents Label128 As Label
-    Friend WithEvents Label119 As Label
     Friend WithEvents Label123 As Label
     Friend WithEvents Label124 As Label
     Friend WithEvents Label125 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label126 As Label
-    Friend WithEvents Label127 As Label
     Friend WithEvents UiTextBox1 As Sunny.UI.UITextBox
     Friend WithEvents UiTextBox2 As Sunny.UI.UITextBox
     Friend WithEvents ColumnHeader6 As ColumnHeader
@@ -4174,5 +3482,15 @@ Partial Class 界面主层_主菜单
     Friend WithEvents Label130 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label68 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label77 As Label
+    Friend WithEvents Label69 As Label
+    Friend WithEvents Label79 As Label
+    Friend WithEvents Label80 As Label
+    Friend WithEvents Label81 As Label
+    Friend WithEvents Label82 As Label
+    Friend WithEvents Label83 As Label
+    Friend WithEvents Label84 As Label
 
 End Class
