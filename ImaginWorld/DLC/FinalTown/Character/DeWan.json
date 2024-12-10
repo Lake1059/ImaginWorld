@@ -53,9 +53,9 @@
     ],
     "Skill_TB_Tactics": [], // 回合制战技的数据，类型：技能数据单级结构，列表形式
     "Skill_TB_End": [], // 回合制终结技的数据，类型：技能数据单级结构，列表形式
-    "Skill_TB_NormalToEnd_AddValue": 10, // 回合制的每次普通攻击能积攒多少终结技槽，整数
-    "Skill_TB_TacticsToEnd_AddValue": 10, // 回合制的每次战技能积攒多少终结技槽，整数
-    "Skill_TB_EndCostValue": 10, // 回合制的每次终结技要消耗多少终结技槽，整数
+    "Skill_TB_NormalAddValue": 10, // 回合制的每次普通攻击能积攒多少技能槽，整数
+    "Skill_TB_TacticsCostValue": 10, // 回合制的每次战技要消耗多少技能槽，整数
+    "Skill_TB_EndCostValue": 50, // 回合制的每次终结技要消耗多少技能槽，整数
     "Skill_RT_Normal": [], // 即时制普通攻击的数据，类型：技能数据单级结构，列表形式
     "Skill_RT_Tactics": [], // 即时制战技的数据，类型：技能数据单级结构，列表形式
     "Skill_RT_End": [], // 即时制终结技的数据，类型：技能数据单级结构，列表形式

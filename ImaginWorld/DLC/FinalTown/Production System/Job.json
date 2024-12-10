@@ -1,6 +1,6 @@
 [
     {
-        "ID": "",
+        "ID": "Job1",
         "ResourcesProducedPerHour": [
             {
                 "Key": "",
@@ -13,6 +13,5 @@
                 "Value": 1
             }
         ]
-    },
-    {}
+    }
 ]

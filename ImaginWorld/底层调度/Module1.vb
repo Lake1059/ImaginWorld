@@ -62,9 +62,12 @@ Module Module1
         End Using
     End Function
 
-    Public Sub SetControlFont(C As Control)
+    Public Sub SetControlFont(C As Control, Optional ExcludeContorl As Control() = Nothing)
         If 游戏设置.实例对象.Font = "微软雅黑" Then Exit Sub
         For Each ctrl As Control In C.Controls
+            If ExcludeContorl IsNot Nothing Then
+                If ExcludeContorl.Contains(ctrl) Then Continue For
+            End If
             Dim controlType As Type = C.GetType()
             Dim propInfo As PropertyInfo = controlType.GetProperty("Font")
             If propInfo IsNot Nothing Then ctrl.Font = New Font(游戏设置.实例对象.Font, ctrl.Font.Size, ctrl.Font.Style)

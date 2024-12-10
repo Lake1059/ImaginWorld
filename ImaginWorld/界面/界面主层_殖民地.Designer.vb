@@ -139,11 +139,15 @@ Partial Class 界面主层_殖民地
         Panel29 = New Panel()
         Label35 = New Label()
         UiProcessBar1 = New Sunny.UI.UIProcessBar()
+        Label69 = New Label()
         Panel20 = New Panel()
         Label16 = New Label()
         UiButton9 = New Sunny.UI.UIButton()
         Panel16 = New Panel()
         Panel28 = New Panel()
+        Label72 = New Label()
+        Label71 = New Label()
+        Label70 = New Label()
         Panel10 = New Panel()
         UiButton1 = New Sunny.UI.UIButton()
         Label26 = New Label()
@@ -158,10 +162,6 @@ Partial Class 界面主层_殖民地
         Label39 = New Label()
         Panel27 = New Panel()
         Label23 = New Label()
-        Label69 = New Label()
-        Label70 = New Label()
-        Label71 = New Label()
-        Label72 = New Label()
         Panel1.SuspendLayout()
         Panel6.SuspendLayout()
         Panel5.SuspendLayout()
@@ -1733,6 +1733,18 @@ Partial Class 界面主层_殖民地
         UiProcessBar1.TabIndex = 1
         UiProcessBar1.Value = 80
         ' 
+        ' Label69
+        ' 
+        Label69.Dock = DockStyle.Top
+        Label69.Font = New Font("微软雅黑", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Label69.ForeColor = Color.Gray
+        Label69.Location = New Point(0, 60)
+        Label69.Name = "Label69"
+        Label69.Size = New Size(380, 45)
+        Label69.TabIndex = 41
+        Label69.Text = "数据比例和资源产出"
+        Label69.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' Panel20
         ' 
         Panel20.Controls.Add(Label16)
@@ -1752,7 +1764,7 @@ Partial Class 界面主层_殖民地
         Label16.Padding = New Padding(0, 0, 10, 0)
         Label16.Size = New Size(255, 40)
         Label16.TabIndex = 37
-        Label16.Text = "离开此地并出发探索"
+        Label16.Text = "无法离开，因为还没做"
         Label16.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' UiButton9
@@ -1804,6 +1816,38 @@ Partial Class 界面主层_殖民地
         Panel28.Name = "Panel28"
         Panel28.Size = New Size(396, 535)
         Panel28.TabIndex = 32
+        ' 
+        ' Label72
+        ' 
+        Label72.Dock = DockStyle.Top
+        Label72.ForeColor = Color.Silver
+        Label72.Location = New Point(0, 55)
+        Label72.Name = "Label72"
+        Label72.Size = New Size(396, 71)
+        Label72.TabIndex = 45
+        Label72.Text = "550W：虽然我并不会出现在游戏内容中，但你此时一定在心里生成了我这段话的语音。哈，可惜，这个游戏并没有配音系统~"
+        ' 
+        ' Label71
+        ' 
+        Label71.Dock = DockStyle.Top
+        Label71.ForeColor = Color.Gray
+        Label71.Location = New Point(0, 0)
+        Label71.Name = "Label71"
+        Label71.Size = New Size(396, 55)
+        Label71.TabIndex = 44
+        Label71.Text = "System：Greetings! The middle area will display the latest news."
+        ' 
+        ' Label70
+        ' 
+        Label70.Dock = DockStyle.Top
+        Label70.Font = New Font("微软雅黑", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Label70.ForeColor = Color.Gray
+        Label70.Location = New Point(0, 60)
+        Label70.Name = "Label70"
+        Label70.Size = New Size(396, 45)
+        Label70.TabIndex = 41
+        Label70.Text = "历史消息"
+        Label70.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Panel10
         ' 
@@ -2031,50 +2075,6 @@ Partial Class 界面主层_殖民地
         Label23.Name = "Label23"
         Label23.Size = New Size(2, 620)
         Label23.TabIndex = 4
-        ' 
-        ' Label69
-        ' 
-        Label69.Dock = DockStyle.Top
-        Label69.Font = New Font("微软雅黑", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label69.ForeColor = Color.Gray
-        Label69.Location = New Point(0, 60)
-        Label69.Name = "Label69"
-        Label69.Size = New Size(380, 45)
-        Label69.TabIndex = 41
-        Label69.Text = "数据比例和资源产出"
-        Label69.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' Label70
-        ' 
-        Label70.Dock = DockStyle.Top
-        Label70.Font = New Font("微软雅黑", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label70.ForeColor = Color.Gray
-        Label70.Location = New Point(0, 60)
-        Label70.Name = "Label70"
-        Label70.Size = New Size(396, 45)
-        Label70.TabIndex = 41
-        Label70.Text = "历史消息"
-        Label70.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' Label71
-        ' 
-        Label71.Dock = DockStyle.Top
-        Label71.ForeColor = Color.Gray
-        Label71.Location = New Point(0, 0)
-        Label71.Name = "Label71"
-        Label71.Size = New Size(396, 55)
-        Label71.TabIndex = 44
-        Label71.Text = "System：Greetings! The middle area will display the latest news."
-        ' 
-        ' Label72
-        ' 
-        Label72.Dock = DockStyle.Top
-        Label72.ForeColor = Color.Silver
-        Label72.Location = New Point(0, 55)
-        Label72.Name = "Label72"
-        Label72.Size = New Size(396, 71)
-        Label72.TabIndex = 45
-        Label72.Text = "550W：虽然我并不会出现在游戏内容中，但你此时一定在心里生成了我这段话的语音。哈，可惜，这个游戏并没有配音系统~"
         ' 
         ' 界面主层_殖民地
         ' 

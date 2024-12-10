@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub 界面顶层_控制台_Load(sender As Object, e As EventArgs) Handles Me.Load
-        SetControlFont(Me)
+        SetControlFont(Me, {RichTextBox1})
         AddHandler Me.UiTextBox1.KeyDown, Sub(s1, e1)
                                               Select Case e1.KeyData
                                                   Case Keys.Enter

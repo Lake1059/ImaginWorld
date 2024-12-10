@@ -79,7 +79,8 @@ Public Class 界面主层_主菜单
         Me.ImageList2.ImageSize = New Size(1, 30 * Form1.DPI)
         调整界面()
         Me.Label1.Text = $"ImaginWorld Dev3 - 已加载 {模组管理.实际加载的模组列表.Count} 个模组 - {If(状态信息.Steam_是否完成了初始化, "Steamworks 已连接", "Steamworks 未连接")}"
-        Me.Panel29.BackgroundImage = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "WelcomePage.png"))
+        Me.PictureBox2.Image = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "FinalTown.png"))
+        Me.PictureBox3.Image = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "UnderJourney.png"))
         是否已初始化 = True
 
         声音控制.自动选择下一首BGM进行播放(True)

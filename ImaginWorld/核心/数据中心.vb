@@ -95,8 +95,8 @@ Public Class 数据中心
         Public Property Skill_TB_Normal As New List(Of 技能数据单级结构)
         Public Property Skill_TB_Tactics As New List(Of 技能数据单级结构)
         Public Property Skill_TB_End As New List(Of 技能数据单级结构)
-        Public Property Skill_TB_NormalToEnd_AddValue As Integer = 10
-        Public Property Skill_TB_TacticsToEnd_AddValue As Integer = 10
+        Public Property Skill_TB_NormalAddValue As Integer = 10
+        Public Property Skill_TB_TacticsCostValue As Integer = 50
         Public Property Skill_TB_EndCostValue As Integer = 50
 
         Public Property Skill_RT_Normal As New List(Of 技能数据单级结构)
