@@ -66,6 +66,7 @@ Public Class 界面主层_主菜单
 
         AddHandler UiButton7.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://steamcommunity.com/id/1059Studio/"))
         AddHandler UiButton8.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://space.bilibili.com/319785096"))
+        AddHandler UiButton10.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://github.com/Lake1059/ImaginWorld"))
 
 
         AddHandler Me.UiButton9.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_殖民地)
@@ -81,6 +82,18 @@ Public Class 界面主层_主菜单
         Me.Label1.Text = $"ImaginWorld Dev3 - 已加载 {模组管理.实际加载的模组列表.Count} 个模组 - {If(状态信息.Steam_是否完成了初始化, "Steamworks 已连接", "Steamworks 未连接")}"
         Me.PictureBox2.Image = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "FinalTown.png"))
         Me.PictureBox3.Image = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "UnderJourney.png"))
+        Me.UiComboBox1.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox2.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox3.ItemHeight = 30 * Form1.DPI
+        Me.UiCheckBox1.CheckBoxSize = 25 * Form1.DPI
+        Me.UiTrackBar1.BarSize = 20 * Form1.DPI
+        Me.UiTrackBar2.BarSize = 20 * Form1.DPI
+        Me.UiTrackBar3.BarSize = 20 * Form1.DPI
+        Me.UiTrackBar4.BarSize = 20 * Form1.DPI
+        Me.UiTrackBar5.BarSize = 20 * Form1.DPI
+
+
+
         是否已初始化 = True
 
         声音控制.自动选择下一首BGM进行播放(True)
@@ -186,7 +199,7 @@ Public Class 界面主层_主菜单
             字体列表.Add(字体.Name)
         Next
         字体列表.Sort()
-        Me.UiComboBox7.Items.AddRange(字体列表.ToArray)
+        Me.UiComboBox2.Items.AddRange(字体列表.ToArray)
 
         AddHandler UiTrackBar1.ValueChanged, Sub(s1, e1)
                                                  Label4.Text = s1.Value
@@ -210,8 +223,8 @@ Public Class 界面主层_主菜单
             Case "en"
                 UiComboBox1.Text = "English"
         End Select
-        UiComboBox7.Text = 游戏设置.实例对象.Font
-        UiComboBox2.Text = 游戏设置.实例对象.WindowSize.Width & "x" & 游戏设置.实例对象.WindowSize.Height
+        UiComboBox2.Text = 游戏设置.实例对象.Font
+        UiComboBox3.Text = 游戏设置.实例对象.WindowSize.Width & "x" & 游戏设置.实例对象.WindowSize.Height
         UiCheckBox1.Checked = 游戏设置.实例对象.FullScreenNoBorders
         UiTrackBar1.Value = 游戏设置.实例对象.BgmVolume * 100
         UiTrackBar2.Value = 游戏设置.实例对象.EsVolume * 100
@@ -227,8 +240,8 @@ Public Class 界面主层_主菜单
             Case 1
                 游戏设置.实例对象.GameLanguage = "en"
         End Select
-        游戏设置.实例对象.Font = UiComboBox7.Text
-        游戏设置.实例对象.WindowSize = New Size(UiComboBox2.Text.Split("x"c)(0), UiComboBox2.Text.Split("x"c)(1))
+        游戏设置.实例对象.Font = UiComboBox2.Text
+        游戏设置.实例对象.WindowSize = New Size(UiComboBox3.Text.Split("x"c)(0), UiComboBox3.Text.Split("x"c)(1))
         游戏设置.实例对象.FullScreenNoBorders = UiCheckBox1.Checked
         游戏设置.实例对象.BgmVolume = UiTrackBar1.Value / 100
         游戏设置.实例对象.EsVolume = UiTrackBar2.Value / 100
@@ -494,6 +507,10 @@ Public Class 界面主层_主菜单
 #Region "创意工坊"
     Sub 上传创意工坊()
         If Me.ListView5.SelectedItems.Count <> 1 Then Exit Sub
+#Disable Warning CA1861 ' 不要将常量数组作为参数
+        Dim m1 As New 多项单选对话框("", {"确认上传", "取消"}, "确认上传选中的模组到创意工坊？")
+#Enable Warning CA1861 ' 不要将常量数组作为参数
+        If m1.ShowDialog(Form1) <> 0 Then Exit Sub
         Dim a As New 创意工坊
         a.上传(Me.ListView5.SelectedItems(0).Text)
         界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)

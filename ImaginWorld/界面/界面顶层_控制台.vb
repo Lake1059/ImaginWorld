@@ -39,6 +39,7 @@
 
     Private Sub UiButton关闭控制台_Click(sender As Object, e As EventArgs) Handles UiButton关闭控制台.Click
         Visible = False
+        Form1.界面图层_顶层 = Nothing
     End Sub
 
     Dim 上一次发送的指令 As String = ""

@@ -48,13 +48,13 @@ Partial Class 界面顶层_控制台
         UiButton关闭控制台 = New Sunny.UI.UIButton()
         Panel2 = New Panel()
         Label4 = New Label()
+        Label5 = New Label()
         Panel5 = New Panel()
         RichTextBox1 = New RichTextBox()
         Panel6 = New Panel()
         UiTextBox1 = New Sunny.UI.UITextBox()
         Label3 = New Label()
         UiButton发送指令 = New Sunny.UI.UIButton()
-        Label5 = New Label()
         Panel1.SuspendLayout()
         Panel3.SuspendLayout()
         Panel12.SuspendLayout()
@@ -394,6 +394,17 @@ Partial Class 界面顶层_控制台
         Label4.Size = New Size(3, 25)
         Label4.TabIndex = 4
         ' 
+        ' Label5
+        ' 
+        Label5.Dock = DockStyle.Left
+        Label5.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold)
+        Label5.Location = New Point(20, 20)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(150, 35)
+        Label5.TabIndex = 40
+        Label5.Text = "调试控制台"
+        Label5.TextAlign = ContentAlignment.MiddleLeft
+        ' 
         ' Panel5
         ' 
         Panel5.Controls.Add(RichTextBox1)
@@ -409,6 +420,7 @@ Partial Class 界面顶层_控制台
         RichTextBox1.BackColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         RichTextBox1.BorderStyle = BorderStyle.None
         RichTextBox1.Dock = DockStyle.Fill
+        RichTextBox1.Font = New Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         RichTextBox1.ForeColor = Color.Silver
         RichTextBox1.HideSelection = False
         RichTextBox1.Location = New Point(15, 15)
@@ -498,17 +510,6 @@ Partial Class 界面顶层_控制台
         UiButton发送指令.TabIndex = 29
         UiButton发送指令.Text = "发送"
         UiButton发送指令.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        ' 
-        ' Label5
-        ' 
-        Label5.Dock = DockStyle.Left
-        Label5.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold)
-        Label5.Location = New Point(20, 20)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(150, 35)
-        Label5.TabIndex = 40
-        Label5.Text = "调试控制台"
-        Label5.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' 界面顶层_控制台
         ' 

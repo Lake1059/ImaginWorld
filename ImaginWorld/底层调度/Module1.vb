@@ -71,7 +71,7 @@ Module Module1
             Dim controlType As Type = C.GetType()
             Dim propInfo As PropertyInfo = controlType.GetProperty("Font")
             If propInfo IsNot Nothing Then ctrl.Font = New Font(游戏设置.实例对象.Font, ctrl.Font.Size, ctrl.Font.Style)
-            If ctrl.HasChildren Then SetControlFont(ctrl)
+            If ctrl.HasChildren Then SetControlFont(ctrl, ExcludeContorl)
         Next
     End Sub
 

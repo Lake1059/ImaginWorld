@@ -67,4 +67,8 @@ Public Class 界面主层_殖民地
     Private Sub UiButton场景_Click(sender As Object, e As EventArgs) Handles UiButton场景.Click
 
     End Sub
+
+    Private Sub UiButton菜单_Click(sender As Object, e As EventArgs) Handles UiButton菜单.Click
+        界面控制.切换界面(界面控制.主界面图层.顶层, New 界面顶层_暂停菜单)
+    End Sub
 End Class

@@ -1,4 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
+Imports Windows.Security.EnterpriseData
 
 Public Class 全局键盘钩子
 
@@ -87,6 +88,19 @@ Public Class 全局键盘钩子
                         Clipboard.SetImage(bitmap)
                     End Using
                 End Using
+            Case Keys.Escape
+                If Form1.界面图层_顶层 Is Nothing Then
+                    If Form1.界面图层_主层.GetType <> GetType(界面主层_主菜单) Then
+                        界面控制.切换界面(界面控制.主界面图层.顶层, New 界面顶层_暂停菜单)
+                    End If
+                Else
+                    Select Case Form1.界面图层_顶层.GetType
+                        Case GetType(界面顶层_暂停菜单)
+                            Form1.界面图层_顶层.Dispose()
+                        Case GetType(界面顶层_控制台)
+                            控制台界面实例.UiButton关闭控制台.PerformClick()
+                    End Select
+                End If
         End Select
     End Sub
 

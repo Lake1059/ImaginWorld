@@ -23,6 +23,8 @@ Partial Class 界面顶层_暂停菜单
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        Panel7 = New Panel()
+        UiButton保存并回主菜单 = New Sunny.UI.UIButton()
         Panel4 = New Panel()
         UiButton4 = New Sunny.UI.UIButton()
         Panel3 = New Panel()
@@ -30,10 +32,11 @@ Partial Class 界面顶层_暂停菜单
         Panel2 = New Panel()
         UiButton2 = New Sunny.UI.UIButton()
         Panel6 = New Panel()
-        UiButton1 = New Sunny.UI.UIButton()
+        UiButton回到游戏 = New Sunny.UI.UIButton()
         Label3 = New Label()
         Label1 = New Label()
         Panel1.SuspendLayout()
+        Panel7.SuspendLayout()
         Panel4.SuspendLayout()
         Panel3.SuspendLayout()
         Panel2.SuspendLayout()
@@ -42,6 +45,7 @@ Partial Class 界面顶层_暂停菜单
         ' 
         ' Panel1
         ' 
+        Panel1.Controls.Add(Panel7)
         Panel1.Controls.Add(Panel4)
         Panel1.Controls.Add(Panel3)
         Panel1.Controls.Add(Panel2)
@@ -51,18 +55,57 @@ Partial Class 界面顶层_暂停菜单
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
-        Panel1.Padding = New Padding(150)
+        Panel1.Padding = New Padding(120)
         Panel1.Size = New Size(1280, 720)
         Panel1.TabIndex = 0
+        ' 
+        ' Panel7
+        ' 
+        Panel7.Controls.Add(UiButton保存并回主菜单)
+        Panel7.Dock = DockStyle.Top
+        Panel7.Location = New Point(120, 467)
+        Panel7.Name = "Panel7"
+        Panel7.Padding = New Padding(10, 0, 0, 15)
+        Panel7.Size = New Size(1040, 55)
+        Panel7.TabIndex = 27
+        ' 
+        ' UiButton保存并回主菜单
+        ' 
+        UiButton保存并回主菜单.Dock = DockStyle.Left
+        UiButton保存并回主菜单.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton保存并回主菜单.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton保存并回主菜单.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton保存并回主菜单.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton保存并回主菜单.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton保存并回主菜单.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton保存并回主菜单.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton保存并回主菜单.ForeColor = Color.Silver
+        UiButton保存并回主菜单.ForeDisableColor = Color.Silver
+        UiButton保存并回主菜单.ForeHoverColor = Color.Silver
+        UiButton保存并回主菜单.ForePressColor = Color.Silver
+        UiButton保存并回主菜单.ForeSelectedColor = Color.Silver
+        UiButton保存并回主菜单.Location = New Point(10, 0)
+        UiButton保存并回主菜单.MinimumSize = New Size(1, 1)
+        UiButton保存并回主菜单.Name = "UiButton保存并回主菜单"
+        UiButton保存并回主菜单.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton保存并回主菜单.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton保存并回主菜单.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton保存并回主菜单.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton保存并回主菜单.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton保存并回主菜单.Size = New Size(250, 40)
+        UiButton保存并回主菜单.TabIndex = 22
+        UiButton保存并回主菜单.Text = "  保存并回主菜单"
+        UiButton保存并回主菜单.TextAlign = ContentAlignment.MiddleLeft
+        UiButton保存并回主菜单.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
         ' Panel4
         ' 
         Panel4.Controls.Add(UiButton4)
         Panel4.Dock = DockStyle.Top
-        Panel4.Location = New Point(150, 472)
+        Panel4.Location = New Point(120, 412)
         Panel4.Name = "Panel4"
-        Panel4.Padding = New Padding(10, 0, 0, 20)
-        Panel4.Size = New Size(980, 65)
+        Panel4.Padding = New Padding(10, 0, 0, 15)
+        Panel4.Size = New Size(1040, 55)
         Panel4.TabIndex = 25
         ' 
         ' UiButton4
@@ -88,9 +131,9 @@ Partial Class 界面顶层_暂停菜单
         UiButton4.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton4.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton4.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton4.Size = New Size(250, 45)
+        UiButton4.Size = New Size(250, 40)
         UiButton4.TabIndex = 22
-        UiButton4.Text = "  放弃进度回主菜单"
+        UiButton4.Text = "  控制台（波浪键）"
         UiButton4.TextAlign = ContentAlignment.MiddleLeft
         UiButton4.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
@@ -98,10 +141,10 @@ Partial Class 界面顶层_暂停菜单
         ' 
         Panel3.Controls.Add(UiButton3)
         Panel3.Dock = DockStyle.Top
-        Panel3.Location = New Point(150, 407)
+        Panel3.Location = New Point(120, 357)
         Panel3.Name = "Panel3"
-        Panel3.Padding = New Padding(10, 0, 0, 20)
-        Panel3.Size = New Size(980, 65)
+        Panel3.Padding = New Padding(10, 0, 0, 15)
+        Panel3.Size = New Size(1040, 55)
         Panel3.TabIndex = 24
         ' 
         ' UiButton3
@@ -127,9 +170,9 @@ Partial Class 界面顶层_暂停菜单
         UiButton3.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton3.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton3.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton3.Size = New Size(250, 45)
+        UiButton3.Size = New Size(250, 40)
         UiButton3.TabIndex = 22
-        UiButton3.Text = "  保存进度回主菜单"
+        UiButton3.Text = "  截图（P 键）"
         UiButton3.TextAlign = ContentAlignment.MiddleLeft
         UiButton3.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
@@ -137,10 +180,10 @@ Partial Class 界面顶层_暂停菜单
         ' 
         Panel2.Controls.Add(UiButton2)
         Panel2.Dock = DockStyle.Top
-        Panel2.Location = New Point(150, 342)
+        Panel2.Location = New Point(120, 302)
         Panel2.Name = "Panel2"
-        Panel2.Padding = New Padding(10, 0, 0, 20)
-        Panel2.Size = New Size(980, 65)
+        Panel2.Padding = New Padding(10, 0, 0, 15)
+        Panel2.Size = New Size(1040, 55)
         Panel2.TabIndex = 23
         ' 
         ' UiButton2
@@ -166,69 +209,69 @@ Partial Class 界面顶层_暂停菜单
         UiButton2.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton2.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton2.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton2.Size = New Size(250, 45)
+        UiButton2.Size = New Size(250, 40)
         UiButton2.TabIndex = 22
-        UiButton2.Text = "  立即保存"
+        UiButton2.Text = "  保存"
         UiButton2.TextAlign = ContentAlignment.MiddleLeft
         UiButton2.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
         ' Panel6
         ' 
-        Panel6.Controls.Add(UiButton1)
+        Panel6.Controls.Add(UiButton回到游戏)
         Panel6.Dock = DockStyle.Top
-        Panel6.Location = New Point(150, 277)
+        Panel6.Location = New Point(120, 247)
         Panel6.Name = "Panel6"
-        Panel6.Padding = New Padding(10, 0, 0, 20)
-        Panel6.Size = New Size(980, 65)
+        Panel6.Padding = New Padding(10, 0, 0, 15)
+        Panel6.Size = New Size(1040, 55)
         Panel6.TabIndex = 22
         ' 
-        ' UiButton1
+        ' UiButton回到游戏
         ' 
-        UiButton1.Dock = DockStyle.Left
-        UiButton1.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        UiButton1.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiButton1.ForeColor = Color.Silver
-        UiButton1.ForeDisableColor = Color.Silver
-        UiButton1.ForeHoverColor = Color.Silver
-        UiButton1.ForePressColor = Color.Silver
-        UiButton1.ForeSelectedColor = Color.Silver
-        UiButton1.Location = New Point(10, 0)
-        UiButton1.MinimumSize = New Size(1, 1)
-        UiButton1.Name = "UiButton1"
-        UiButton1.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.Size = New Size(250, 45)
-        UiButton1.TabIndex = 22
-        UiButton1.Text = "  回到游戏"
-        UiButton1.TextAlign = ContentAlignment.MiddleLeft
-        UiButton1.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton回到游戏.Dock = DockStyle.Left
+        UiButton回到游戏.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton回到游戏.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton回到游戏.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton回到游戏.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton回到游戏.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton回到游戏.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton回到游戏.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton回到游戏.ForeColor = Color.Silver
+        UiButton回到游戏.ForeDisableColor = Color.Silver
+        UiButton回到游戏.ForeHoverColor = Color.Silver
+        UiButton回到游戏.ForePressColor = Color.Silver
+        UiButton回到游戏.ForeSelectedColor = Color.Silver
+        UiButton回到游戏.Location = New Point(10, 0)
+        UiButton回到游戏.MinimumSize = New Size(1, 1)
+        UiButton回到游戏.Name = "UiButton回到游戏"
+        UiButton回到游戏.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton回到游戏.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton回到游戏.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton回到游戏.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton回到游戏.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton回到游戏.Size = New Size(250, 40)
+        UiButton回到游戏.TabIndex = 22
+        UiButton回到游戏.Text = "  回到游戏"
+        UiButton回到游戏.TextAlign = ContentAlignment.MiddleLeft
+        UiButton回到游戏.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Dock = DockStyle.Top
         Label3.ForeColor = Color.Gray
-        Label3.Location = New Point(150, 205)
+        Label3.Location = New Point(120, 175)
         Label3.Name = "Label3"
         Label3.Padding = New Padding(5, 0, 0, 30)
         Label3.Size = New Size(639, 72)
         Label3.TabIndex = 26
-        Label3.Text = "并不需要专门调出暂停菜单来暂停游戏，很多界面都会将时间暂停来得到暂停游戏的效果" & vbCrLf & "这样的界面例如：剧情、任务、角色详情、仓库、远行队、运输队等" & vbCrLf
+        Label3.Text = "并不需要专门调出暂停菜单来暂停游戏，很多界面都会将时间暂停来得到暂停游戏的效果" & vbCrLf & "这样的界面例如：剧情、任务、角色详情、仓库、远行队、图鉴、场景列表等" & vbCrLf
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Dock = DockStyle.Top
         Label1.Font = New Font("微软雅黑", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        Label1.Location = New Point(150, 150)
+        Label1.Location = New Point(120, 120)
         Label1.Name = "Label1"
         Label1.Padding = New Padding(0, 0, 0, 20)
         Label1.Size = New Size(123, 55)
@@ -247,6 +290,7 @@ Partial Class 界面顶层_暂停菜单
         Size = New Size(1280, 720)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        Panel7.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel3.ResumeLayout(False)
         Panel2.ResumeLayout(False)
@@ -261,9 +305,11 @@ Partial Class 界面顶层_暂停菜单
     Friend WithEvents Panel2 As Panel
     Friend WithEvents UiButton2 As Sunny.UI.UIButton
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents UiButton1 As Sunny.UI.UIButton
+    Friend WithEvents UiButton回到游戏 As Sunny.UI.UIButton
     Friend WithEvents Panel4 As Panel
     Friend WithEvents UiButton4 As Sunny.UI.UIButton
     Friend WithEvents Label3 As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents UiButton保存并回主菜单 As Sunny.UI.UIButton
 
 End Class
