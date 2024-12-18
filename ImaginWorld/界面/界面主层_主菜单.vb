@@ -1,4 +1,9 @@
 ﻿Imports System.IO
+Imports System.Net
+Imports System.Net.Sockets
+Imports System.Text
+Imports System.Threading
+Imports System.Timers
 Imports ImaginWorld.模组管理
 Imports Microsoft.VisualBasic.FileIO.FileSystem
 Imports Newtonsoft.Json
@@ -15,6 +20,7 @@ Public Class 界面主层_主菜单
         暗黑列表视图自绘制.绑定模组列表的列表视图事件(ListView3)
         暗黑列表视图自绘制.绑定模组列表的列表视图事件(ListView4)
         暗黑列表视图自绘制.绑定列表视图事件(ListView5)
+        暗黑列表视图自绘制.绑定列表视图事件(ListView6)
 
         AddHandler UiButton重新扫描.Click, AddressOf 刷新模组列表
         AddHandler UiButton启用模组.Click, AddressOf 启用选中模组
@@ -51,10 +57,6 @@ Public Class 界面主层_主菜单
         AddHandler UiButton导出排序.Click, AddressOf 导出排序
         AddHandler UiButton应用模组排序并重启.Click, AddressOf 应用模组排序并重启
         AddHandler UiButton取消订阅选中模组.Click, AddressOf 取消订阅
-
-
-
-
         AddHandler UiButton在创意工坊中查看.Click, AddressOf 在创意工坊中查看
         AddHandler LinkLabel4.LinkClicked, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://steamcommunity.com/sharedfiles/workshoplegalagreement"))
         AddHandler UiButton打开创意工坊.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://steamcommunity.com/app/2577690/workshop"))
@@ -76,6 +78,10 @@ Public Class 界面主层_主菜单
         初始化设置选项卡内容()
         AddHandler Me.UiButton15.Click, AddressOf 保存设置
 
+
+        AddHandler Me.UiButton11.Click, AddressOf 启动服务器
+        AddHandler Me.UiButton14.Click, AddressOf 开始寻找广播服务器
+
         Me.ImageList1.ImageSize = New Size(1, 35 * Form1.DPI)
         Me.ImageList2.ImageSize = New Size(1, 30 * Form1.DPI)
         调整界面()
@@ -85,6 +91,13 @@ Public Class 界面主层_主菜单
         Me.UiComboBox1.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox2.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox3.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox4.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox5.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox6.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox7.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox8.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox9.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox10.ItemHeight = 30 * Form1.DPI
         Me.UiCheckBox1.CheckBoxSize = 25 * Form1.DPI
         Me.UiTrackBar1.BarSize = 20 * Form1.DPI
         Me.UiTrackBar2.BarSize = 20 * Form1.DPI
@@ -92,10 +105,7 @@ Public Class 界面主层_主菜单
         Me.UiTrackBar4.BarSize = 20 * Form1.DPI
         Me.UiTrackBar5.BarSize = 20 * Form1.DPI
 
-
-
         是否已初始化 = True
-
         声音控制.自动选择下一首BGM进行播放(True)
         声音控制.自动播放BGM定时器.Start()
     End Sub
@@ -122,10 +132,8 @@ Public Class 界面主层_主菜单
         Select Case True
             Case 子选项卡.IsEqual(TabPage欢迎)
                 Panel模组管理顶部功能区.Visible = False
-
             Case 子选项卡.IsEqual(TabPage新游戏)
                 Panel模组管理顶部功能区.Visible = False
-
             Case 子选项卡.IsEqual(TabPage载入存档)
                 Panel模组管理顶部功能区.Visible = False
                 Panel22.Width = Panel22.Parent.Width * 0.2
@@ -134,6 +142,16 @@ Public Class 界面主层_主菜单
                 Me.ListView1.Columns(0).Width = Me.ListView1.Parent.Width
                 Me.ListView2.Width = Me.ListView2.Parent.Width + SystemInformation.VerticalScrollBarWidth * Form1.DPI
                 Me.ListView2.Columns(0).Width = Me.ListView2.Parent.Width
+            Case 子选项卡.IsEqual(TabPage服务器)
+                Panel模组管理顶部功能区.Visible = False
+            Case 子选项卡.IsEqual(TabPage连接主机)
+                Panel模组管理顶部功能区.Visible = False
+                Me.ListView6.Width = Me.ListView6.Parent.Width + SystemInformation.VerticalScrollBarWidth * Form1.DPI
+                Me.ListView6.Columns(0).Width = Me.ListView6.Parent.Width * 0.2
+                Me.ListView6.Columns(1).Width = Me.ListView6.Parent.Width * 0.1
+                Me.ListView6.Columns(2).Width = Me.ListView6.Parent.Width * 0.2
+                Me.ListView6.Columns(3).Width = Me.ListView6.Parent.Width * 0.3
+                Me.ListView6.Columns(4).Width = Me.ListView6.Parent.Width * 0.2
             Case 子选项卡.IsEqual(TabPage模组)
                 Panel模组管理顶部功能区.Visible = True
                 Panel24.Width = Panel24.Parent.Width * 0.35
@@ -164,6 +182,10 @@ Public Class 界面主层_主菜单
             Case 子选项卡.IsEqual(TabPage新游戏)
                 调整选项卡页面()
             Case 子选项卡.IsEqual(TabPage载入存档)
+                调整选项卡页面()
+            Case 子选项卡.IsEqual(TabPage服务器)
+                调整选项卡页面()
+            Case 子选项卡.IsEqual(TabPage连接主机)
                 调整选项卡页面()
             Case 子选项卡.IsEqual(TabPage模组)
                 调整选项卡页面()
@@ -507,9 +529,7 @@ Public Class 界面主层_主菜单
 #Region "创意工坊"
     Sub 上传创意工坊()
         If Me.ListView5.SelectedItems.Count <> 1 Then Exit Sub
-#Disable Warning CA1861 ' 不要将常量数组作为参数
         Dim m1 As New 多项单选对话框("", {"确认上传", "取消"}, "确认上传选中的模组到创意工坊？")
-#Enable Warning CA1861 ' 不要将常量数组作为参数
         If m1.ShowDialog(Form1) <> 0 Then Exit Sub
         Dim a As New 创意工坊
         a.上传(Me.ListView5.SelectedItems(0).Text)
@@ -517,5 +537,83 @@ Public Class 界面主层_主菜单
     End Sub
 
 #End Region
+
+#Region "服务器"
+    Sub 启动服务器()
+        Dim a As New 多项单选对话框("", {"确认启动", "取消"}, "确认启动服务器？")
+        If a.ShowDialog(Form1) <> 0 Then Exit Sub
+        服务器.服务器端口 = If(Me.UiTextBox4.Text = "", Me.UiTextBox4.Watermark, Me.UiTextBox4.Text)
+        服务器.服务器名称 = If(Me.UiTextBox5.Text = "", Me.UiTextBox5.Watermark, Me.UiTextBox5.Text)
+        服务器.服务器描述 = If(Me.UiTextBox6.Text = "", Me.UiTextBox6.Watermark, Me.UiTextBox6.Text)
+        服务器.启动服务器()
+        Me.UiButton11.Enabled = False
+        Me.UiButton11.Text = "服务器已经启动"
+    End Sub
+
+    Private 广播接收端 As UdpClient
+    Private 广播接收线程 As Thread
+    Private 广播接收计时器 As Timers.Timer
+
+    Sub 开始寻找广播服务器()
+        Me.ListView6.Items.Clear()
+        广播接收端 = New UdpClient(1059)
+        广播接收线程 = New Thread(AddressOf 寻找广播服务器)
+        广播接收线程.Start()
+
+        广播接收计时器 = New Timers.Timer(10000)
+        AddHandler 广播接收计时器.Elapsed, AddressOf 停止寻找广播服务器
+        广播接收计时器.AutoReset = False
+        广播接收计时器.Start()
+        Me.UiButton14.Enabled = False
+    End Sub
+
+    Sub 寻找广播服务器()
+        While True
+            Try
+                Dim remoteEndPoint As New IPEndPoint(IPAddress.Any, 0)
+                Dim data = 广播接收端.Receive(remoteEndPoint)
+                Dim message = Encoding.UTF8.GetString(data)
+                If message.StartsWith("ImaginWorldSever") Then
+                    Dim severinfo As New List(Of String)(message.Split("|"c))
+                    Form1.重新创建句柄()
+                    Form1.Invoke(Sub() 向服务器列表添加信息(severinfo))
+                End If
+            Catch ex As Exception
+                Form1.重新创建句柄()
+                Form1.Invoke(Sub() DebugPrint(ex.Message, Color.OrangeRed))
+            End Try
+            Thread.Sleep(500)
+        End While
+    End Sub
+
+    Sub 停止寻找广播服务器(sender As Object, e As ElapsedEventArgs)
+        广播接收端?.Close()
+        If 广播接收线程 IsNot Nothing AndAlso 广播接收线程.IsAlive Then
+            广播接收线程 = Nothing
+        End If
+        Form1.重新创建句柄()
+        Form1.Invoke(Sub() Me.UiButton14.Enabled = True)
+    End Sub
+
+    Sub 向服务器列表添加信息(info As List(Of String))
+        For i3 = 0 To Me.ListView6.Items.Count - 1
+            If Me.ListView6.Items(i3).Text = info(1) AndAlso Me.ListView6.Items(i3).SubItems(1).Text = info(2) Then
+                Return
+            End If
+        Next
+        Dim item As New ListViewItem(info(1))
+        item.SubItems.Add(info(2))
+        item.SubItems.Add(info(3))
+        item.SubItems.Add(info(4))
+        item.SubItems.Add(info(5))
+        Me.ListView6.Items.Add(item)
+    End Sub
+
+
+#End Region
+
+
+
+
 
 End Class

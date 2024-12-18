@@ -39,6 +39,7 @@ Partial Class 界面主层_主菜单
         Label79 = New Label()
         Label85 = New Label()
         Label82 = New Label()
+        Label107 = New Label()
         Label5 = New Label()
         Label69 = New Label()
         Label78 = New Label()
@@ -94,6 +95,68 @@ Partial Class 界面主层_主菜单
         ColumnHeader1 = New ColumnHeader()
         Label36 = New Label()
         Label37 = New Label()
+        TabPage服务器 = New TabPage()
+        Panel47 = New Panel()
+        Panel50 = New Panel()
+        Panel64 = New Panel()
+        Label106 = New Label()
+        UiComboBox10 = New Sunny.UI.UIComboBox()
+        Panel63 = New Panel()
+        Label105 = New Label()
+        UiComboBox9 = New Sunny.UI.UIComboBox()
+        Panel62 = New Panel()
+        Label104 = New Label()
+        UiComboBox7 = New Sunny.UI.UIComboBox()
+        Panel58 = New Panel()
+        Label97 = New Label()
+        UiComboBox8 = New Sunny.UI.UIComboBox()
+        Panel56 = New Panel()
+        Label95 = New Label()
+        UiComboBox6 = New Sunny.UI.UIComboBox()
+        Panel55 = New Panel()
+        Label92 = New Label()
+        UiTextBox6 = New Sunny.UI.UITextBox()
+        Panel54 = New Panel()
+        Label91 = New Label()
+        UiTextBox5 = New Sunny.UI.UITextBox()
+        Panel53 = New Panel()
+        Label83 = New Label()
+        UiTextBox4 = New Sunny.UI.UITextBox()
+        Panel51 = New Panel()
+        Label80 = New Label()
+        UiComboBox5 = New Sunny.UI.UIComboBox()
+        Panel48 = New Panel()
+        Label94 = New Label()
+        UiComboBox4 = New Sunny.UI.UIComboBox()
+        Panel49 = New Panel()
+        Label93 = New Label()
+        UiButton11 = New Sunny.UI.UIButton()
+        TabPage连接主机 = New TabPage()
+        Panel52 = New Panel()
+        Panel61 = New Panel()
+        Panel59 = New Panel()
+        ListView6 = New ListView()
+        ColumnHeader7 = New ColumnHeader()
+        ColumnHeader8 = New ColumnHeader()
+        ColumnHeader9 = New ColumnHeader()
+        ColumnHeader10 = New ColumnHeader()
+        ColumnHeader11 = New ColumnHeader()
+        ImageList1 = New ImageList(components)
+        Panel60 = New Panel()
+        Label103 = New Label()
+        UiButton13 = New Sunny.UI.UIButton()
+        UiButton14 = New Sunny.UI.UIButton()
+        Label102 = New Label()
+        Label101 = New Label()
+        Label100 = New Label()
+        Panel57 = New Panel()
+        UiButton12 = New Sunny.UI.UIButton()
+        Label99 = New Label()
+        UiTextBox7 = New Sunny.UI.UITextBox()
+        Label98 = New Label()
+        UiTextBox3 = New Sunny.UI.UITextBox()
+        Label96 = New Label()
+        Label81 = New Label()
         TabPage模组 = New TabPage()
         Panel28 = New Panel()
         Label简介 = New Label()
@@ -204,7 +267,6 @@ Partial Class 界面主层_主菜单
         Panel39 = New Panel()
         ListView5 = New ListView()
         ColumnHeader5 = New ColumnHeader()
-        ImageList1 = New ImageList(components)
         LinkLabel4 = New LinkLabel()
         Panel37 = New Panel()
         UiButton上传创意工坊 = New Sunny.UI.UIButton()
@@ -252,6 +314,26 @@ Partial Class 界面主层_主菜单
         Panel22.SuspendLayout()
         Panel18.SuspendLayout()
         Panel19.SuspendLayout()
+        TabPage服务器.SuspendLayout()
+        Panel47.SuspendLayout()
+        Panel50.SuspendLayout()
+        Panel64.SuspendLayout()
+        Panel63.SuspendLayout()
+        Panel62.SuspendLayout()
+        Panel58.SuspendLayout()
+        Panel56.SuspendLayout()
+        Panel55.SuspendLayout()
+        Panel54.SuspendLayout()
+        Panel53.SuspendLayout()
+        Panel51.SuspendLayout()
+        Panel48.SuspendLayout()
+        Panel49.SuspendLayout()
+        TabPage连接主机.SuspendLayout()
+        Panel52.SuspendLayout()
+        Panel61.SuspendLayout()
+        Panel59.SuspendLayout()
+        Panel60.SuspendLayout()
+        Panel57.SuspendLayout()
         TabPage模组.SuspendLayout()
         Panel28.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -444,6 +526,8 @@ Partial Class 界面主层_主菜单
         UiTabControlMenu1.Controls.Add(TabPage欢迎)
         UiTabControlMenu1.Controls.Add(TabPage新游戏)
         UiTabControlMenu1.Controls.Add(TabPage载入存档)
+        UiTabControlMenu1.Controls.Add(TabPage服务器)
+        UiTabControlMenu1.Controls.Add(TabPage连接主机)
         UiTabControlMenu1.Controls.Add(TabPage模组)
         UiTabControlMenu1.Controls.Add(TabPage设置)
         UiTabControlMenu1.Controls.Add(TabPageDLC)
@@ -492,6 +576,7 @@ Partial Class 界面主层_主菜单
         Panel29.Controls.Add(Label79)
         Panel29.Controls.Add(Label85)
         Panel29.Controls.Add(Label82)
+        Panel29.Controls.Add(Label107)
         Panel29.Controls.Add(Label5)
         Panel29.Controls.Add(Label69)
         Panel29.Controls.Add(Label78)
@@ -509,7 +594,7 @@ Partial Class 界面主层_主菜单
         Label79.BackColor = Color.Transparent
         Label79.Dock = DockStyle.Top
         Label79.ForeColor = Color.DarkGray
-        Label79.Location = New Point(30, 215)
+        Label79.Location = New Point(30, 246)
         Label79.Name = "Label79"
         Label79.Padding = New Padding(1, 0, 0, 10)
         Label79.Size = New Size(299, 31)
@@ -522,7 +607,7 @@ Partial Class 界面主层_主菜单
         Label85.BackColor = Color.Transparent
         Label85.Dock = DockStyle.Top
         Label85.ForeColor = Color.DarkGray
-        Label85.Location = New Point(30, 184)
+        Label85.Location = New Point(30, 215)
         Label85.Name = "Label85"
         Label85.Padding = New Padding(1, 0, 0, 10)
         Label85.Size = New Size(251, 31)
@@ -535,12 +620,25 @@ Partial Class 界面主层_主菜单
         Label82.BackColor = Color.Transparent
         Label82.Dock = DockStyle.Top
         Label82.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
-        Label82.Location = New Point(30, 118)
+        Label82.Location = New Point(30, 149)
         Label82.Name = "Label82"
         Label82.Padding = New Padding(0, 30, 0, 10)
         Label82.Size = New Size(88, 66)
         Label82.TabIndex = 40
         Label82.Text = "基础教学"
+        ' 
+        ' Label107
+        ' 
+        Label107.AutoSize = True
+        Label107.BackColor = Color.Transparent
+        Label107.Dock = DockStyle.Top
+        Label107.ForeColor = Color.DarkGray
+        Label107.Location = New Point(30, 128)
+        Label107.Name = "Label107"
+        Label107.Padding = New Padding(1, 0, 0, 0)
+        Label107.Size = New Size(130, 21)
+        Label107.TabIndex = 45
+        Label107.Text = "当前总进度：5%"
         ' 
         ' Label5
         ' 
@@ -550,10 +648,10 @@ Partial Class 界面主层_主菜单
         Label5.ForeColor = Color.DarkGray
         Label5.Location = New Point(30, 97)
         Label5.Name = "Label5"
-        Label5.Padding = New Padding(1, 0, 0, 0)
-        Label5.Size = New Size(130, 21)
+        Label5.Padding = New Padding(1, 0, 0, 10)
+        Label5.Size = New Size(294, 31)
         Label5.TabIndex = 8
-        Label5.Text = "当前总进度：5%"
+        Label5.Text = "此游戏的工程文件和免费版本在 GitHub"
         ' 
         ' Label69
         ' 
@@ -923,6 +1021,7 @@ Partial Class 界面主层_主菜单
         ListView2.BorderStyle = BorderStyle.None
         ListView2.Columns.AddRange(New ColumnHeader() {ColumnHeader2})
         ListView2.Dock = DockStyle.Left
+        ListView2.ForeColor = Color.Silver
         ListView2.HeaderStyle = ColumnHeaderStyle.None
         ListView2.Location = New Point(0, 5)
         ListView2.Name = "ListView2"
@@ -1300,6 +1399,7 @@ Partial Class 界面主层_主菜单
         ListView1.BorderStyle = BorderStyle.None
         ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader1})
         ListView1.Dock = DockStyle.Left
+        ListView1.ForeColor = Color.Silver
         ListView1.HeaderStyle = ColumnHeaderStyle.None
         ListView1.Location = New Point(0, 5)
         ListView1.Name = "ListView1"
@@ -1332,6 +1432,977 @@ Partial Class 界面主层_主菜单
         Label37.Size = New Size(88, 36)
         Label37.TabIndex = 12
         Label37.Text = "选择世界"
+        ' 
+        ' TabPage服务器
+        ' 
+        TabPage服务器.BackColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
+        TabPage服务器.Controls.Add(Panel47)
+        TabPage服务器.Location = New Point(152, 0)
+        TabPage服务器.Name = "TabPage服务器"
+        TabPage服务器.Size = New Size(1128, 659)
+        TabPage服务器.TabIndex = 8
+        TabPage服务器.Text = "服务器"
+        ' 
+        ' Panel47
+        ' 
+        Panel47.Controls.Add(Panel50)
+        Panel47.Controls.Add(Panel49)
+        Panel47.Dock = DockStyle.Fill
+        Panel47.Location = New Point(0, 0)
+        Panel47.Name = "Panel47"
+        Panel47.Padding = New Padding(30)
+        Panel47.Size = New Size(1128, 659)
+        Panel47.TabIndex = 32
+        ' 
+        ' Panel50
+        ' 
+        Panel50.Controls.Add(Panel64)
+        Panel50.Controls.Add(Panel63)
+        Panel50.Controls.Add(Panel62)
+        Panel50.Controls.Add(Panel58)
+        Panel50.Controls.Add(Panel56)
+        Panel50.Controls.Add(Panel55)
+        Panel50.Controls.Add(Panel54)
+        Panel50.Controls.Add(Panel53)
+        Panel50.Controls.Add(Panel51)
+        Panel50.Controls.Add(Panel48)
+        Panel50.Dock = DockStyle.Fill
+        Panel50.Location = New Point(430, 30)
+        Panel50.Name = "Panel50"
+        Panel50.Padding = New Padding(20, 0, 0, 0)
+        Panel50.Size = New Size(668, 599)
+        Panel50.TabIndex = 45
+        ' 
+        ' Panel64
+        ' 
+        Panel64.Controls.Add(Label106)
+        Panel64.Controls.Add(UiComboBox10)
+        Panel64.Dock = DockStyle.Top
+        Panel64.Location = New Point(20, 405)
+        Panel64.Name = "Panel64"
+        Panel64.Padding = New Padding(0, 0, 0, 10)
+        Panel64.Size = New Size(648, 45)
+        Panel64.TabIndex = 53
+        ' 
+        ' Label106
+        ' 
+        Label106.Dock = DockStyle.Fill
+        Label106.Location = New Point(0, 0)
+        Label106.Name = "Label106"
+        Label106.Size = New Size(248, 35)
+        Label106.TabIndex = 3
+        Label106.Text = "允许的连接"
+        Label106.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiComboBox10
+        ' 
+        UiComboBox10.DataSource = Nothing
+        UiComboBox10.Dock = DockStyle.Right
+        UiComboBox10.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList
+        UiComboBox10.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox10.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox10.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox10.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiComboBox10.ForeColor = Color.Silver
+        UiComboBox10.ForeDisableColor = Color.Silver
+        UiComboBox10.ItemFillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox10.ItemForeColor = Color.Silver
+        UiComboBox10.ItemHeight = 30
+        UiComboBox10.ItemHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiComboBox10.ItemRectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox10.Items.AddRange(New Object() {"局域网中的设备都可连接", "仅允许本机玩家（用于封闭测试）"})
+        UiComboBox10.ItemSelectBackColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox10.ItemSelectForeColor = Color.Silver
+        UiComboBox10.Location = New Point(248, 0)
+        UiComboBox10.Margin = New Padding(4, 5, 4, 5)
+        UiComboBox10.MinimumSize = New Size(63, 0)
+        UiComboBox10.Name = "UiComboBox10"
+        UiComboBox10.Padding = New Padding(0, 0, 30, 2)
+        UiComboBox10.RectColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox10.RectDisableColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox10.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox10.ScrollBarColor = Color.Silver
+        UiComboBox10.ScrollBarHandleWidth = 20
+        UiComboBox10.ScrollBarStyleInherited = False
+        UiComboBox10.Size = New Size(400, 35)
+        UiComboBox10.SymbolSize = 24
+        UiComboBox10.TabIndex = 2
+        UiComboBox10.TextAlignment = ContentAlignment.MiddleLeft
+        UiComboBox10.Watermark = "（仅限本机还是公开）"
+        ' 
+        ' Panel63
+        ' 
+        Panel63.Controls.Add(Label105)
+        Panel63.Controls.Add(UiComboBox9)
+        Panel63.Dock = DockStyle.Top
+        Panel63.Location = New Point(20, 360)
+        Panel63.Name = "Panel63"
+        Panel63.Padding = New Padding(0, 0, 0, 10)
+        Panel63.Size = New Size(648, 45)
+        Panel63.TabIndex = 52
+        ' 
+        ' Label105
+        ' 
+        Label105.Dock = DockStyle.Fill
+        Label105.Location = New Point(0, 0)
+        Label105.Name = "Label105"
+        Label105.Size = New Size(248, 35)
+        Label105.TabIndex = 3
+        Label105.Text = "广播"
+        Label105.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiComboBox9
+        ' 
+        UiComboBox9.DataSource = Nothing
+        UiComboBox9.Dock = DockStyle.Right
+        UiComboBox9.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList
+        UiComboBox9.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox9.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox9.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox9.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiComboBox9.ForeColor = Color.Silver
+        UiComboBox9.ForeDisableColor = Color.Silver
+        UiComboBox9.ItemFillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox9.ItemForeColor = Color.Silver
+        UiComboBox9.ItemHeight = 30
+        UiComboBox9.ItemHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiComboBox9.ItemRectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox9.Items.AddRange(New Object() {"启动服务器时自动开始广播", "启动服务器时不广播"})
+        UiComboBox9.ItemSelectBackColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox9.ItemSelectForeColor = Color.Silver
+        UiComboBox9.Location = New Point(248, 0)
+        UiComboBox9.Margin = New Padding(4, 5, 4, 5)
+        UiComboBox9.MinimumSize = New Size(63, 0)
+        UiComboBox9.Name = "UiComboBox9"
+        UiComboBox9.Padding = New Padding(0, 0, 30, 2)
+        UiComboBox9.RectColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox9.RectDisableColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox9.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox9.ScrollBarColor = Color.Silver
+        UiComboBox9.ScrollBarHandleWidth = 20
+        UiComboBox9.ScrollBarStyleInherited = False
+        UiComboBox9.Size = New Size(400, 35)
+        UiComboBox9.SymbolSize = 24
+        UiComboBox9.TabIndex = 2
+        UiComboBox9.TextAlignment = ContentAlignment.MiddleLeft
+        UiComboBox9.Watermark = "（是否立即开始广播）"
+        ' 
+        ' Panel62
+        ' 
+        Panel62.Controls.Add(Label104)
+        Panel62.Controls.Add(UiComboBox7)
+        Panel62.Dock = DockStyle.Top
+        Panel62.Location = New Point(20, 315)
+        Panel62.Name = "Panel62"
+        Panel62.Padding = New Padding(0, 0, 0, 10)
+        Panel62.Size = New Size(648, 45)
+        Panel62.TabIndex = 51
+        ' 
+        ' Label104
+        ' 
+        Label104.Dock = DockStyle.Fill
+        Label104.Location = New Point(0, 0)
+        Label104.Name = "Label104"
+        Label104.Size = New Size(248, 35)
+        Label104.TabIndex = 3
+        Label104.Text = "服务器 IP 类型"
+        Label104.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiComboBox7
+        ' 
+        UiComboBox7.DataSource = Nothing
+        UiComboBox7.Dock = DockStyle.Right
+        UiComboBox7.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList
+        UiComboBox7.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox7.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox7.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox7.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiComboBox7.ForeColor = Color.Silver
+        UiComboBox7.ForeDisableColor = Color.Silver
+        UiComboBox7.ItemFillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox7.ItemForeColor = Color.Silver
+        UiComboBox7.ItemHeight = 30
+        UiComboBox7.ItemHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiComboBox7.ItemRectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox7.Items.AddRange(New Object() {"IPv4", "IPv6"})
+        UiComboBox7.ItemSelectBackColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox7.ItemSelectForeColor = Color.Silver
+        UiComboBox7.Location = New Point(248, 0)
+        UiComboBox7.Margin = New Padding(4, 5, 4, 5)
+        UiComboBox7.MinimumSize = New Size(63, 0)
+        UiComboBox7.Name = "UiComboBox7"
+        UiComboBox7.Padding = New Padding(0, 0, 30, 2)
+        UiComboBox7.RectColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox7.RectDisableColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox7.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox7.ScrollBarColor = Color.Silver
+        UiComboBox7.ScrollBarHandleWidth = 20
+        UiComboBox7.ScrollBarStyleInherited = False
+        UiComboBox7.Size = New Size(400, 35)
+        UiComboBox7.SymbolSize = 24
+        UiComboBox7.TabIndex = 2
+        UiComboBox7.TextAlignment = ContentAlignment.MiddleLeft
+        UiComboBox7.Watermark = "（IPv4 or IPv6）"
+        ' 
+        ' Panel58
+        ' 
+        Panel58.Controls.Add(Label97)
+        Panel58.Controls.Add(UiComboBox8)
+        Panel58.Dock = DockStyle.Top
+        Panel58.Location = New Point(20, 270)
+        Panel58.Name = "Panel58"
+        Panel58.Padding = New Padding(0, 0, 0, 10)
+        Panel58.Size = New Size(648, 45)
+        Panel58.TabIndex = 50
+        ' 
+        ' Label97
+        ' 
+        Label97.Dock = DockStyle.Fill
+        Label97.Location = New Point(0, 0)
+        Label97.Name = "Label97"
+        Label97.Size = New Size(248, 35)
+        Label97.TabIndex = 3
+        Label97.Text = "最大延迟"
+        Label97.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiComboBox8
+        ' 
+        UiComboBox8.DataSource = Nothing
+        UiComboBox8.Dock = DockStyle.Right
+        UiComboBox8.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList
+        UiComboBox8.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox8.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox8.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox8.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiComboBox8.ForeColor = Color.Silver
+        UiComboBox8.ForeDisableColor = Color.Silver
+        UiComboBox8.ItemFillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox8.ItemForeColor = Color.Silver
+        UiComboBox8.ItemHeight = 30
+        UiComboBox8.ItemHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiComboBox8.ItemRectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox8.Items.AddRange(New Object() {"不自动踢出任何延迟的玩家", "500ms", "1000ms", "2000ms", "3000ms"})
+        UiComboBox8.ItemSelectBackColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox8.ItemSelectForeColor = Color.Silver
+        UiComboBox8.Location = New Point(248, 0)
+        UiComboBox8.Margin = New Padding(4, 5, 4, 5)
+        UiComboBox8.MinimumSize = New Size(63, 0)
+        UiComboBox8.Name = "UiComboBox8"
+        UiComboBox8.Padding = New Padding(0, 0, 30, 2)
+        UiComboBox8.RectColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox8.RectDisableColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox8.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox8.ScrollBarColor = Color.Silver
+        UiComboBox8.ScrollBarHandleWidth = 20
+        UiComboBox8.ScrollBarStyleInherited = False
+        UiComboBox8.Size = New Size(400, 35)
+        UiComboBox8.SymbolSize = 24
+        UiComboBox8.TabIndex = 2
+        UiComboBox8.TextAlignment = ContentAlignment.MiddleLeft
+        UiComboBox8.Watermark = "（自动踢出延迟过高的客机）"
+        ' 
+        ' Panel56
+        ' 
+        Panel56.Controls.Add(Label95)
+        Panel56.Controls.Add(UiComboBox6)
+        Panel56.Dock = DockStyle.Top
+        Panel56.Location = New Point(20, 225)
+        Panel56.Name = "Panel56"
+        Panel56.Padding = New Padding(0, 0, 0, 10)
+        Panel56.Size = New Size(648, 45)
+        Panel56.TabIndex = 48
+        ' 
+        ' Label95
+        ' 
+        Label95.Dock = DockStyle.Fill
+        Label95.Location = New Point(0, 0)
+        Label95.Name = "Label95"
+        Label95.Size = New Size(248, 35)
+        Label95.TabIndex = 3
+        Label95.Text = "默认权限"
+        Label95.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiComboBox6
+        ' 
+        UiComboBox6.DataSource = Nothing
+        UiComboBox6.Dock = DockStyle.Right
+        UiComboBox6.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList
+        UiComboBox6.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox6.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox6.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox6.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiComboBox6.ForeColor = Color.Silver
+        UiComboBox6.ForeDisableColor = Color.Silver
+        UiComboBox6.ItemFillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox6.ItemForeColor = Color.Silver
+        UiComboBox6.ItemHeight = 30
+        UiComboBox6.ItemHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiComboBox6.ItemRectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox6.Items.AddRange(New Object() {"自动允许控制台指令", "自动禁用控制台指令"})
+        UiComboBox6.ItemSelectBackColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox6.ItemSelectForeColor = Color.Silver
+        UiComboBox6.Location = New Point(248, 0)
+        UiComboBox6.Margin = New Padding(4, 5, 4, 5)
+        UiComboBox6.MinimumSize = New Size(63, 0)
+        UiComboBox6.Name = "UiComboBox6"
+        UiComboBox6.Padding = New Padding(0, 0, 30, 2)
+        UiComboBox6.RectColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox6.RectDisableColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox6.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox6.ScrollBarColor = Color.Silver
+        UiComboBox6.ScrollBarHandleWidth = 20
+        UiComboBox6.ScrollBarStyleInherited = False
+        UiComboBox6.Size = New Size(400, 35)
+        UiComboBox6.SymbolSize = 24
+        UiComboBox6.TabIndex = 2
+        UiComboBox6.TextAlignment = ContentAlignment.MiddleLeft
+        UiComboBox6.Watermark = "（是否允许控制台）"
+        ' 
+        ' Panel55
+        ' 
+        Panel55.Controls.Add(Label92)
+        Panel55.Controls.Add(UiTextBox6)
+        Panel55.Dock = DockStyle.Top
+        Panel55.Location = New Point(20, 180)
+        Panel55.Name = "Panel55"
+        Panel55.Padding = New Padding(0, 0, 0, 10)
+        Panel55.Size = New Size(648, 45)
+        Panel55.TabIndex = 47
+        ' 
+        ' Label92
+        ' 
+        Label92.Dock = DockStyle.Fill
+        Label92.Location = New Point(0, 0)
+        Label92.Name = "Label92"
+        Label92.Size = New Size(248, 35)
+        Label92.TabIndex = 3
+        Label92.Text = "服务器描述"
+        Label92.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiTextBox6
+        ' 
+        UiTextBox6.Dock = DockStyle.Right
+        UiTextBox6.FillColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox6.FillColor2 = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox6.FillDisableColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox6.FillReadOnlyColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox6.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiTextBox6.ForeColor = Color.DarkGray
+        UiTextBox6.ForeDisableColor = Color.DarkGray
+        UiTextBox6.ForeReadOnlyColor = Color.DarkGray
+        UiTextBox6.Location = New Point(248, 0)
+        UiTextBox6.Margin = New Padding(4, 5, 4, 5)
+        UiTextBox6.MinimumSize = New Size(1, 16)
+        UiTextBox6.Name = "UiTextBox6"
+        UiTextBox6.Padding = New Padding(5)
+        UiTextBox6.RectColor = Color.DimGray
+        UiTextBox6.RectDisableColor = Color.DimGray
+        UiTextBox6.RectReadOnlyColor = Color.DimGray
+        UiTextBox6.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiTextBox6.ScrollBarColor = Color.DimGray
+        UiTextBox6.ScrollBarStyleInherited = False
+        UiTextBox6.ShowText = False
+        UiTextBox6.Size = New Size(400, 35)
+        UiTextBox6.TabIndex = 4
+        UiTextBox6.TextAlignment = ContentAlignment.MiddleLeft
+        UiTextBox6.Watermark = "Sever Description"
+        UiTextBox6.WatermarkActiveColor = Color.DimGray
+        UiTextBox6.WatermarkColor = Color.DimGray
+        ' 
+        ' Panel54
+        ' 
+        Panel54.Controls.Add(Label91)
+        Panel54.Controls.Add(UiTextBox5)
+        Panel54.Dock = DockStyle.Top
+        Panel54.Location = New Point(20, 135)
+        Panel54.Name = "Panel54"
+        Panel54.Padding = New Padding(0, 0, 0, 10)
+        Panel54.Size = New Size(648, 45)
+        Panel54.TabIndex = 46
+        ' 
+        ' Label91
+        ' 
+        Label91.Dock = DockStyle.Fill
+        Label91.Location = New Point(0, 0)
+        Label91.Name = "Label91"
+        Label91.Size = New Size(248, 35)
+        Label91.TabIndex = 3
+        Label91.Text = "服务器名称"
+        Label91.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiTextBox5
+        ' 
+        UiTextBox5.Dock = DockStyle.Right
+        UiTextBox5.FillColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox5.FillColor2 = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox5.FillDisableColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox5.FillReadOnlyColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox5.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiTextBox5.ForeColor = Color.DarkGray
+        UiTextBox5.ForeDisableColor = Color.DarkGray
+        UiTextBox5.ForeReadOnlyColor = Color.DarkGray
+        UiTextBox5.Location = New Point(248, 0)
+        UiTextBox5.Margin = New Padding(4, 5, 4, 5)
+        UiTextBox5.MinimumSize = New Size(1, 16)
+        UiTextBox5.Name = "UiTextBox5"
+        UiTextBox5.Padding = New Padding(5)
+        UiTextBox5.RectColor = Color.DimGray
+        UiTextBox5.RectDisableColor = Color.DimGray
+        UiTextBox5.RectReadOnlyColor = Color.DimGray
+        UiTextBox5.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiTextBox5.ScrollBarColor = Color.DimGray
+        UiTextBox5.ScrollBarStyleInherited = False
+        UiTextBox5.ShowText = False
+        UiTextBox5.Size = New Size(400, 35)
+        UiTextBox5.TabIndex = 4
+        UiTextBox5.TextAlignment = ContentAlignment.MiddleLeft
+        UiTextBox5.Watermark = "ImaginWorld Sever"
+        UiTextBox5.WatermarkActiveColor = Color.DimGray
+        UiTextBox5.WatermarkColor = Color.DimGray
+        ' 
+        ' Panel53
+        ' 
+        Panel53.Controls.Add(Label83)
+        Panel53.Controls.Add(UiTextBox4)
+        Panel53.Dock = DockStyle.Top
+        Panel53.Location = New Point(20, 90)
+        Panel53.Name = "Panel53"
+        Panel53.Padding = New Padding(0, 0, 0, 10)
+        Panel53.Size = New Size(648, 45)
+        Panel53.TabIndex = 45
+        ' 
+        ' Label83
+        ' 
+        Label83.Dock = DockStyle.Fill
+        Label83.Location = New Point(0, 0)
+        Label83.Name = "Label83"
+        Label83.Size = New Size(248, 35)
+        Label83.TabIndex = 3
+        Label83.Text = "服务器端口"
+        Label83.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiTextBox4
+        ' 
+        UiTextBox4.Dock = DockStyle.Right
+        UiTextBox4.FillColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox4.FillColor2 = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox4.FillDisableColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox4.FillReadOnlyColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox4.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiTextBox4.ForeColor = Color.DarkGray
+        UiTextBox4.ForeDisableColor = Color.DarkGray
+        UiTextBox4.ForeReadOnlyColor = Color.DarkGray
+        UiTextBox4.Location = New Point(248, 0)
+        UiTextBox4.Margin = New Padding(4, 5, 4, 5)
+        UiTextBox4.MinimumSize = New Size(1, 16)
+        UiTextBox4.Name = "UiTextBox4"
+        UiTextBox4.Padding = New Padding(5)
+        UiTextBox4.RectColor = Color.DimGray
+        UiTextBox4.RectDisableColor = Color.DimGray
+        UiTextBox4.RectReadOnlyColor = Color.DimGray
+        UiTextBox4.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiTextBox4.ScrollBarColor = Color.DimGray
+        UiTextBox4.ScrollBarStyleInherited = False
+        UiTextBox4.ShowText = False
+        UiTextBox4.Size = New Size(400, 35)
+        UiTextBox4.TabIndex = 4
+        UiTextBox4.TextAlignment = ContentAlignment.MiddleLeft
+        UiTextBox4.Watermark = "10590"
+        UiTextBox4.WatermarkActiveColor = Color.DimGray
+        UiTextBox4.WatermarkColor = Color.DimGray
+        ' 
+        ' Panel51
+        ' 
+        Panel51.Controls.Add(Label80)
+        Panel51.Controls.Add(UiComboBox5)
+        Panel51.Dock = DockStyle.Top
+        Panel51.Location = New Point(20, 45)
+        Panel51.Name = "Panel51"
+        Panel51.Padding = New Padding(0, 0, 0, 10)
+        Panel51.Size = New Size(648, 45)
+        Panel51.TabIndex = 43
+        ' 
+        ' Label80
+        ' 
+        Label80.Dock = DockStyle.Fill
+        Label80.Location = New Point(0, 0)
+        Label80.Name = "Label80"
+        Label80.Size = New Size(248, 35)
+        Label80.TabIndex = 3
+        Label80.Text = "选择存档"
+        Label80.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiComboBox5
+        ' 
+        UiComboBox5.DataSource = Nothing
+        UiComboBox5.Dock = DockStyle.Right
+        UiComboBox5.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList
+        UiComboBox5.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox5.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox5.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox5.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiComboBox5.ForeColor = Color.Silver
+        UiComboBox5.ForeDisableColor = Color.Silver
+        UiComboBox5.ItemFillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox5.ItemForeColor = Color.Silver
+        UiComboBox5.ItemHeight = 30
+        UiComboBox5.ItemHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiComboBox5.ItemRectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox5.ItemSelectBackColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox5.ItemSelectForeColor = Color.Silver
+        UiComboBox5.Location = New Point(248, 0)
+        UiComboBox5.Margin = New Padding(4, 5, 4, 5)
+        UiComboBox5.MinimumSize = New Size(63, 0)
+        UiComboBox5.Name = "UiComboBox5"
+        UiComboBox5.Padding = New Padding(0, 0, 30, 2)
+        UiComboBox5.RectColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox5.RectDisableColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox5.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox5.ScrollBarColor = Color.Silver
+        UiComboBox5.ScrollBarHandleWidth = 20
+        UiComboBox5.ScrollBarStyleInherited = False
+        UiComboBox5.Size = New Size(400, 35)
+        UiComboBox5.SymbolSize = 24
+        UiComboBox5.TabIndex = 2
+        UiComboBox5.TextAlignment = ContentAlignment.MiddleLeft
+        UiComboBox5.Watermark = "（选择存档）"
+        ' 
+        ' Panel48
+        ' 
+        Panel48.Controls.Add(Label94)
+        Panel48.Controls.Add(UiComboBox4)
+        Panel48.Dock = DockStyle.Top
+        Panel48.Location = New Point(20, 0)
+        Panel48.Name = "Panel48"
+        Panel48.Padding = New Padding(0, 0, 0, 10)
+        Panel48.Size = New Size(648, 45)
+        Panel48.TabIndex = 41
+        ' 
+        ' Label94
+        ' 
+        Label94.Dock = DockStyle.Fill
+        Label94.Location = New Point(0, 0)
+        Label94.Name = "Label94"
+        Label94.Size = New Size(248, 35)
+        Label94.TabIndex = 3
+        Label94.Text = "选择世界"
+        Label94.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiComboBox4
+        ' 
+        UiComboBox4.DataSource = Nothing
+        UiComboBox4.Dock = DockStyle.Right
+        UiComboBox4.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList
+        UiComboBox4.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox4.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox4.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox4.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiComboBox4.ForeColor = Color.Silver
+        UiComboBox4.ForeDisableColor = Color.Silver
+        UiComboBox4.ItemFillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiComboBox4.ItemForeColor = Color.Silver
+        UiComboBox4.ItemHeight = 30
+        UiComboBox4.ItemHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiComboBox4.ItemRectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox4.ItemSelectBackColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox4.ItemSelectForeColor = Color.Silver
+        UiComboBox4.Location = New Point(248, 0)
+        UiComboBox4.Margin = New Padding(4, 5, 4, 5)
+        UiComboBox4.MinimumSize = New Size(63, 0)
+        UiComboBox4.Name = "UiComboBox4"
+        UiComboBox4.Padding = New Padding(0, 0, 30, 2)
+        UiComboBox4.RectColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox4.RectDisableColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
+        UiComboBox4.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiComboBox4.ScrollBarColor = Color.Silver
+        UiComboBox4.ScrollBarHandleWidth = 20
+        UiComboBox4.ScrollBarStyleInherited = False
+        UiComboBox4.Size = New Size(400, 35)
+        UiComboBox4.SymbolSize = 24
+        UiComboBox4.TabIndex = 2
+        UiComboBox4.TextAlignment = ContentAlignment.MiddleLeft
+        UiComboBox4.Watermark = "（选择世界）"
+        ' 
+        ' Panel49
+        ' 
+        Panel49.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        Panel49.Controls.Add(Label93)
+        Panel49.Controls.Add(UiButton11)
+        Panel49.Dock = DockStyle.Left
+        Panel49.Location = New Point(30, 30)
+        Panel49.Name = "Panel49"
+        Panel49.Padding = New Padding(20)
+        Panel49.Size = New Size(400, 599)
+        Panel49.TabIndex = 44
+        ' 
+        ' Label93
+        ' 
+        Label93.BackColor = Color.Transparent
+        Label93.Dock = DockStyle.Fill
+        Label93.ForeColor = Color.Gray
+        Label93.Location = New Point(20, 20)
+        Label93.Name = "Label93"
+        Label93.Padding = New Padding(1, 0, 0, 10)
+        Label93.Size = New Size(360, 524)
+        Label93.TabIndex = 40
+        Label93.Text = "与好友一起游玩，存档必须至少有一个为多人模式预留的殖民地位置才能启动，存档将保存到另一种名称的文件中。" & vbCrLf & vbCrLf & "当服务器正在运行时不能进行单人游戏，您需要在「连接主机」选项卡中加入您的服务器；多人模式下不区分「主客」玩家，服务器启动后可以在弹出的面板中进行管理以及精细控制。" & vbCrLf & vbCrLf & "稍后进入该存档的单人模式时，其他玩家的数据将处于冻结状态，不会干扰单人游戏的内容。"
+        ' 
+        ' UiButton11
+        ' 
+        UiButton11.Dock = DockStyle.Bottom
+        UiButton11.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton11.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton11.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
+        UiButton11.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton11.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton11.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton11.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton11.ForeColor = Color.Silver
+        UiButton11.ForeDisableColor = Color.Gray
+        UiButton11.ForeHoverColor = Color.Silver
+        UiButton11.ForePressColor = Color.Silver
+        UiButton11.ForeSelectedColor = Color.Silver
+        UiButton11.Location = New Point(20, 544)
+        UiButton11.MinimumSize = New Size(1, 1)
+        UiButton11.Name = "UiButton11"
+        UiButton11.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton11.RectDisableColor = Color.Black
+        UiButton11.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton11.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton11.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton11.Size = New Size(360, 35)
+        UiButton11.TabIndex = 41
+        UiButton11.Text = "启动服务器"
+        UiButton11.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' TabPage连接主机
+        ' 
+        TabPage连接主机.BackColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
+        TabPage连接主机.Controls.Add(Panel52)
+        TabPage连接主机.Location = New Point(152, 0)
+        TabPage连接主机.Name = "TabPage连接主机"
+        TabPage连接主机.Size = New Size(1128, 659)
+        TabPage连接主机.TabIndex = 9
+        TabPage连接主机.Text = "连接主机"
+        ' 
+        ' Panel52
+        ' 
+        Panel52.Controls.Add(Panel61)
+        Panel52.Controls.Add(Panel60)
+        Panel52.Controls.Add(Label102)
+        Panel52.Controls.Add(Label101)
+        Panel52.Controls.Add(Label100)
+        Panel52.Controls.Add(Panel57)
+        Panel52.Controls.Add(Label96)
+        Panel52.Controls.Add(Label81)
+        Panel52.Dock = DockStyle.Fill
+        Panel52.Location = New Point(0, 0)
+        Panel52.Name = "Panel52"
+        Panel52.Padding = New Padding(30)
+        Panel52.Size = New Size(1128, 659)
+        Panel52.TabIndex = 0
+        ' 
+        ' Panel61
+        ' 
+        Panel61.Controls.Add(Panel59)
+        Panel61.Dock = DockStyle.Fill
+        Panel61.Location = New Point(30, 265)
+        Panel61.Name = "Panel61"
+        Panel61.Padding = New Padding(6, 0, 0, 0)
+        Panel61.Size = New Size(1068, 309)
+        Panel61.TabIndex = 57
+        ' 
+        ' Panel59
+        ' 
+        Panel59.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        Panel59.Controls.Add(ListView6)
+        Panel59.Dock = DockStyle.Fill
+        Panel59.Location = New Point(6, 0)
+        Panel59.Name = "Panel59"
+        Panel59.Padding = New Padding(0, 10, 0, 10)
+        Panel59.Size = New Size(1062, 309)
+        Panel59.TabIndex = 56
+        ' 
+        ' ListView6
+        ' 
+        ListView6.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        ListView6.BorderStyle = BorderStyle.None
+        ListView6.Columns.AddRange(New ColumnHeader() {ColumnHeader7, ColumnHeader8, ColumnHeader9, ColumnHeader10, ColumnHeader11})
+        ListView6.Dock = DockStyle.Left
+        ListView6.ForeColor = Color.Silver
+        ListView6.FullRowSelect = True
+        ListView6.HeaderStyle = ColumnHeaderStyle.None
+        ListView6.Location = New Point(0, 10)
+        ListView6.Name = "ListView6"
+        ListView6.OwnerDraw = True
+        ListView6.Size = New Size(1031, 289)
+        ListView6.StateImageList = ImageList1
+        ListView6.TabIndex = 0
+        ListView6.UseCompatibleStateImageBehavior = False
+        ListView6.View = View.Details
+        ' 
+        ' ImageList1
+        ' 
+        ImageList1.ColorDepth = ColorDepth.Depth32Bit
+        ImageList1.ImageSize = New Size(1, 35)
+        ImageList1.TransparentColor = Color.Transparent
+        ' 
+        ' Panel60
+        ' 
+        Panel60.Controls.Add(Label103)
+        Panel60.Controls.Add(UiButton13)
+        Panel60.Controls.Add(UiButton14)
+        Panel60.Dock = DockStyle.Bottom
+        Panel60.Location = New Point(30, 574)
+        Panel60.Name = "Panel60"
+        Panel60.Padding = New Padding(6, 20, 0, 0)
+        Panel60.Size = New Size(1068, 55)
+        Panel60.TabIndex = 56
+        ' 
+        ' Label103
+        ' 
+        Label103.Dock = DockStyle.Fill
+        Label103.Location = New Point(131, 20)
+        Label103.Name = "Label103"
+        Label103.Padding = New Padding(10, 0, 0, 0)
+        Label103.Size = New Size(812, 35)
+        Label103.TabIndex = 43
+        Label103.Text = "或使用双击来连接"
+        Label103.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UiButton13
+        ' 
+        UiButton13.Dock = DockStyle.Left
+        UiButton13.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton13.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton13.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton13.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton13.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton13.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton13.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton13.ForeColor = Color.Silver
+        UiButton13.ForeDisableColor = Color.Silver
+        UiButton13.ForeHoverColor = Color.Silver
+        UiButton13.ForePressColor = Color.Silver
+        UiButton13.ForeSelectedColor = Color.Silver
+        UiButton13.Location = New Point(6, 20)
+        UiButton13.MinimumSize = New Size(1, 1)
+        UiButton13.Name = "UiButton13"
+        UiButton13.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton13.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton13.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton13.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton13.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton13.Size = New Size(125, 35)
+        UiButton13.TabIndex = 42
+        UiButton13.Text = "连接"
+        UiButton13.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' UiButton14
+        ' 
+        UiButton14.Dock = DockStyle.Right
+        UiButton14.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton14.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton14.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
+        UiButton14.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton14.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton14.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton14.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton14.ForeColor = Color.Silver
+        UiButton14.ForeDisableColor = Color.Gray
+        UiButton14.ForeHoverColor = Color.Silver
+        UiButton14.ForePressColor = Color.Silver
+        UiButton14.ForeSelectedColor = Color.Silver
+        UiButton14.Location = New Point(943, 20)
+        UiButton14.MinimumSize = New Size(1, 1)
+        UiButton14.Name = "UiButton14"
+        UiButton14.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton14.RectDisableColor = Color.Black
+        UiButton14.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton14.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton14.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton14.Size = New Size(125, 35)
+        UiButton14.TabIndex = 44
+        UiButton14.Text = "刷新"
+        UiButton14.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' Label102
+        ' 
+        Label102.AutoSize = True
+        Label102.Dock = DockStyle.Top
+        Label102.ForeColor = Color.DarkGray
+        Label102.Location = New Point(30, 224)
+        Label102.Name = "Label102"
+        Label102.Padding = New Padding(1, 0, 0, 20)
+        Label102.Size = New Size(393, 41)
+        Label102.TabIndex = 54
+        Label102.Text = "主机的广播会在 1059 端口上进行，注意该端口的放行"
+        ' 
+        ' Label101
+        ' 
+        Label101.AutoSize = True
+        Label101.Dock = DockStyle.Top
+        Label101.ForeColor = Color.DarkGray
+        Label101.Location = New Point(30, 193)
+        Label101.Name = "Label101"
+        Label101.Padding = New Padding(1, 0, 0, 10)
+        Label101.Size = New Size(379, 31)
+        Label101.TabIndex = 53
+        Label101.Text = "点击右下角的刷新来监听一段时间在局域网中的广播"
+        ' 
+        ' Label100
+        ' 
+        Label100.AutoSize = True
+        Label100.Dock = DockStyle.Top
+        Label100.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        Label100.Location = New Point(30, 137)
+        Label100.Name = "Label100"
+        Label100.Padding = New Padding(0, 20, 0, 10)
+        Label100.Size = New Size(88, 56)
+        Label100.TabIndex = 52
+        Label100.Text = "自动查找"
+        ' 
+        ' Panel57
+        ' 
+        Panel57.Controls.Add(UiButton12)
+        Panel57.Controls.Add(Label99)
+        Panel57.Controls.Add(UiTextBox7)
+        Panel57.Controls.Add(Label98)
+        Panel57.Controls.Add(UiTextBox3)
+        Panel57.Dock = DockStyle.Top
+        Panel57.Location = New Point(30, 102)
+        Panel57.Name = "Panel57"
+        Panel57.Padding = New Padding(6, 0, 0, 0)
+        Panel57.Size = New Size(1068, 35)
+        Panel57.TabIndex = 51
+        ' 
+        ' UiButton12
+        ' 
+        UiButton12.Dock = DockStyle.Left
+        UiButton12.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton12.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton12.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton12.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton12.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton12.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton12.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton12.ForeColor = Color.Silver
+        UiButton12.ForeDisableColor = Color.Silver
+        UiButton12.ForeHoverColor = Color.Silver
+        UiButton12.ForePressColor = Color.Silver
+        UiButton12.ForeSelectedColor = Color.Silver
+        UiButton12.Location = New Point(361, 0)
+        UiButton12.MinimumSize = New Size(1, 1)
+        UiButton12.Name = "UiButton12"
+        UiButton12.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton12.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton12.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton12.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton12.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton12.Size = New Size(125, 35)
+        UiButton12.TabIndex = 42
+        UiButton12.Text = "连接"
+        UiButton12.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' Label99
+        ' 
+        Label99.Dock = DockStyle.Left
+        Label99.Location = New Point(346, 0)
+        Label99.Name = "Label99"
+        Label99.Size = New Size(15, 35)
+        Label99.TabIndex = 8
+        ' 
+        ' UiTextBox7
+        ' 
+        UiTextBox7.Dock = DockStyle.Left
+        UiTextBox7.FillColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox7.FillColor2 = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox7.FillDisableColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox7.FillReadOnlyColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox7.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiTextBox7.ForeColor = Color.DarkGray
+        UiTextBox7.ForeDisableColor = Color.DarkGray
+        UiTextBox7.ForeReadOnlyColor = Color.DarkGray
+        UiTextBox7.Location = New Point(246, 0)
+        UiTextBox7.Margin = New Padding(4, 5, 4, 5)
+        UiTextBox7.MinimumSize = New Size(1, 16)
+        UiTextBox7.Name = "UiTextBox7"
+        UiTextBox7.Padding = New Padding(5)
+        UiTextBox7.RectColor = Color.DimGray
+        UiTextBox7.RectDisableColor = Color.DimGray
+        UiTextBox7.RectReadOnlyColor = Color.DimGray
+        UiTextBox7.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiTextBox7.ScrollBarColor = Color.DimGray
+        UiTextBox7.ScrollBarStyleInherited = False
+        UiTextBox7.ShowText = False
+        UiTextBox7.Size = New Size(100, 35)
+        UiTextBox7.TabIndex = 7
+        UiTextBox7.TextAlignment = ContentAlignment.MiddleLeft
+        UiTextBox7.Watermark = "Port"
+        UiTextBox7.WatermarkActiveColor = Color.DimGray
+        UiTextBox7.WatermarkColor = Color.DimGray
+        ' 
+        ' Label98
+        ' 
+        Label98.Dock = DockStyle.Left
+        Label98.Location = New Point(231, 0)
+        Label98.Name = "Label98"
+        Label98.Size = New Size(15, 35)
+        Label98.TabIndex = 6
+        ' 
+        ' UiTextBox3
+        ' 
+        UiTextBox3.Dock = DockStyle.Left
+        UiTextBox3.FillColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox3.FillColor2 = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox3.FillDisableColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox3.FillReadOnlyColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        UiTextBox3.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiTextBox3.ForeColor = Color.DarkGray
+        UiTextBox3.ForeDisableColor = Color.DarkGray
+        UiTextBox3.ForeReadOnlyColor = Color.DarkGray
+        UiTextBox3.Location = New Point(6, 0)
+        UiTextBox3.Margin = New Padding(4, 5, 4, 5)
+        UiTextBox3.MinimumSize = New Size(1, 16)
+        UiTextBox3.Name = "UiTextBox3"
+        UiTextBox3.Padding = New Padding(5)
+        UiTextBox3.RectColor = Color.DimGray
+        UiTextBox3.RectDisableColor = Color.DimGray
+        UiTextBox3.RectReadOnlyColor = Color.DimGray
+        UiTextBox3.ScrollBarBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiTextBox3.ScrollBarColor = Color.DimGray
+        UiTextBox3.ScrollBarStyleInherited = False
+        UiTextBox3.ShowText = False
+        UiTextBox3.Size = New Size(225, 35)
+        UiTextBox3.TabIndex = 5
+        UiTextBox3.TextAlignment = ContentAlignment.MiddleLeft
+        UiTextBox3.Watermark = "IP"
+        UiTextBox3.WatermarkActiveColor = Color.DimGray
+        UiTextBox3.WatermarkColor = Color.DimGray
+        ' 
+        ' Label96
+        ' 
+        Label96.AutoSize = True
+        Label96.Dock = DockStyle.Top
+        Label96.ForeColor = Color.DarkGray
+        Label96.Location = New Point(30, 66)
+        Label96.Name = "Label96"
+        Label96.Padding = New Padding(1, 0, 0, 15)
+        Label96.Size = New Size(509, 36)
+        Label96.TabIndex = 14
+        Label96.Text = "如果服务器未广播则可以手动连接，默认情况下服务器的端口是 10590"
+        ' 
+        ' Label81
+        ' 
+        Label81.AutoSize = True
+        Label81.Dock = DockStyle.Top
+        Label81.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        Label81.Location = New Point(30, 30)
+        Label81.Name = "Label81"
+        Label81.Padding = New Padding(0, 0, 0, 10)
+        Label81.Size = New Size(88, 36)
+        Label81.TabIndex = 11
+        Label81.Text = "手动连接"
         ' 
         ' TabPage模组
         ' 
@@ -2909,12 +3980,6 @@ Partial Class 界面主层_主菜单
         ListView5.UseCompatibleStateImageBehavior = False
         ListView5.View = View.Details
         ' 
-        ' ImageList1
-        ' 
-        ImageList1.ColorDepth = ColorDepth.Depth32Bit
-        ImageList1.ImageSize = New Size(1, 35)
-        ImageList1.TransparentColor = Color.Transparent
-        ' 
         ' LinkLabel4
         ' 
         LinkLabel4.AutoSize = True
@@ -3346,6 +4411,27 @@ Partial Class 界面主层_主菜单
         Panel18.ResumeLayout(False)
         Panel18.PerformLayout()
         Panel19.ResumeLayout(False)
+        TabPage服务器.ResumeLayout(False)
+        Panel47.ResumeLayout(False)
+        Panel50.ResumeLayout(False)
+        Panel64.ResumeLayout(False)
+        Panel63.ResumeLayout(False)
+        Panel62.ResumeLayout(False)
+        Panel58.ResumeLayout(False)
+        Panel56.ResumeLayout(False)
+        Panel55.ResumeLayout(False)
+        Panel54.ResumeLayout(False)
+        Panel53.ResumeLayout(False)
+        Panel51.ResumeLayout(False)
+        Panel48.ResumeLayout(False)
+        Panel49.ResumeLayout(False)
+        TabPage连接主机.ResumeLayout(False)
+        Panel52.ResumeLayout(False)
+        Panel52.PerformLayout()
+        Panel61.ResumeLayout(False)
+        Panel59.ResumeLayout(False)
+        Panel60.ResumeLayout(False)
+        Panel57.ResumeLayout(False)
         TabPage模组.ResumeLayout(False)
         Panel28.ResumeLayout(False)
         Panel28.PerformLayout()
@@ -3609,5 +4695,67 @@ Partial Class 界面主层_主菜单
     Friend WithEvents UiButton10 As Sunny.UI.UIButton
     Friend WithEvents Label77 As Label
     Friend WithEvents Label79 As Label
+    Friend WithEvents TabPage服务器 As TabPage
+    Friend WithEvents TabPage连接主机 As TabPage
+    Friend WithEvents Panel47 As Panel
+    Friend WithEvents Panel49 As Panel
+    Friend WithEvents Label93 As Label
+    Friend WithEvents Panel50 As Panel
+    Friend WithEvents Panel51 As Panel
+    Friend WithEvents Label80 As Label
+    Friend WithEvents UiComboBox5 As Sunny.UI.UIComboBox
+    Friend WithEvents Panel48 As Panel
+    Friend WithEvents Label94 As Label
+    Friend WithEvents UiComboBox4 As Sunny.UI.UIComboBox
+    Friend WithEvents Panel53 As Panel
+    Friend WithEvents UiTextBox4 As Sunny.UI.UITextBox
+    Friend WithEvents Label83 As Label
+    Friend WithEvents Panel54 As Panel
+    Friend WithEvents UiTextBox5 As Sunny.UI.UITextBox
+    Friend WithEvents Label91 As Label
+    Friend WithEvents Panel55 As Panel
+    Friend WithEvents UiTextBox6 As Sunny.UI.UITextBox
+    Friend WithEvents Label92 As Label
+    Friend WithEvents Panel58 As Panel
+    Friend WithEvents Label97 As Label
+    Friend WithEvents UiComboBox8 As Sunny.UI.UIComboBox
+    Friend WithEvents Panel56 As Panel
+    Friend WithEvents Label95 As Label
+    Friend WithEvents UiComboBox6 As Sunny.UI.UIComboBox
+    Friend WithEvents UiButton11 As Sunny.UI.UIButton
+    Friend WithEvents Panel52 As Panel
+    Friend WithEvents Label81 As Label
+    Friend WithEvents Panel57 As Panel
+    Friend WithEvents UiTextBox7 As Sunny.UI.UITextBox
+    Friend WithEvents Label98 As Label
+    Friend WithEvents UiTextBox3 As Sunny.UI.UITextBox
+    Friend WithEvents Label96 As Label
+    Friend WithEvents Label102 As Label
+    Friend WithEvents Label101 As Label
+    Friend WithEvents Label100 As Label
+    Friend WithEvents UiButton12 As Sunny.UI.UIButton
+    Friend WithEvents Label99 As Label
+    Friend WithEvents Panel60 As Panel
+    Friend WithEvents UiButton13 As Sunny.UI.UIButton
+    Friend WithEvents Label103 As Label
+    Friend WithEvents Panel61 As Panel
+    Friend WithEvents Panel59 As Panel
+    Friend WithEvents ListView6 As ListView
+    Friend WithEvents ColumnHeader7 As ColumnHeader
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents ColumnHeader9 As ColumnHeader
+    Friend WithEvents ColumnHeader10 As ColumnHeader
+    Friend WithEvents ColumnHeader11 As ColumnHeader
+    Friend WithEvents Panel63 As Panel
+    Friend WithEvents Label105 As Label
+    Friend WithEvents UiComboBox9 As Sunny.UI.UIComboBox
+    Friend WithEvents Panel62 As Panel
+    Friend WithEvents Label104 As Label
+    Friend WithEvents UiComboBox7 As Sunny.UI.UIComboBox
+    Friend WithEvents Panel64 As Panel
+    Friend WithEvents Label106 As Label
+    Friend WithEvents UiComboBox10 As Sunny.UI.UIComboBox
+    Friend WithEvents UiButton14 As Sunny.UI.UIButton
+    Friend WithEvents Label107 As Label
 
 End Class
