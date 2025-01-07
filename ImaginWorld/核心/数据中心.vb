@@ -114,6 +114,7 @@ Public Class 数据中心
         Public Property Talent3 As New List(Of 天赋单级结构)
         Public Property Talent3Name As String = ""
 
+
         Public Property Story As New List(Of KeyValuePair(Of String, String))
 
         <Serializable>
@@ -341,7 +342,7 @@ Public Class 数据中心
                                            所有物品(item.ID) = item
                                        Next
                                    Catch ex As Exception
-                                       Form1.Invoke(Sub() DebugPrint($"加载物品失败：{ex.Message}，位于文件：{物品文件路径}", Color.Tomato))
+                                       DebugPrint($"加载物品失败：{ex.Message}，位于文件：{物品文件路径}", Color.Tomato)
                                    End Try
                                Next
                            Next
@@ -365,7 +366,7 @@ Public Class 数据中心
                                            End Select
                                        Next
                                    Catch ex As Exception
-                                       Form1.Invoke(Sub() DebugPrint($"加载武器失败：{ex.Message}，位于文件：{武器文件路径}", Color.Tomato))
+                                       DebugPrint($"加载武器失败：{ex.Message}，位于文件：{武器文件路径}", Color.Tomato)
                                    End Try
                                Next
                            Next
@@ -389,7 +390,7 @@ Public Class 数据中心
                                            End Select
                                        Next
                                    Catch ex As Exception
-                                       Form1.Invoke(Sub() DebugPrint($"加载装备失败：{ex.Message}，位于文件：{装备文件路径}", Color.Tomato))
+                                       DebugPrint($"加载装备失败：{ex.Message}，位于文件：{装备文件路径}", Color.Tomato)
                                    End Try
                                Next
                            Next
@@ -410,7 +411,7 @@ Public Class 数据中心
                                        If a.ID = "" Then Continue For
                                        所有角色(a.ID) = a
                                    Catch ex As Exception
-                                       Form1.Invoke(Sub() DebugPrint($"加载角色失败：{ex.Message}，位于文件：{角色文件路径}", Color.Tomato))
+                                       DebugPrint($"加载角色失败：{ex.Message}，位于文件：{角色文件路径}", Color.Tomato)
                                    End Try
                                Next
                            Next
@@ -430,7 +431,7 @@ Public Class 数据中心
                                        所有岗位(item.ID) = item
                                    Next
                                Catch ex As Exception
-                                   Form1.Invoke(Sub() DebugPrint($"加载岗位失败：{ex.Message}，位于文件：{岗位文件路径}", Color.Tomato))
+                                   DebugPrint($"加载岗位失败：{ex.Message}，位于文件：{岗位文件路径}", Color.Tomato)
                                End Try
                            Next
                        End Sub)
@@ -449,7 +450,7 @@ Public Class 数据中心
                                        所有建筑(item.ID) = item
                                    Next
                                Catch ex As Exception
-                                   Form1.Invoke(Sub() DebugPrint($"加载建筑失败：{ex.Message}，位于文件：{建筑文件路径}", Color.Tomato))
+                                   DebugPrint($"加载建筑失败：{ex.Message}，位于文件：{建筑文件路径}", Color.Tomato)
                                End Try
                            Next
                        End Sub)
@@ -468,7 +469,7 @@ Public Class 数据中心
                                        所有环境(item.ID) = item
                                    Next
                                Catch ex As Exception
-                                   Form1.Invoke(Sub() DebugPrint($"加载环境失败：{ex.Message}，位于文件：{环境文件路径}", Color.Tomato))
+                                   DebugPrint($"加载环境失败：{ex.Message}，位于文件：{环境文件路径}", Color.Tomato)
                                End Try
                            Next
                        End Sub)
@@ -487,7 +488,7 @@ Public Class 数据中心
                                        所有物种(item.ID) = item
                                    Next
                                Catch ex As Exception
-                                   Form1.Invoke(Sub() DebugPrint($"加载物种失败：{ex.Message}，位于文件：{物种文件路径}", Color.Tomato))
+                                   DebugPrint($"加载物种失败：{ex.Message}，位于文件：{物种文件路径}", Color.Tomato)
                                End Try
                            Next
                        End Sub)
@@ -506,7 +507,7 @@ Public Class 数据中心
                                        所有科技(item.ID) = item
                                    Next
                                Catch ex As Exception
-                                   Form1.Invoke(Sub() DebugPrint($"加载科技失败：{ex.Message}，位于文件：{科技文件路径}", Color.Tomato))
+                                   DebugPrint($"加载科技失败：{ex.Message}，位于文件：{科技文件路径}", Color.Tomato)
                                End Try
                            Next
                        End Sub)
@@ -525,7 +526,7 @@ Public Class 数据中心
                                        所有合成配方(item.ID) = item
                                    Next
                                Catch ex As Exception
-                                   Form1.Invoke(Sub() DebugPrint($"加载合成配方失败：{ex.Message}，位于文件：{合成配方文件路径}", Color.Tomato))
+                                   DebugPrint($"加载合成配方失败：{ex.Message}，位于文件：{合成配方文件路径}", Color.Tomato)
                                End Try
                            Next
                        End Sub)
@@ -544,14 +545,14 @@ Public Class 数据中心
                                        所有载具(item.ID) = item
                                    Next
                                Catch ex As Exception
-                                   Form1.Invoke(Sub() DebugPrint($"加载载具失败：{ex.Message}，位于文件：{载具文件路径}", Color.Tomato))
+                                   DebugPrint($"加载载具失败：{ex.Message}，位于文件：{载具文件路径}", Color.Tomato)
                                End Try
                            Next
                        End Sub)
 
         计时器.Stop()
         DebugPrint($"载具加载完成，耗时 {计时器.ElapsedMilliseconds / 1000} 秒，共计 {所有载具.Count}", Color.ForestGreen)
-        计时器.Restart()
+        '计时器.Restart()
 
 
 
@@ -562,14 +563,18 @@ Public Class 数据中心
         DebugPrint($"加载完毕，总耗时：{Form1.加载时间计时器.ElapsedMilliseconds / 1000} 秒", Color.Silver)
         DebugPrint($"初始化 ...", Color.Silver)
         Application.DoEvents()
-        全局键盘钩子.初始化全局键盘事件()
-        Await Task.Run(Sub() Threading.Thread.Sleep(2000))
 
+        全局键盘钩子.初始化全局键盘事件()
+        消息响应.初始化()
+
+        Application.DoEvents()
+        DebugPrint($"启动流程结束，2 秒后调出主菜单", Color.CornflowerBlue)
+        Application.DoEvents()
+        Await Task.Run(Sub() Threading.Thread.Sleep(2000))
         控制台界面实例.Visible = False
         控制台界面实例.启用可操作区域()
-
         界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_主菜单)
-        DebugPrint($"启动流程结束", Color.CornflowerBlue)
+        声音控制.自动播放BGM定时器.Start()
     End Sub
 
 

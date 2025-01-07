@@ -1,7 +1,7 @@
 ﻿Public Class 多项单选对话框
     Private ReadOnly newDialog As New Form多项单选对话框
 
-    Public Sub New(Title As String, SelectionGroup As String(), Optional Description As String = "", Optional DescriptionPanelHeight As Integer = 77, Optional WindowWidth As Integer = 300)
+    Public Sub New(Title As String, SelectionGroup As String(), Optional Description As String = "", Optional DescriptionPanelHeight As Integer = 77, Optional WindowWidth As Integer = 350)
         If SelectionGroup Is Nothing Then Err.Raise(10001,, "SelectionGroup is nothing")
         If SelectionGroup.Length = 0 Then Err.Raise(10002,, "SelectionGroup have no item")
         newDialog.Text = Title
@@ -48,7 +48,7 @@
         newDialog.Height = newDialog.MinimumSize.Height
     End Sub
 
-    Public Sub New(Title As String, SelectionGroup As List(Of String), Optional Description As String = "", Optional DescriptionPanelHeight As Integer = 77, Optional WindowWidth As Integer = 300)
+    Public Sub New(Title As String, SelectionGroup As List(Of String), Optional Description As String = "", Optional DescriptionPanelHeight As Integer = 77, Optional WindowWidth As Integer = 350)
         If SelectionGroup Is Nothing Then Err.Raise(10001,, "SelectionGroup is nothing")
         If SelectionGroup.Count = 0 Then Err.Raise(10002,, "SelectionGroup have no item")
         newDialog.Text = Title

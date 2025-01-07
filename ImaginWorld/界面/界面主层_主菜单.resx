@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label3.Text" xml:space="preserve">
-    <value>本游戏由纯 WinForm 桌面技术构建，没有游戏引擎，因此在展现形式上受限，请勿要求任何高级视觉和特效；最低配置要求在 Intel N100 处理器的触控设备上测试。
+    <value>本游戏由纯 WinForm 桌面技术构建，没有游戏引擎，因此在展现形式上受限，请勿要求任何高级视觉和特效；最低配置在 Intel N100 处理器的触控设备上测试。
 
 在主菜单中，您有机会听到所有被载入的音乐，在控制台发送 nextbgm 来随机播放下一曲，发送 listbgm 查看所有音乐名称， bgm [ID] 可随时播放指定的音乐。
 
@@ -127,6 +127,15 @@
 使用 Alt+F4 或直接关闭窗口也会保存进度；即便 Windows 直接关机也可以，但最好不要这样做。
 
 当主界面具有焦点时，按 P 键将窗口内容以原始分辨率绘制成图像并复制到剪贴板，以方便汇报任何问题或向其他玩家分享。</value>
+  </data>
+  <data name="Label93.Text" xml:space="preserve">
+    <value>与好友一起游玩，存档必须至少有一个为多人模式预留的殖民地位置才能启动，存档将保存到另一种名称的文件中。
+
+当服务器正在运行时不能进行单人游戏，您需要在「连接主机」选项卡中加入您的服务器；多人模式下不区分「主客」玩家，服务器启动后可以在弹出的面板中进行管理以及精细控制。
+
+稍后进入该存档的单人模式时，其他玩家的数据将处于冻结状态，不会干扰单人游戏的内容。
+
+多人模式没有开局教程和开局剧情，玩家将直接处于自己的殖民地中，请确保在单人模式中学习了基础操作后再进行多人。</value>
   </data>
   <metadata name="ImageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

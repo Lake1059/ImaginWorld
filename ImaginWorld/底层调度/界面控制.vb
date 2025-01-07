@@ -40,9 +40,6 @@
         c.Visible = True
     End Sub
 
-
-
-
     Public Shared Sub 根据宽度显示单行文本(标签控件 As Label, 文本 As String, 宽度 As Integer)
         Dim 文字显示所需尺寸 As Size = TextRenderer.MeasureText(文本, 标签控件.Font)
         Dim 实际文本 As String = 文本

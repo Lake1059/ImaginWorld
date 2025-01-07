@@ -57,8 +57,8 @@ Public Class 声音控制
 
     Public Shared Property 自动播放BGM定时器 As New Timer With {.Interval = 10000}
 
-    Public Shared Sub 自动选择下一首BGM进行播放(Optional 定时器的强制切换 As Boolean = False)
-        If 定时器的强制切换 Then GoTo jx1
+    Public Shared Sub 自动选择下一首BGM进行播放(Optional 强制切换 As Boolean = False)
+        If 强制切换 Then GoTo jx1
         If BGM输出设备.PlaybackState = PlaybackState.Playing Then Exit Sub
 jx1:
         If Form1.界面图层_主层.GetType Is GetType(界面主层_主菜单) Then

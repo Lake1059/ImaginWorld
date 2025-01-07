@@ -5,41 +5,55 @@ Imports System.Threading
 
 Public Class 客户端
     Public Shared Property UDP客户端 As UdpClient
-    Public Shared Property 服务器地址端口 As IPEndPoint
-    Public Shared Property 监听线程 As Thread
+    Public Shared Property 服务器地址 As IPEndPoint
+    Public Shared Property 监听任务 As Task
+    Public Shared Property 取消令牌源 As CancellationTokenSource
     Public Shared Property 是否正在运行 As Boolean = False
+    Public Shared Property 是否收到响应 As Boolean = False
 
     Public Shared Sub 启动客户端(服务器IP As String, 服务器端口 As String)
         UDP客户端 = New UdpClient()
-        服务器地址端口 = New IPEndPoint(IPAddress.Parse(服务器IP), 服务器端口)
-        监听线程 = New Thread(AddressOf 监听消息)
-        监听线程.Start()
+        服务器地址 = New IPEndPoint(IPAddress.Parse(服务器IP), 服务器端口)
+        取消令牌源 = New CancellationTokenSource()
+        监听任务 = Task.Run(AddressOf 监听消息, 取消令牌源.Token)
         是否正在运行 = True
+        是否收到响应 = False
     End Sub
 
     Public Shared Sub 监听消息()
         While 是否正在运行
             Try
-                Dim remoteEndPoint As New IPEndPoint(IPAddress.Any, 0)
-                Dim data = UDP客户端.Receive(remoteEndPoint)
-                Dim message = Encoding.UTF8.GetString(data)
+                Dim 数据_接收到的字节 = UDP客户端.Receive(服务器地址)
+                Dim 数据_文本 = Encoding.UTF8.GetString(数据_接收到的字节)
+                Dim 数据_消息列表 As List(Of String) = 数据_文本.Split("<iw_separator>", StringSplitOptions.None).ToList()
+                消息响应.执行消息(数据_消息列表, 服务器地址)
             Catch ex As Exception
                 Console.WriteLine("接收消息时出错: " & ex.Message)
             End Try
         End While
     End Sub
 
-    Public Shared Sub 发送消息(message As String)
+    Public Shared Sub 发送消息(message As List(Of String))
         Try
-            Dim data = Encoding.UTF8.GetBytes(message)
-            UDP客户端.Send(data, data.Length, 服务器地址端口)
+            Dim combinedMessage As String = String.Join("<iw_separator>", message)
+            Dim data = Encoding.UTF8.GetBytes(combinedMessage)
+            UDP客户端.Send(data, data.Length, 服务器地址)
         Catch ex As Exception
-            Console.WriteLine("发送消息时出错: " & ex.Message)
+            DebugPrint(ex.Message, Color.Tomato)
         End Try
     End Sub
 
-    Public Shared Sub 停止客户端()
+    Public Shared Async Sub 停止客户端()
         是否正在运行 = False
+        If 取消令牌源 IsNot Nothing Then
+            取消令牌源.Cancel()
+            Await 监听任务
+            If 取消令牌源 IsNot Nothing Then
+                取消令牌源.Dispose()
+                取消令牌源 = Nothing
+            End If
+        End If
         UDP客户端.Close()
+        UDP客户端 = Nothing
     End Sub
 End Class

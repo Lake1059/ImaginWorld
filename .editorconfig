@@ -1,0 +1,4 @@
+﻿[*.vb]
+
+# CA1861: 不要将常量数组作为参数
+dotnet_diagnostic.CA1861.severity = silent

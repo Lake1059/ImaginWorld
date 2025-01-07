@@ -36,7 +36,7 @@ Partial Class Form多项单选对话框
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(284, 85)
+        Panel1.Size = New Size(334, 85)
         Panel1.TabIndex = 0
         ' 
         ' Label1
@@ -46,7 +46,7 @@ Partial Class Form多项单选对话框
         Label1.Location = New Point(20, 20)
         Label1.Margin = New Padding(20)
         Label1.Name = "Label1"
-        Label1.Size = New Size(244, 45)
+        Label1.Size = New Size(294, 45)
         Label1.TabIndex = 18
         Label1.Text = "Label1" & vbCrLf & "Label1"
         ' 
@@ -55,10 +55,10 @@ Partial Class Form多项单选对话框
         LabelLine.AutoEllipsis = True
         LabelLine.BackColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
         LabelLine.Dock = DockStyle.Bottom
-        LabelLine.Font = New Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        LabelLine.Font = New Font("Microsoft YaHei UI", 9F)
         LabelLine.Location = New Point(0, 84)
         LabelLine.Name = "LabelLine"
-        LabelLine.Size = New Size(284, 1)
+        LabelLine.Size = New Size(334, 1)
         LabelLine.TabIndex = 17
         LabelLine.Visible = False
         ' 
@@ -68,7 +68,7 @@ Partial Class Form多项单选对话框
         Panel2.Location = New Point(0, 85)
         Panel2.Name = "Panel2"
         Panel2.Padding = New Padding(20)
-        Panel2.Size = New Size(284, 76)
+        Panel2.Size = New Size(334, 76)
         Panel2.TabIndex = 1
         ' 
         ' Form多项单选对话框
@@ -77,14 +77,14 @@ Partial Class Form多项单选对话框
         AutoScaleMode = AutoScaleMode.Dpi
         AutoSize = True
         BackColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
-        ClientSize = New Size(284, 161)
+        ClientSize = New Size(334, 161)
         Controls.Add(Panel1)
         Controls.Add(Panel2)
-        Font = New Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Font = New Font("Microsoft YaHei UI", 9.75F)
         ForeColor = SystemColors.Control
         MaximizeBox = False
         MinimizeBox = False
-        MinimumSize = New Size(300, 200)
+        MinimumSize = New Size(350, 200)
         Name = "Form多项单选对话框"
         ShowIcon = False
         ShowInTaskbar = False

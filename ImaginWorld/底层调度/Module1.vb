@@ -24,16 +24,20 @@ Module Module1
         Return page1.Name = page2.Name
     End Function
 
-    Public Sub DebugPrint(文本 As String, 颜色 As Color, Optional 时间戳 As Boolean = True)
+    Public Sub DebugPrint(文本 As String, 颜色 As Color, Optional 时间戳 As Boolean = True, Optional 强制切换到控制台 As Boolean = False)
         If String.IsNullOrEmpty(文本) Then Exit Sub
         If 时间戳 Then 文本 = $"{TimeString} " & 文本
-        控制台界面实例.RichTextBox1.AppendText(vbCrLf & 文本)
-        Dim textLen As Integer = Len(文本)
-        Dim startPos As Integer = 控制台界面实例.RichTextBox1.TextLength - textLen
-        控制台界面实例.RichTextBox1.Select(startPos, textLen)
-        控制台界面实例.RichTextBox1.SelectionColor = 颜色
-        控制台界面实例.RichTextBox1.Select(控制台界面实例.RichTextBox1.TextLength, 0)
-        控制台界面实例.RichTextBox1.ScrollToCaret()
+        Dim 文本长度 = Len(文本)
+        Form1.重新创建句柄()
+        Form1.Invoke(Sub()
+                         控制台界面实例.RichTextBox1.AppendText(vbCrLf & 文本)
+                         Dim 添加起始位 As Integer = 控制台界面实例.RichTextBox1.TextLength - 文本长度
+                         控制台界面实例.RichTextBox1.Select(添加起始位, 文本长度)
+                         控制台界面实例.RichTextBox1.SelectionColor = 颜色
+                         控制台界面实例.RichTextBox1.Select(控制台界面实例.RichTextBox1.TextLength, 0)
+                         控制台界面实例.RichTextBox1.ScrollToCaret()
+                         If 强制切换到控制台 Then 界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
+                     End Sub)
     End Sub
 
     Public Function LaunchSvgToImage(SvgPath As String) As Image
@@ -41,7 +45,7 @@ Module Module1
             Dim svgDoc As SvgDocument = SvgDocument.Open(SvgPath)
             Return svgDoc.Draw(48 * Form1.DPI, 48 * Form1.DPI)
         Catch ex As Exception
-            Form1.Invoke(Sub() DebugPrint($"转换 SVG 图像错误：{ex.Message}", Color.Tomato))
+            DebugPrint($"转换 SVG 图像错误：{ex.Message}", Color.Tomato)
             Return Nothing
         End Try
     End Function
@@ -76,12 +80,12 @@ Module Module1
     End Sub
 
     Public Sub 显示模式窗体(哪个窗口 As Form, 以谁为基准显示 As Form)
-        哪个窗口.Left = (以谁为基准显示.Width - 哪个窗口.Width) * 0.5 + 以谁为基准显示.Left
-        哪个窗口.Top = (以谁为基准显示.Height - 哪个窗口.Height) * 0.5 + 以谁为基准显示.Top
-        哪个窗口.TopMost = 以谁为基准显示.TopMost
+        哪个窗口.Left = (以谁为基准显示.Width - 哪个窗口.Width) * 0.5 + 以谁为基准显示.ScreenLocation.X
+        哪个窗口.Top = (以谁为基准显示.Height - 哪个窗口.Height) * 0.5 + 以谁为基准显示.ScreenLocation.Y
         以谁为基准显示.Focus()
         哪个窗口.ShowDialog(以谁为基准显示)
     End Sub
+
 
     Public Sub 显示窗体(哪个窗口 As Form, 以谁为基准显示 As Form)
         If 哪个窗口.Visible = True Then

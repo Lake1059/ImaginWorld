@@ -1,6 +1,4 @@
 ﻿Imports System.Runtime.InteropServices
-Imports Windows.Security.EnterpriseData
-
 Public Class 全局键盘钩子
 
     Private Delegate Function HookProc(nCode As Integer, wParam As IntPtr, lParam As IntPtr) As IntPtr

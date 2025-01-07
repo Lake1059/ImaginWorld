@@ -6,6 +6,7 @@ Imports System.Threading
 Imports System.Timers
 Imports ImaginWorld.模组管理
 Imports Microsoft.VisualBasic.FileIO.FileSystem
+Imports NAudio.Wave
 Imports Newtonsoft.Json
 Imports Windows.System
 
@@ -82,6 +83,9 @@ Public Class 界面主层_主菜单
         AddHandler Me.UiButton11.Click, AddressOf 启动服务器
         AddHandler Me.UiButton14.Click, AddressOf 开始寻找广播服务器
 
+        AddHandler Me.UiButton13.Click, AddressOf 连接选中的服务器
+        AddHandler Me.ListView6.DoubleClick, Sub() If Me.ListView6.SelectedItems.Count = 1 Then 连接选中的服务器()
+
         Me.ImageList1.ImageSize = New Size(1, 35 * Form1.DPI)
         Me.ImageList2.ImageSize = New Size(1, 30 * Form1.DPI)
         调整界面()
@@ -104,18 +108,20 @@ Public Class 界面主层_主菜单
         Me.UiTrackBar3.BarSize = 20 * Form1.DPI
         Me.UiTrackBar4.BarSize = 20 * Form1.DPI
         Me.UiTrackBar5.BarSize = 20 * Form1.DPI
-
         是否已初始化 = True
-        声音控制.自动选择下一首BGM进行播放(True)
-        声音控制.自动播放BGM定时器.Start()
+        If 声音控制.特效声音输出设备 Is Nothing Then
+            If 数据中心.所有背景音乐.ContainsKey("WarmHome") Then
+                声音控制.切换BGM("WarmHome")
+            Else
+                声音控制.自动选择下一首BGM进行播放(True)
+            End If
+        Else
+            声音控制.自动选择下一首BGM进行播放(True)
+        End If
     End Sub
-
     Private Sub 模板_主菜单_DpiChangedAfterParent(sender As Object, e As EventArgs) Handles Me.DpiChangedAfterParent
-
         调整界面()
-
     End Sub
-
     Private Sub 模板_主菜单_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Not 是否已初始化 Then Exit Sub
         If Me.ParentForm.WindowState = FormWindowState.Minimized Then Exit Sub
@@ -173,7 +179,6 @@ Public Class 界面主层_主菜单
                 Panel模组管理顶部功能区.Visible = False
         End Select
     End Sub
-
     Private Sub UiTabControlMenu1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles UiTabControlMenu1.SelectedIndexChanged
         Dim 子选项卡 As TabPage = Me.UiTabControlMenu1.SelectedTab
         Select Case True
@@ -211,7 +216,6 @@ Public Class 界面主层_主菜单
                 调整选项卡页面()
         End Select
     End Sub
-
 
 #Region "设置"
 
@@ -540,14 +544,60 @@ Public Class 界面主层_主菜单
 
 #Region "服务器"
     Sub 启动服务器()
+        If 服务器.UDP服务器 IsNot Nothing Then
+            Dim a1 As New 多项单选对话框("", {"了解"}, "服务器正在运行中，若要关闭服务器请在服务器管理窗口上操作！")
+            a1.ShowDialog(Form1)
+            Exit Sub
+        End If
         Dim a As New 多项单选对话框("", {"确认启动", "取消"}, "确认启动服务器？")
         If a.ShowDialog(Form1) <> 0 Then Exit Sub
         服务器.服务器端口 = If(Me.UiTextBox4.Text = "", Me.UiTextBox4.Watermark, Me.UiTextBox4.Text)
         服务器.服务器名称 = If(Me.UiTextBox5.Text = "", Me.UiTextBox5.Watermark, Me.UiTextBox5.Text)
         服务器.服务器描述 = If(Me.UiTextBox6.Text = "", Me.UiTextBox6.Watermark, Me.UiTextBox6.Text)
+        Select Case Me.UiComboBox6.SelectedIndex
+            Case 0
+                服务器.玩家默认权限 = 服务器.玩家权限类型.普通玩家禁用控制台
+            Case 1
+                服务器.玩家默认权限 = 服务器.玩家权限类型.管理员执行大多数指令
+            Case 2
+                服务器.玩家默认权限 = 服务器.玩家权限类型.超级管理员全部指令
+        End Select
+        Select Case Me.UiComboBox8.SelectedIndex
+            Case 0
+                服务器.自动踢出延迟 = -1
+            Case 1
+                服务器.自动踢出延迟 = 500
+            Case 2
+                服务器.自动踢出延迟 = 1000
+            Case 3
+                服务器.自动踢出延迟 = 2000
+            Case 4
+                服务器.自动踢出延迟 = 3000
+        End Select
+        服务器.自动开始广播 = Me.UiComboBox9.SelectedIndex = 0
+        服务器.是否允许新地址加入 = Me.UiComboBox10.SelectedIndex = 0
+        Select Case Me.UiComboBox10.SelectedIndex
+            Case 0
+                服务器.响应线程数量 = 1
+            Case 1
+                服务器.响应线程数量 = 2
+            Case 2
+                服务器.响应线程数量 = 4
+            Case 3
+                服务器.响应线程数量 = 8
+            Case 4
+                服务器.响应线程数量 = 16
+            Case 5
+                服务器.响应线程数量 = 32
+            Case 6
+                服务器.响应线程数量 = 64
+            Case 7
+                服务器.响应线程数量 = 128
+            Case Else
+                服务器.响应线程数量 = 1
+        End Select
+        服务器.开放单人数据位 = Me.UiComboBox7.SelectedIndex = 1
         服务器.启动服务器()
-        Me.UiButton11.Enabled = False
-        Me.UiButton11.Text = "服务器已经启动"
     End Sub
 
     Private 广播接收端 As UdpClient
@@ -555,22 +605,25 @@ Public Class 界面主层_主菜单
     Private 广播接收计时器 As Timers.Timer
 
     Sub 开始寻找广播服务器()
-        Me.ListView6.Items.Clear()
-        广播接收端 = New UdpClient(1059)
-        广播接收线程 = New Thread(AddressOf 寻找广播服务器)
-        广播接收线程.Start()
-
-        广播接收计时器 = New Timers.Timer(10000)
-        AddHandler 广播接收计时器.Elapsed, AddressOf 停止寻找广播服务器
-        广播接收计时器.AutoReset = False
-        广播接收计时器.Start()
-        Me.UiButton14.Enabled = False
+        Try
+            Me.ListView6.Items.Clear()
+            广播接收端 = New UdpClient(1059)
+            广播接收线程 = New Thread(AddressOf 寻找广播服务器)
+            广播接收计时器 = New Timers.Timer(10000)
+            AddHandler 广播接收计时器.Elapsed, AddressOf 停止寻找广播服务器
+            广播接收计时器.AutoReset = False
+            广播接收计时器.Start()
+            广播接收线程.Start()
+            Me.UiButton14.Enabled = False
+        Catch ex As Exception
+            DebugPrint(ex.Message, Color.OrangeRed)
+        End Try
     End Sub
 
     Sub 寻找广播服务器()
         While True
             Try
-                Dim remoteEndPoint As New IPEndPoint(IPAddress.Any, 0)
+                Dim remoteEndPoint As New IPEndPoint(IPAddress.Any, 1059)
                 Dim data = 广播接收端.Receive(remoteEndPoint)
                 Dim message = Encoding.UTF8.GetString(data)
                 If message.StartsWith("ImaginWorldSever") Then
@@ -578,9 +631,10 @@ Public Class 界面主层_主菜单
                     Form1.重新创建句柄()
                     Form1.Invoke(Sub() 向服务器列表添加信息(severinfo))
                 End If
+                If 广播接收计时器.Enabled = False Then Exit While
             Catch ex As Exception
-                Form1.重新创建句柄()
-                Form1.Invoke(Sub() DebugPrint(ex.Message, Color.OrangeRed))
+                DebugPrint(ex.Message, Color.OrangeRed)
+                If 广播接收计时器.Enabled = False Then Exit While
             End Try
             Thread.Sleep(500)
         End While
@@ -588,9 +642,8 @@ Public Class 界面主层_主菜单
 
     Sub 停止寻找广播服务器(sender As Object, e As ElapsedEventArgs)
         广播接收端?.Close()
-        If 广播接收线程 IsNot Nothing AndAlso 广播接收线程.IsAlive Then
-            广播接收线程 = Nothing
-        End If
+        广播接收线程.Join()
+        广播接收线程 = Nothing
         Form1.重新创建句柄()
         Form1.Invoke(Sub() Me.UiButton14.Enabled = True)
     End Sub
@@ -609,10 +662,31 @@ Public Class 界面主层_主菜单
         Me.ListView6.Items.Add(item)
     End Sub
 
-
 #End Region
 
+#Region "连接主机"
+    Async Sub 连接选中的服务器()
+        If Me.ListView6.SelectedItems.Count <> 1 Then Exit Sub
+        If 客户端.是否正在运行 Then
+            Dim a As New 多项单选对话框("", {"新的连接", "取消"}, "客户端服务正在运行，是否关闭当前连接并开始新的连接？")
+            If a.ShowDialog(Form1) <> 0 Then Exit Sub
+        End If
+        Me.Label103.Text = "客户端服务已启动，已发送请求"
+        客户端.启动客户端(Me.ListView6.SelectedItems(0).Text, Me.ListView6.SelectedItems(0).SubItems(1).Text)
+        客户端.发送消息(New List(Of String) From {"iw_client_login_beta3"})
+        Await Task.Run(Sub()
+                           Thread.Sleep(5000)
+                       End Sub)
+        If 客户端.是否收到响应 Then
+            Me.Label103.Text = $"已连接到 {客户端.服务器地址}"
+        Else
+            客户端.停止客户端()
+            Me.Label103.Text = "由于没有收到服务器消息，客户端服务已自动停止"
+        End If
+    End Sub
 
+
+#End Region
 
 
 
