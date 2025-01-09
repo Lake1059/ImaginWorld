@@ -85,6 +85,8 @@ Public Class 界面主层_主菜单
 
         AddHandler Me.UiButton13.Click, AddressOf 连接选中的服务器
         AddHandler Me.ListView6.DoubleClick, Sub() If Me.ListView6.SelectedItems.Count = 1 Then 连接选中的服务器()
+        AddHandler Me.UiButton12.Click, AddressOf 连接自定义输入的服务器
+
 
         Me.ImageList1.ImageSize = New Size(1, 35 * Form1.DPI)
         Me.ImageList2.ImageSize = New Size(1, 30 * Form1.DPI)
@@ -544,7 +546,7 @@ Public Class 界面主层_主菜单
 
 #Region "服务器"
     Sub 启动服务器()
-        If 服务器.UDP服务器 IsNot Nothing Then
+        If 服务器.是否正在运行 Then
             Dim a1 As New 多项单选对话框("", {"了解"}, "服务器正在运行中，若要关闭服务器请在服务器管理窗口上操作！")
             a1.ShowDialog(Form1)
             Exit Sub
@@ -556,15 +558,17 @@ Public Class 界面主层_主菜单
         服务器.服务器描述 = If(Me.UiTextBox6.Text = "", Me.UiTextBox6.Watermark, Me.UiTextBox6.Text)
         Select Case Me.UiComboBox6.SelectedIndex
             Case 0
-                服务器.玩家默认权限 = 服务器.玩家权限类型.普通玩家禁用控制台
+                服务器.玩家默认权限 = 服务器.玩家权限类型.普通玩家
             Case 1
-                服务器.玩家默认权限 = 服务器.玩家权限类型.管理员执行大多数指令
+                服务器.玩家默认权限 = 服务器.玩家权限类型.管理员
             Case 2
-                服务器.玩家默认权限 = 服务器.玩家权限类型.超级管理员全部指令
+                服务器.玩家默认权限 = 服务器.玩家权限类型.超级管理员
+            Case Else
+                服务器.玩家默认权限 = 服务器.玩家权限类型.普通玩家
         End Select
         Select Case Me.UiComboBox8.SelectedIndex
             Case 0
-                服务器.自动踢出延迟 = -1
+                服务器.自动踢出延迟 = Integer.MaxValue
             Case 1
                 服务器.自动踢出延迟 = 500
             Case 2
@@ -573,6 +577,8 @@ Public Class 界面主层_主菜单
                 服务器.自动踢出延迟 = 2000
             Case 4
                 服务器.自动踢出延迟 = 3000
+            Case Else
+                服务器.自动踢出延迟 = Integer.MaxValue
         End Select
         服务器.自动开始广播 = Me.UiComboBox9.SelectedIndex = 0
         服务器.是否允许新地址加入 = Me.UiComboBox10.SelectedIndex = 0
@@ -601,19 +607,20 @@ Public Class 界面主层_主菜单
     End Sub
 
     Private 广播接收端 As UdpClient
-    Private 广播接收线程 As Thread
+    Private 广播接收任务 As Task
+    Private 广播接收任务取消令牌源 As CancellationTokenSource
     Private 广播接收计时器 As Timers.Timer
 
     Sub 开始寻找广播服务器()
         Try
             Me.ListView6.Items.Clear()
             广播接收端 = New UdpClient(1059)
-            广播接收线程 = New Thread(AddressOf 寻找广播服务器)
+            广播接收任务取消令牌源 = New CancellationTokenSource
+            广播接收任务 = Task.Run(AddressOf 寻找广播服务器, 广播接收任务取消令牌源.Token)
             广播接收计时器 = New Timers.Timer(10000)
             AddHandler 广播接收计时器.Elapsed, AddressOf 停止寻找广播服务器
             广播接收计时器.AutoReset = False
             广播接收计时器.Start()
-            广播接收线程.Start()
             Me.UiButton14.Enabled = False
         Catch ex As Exception
             DebugPrint(ex.Message, Color.OrangeRed)
@@ -621,7 +628,7 @@ Public Class 界面主层_主菜单
     End Sub
 
     Sub 寻找广播服务器()
-        While True
+        While True AndAlso Not 广播接收任务取消令牌源.Token.IsCancellationRequested
             Try
                 Dim remoteEndPoint As New IPEndPoint(IPAddress.Any, 1059)
                 Dim data = 广播接收端.Receive(remoteEndPoint)
@@ -640,10 +647,16 @@ Public Class 界面主层_主菜单
         End While
     End Sub
 
-    Sub 停止寻找广播服务器(sender As Object, e As ElapsedEventArgs)
+    Async Sub 停止寻找广播服务器(sender As Object, e As ElapsedEventArgs)
+        If 广播接收任务取消令牌源 IsNot Nothing Then
+            广播接收任务取消令牌源.Cancel()
+            Await 广播接收任务
+            If 广播接收任务取消令牌源 IsNot Nothing Then
+                广播接收任务取消令牌源.Dispose()
+                广播接收任务取消令牌源 = Nothing
+            End If
+        End If
         广播接收端?.Close()
-        广播接收线程.Join()
-        广播接收线程 = Nothing
         Form1.重新创建句柄()
         Form1.Invoke(Sub() Me.UiButton14.Enabled = True)
     End Sub
@@ -673,6 +686,40 @@ Public Class 界面主层_主菜单
         End If
         Me.Label103.Text = "客户端服务已启动，已发送请求"
         客户端.启动客户端(Me.ListView6.SelectedItems(0).Text, Me.ListView6.SelectedItems(0).SubItems(1).Text)
+        客户端.发送消息(New List(Of String) From {"iw_client_login_beta3"})
+        Await Task.Run(Sub()
+                           Thread.Sleep(5000)
+                       End Sub)
+        If 客户端.是否收到响应 Then
+            Me.Label103.Text = $"已连接到 {客户端.服务器地址}"
+        Else
+            客户端.停止客户端()
+            Me.Label103.Text = "由于没有收到服务器消息，客户端服务已自动停止"
+        End If
+    End Sub
+
+    Async Sub 连接自定义输入的服务器()
+        If Me.UiTextBox3.Text = "" Then Exit Sub
+        Dim ip As String = Me.UiTextBox3.Text
+        Dim ipArray As String() = ip.Split("."c)
+        If ipArray.Length <> 4 Then
+            Dim a As New 多项单选对话框("", {"了解"}, "IPv4 地址格式错误！")
+            a.ShowDialog(Form1)
+            Exit Sub
+        End If
+        If Me.UiTextBox7.Text = "" Then Exit Sub
+        Dim port As Integer
+        If Not Integer.TryParse(Me.UiTextBox7.Text, port) OrElse port < 0 OrElse port > 65535 Then
+            Dim a As New 多项单选对话框("", {"了解"}, "端口号格式错误！")
+            a.ShowDialog(Form1)
+            Exit Sub
+        End If
+        If 客户端.是否正在运行 Then
+            Dim a As New 多项单选对话框("", {"新的连接", "取消"}, "客户端服务正在运行，是否关闭当前连接并开始新的连接？")
+            If a.ShowDialog(Form1) <> 0 Then Exit Sub
+        End If
+        Me.Label103.Text = "客户端服务已启动，已发送请求"
+        客户端.启动客户端(Me.UiTextBox3.Text, Me.UiTextBox7.Text)
         客户端.发送消息(New List(Of String) From {"iw_client_login_beta3"})
         Await Task.Run(Sub()
                            Thread.Sleep(5000)

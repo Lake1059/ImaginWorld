@@ -565,7 +565,8 @@ Public Class 数据中心
         Application.DoEvents()
 
         全局键盘钩子.初始化全局键盘事件()
-        消息响应.初始化()
+        服务器的消息响应.初始化()
+        客户端的消息响应.初始化()
 
         Application.DoEvents()
         DebugPrint($"启动流程结束，2 秒后调出主菜单", Color.CornflowerBlue)

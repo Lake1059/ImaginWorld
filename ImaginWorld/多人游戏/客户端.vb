@@ -21,14 +21,14 @@ Public Class 客户端
     End Sub
 
     Public Shared Sub 监听消息()
-        While 是否正在运行
+        While 是否正在运行 AndAlso Not 取消令牌源.Token.IsCancellationRequested
             Try
                 Dim 数据_接收到的字节 = UDP客户端.Receive(服务器地址)
                 Dim 数据_文本 = Encoding.UTF8.GetString(数据_接收到的字节)
                 Dim 数据_消息列表 As List(Of String) = 数据_文本.Split("<iw_separator>", StringSplitOptions.None).ToList()
-                消息响应.执行消息(数据_消息列表, 服务器地址)
+                客户端的消息响应.执行消息(数据_消息列表)
             Catch ex As Exception
-                Console.WriteLine("接收消息时出错: " & ex.Message)
+                DebugPrint(ex.Message, Color.Tomato)
             End Try
         End While
     End Sub
@@ -44,6 +44,7 @@ Public Class 客户端
     End Sub
 
     Public Shared Async Sub 停止客户端()
+        是否收到响应 = False
         是否正在运行 = False
         If 取消令牌源 IsNot Nothing Then
             取消令牌源.Cancel()
@@ -53,7 +54,7 @@ Public Class 客户端
                 取消令牌源 = Nothing
             End If
         End If
-        UDP客户端.Close()
+        UDP客户端?.Close()
         UDP客户端 = Nothing
     End Sub
 End Class

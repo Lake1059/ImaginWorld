@@ -22,6 +22,7 @@ Partial Class Form服务器
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         UiTabControl1 = New Sunny.UI.UITabControl()
         TabPage1 = New TabPage()
         Panel2 = New Panel()
@@ -62,6 +63,10 @@ Partial Class Form服务器
         Label2 = New Label()
         TabPage2 = New TabPage()
         Panel9 = New Panel()
+        Panel25 = New Panel()
+        UiButton4 = New Sunny.UI.UIButton()
+        Label30 = New Label()
+        Label32 = New Label()
         Panel58 = New Panel()
         Label97 = New Label()
         UiComboBox8 = New Sunny.UI.UIComboBox()
@@ -76,6 +81,8 @@ Partial Class Form服务器
         ColumnHeader1 = New ColumnHeader()
         ColumnHeader2 = New ColumnHeader()
         ColumnHeader3 = New ColumnHeader()
+        ColumnHeader4 = New ColumnHeader()
+        ImageList1 = New ImageList(components)
         Panel11 = New Panel()
         UiButton3 = New Sunny.UI.UIButton()
         Label16 = New Label()
@@ -93,11 +100,16 @@ Partial Class Form服务器
         UiComboBox1 = New Sunny.UI.UIComboBox()
         TabPage4 = New TabPage()
         Panel12 = New Panel()
+        Label29 = New Label()
+        Label3 = New Label()
         Label25 = New Label()
         Label23 = New Label()
         Label22 = New Label()
         Label21 = New Label()
         Panel13 = New Panel()
+        Panel24 = New Panel()
+        UiRoundProcess3 = New Sunny.UI.UIRoundProcess()
+        Label31 = New Label()
         Panel15 = New Panel()
         UiRoundProcess2 = New Sunny.UI.UIRoundProcess()
         Label24 = New Label()
@@ -121,6 +133,7 @@ Partial Class Form服务器
         Panel3.SuspendLayout()
         TabPage2.SuspendLayout()
         Panel9.SuspendLayout()
+        Panel25.SuspendLayout()
         Panel58.SuspendLayout()
         Panel56.SuspendLayout()
         TabPage3.SuspendLayout()
@@ -134,6 +147,7 @@ Partial Class Form服务器
         TabPage4.SuspendLayout()
         Panel12.SuspendLayout()
         Panel13.SuspendLayout()
+        Panel24.SuspendLayout()
         Panel15.SuspendLayout()
         Panel14.SuspendLayout()
         Panel1.SuspendLayout()
@@ -689,6 +703,8 @@ Partial Class Form服务器
         ' 
         ' Panel9
         ' 
+        Panel9.Controls.Add(Panel25)
+        Panel9.Controls.Add(Label32)
         Panel9.Controls.Add(Panel58)
         Panel9.Controls.Add(Label10)
         Panel9.Controls.Add(Panel56)
@@ -698,6 +714,64 @@ Partial Class Form服务器
         Panel9.Padding = New Padding(20)
         Panel9.Size = New Size(200, 60)
         Panel9.TabIndex = 0
+        ' 
+        ' Panel25
+        ' 
+        Panel25.Controls.Add(UiButton4)
+        Panel25.Controls.Add(Label30)
+        Panel25.Dock = DockStyle.Top
+        Panel25.Location = New Point(20, 124)
+        Panel25.Name = "Panel25"
+        Panel25.Padding = New Padding(0, 10, 0, 10)
+        Panel25.Size = New Size(160, 55)
+        Panel25.TabIndex = 70
+        ' 
+        ' UiButton4
+        ' 
+        UiButton4.Dock = DockStyle.Right
+        UiButton4.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton4.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton4.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
+        UiButton4.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton4.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton4.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton4.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton4.ForeColor = Color.Silver
+        UiButton4.ForeDisableColor = Color.Gray
+        UiButton4.ForeHoverColor = Color.Silver
+        UiButton4.ForePressColor = Color.Silver
+        UiButton4.ForeSelectedColor = Color.Silver
+        UiButton4.Location = New Point(60, 10)
+        UiButton4.MinimumSize = New Size(1, 1)
+        UiButton4.Name = "UiButton4"
+        UiButton4.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton4.RectDisableColor = Color.Black
+        UiButton4.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton4.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton4.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton4.Size = New Size(100, 35)
+        UiButton4.TabIndex = 42
+        UiButton4.Text = "确认"
+        UiButton4.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' Label30
+        ' 
+        Label30.Dock = DockStyle.Fill
+        Label30.Location = New Point(0, 10)
+        Label30.Name = "Label30"
+        Label30.Size = New Size(160, 35)
+        Label30.TabIndex = 3
+        Label30.Text = "确认本页改动"
+        Label30.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' Label32
+        ' 
+        Label32.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
+        Label32.Dock = DockStyle.Top
+        Label32.Location = New Point(20, 122)
+        Label32.Name = "Label32"
+        Label32.Size = New Size(160, 2)
+        Label32.TabIndex = 69
         ' 
         ' Panel58
         ' 
@@ -853,7 +927,7 @@ Partial Class Form服务器
         ' 
         ListView1.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
         ListView1.BorderStyle = BorderStyle.None
-        ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader3})
+        ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader3, ColumnHeader4})
         ListView1.Dock = DockStyle.Left
         ListView1.ForeColor = Color.Silver
         ListView1.FullRowSelect = True
@@ -862,9 +936,16 @@ Partial Class Form服务器
         ListView1.Name = "ListView1"
         ListView1.OwnerDraw = True
         ListView1.Size = New Size(586, 0)
+        ListView1.StateImageList = ImageList1
         ListView1.TabIndex = 0
         ListView1.UseCompatibleStateImageBehavior = False
         ListView1.View = View.Details
+        ' 
+        ' ImageList1
+        ' 
+        ImageList1.ColorDepth = ColorDepth.Depth32Bit
+        ImageList1.ImageSize = New Size(1, 30)
+        ImageList1.TransparentColor = Color.Transparent
         ' 
         ' Panel11
         ' 
@@ -1163,6 +1244,8 @@ Partial Class Form服务器
         ' 
         ' Panel12
         ' 
+        Panel12.Controls.Add(Label29)
+        Panel12.Controls.Add(Label3)
         Panel12.Controls.Add(Label25)
         Panel12.Controls.Add(Label23)
         Panel12.Controls.Add(Label22)
@@ -1175,67 +1258,136 @@ Partial Class Form服务器
         Panel12.Size = New Size(200, 60)
         Panel12.TabIndex = 0
         ' 
+        ' Label29
+        ' 
+        Label29.AutoSize = True
+        Label29.Dock = DockStyle.Top
+        Label29.ForeColor = Color.Gray
+        Label29.Location = New Point(20, 365)
+        Label29.Name = "Label29"
+        Label29.Padding = New Padding(0, 10, 0, 0)
+        Label29.Size = New Size(219, 31)
+        Label29.TabIndex = 6
+        Label29.Text = "服务器发送总量：0 个 - 0 KB"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Dock = DockStyle.Top
+        Label3.ForeColor = Color.Gray
+        Label3.Location = New Point(20, 334)
+        Label3.Name = "Label3"
+        Label3.Padding = New Padding(0, 10, 0, 0)
+        Label3.Size = New Size(219, 31)
+        Label3.TabIndex = 7
+        Label3.Text = "服务器接收总量：0 个 - 0 KB"
+        ' 
         ' Label25
         ' 
         Label25.AutoSize = True
         Label25.Dock = DockStyle.Top
-        Label25.Location = New Point(20, 353)
+        Label25.ForeColor = Color.Gray
+        Label25.Location = New Point(20, 303)
         Label25.Name = "Label25"
         Label25.Padding = New Padding(0, 10, 0, 0)
-        Label25.Size = New Size(153, 31)
+        Label25.Size = New Size(223, 31)
         Label25.TabIndex = 5
-        Label25.Text = "平均处理时间：0ms"
+        Label25.Text = "网络适配器 接收速度：0 KB/s"
         ' 
         ' Label23
         ' 
         Label23.AutoSize = True
         Label23.Dock = DockStyle.Top
-        Label23.Location = New Point(20, 322)
+        Label23.ForeColor = Color.Gray
+        Label23.Location = New Point(20, 272)
         Label23.Name = "Label23"
         Label23.Padding = New Padding(0, 10, 0, 0)
-        Label23.Size = New Size(83, 31)
+        Label23.Size = New Size(223, 31)
         Label23.TabIndex = 4
-        Label23.Text = "处理量：0"
+        Label23.Text = "网络适配器 发送速度：0 KB/s"
         ' 
         ' Label22
         ' 
         Label22.AutoSize = True
         Label22.Dock = DockStyle.Top
-        Label22.Location = New Point(20, 291)
+        Label22.ForeColor = Color.Gray
+        Label22.Location = New Point(20, 241)
         Label22.Name = "Label22"
         Label22.Padding = New Padding(0, 10, 0, 0)
-        Label22.Size = New Size(135, 31)
+        Label22.Size = New Size(223, 31)
         Label22.TabIndex = 3
-        Label22.Text = "接收速度：0KB/S"
+        Label22.Text = "服务器消息 接收速度：0 KB/s"
         ' 
         ' Label21
         ' 
         Label21.AutoSize = True
         Label21.Dock = DockStyle.Top
-        Label21.Location = New Point(20, 270)
+        Label21.ForeColor = Color.Gray
+        Label21.Location = New Point(20, 220)
         Label21.Name = "Label21"
-        Label21.Size = New Size(135, 21)
+        Label21.Size = New Size(223, 21)
         Label21.TabIndex = 2
-        Label21.Text = "发送速度：0KB/S"
+        Label21.Text = "服务器消息 发送速度：0 KB/s"
         ' 
         ' Panel13
         ' 
+        Panel13.Controls.Add(Panel24)
         Panel13.Controls.Add(Panel15)
         Panel13.Controls.Add(Panel14)
         Panel13.Dock = DockStyle.Top
         Panel13.Location = New Point(20, 20)
         Panel13.Name = "Panel13"
-        Panel13.Size = New Size(160, 250)
+        Panel13.Size = New Size(160, 200)
         Panel13.TabIndex = 1
+        ' 
+        ' Panel24
+        ' 
+        Panel24.Controls.Add(UiRoundProcess3)
+        Panel24.Controls.Add(Label31)
+        Panel24.Dock = DockStyle.Left
+        Panel24.Location = New Point(400, 0)
+        Panel24.Name = "Panel24"
+        Panel24.Size = New Size(200, 200)
+        Panel24.TabIndex = 4
+        ' 
+        ' UiRoundProcess3
+        ' 
+        UiRoundProcess3.DecimalPlaces = 0
+        UiRoundProcess3.Dock = DockStyle.Fill
+        UiRoundProcess3.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiRoundProcess3.ForeColor = Color.Silver
+        UiRoundProcess3.ForeColor2 = Color.Silver
+        UiRoundProcess3.Inner = 40
+        UiRoundProcess3.Location = New Point(0, 21)
+        UiRoundProcess3.Maximum = 1000
+        UiRoundProcess3.MinimumSize = New Size(1, 1)
+        UiRoundProcess3.Name = "UiRoundProcess3"
+        UiRoundProcess3.Outer = 60
+        UiRoundProcess3.ProcessBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiRoundProcess3.ProcessColor = Color.Gray
+        UiRoundProcess3.ShowProcess = True
+        UiRoundProcess3.Size = New Size(200, 179)
+        UiRoundProcess3.TabIndex = 1
+        UiRoundProcess3.Text = "0%"
+        ' 
+        ' Label31
+        ' 
+        Label31.AutoSize = True
+        Label31.Dock = DockStyle.Top
+        Label31.Location = New Point(0, 0)
+        Label31.Name = "Label31"
+        Label31.Size = New Size(85, 21)
+        Label31.TabIndex = 3
+        Label31.Text = "CPU Time"
         ' 
         ' Panel15
         ' 
         Panel15.Controls.Add(UiRoundProcess2)
         Panel15.Controls.Add(Label24)
         Panel15.Dock = DockStyle.Left
-        Panel15.Location = New Point(239, 0)
+        Panel15.Location = New Point(200, 0)
         Panel15.Name = "Panel15"
-        Panel15.Size = New Size(239, 250)
+        Panel15.Size = New Size(200, 200)
         Panel15.TabIndex = 3
         ' 
         ' UiRoundProcess2
@@ -1245,18 +1397,17 @@ Partial Class Form服务器
         UiRoundProcess2.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         UiRoundProcess2.ForeColor = Color.Silver
         UiRoundProcess2.ForeColor2 = Color.Silver
-        UiRoundProcess2.Inner = 50
+        UiRoundProcess2.Inner = 40
         UiRoundProcess2.Location = New Point(0, 21)
         UiRoundProcess2.MinimumSize = New Size(1, 1)
         UiRoundProcess2.Name = "UiRoundProcess2"
-        UiRoundProcess2.Outer = 75
+        UiRoundProcess2.Outer = 60
         UiRoundProcess2.ProcessBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiRoundProcess2.ProcessColor = Color.Gray
         UiRoundProcess2.ShowProcess = True
-        UiRoundProcess2.Size = New Size(239, 229)
+        UiRoundProcess2.Size = New Size(200, 179)
         UiRoundProcess2.TabIndex = 1
-        UiRoundProcess2.Text = "25%"
-        UiRoundProcess2.Value = 25
+        UiRoundProcess2.Text = "0%"
         ' 
         ' Label24
         ' 
@@ -1275,7 +1426,7 @@ Partial Class Form服务器
         Panel14.Dock = DockStyle.Left
         Panel14.Location = New Point(0, 0)
         Panel14.Name = "Panel14"
-        Panel14.Size = New Size(239, 250)
+        Panel14.Size = New Size(200, 200)
         Panel14.TabIndex = 2
         ' 
         ' UiRoundProcess1
@@ -1285,18 +1436,17 @@ Partial Class Form服务器
         UiRoundProcess1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         UiRoundProcess1.ForeColor = Color.Silver
         UiRoundProcess1.ForeColor2 = Color.Silver
-        UiRoundProcess1.Inner = 50
+        UiRoundProcess1.Inner = 40
         UiRoundProcess1.Location = New Point(0, 21)
         UiRoundProcess1.MinimumSize = New Size(1, 1)
         UiRoundProcess1.Name = "UiRoundProcess1"
-        UiRoundProcess1.Outer = 75
+        UiRoundProcess1.Outer = 60
         UiRoundProcess1.ProcessBackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiRoundProcess1.ProcessColor = Color.Gray
         UiRoundProcess1.ShowProcess = True
-        UiRoundProcess1.Size = New Size(239, 229)
+        UiRoundProcess1.Size = New Size(200, 179)
         UiRoundProcess1.TabIndex = 1
-        UiRoundProcess1.Text = "25%"
-        UiRoundProcess1.Value = 25
+        UiRoundProcess1.Text = "0%"
         ' 
         ' Label20
         ' 
@@ -1362,6 +1512,7 @@ Partial Class Form服务器
         Panel3.ResumeLayout(False)
         TabPage2.ResumeLayout(False)
         Panel9.ResumeLayout(False)
+        Panel25.ResumeLayout(False)
         Panel58.ResumeLayout(False)
         Panel56.ResumeLayout(False)
         TabPage3.ResumeLayout(False)
@@ -1377,6 +1528,8 @@ Partial Class Form服务器
         Panel12.ResumeLayout(False)
         Panel12.PerformLayout()
         Panel13.ResumeLayout(False)
+        Panel24.ResumeLayout(False)
+        Panel24.PerformLayout()
         Panel15.ResumeLayout(False)
         Panel15.PerformLayout()
         Panel14.ResumeLayout(False)
@@ -1469,4 +1622,15 @@ Partial Class Form服务器
     Friend WithEvents Panel23 As Panel
     Friend WithEvents UiSwitch3 As Sunny.UI.UISwitch
     Friend WithEvents Label28 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents UiRoundProcess3 As Sunny.UI.UIRoundProcess
+    Friend WithEvents Label31 As Label
+    Friend WithEvents Panel25 As Panel
+    Friend WithEvents UiButton4 As Sunny.UI.UIButton
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label32 As Label
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ImageList1 As ImageList
 End Class
