@@ -5,12 +5,16 @@ Imports Svg
 Imports Microsoft.VisualBasic.FileIO.FileSystem
 Imports System.IO
 Imports Sunny.UI
+Imports System.Threading
 
 Module Module1
 
     Public 控制台界面实例 As New 界面顶层_控制台
 
     Public JSON序列化选项 As New JsonSerializerOptions With {.WriteIndented = True}
+
+    Public UI同步上下文 As SynchronizationContext = SynchronizationContext.Current
+
 
     <Extension>
     Public Sub DoubleBuffer(control As Control)
@@ -28,8 +32,7 @@ Module Module1
         If String.IsNullOrEmpty(文本) Then Exit Sub
         If 时间戳 Then 文本 = $"{TimeString} " & 文本
         Dim 文本长度 = Len(文本)
-        Form1.重新创建句柄()
-        Form1.Invoke(Sub()
+        UI同步上下文.Post(Sub()
                          控制台界面实例.RichTextBox1.AppendText(vbCrLf & 文本)
                          Dim 添加起始位 As Integer = 控制台界面实例.RichTextBox1.TextLength - 文本长度
                          控制台界面实例.RichTextBox1.Select(添加起始位, 文本长度)
@@ -37,7 +40,7 @@ Module Module1
                          控制台界面实例.RichTextBox1.Select(控制台界面实例.RichTextBox1.TextLength, 0)
                          控制台界面实例.RichTextBox1.ScrollToCaret()
                          If 强制切换到控制台 Then 界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
-                     End Sub)
+                     End Sub, Nothing)
     End Sub
 
     Public Function LaunchSvgToImage(SvgPath As String) As Image

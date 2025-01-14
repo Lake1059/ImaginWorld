@@ -6,7 +6,6 @@ Imports System.Threading
 Imports System.Timers
 Imports ImaginWorld.模组管理
 Imports Microsoft.VisualBasic.FileIO.FileSystem
-Imports NAudio.Wave
 Imports Newtonsoft.Json
 Imports Windows.System
 
@@ -22,6 +21,12 @@ Public Class 界面主层_主菜单
         暗黑列表视图自绘制.绑定模组列表的列表视图事件(ListView4)
         暗黑列表视图自绘制.绑定列表视图事件(ListView5)
         暗黑列表视图自绘制.绑定列表视图事件(ListView6)
+
+        Me.UiComboBox13.Items.Clear()
+        For Each item In 数据中心.所有背景音乐
+            Me.UiComboBox13.Items.Add(item.Key)
+        Next
+        AddHandler Me.UiButton17.Click, Sub() 指令系统.切换BGM(New List(Of String) From {Me.UiComboBox13.Text})
 
         AddHandler UiButton重新扫描.Click, AddressOf 刷新模组列表
         AddHandler UiButton启用模组.Click, AddressOf 启用选中模组
@@ -65,35 +70,30 @@ Public Class 界面主层_主菜单
         AddHandler UiButtonKOOK频道.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://kook.top/C7XWyz"))
         AddHandler UiButton开发者群.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://qm.qq.com/cgi-bin/qm/qr?k=Q9iyczf0U4Vevro4YX-x1kczATQDLbHq&jump_from=webapi&authKey=Q8CIt3aEn+mltj2NjnLTJiku6T7GUAgGysyfkQ2W7q0a3wDcXbyWismuKSlViek4"))
 
-
-
         AddHandler UiButton7.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://steamcommunity.com/id/1059Studio/"))
         AddHandler UiButton8.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://space.bilibili.com/319785096"))
         AddHandler UiButton10.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://github.com/Lake1059/ImaginWorld"))
 
-
         AddHandler Me.UiButton9.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_殖民地)
         AddHandler Me.UiButton22.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
         AddHandler Me.UiButton上传创意工坊.Click, AddressOf 上传创意工坊
-
         初始化设置选项卡内容()
+
         AddHandler Me.UiButton15.Click, AddressOf 保存设置
 
-
         AddHandler Me.UiButton11.Click, AddressOf 启动服务器
+        AddHandler Me.UiButton16.Click, AddressOf 保存服务器选项卡设置
         AddHandler Me.UiButton14.Click, AddressOf 开始寻找广播服务器
-
         AddHandler Me.UiButton13.Click, AddressOf 连接选中的服务器
         AddHandler Me.ListView6.DoubleClick, Sub() If Me.ListView6.SelectedItems.Count = 1 Then 连接选中的服务器()
         AddHandler Me.UiButton12.Click, AddressOf 连接自定义输入的服务器
-
 
         Me.ImageList1.ImageSize = New Size(1, 35 * Form1.DPI)
         Me.ImageList2.ImageSize = New Size(1, 30 * Form1.DPI)
         调整界面()
         Me.Label1.Text = $"ImaginWorld Dev3 - 已加载 {模组管理.实际加载的模组列表.Count} 个模组 - {If(状态信息.Steam_是否完成了初始化, "Steamworks 已连接", "Steamworks 未连接")}"
         Me.PictureBox2.Image = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "FinalTown.png"))
-        Me.PictureBox3.Image = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "UnderJourney.png"))
+        'Me.PictureBox3.Image = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "UnderJourney.png"))
         Me.UiComboBox1.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox2.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox3.ItemHeight = 30 * Form1.DPI
@@ -104,6 +104,9 @@ Public Class 界面主层_主菜单
         Me.UiComboBox8.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox9.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox10.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox11.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox12.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox13.ItemHeight = 30 * Form1.DPI
         Me.UiCheckBox1.CheckBoxSize = 25 * Form1.DPI
         Me.UiTrackBar1.BarSize = 20 * Form1.DPI
         Me.UiTrackBar2.BarSize = 20 * Form1.DPI
@@ -112,8 +115,8 @@ Public Class 界面主层_主菜单
         Me.UiTrackBar5.BarSize = 20 * Form1.DPI
         是否已初始化 = True
         If 声音控制.特效声音输出设备 Is Nothing Then
-            If 数据中心.所有背景音乐.ContainsKey("WarmHome") Then
-                声音控制.切换BGM("WarmHome")
+            If 数据中心.所有背景音乐.ContainsKey("温暖的家") Then
+                声音控制.切换BGM("温暖的家")
             Else
                 声音控制.自动选择下一首BGM进行播放(True)
             End If
@@ -160,6 +163,7 @@ Public Class 界面主层_主菜单
                 Me.ListView6.Columns(2).Width = Me.ListView6.Parent.Width * 0.2
                 Me.ListView6.Columns(3).Width = Me.ListView6.Parent.Width * 0.3
                 Me.ListView6.Columns(4).Width = Me.ListView6.Parent.Width * 0.2
+                Me.Label103.Text = "或使用双击来连接"
             Case 子选项卡.IsEqual(TabPage模组)
                 Panel模组管理顶部功能区.Visible = True
                 Panel24.Width = Panel24.Parent.Width * 0.35
@@ -220,7 +224,6 @@ Public Class 界面主层_主菜单
     End Sub
 
 #Region "设置"
-
     Sub 初始化设置选项卡内容()
         Dim 字体列表 As New List(Of String)
         For Each 字体 As FontFamily In FontFamily.Families
@@ -259,6 +262,19 @@ Public Class 界面主层_主菜单
         UiTrackBar3.Value = 游戏设置.实例对象.ColonyCalculationThreads
         UiTrackBar4.Value = 游戏设置.实例对象.WorldStateCalculationThreads
         UiTrackBar5.Value = 游戏设置.实例对象.RandomEventsTriggerCalculationThreads
+        UiComboBox12.SelectedIndex = 游戏设置.实例对象.BattleModeSelection
+
+        UiTextBox4.Text = 游戏设置.实例对象.Sever_Port
+        UiTextBox5.Text = 游戏设置.实例对象.Sever_Name
+        UiTextBox6.Text = 游戏设置.实例对象.Sever_Description
+        UiComboBox6.SelectedIndex = 游戏设置.实例对象.Sever_DefaultPermission
+        UiComboBox8.SelectedIndex = 游戏设置.实例对象.Sever_MaxPing
+        UiComboBox9.SelectedIndex = 游戏设置.实例对象.Sever_Broadcast
+        UiComboBox10.SelectedIndex = 游戏设置.实例对象.Sever_AllowedConnection
+        UiComboBox11.SelectedIndex = 游戏设置.实例对象.Sever_MessageProcessMultithread
+        UiComboBox7.SelectedIndex = 游戏设置.实例对象.Sever_OpenSinglePlayerLocation
+        UiTextBox3.Text = 游戏设置.实例对象.ConnectSever_IP
+        UiTextBox7.Text = 游戏设置.实例对象.ConnectSever_Port
     End Sub
 
     Sub 保存设置()
@@ -276,6 +292,7 @@ Public Class 界面主层_主菜单
         游戏设置.实例对象.ColonyCalculationThreads = UiTrackBar3.Value
         游戏设置.实例对象.WorldStateCalculationThreads = UiTrackBar4.Value
         游戏设置.实例对象.RandomEventsTriggerCalculationThreads = UiTrackBar5.Value
+        游戏设置.实例对象.BattleModeSelection = UiComboBox12.SelectedIndex
         游戏设置.保存()
         SetControlFont(Me)
         SetControlFont(控制台界面实例)
@@ -580,8 +597,22 @@ Public Class 界面主层_主菜单
             Case Else
                 服务器.自动踢出延迟 = Integer.MaxValue
         End Select
-        服务器.自动开始广播 = Me.UiComboBox9.SelectedIndex = 0
-        服务器.是否允许新地址加入 = Me.UiComboBox10.SelectedIndex = 0
+        Select Case Me.UiComboBox9.SelectedIndex
+            Case 0
+                服务器.自动开始广播 = True
+            Case 1
+                服务器.自动开始广播 = False
+            Case Else
+                服务器.自动开始广播 = True
+        End Select
+        Select Case Me.UiComboBox10.SelectedIndex
+            Case 0
+                服务器.是否允许新地址加入 = True
+            Case 1
+                服务器.是否允许新地址加入 = False
+            Case Else
+                服务器.是否允许新地址加入 = True
+        End Select
         Select Case Me.UiComboBox10.SelectedIndex
             Case 0
                 服务器.响应线程数量 = 1
@@ -615,6 +646,7 @@ Public Class 界面主层_主菜单
         Try
             Me.ListView6.Items.Clear()
             广播接收端 = New UdpClient(1059)
+            广播接收端.Client.ReceiveTimeout = 1000
             广播接收任务取消令牌源 = New CancellationTokenSource
             广播接收任务 = Task.Run(AddressOf 寻找广播服务器, 广播接收任务取消令牌源.Token)
             广播接收计时器 = New Timers.Timer(10000)
@@ -623,7 +655,7 @@ Public Class 界面主层_主菜单
             广播接收计时器.Start()
             Me.UiButton14.Enabled = False
         Catch ex As Exception
-            DebugPrint(ex.Message, Color.OrangeRed)
+            DebugPrint(ex.Message, Color.Tomato)
         End Try
     End Sub
 
@@ -639,8 +671,9 @@ Public Class 界面主层_主菜单
                     Form1.Invoke(Sub() 向服务器列表添加信息(severinfo))
                 End If
                 If 广播接收计时器.Enabled = False Then Exit While
+            Catch ex As SocketException When ex.SocketErrorCode = SocketError.TimedOut
             Catch ex As Exception
-                DebugPrint(ex.Message, Color.OrangeRed)
+                DebugPrint(ex.Message, Color.Tomato)
                 If 广播接收计时器.Enabled = False Then Exit While
             End Try
             Thread.Sleep(500)
@@ -656,7 +689,10 @@ Public Class 界面主层_主菜单
                 广播接收任务取消令牌源 = Nothing
             End If
         End If
+        广播接收任务 = Nothing
         广播接收端?.Close()
+        广播接收端?.Dispose()
+        广播接收计时器?.Dispose()
         Form1.重新创建句柄()
         Form1.Invoke(Sub() Me.UiButton14.Enabled = True)
     End Sub
@@ -675,6 +711,20 @@ Public Class 界面主层_主菜单
         Me.ListView6.Items.Add(item)
     End Sub
 
+    Sub 保存服务器选项卡设置()
+        游戏设置.实例对象.Sever_Port = UiTextBox4.Text
+        游戏设置.实例对象.Sever_Name = UiTextBox5.Text
+        游戏设置.实例对象.Sever_Description = UiTextBox6.Text
+        游戏设置.实例对象.Sever_DefaultPermission = UiComboBox6.SelectedIndex
+        游戏设置.实例对象.Sever_MaxPing = UiComboBox8.SelectedIndex
+        游戏设置.实例对象.Sever_Broadcast = UiComboBox9.SelectedIndex
+        游戏设置.实例对象.Sever_AllowedConnection = UiComboBox10.SelectedIndex
+        游戏设置.实例对象.Sever_MessageProcessMultithread = UiComboBox11.SelectedIndex
+        游戏设置.实例对象.Sever_OpenSinglePlayerLocation = UiComboBox7.SelectedIndex
+        游戏设置.实例对象.ConnectSever_IP = UiTextBox3.Text
+        游戏设置.实例对象.ConnectSever_Port = UiTextBox7.Text
+        游戏设置.保存()
+    End Sub
 #End Region
 
 #Region "连接主机"
@@ -719,6 +769,9 @@ Public Class 界面主层_主菜单
             If a.ShowDialog(Form1) <> 0 Then Exit Sub
         End If
         Me.Label103.Text = "客户端服务已启动，已发送请求"
+        游戏设置.实例对象.ConnectSever_IP = UiTextBox3.Text
+        游戏设置.实例对象.ConnectSever_Port = UiTextBox7.Text
+        游戏设置.保存()
         客户端.启动客户端(Me.UiTextBox3.Text, Me.UiTextBox7.Text)
         客户端.发送消息(New List(Of String) From {"iw_client_login_beta3"})
         Await Task.Run(Sub()
@@ -731,7 +784,6 @@ Public Class 界面主层_主菜单
             Me.Label103.Text = "由于没有收到服务器消息，客户端服务已自动停止"
         End If
     End Sub
-
 
 #End Region
 

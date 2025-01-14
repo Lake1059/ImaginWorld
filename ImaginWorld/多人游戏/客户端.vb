@@ -12,12 +12,13 @@ Public Class 客户端
     Public Shared Property 是否收到响应 As Boolean = False
 
     Public Shared Sub 启动客户端(服务器IP As String, 服务器端口 As String)
+        是否正在运行 = True
+        是否收到响应 = False
         UDP客户端 = New UdpClient()
         服务器地址 = New IPEndPoint(IPAddress.Parse(服务器IP), 服务器端口)
         取消令牌源 = New CancellationTokenSource()
         监听任务 = Task.Run(AddressOf 监听消息, 取消令牌源.Token)
-        是否正在运行 = True
-        是否收到响应 = False
+        UDP客户端.Client.ReceiveTimeout = 10000
     End Sub
 
     Public Shared Sub 监听消息()
@@ -31,6 +32,7 @@ Public Class 客户端
                 DebugPrint(ex.Message, Color.Tomato)
             End Try
         End While
+        UI同步上下文.Post(Sub() DebugPrint("客户端消息处理线程已停止运行", Color.Tomato), Nothing)
     End Sub
 
     Public Shared Sub 发送消息(message As List(Of String))

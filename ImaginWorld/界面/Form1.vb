@@ -1,6 +1,4 @@
-﻿Imports System.IO
-Imports Microsoft.VisualBasic.FileIO.FileSystem
-Imports System.ComponentModel
+﻿Imports System.ComponentModel
 
 Public Class Form1
     Protected Overrides Sub WndProc(ByRef m As Message)
@@ -80,4 +78,20 @@ Public Class Form1
         全局键盘钩子.Unhook()
         End
     End Sub
+
+    Public Sub 释放所有资源回主菜单()
+        界面图层_主层?.Dispose()
+        界面图层_二层?.Dispose()
+        界面图层_三层?.Dispose()
+        If 界面图层_顶层 IsNot Nothing Then
+            If 界面图层_顶层.GetType = GetType(界面顶层_控制台) Then
+                控制台界面实例.UiButton关闭控制台.PerformClick()
+            Else
+                界面图层_顶层?.Dispose()
+            End If
+        End If
+        界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_主菜单)
+    End Sub
+
+
 End Class

@@ -1,6 +1,4 @@
 ﻿
-Imports System.Net
-
 Public Class 客户端的消息响应
     Public Shared Property 消息字典 As New Dictionary(Of String, Action(Of List(Of String)))
 
@@ -9,6 +7,8 @@ Public Class 客户端的消息响应
         消息字典.Add("iw_sever_message", AddressOf 收到弹出式消息)
         消息字典.Add("iw_sever_playerlist", AddressOf 收到多人模式空位列表)
         消息字典.Add("iw_sever_powerdown", AddressOf 收到服务器已停止运行)
+        消息字典.Add("iw_sever_remove", AddressOf 收到服务器移出此设备)
+        消息字典.Add("iw_sever_ban", AddressOf 收到服务器封禁此设备)
 
         DebugPrint($"客户端消息响应初始化完成，共计 {消息字典.Count } 个消息处理方法", Color.CornflowerBlue)
     End Sub
@@ -28,22 +28,46 @@ Public Class 客户端的消息响应
     End Sub
 
     Public Shared Sub 收到弹出式消息(消息 As List(Of String))
-        Dim a1 As New 多项单选对话框($"收到弹出式消息", {"OK"}, 消息.Last)
-        a1.ShowDialog(Form1)
+        UI同步上下文.Post(Sub()
+                         Dim a1 As New 多项单选对话框($"收到弹出式消息", {"OK"}, 消息.Last)
+                         a1.ShowDialog(Form1)
+                     End Sub, Nothing)
     End Sub
 
     Public Shared Sub 收到多人模式空位列表(消息 As List(Of String))
         客户端.是否收到响应 = True
-        Dim a1 As New 多项单选对话框($"收到了多人模式玩家空位信息", {"OK"}, "假设这里是那个界面，因为还没做所以先用这个对话框代替",, 500)
-        a1.ShowDialog(Form1)
+        UI同步上下文.Post(Sub()
+                         Dim a1 As New 多项单选对话框($"连接成功，现在选择角色", {"OK"}, "因为还没做，所以先用这个对话框顶一下", 300, 500)
+                         a1.ShowDialog(Form1)
+                         界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_殖民地)
+                     End Sub, Nothing)
     End Sub
 
     Public Shared Sub 收到服务器已停止运行(消息 As List(Of String))
         客户端.停止客户端()
-        Dim a1 As New 多项单选对话框($"断开连接", {"OK"}, "服务器已停止运行，自动返回主菜单")
-        a1.ShowDialog(Form1)
-        Form1.重新创建句柄()
-        Form1.Invoke(Sub() 界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_主菜单))
+        UI同步上下文.Post(Sub()
+                         Dim a1 As New 多项单选对话框($"自动断开连接", {"OK"}, "服务器已停止运行")
+                         a1.ShowDialog(Form1)
+                         Form1.释放所有资源回主菜单()
+                     End Sub, Nothing)
+    End Sub
+
+    Public Shared Sub 收到服务器移出此设备(消息 As List(Of String))
+        客户端.停止客户端()
+        UI同步上下文.Post(Sub()
+                         Dim a1 As New 多项单选对话框($"主动断开连接", {"OK"}, "你已被服务器移出")
+                         a1.ShowDialog(Form1)
+                         Form1.释放所有资源回主菜单()
+                     End Sub, Nothing)
+    End Sub
+
+    Public Shared Sub 收到服务器封禁此设备(消息 As List(Of String))
+        客户端.停止客户端()
+        UI同步上下文.Post(Sub()
+                         Dim a1 As New 多项单选对话框($"强制断开连接", {"OK"}, "你已被服务器封禁")
+                         a1.ShowDialog(Form1)
+                         Form1.释放所有资源回主菜单()
+                     End Sub, Nothing)
     End Sub
 
 End Class

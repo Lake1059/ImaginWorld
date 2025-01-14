@@ -1,4 +1,5 @@
 ﻿
+Imports System.Net
 Imports System.Net.NetworkInformation
 Imports System.Threading
 Imports System.Timers
@@ -42,6 +43,7 @@ Public Class Form服务器
         SetControlFont(Me)
         初始化网络适配器监视器()
         暗黑列表视图自绘制.绑定列表视图事件(ListView1)
+        Me.UiTabControl1.ItemSize = New Size(100 * Form1.DPI, 50 * Form1.DPI)
         Me.ImageList1.ImageSize = New Size(1, 30 * Form1.DPI)
         Me.Label1.Text = $"{服务器.获取本地IPv4()}：{服务器.服务器端口}"
         顶部显示的地址端口 = Me.Label1.Text
@@ -79,6 +81,7 @@ Public Class Form服务器
     End Sub
 
     Private Async Sub Form服务器_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+
         Await Task.Run(Sub() CPU性能计数器 = New PerformanceCounter("Process", "% Processor Time", Process.GetCurrentProcess().ProcessName, True))
     End Sub
 
@@ -88,12 +91,19 @@ Public Class Form服务器
 
     Private Sub Form服务器_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Dim a As New 多项单选对话框("", {"确认关闭服务器", "取消"}, "确认关闭服务器？")
-        If a.ShowDialog(Form1) = 0 Then
+        If a.ShowDialog(Me) = 0 Then
+            网络适配器监视器.Close()
             网络适配器监视器.Dispose()
+            每秒刷新计时器.Close()
             每秒刷新计时器.Dispose()
+            成员列表刷新计时器.Close()
             成员列表刷新计时器.Dispose()
+            CPU性能计数器?.Close()
+            CPU性能计数器?.Dispose()
             服务器.停止服务器()
+            e.Cancel = False
         Else
+            e.Cancel = True
             Exit Sub
         End If
     End Sub
@@ -103,10 +113,11 @@ Public Class Form服务器
     End Sub
 
     Sub 调整界面()
-        Me.UiButton9.Width = (Me.Panel21.Width - Me.Label12.Width) * 0.5
-        Me.UiButton7.Width = (Me.Panel11.Width - Me.Label18.Width * 2) / 3
-        Me.UiButton2.Width = Me.UiButton7.Width
-        Me.UiButton3.Width = Me.UiButton7.Width
+        Me.UiButton选中执行.Width = (Me.Panel21.Width - Me.Label12.Width * 4) * 0.2
+        Me.UiButton全部执行.Width = Me.UiButton选中执行.Width
+        Me.UiButton权限.Width = Me.UiButton选中执行.Width
+        Me.UiButton移出.Width = Me.UiButton选中执行.Width
+        Me.UiButton封禁.Width = Me.UiButton选中执行.Width
         Me.ListView1.Width = Me.ListView1.Parent.Width + SystemInformation.VerticalScrollBarWidth * Form1.DPI
         Me.ListView1.Columns(0).Width = Me.ListView1.Parent.Width * 0.3
         Me.ListView1.Columns(1).Width = Me.ListView1.Parent.Width * 0.2
@@ -125,6 +136,7 @@ Public Class Form服务器
 
     Sub 每秒刷新界面()
         Me.Invoke(Sub()
+                      If Not 服务器.是否正在运行 Then Exit Sub
                       Dim 要显示的服务器发送速度 As String
                       Select Case 服务器.已发送字节 - 服务器上一秒发送总量
                           Case >= 1024 * 1024
@@ -244,7 +256,7 @@ Public Class Form服务器
                               item.Name = key.ToString()
                               item.Text = key.ToString()
                               item.SubItems(1).Text = client.权限.ToString
-                              If client.延迟 > 服务器.自动踢出延迟 Then
+                              If client.延迟 >= 服务器.自动踢出延迟 Then
                                   item.SubItems(2).Text = $"已超时 ({client.连续超时次数})"
                               Else
                                   item.SubItems(2).Text = client.延迟 & "ms"
@@ -254,7 +266,7 @@ Public Class Form服务器
                               ' 创建一个新的项并添加
                               item = New ListViewItem(key.ToString()) With {.Name = key.ToString()}
                               item.SubItems.Add(client.权限.ToString)
-                              If client.延迟 > 服务器.自动踢出延迟 Then
+                              If client.延迟 >= 服务器.自动踢出延迟 Then
                                   item.SubItems.Add($"已超时 ({client.连续超时次数})")
                               Else
                                   item.SubItems.Add(client.延迟 & "ms")
@@ -332,10 +344,84 @@ Public Class Form服务器
         End Select
     End Sub
 
+    Private Sub Form服务器_DpiChanged(sender As Object, e As DpiChangedEventArgs) Handles Me.DpiChanged
 
+    End Sub
 
+    Private Sub UiButton选中执行_Click(sender As Object, e As EventArgs) Handles UiButton选中执行.Click
+        If ListView1.SelectedItems.Count = 0 Then Exit Sub
+        If Me.UiComboBox1.SelectedIndex < 0 Then Exit Sub
+        If Me.UiComboBox1.Text = "" Then Exit Sub
+        For Each item In ListView1.SelectedItems
+            Dim data As New List(Of String) From {Me.UiComboBox1.Text}
+            For Each line In Me.UiTextBox3.Lines
+                data.Add(line)
+            Next
+            服务器.发送消息(服务器.客户端列表(item.Name).IP, data)
+        Next
+    End Sub
 
+    Private Sub UiButton全部执行_Click(sender As Object, e As EventArgs) Handles UiButton全部执行.Click
+        If ListView1.Items.Count = 0 Then Exit Sub
+        If Me.UiComboBox1.SelectedIndex < 0 Then Exit Sub
+        If Me.UiComboBox1.Text = "" Then Exit Sub
+        For Each item In ListView1.Items
+            Dim data As New List(Of String) From {Me.UiComboBox1.Text}
+            For Each line In Me.UiTextBox3.Lines
+                data.Add(line)
+            Next
+            服务器.发送消息(服务器.客户端列表(item.Name).IP, data)
+        Next
+    End Sub
 
+    Private Sub UiButton权限_Click(sender As Object, e As EventArgs) Handles UiButton权限.Click
+        Dim a As New 暗黑菜单条控件本体
+        AddHandler a.Items.Add("普通玩家").Click, Sub()
+                                                  For Each item As ListViewItem In ListView1.SelectedItems
+                                                      Dim ipPortParts = item.Text.Split(":"c)
+                                                      服务器.客户端列表(New IPEndPoint(IPAddress.Parse(ipPortParts(0)), ipPortParts(1))).权限 = 服务器.玩家权限类型.普通玩家
+                                                      item.SubItems(1).Text = "普通玩家"
+                                                  Next
+                                              End Sub
+        AddHandler a.Items.Add("管理员").Click, Sub()
+                                                 For Each item As ListViewItem In ListView1.SelectedItems
+                                                     Dim ipPortParts = item.Text.Split(":"c)
+                                                     服务器.客户端列表(New IPEndPoint(IPAddress.Parse(ipPortParts(0)), ipPortParts(1))).权限 = 服务器.玩家权限类型.管理员
+                                                     item.SubItems(1).Text = "管理员"
+                                                 Next
+                                             End Sub
+        AddHandler a.Items.Add("超级管理员").Click, Sub()
+                                                   For Each item As ListViewItem In ListView1.SelectedItems
+                                                       Dim ipPortParts = item.Text.Split(":"c)
+                                                       服务器.客户端列表(New IPEndPoint(IPAddress.Parse(ipPortParts(0)), ipPortParts(1))).权限 = 服务器.玩家权限类型.超级管理员
+                                                       item.SubItems(1).Text = "超级管理员"
+                                                   Next
+                                               End Sub
+        a.Show(MousePosition)
+    End Sub
+
+    Private Sub UiButton移出_Click(sender As Object, e As EventArgs) Handles UiButton移出.Click
+        Dim a As New 多项单选对话框("", {"确认移出", "取消"}, "确认移出选中的玩家？")
+        If a.ShowDialog(Me) <> 0 Then Exit Sub
+        For Each item As ListViewItem In ListView1.SelectedItems
+            Dim ipPortParts = item.Text.Split(":"c)
+            服务器.发送消息(New IPEndPoint(IPAddress.Parse(ipPortParts(0)), ipPortParts(1)), New List(Of String) From {"iw_sever_remove"})
+            服务器.客户端列表.Remove(New IPEndPoint(IPAddress.Parse(ipPortParts(0)), ipPortParts(1)))
+            item.Remove()
+        Next
+    End Sub
+
+    Private Sub UiButton封禁_Click(sender As Object, e As EventArgs) Handles UiButton封禁.Click
+        Dim a As New 多项单选对话框("", {"确认封禁", "取消"}, $"确认封禁选中玩家？{vbCrLf & vbCrLf}请详细了解这些：封禁文件位于 PlayerData\SeverBan.json，若要解封，请先关闭服务器，然后手动编辑 json 文件后再重启服务器。{vbCrLf & vbCrLf}关于内网穿透的远程客户端：如果该玩家通过内网穿透服务连接，则封禁是无效的，因为内网穿透的技术原理导致其地址是本机地址，封禁该地址等同于封禁本机，请从内网穿透服务、宣传途径、平台人员管理等途径进行安排，而不是在这里操作。{vbCrLf & vbCrLf}由于客户端每次启动都会随机一个新的端口，因此封禁是直接封禁 IP 地址，不管其端口，所以请谨慎决定封禁，避免误伤正常玩家。", 300, 500)
+        If a.ShowDialog(Me) <> 0 Then Exit Sub
+        For Each item As ListViewItem In ListView1.SelectedItems
+            Dim ipPortParts = item.Text.Split(":"c)
+            If Not 服务器.黑名单.Contains(ipPortParts(0)) Then 服务器.黑名单.Add(ipPortParts(0))
+            服务器.发送消息(New IPEndPoint(ipPortParts(0), ipPortParts(1)), New List(Of String) From {"iw_sever_ban"})
+            服务器.客户端列表.Remove(New IPEndPoint(IPAddress.Parse(ipPortParts(0)), ipPortParts(1)))
+            item.Remove()
+        Next
+    End Sub
 
 
 

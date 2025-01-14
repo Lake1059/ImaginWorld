@@ -83,17 +83,17 @@ Partial Class Form服务器
         ColumnHeader3 = New ColumnHeader()
         ColumnHeader4 = New ColumnHeader()
         ImageList1 = New ImageList(components)
-        Panel11 = New Panel()
-        UiButton3 = New Sunny.UI.UIButton()
-        Label16 = New Label()
-        UiButton2 = New Sunny.UI.UIButton()
-        Label18 = New Label()
-        UiButton7 = New Sunny.UI.UIButton()
         Panel4 = New Panel()
         Panel21 = New Panel()
-        UiButton8 = New Sunny.UI.UIButton()
+        UiButton封禁 = New Sunny.UI.UIButton()
+        Label16 = New Label()
+        UiButton移出 = New Sunny.UI.UIButton()
+        Label18 = New Label()
+        UiButton权限 = New Sunny.UI.UIButton()
+        Label33 = New Label()
+        UiButton全部执行 = New Sunny.UI.UIButton()
         Label12 = New Label()
-        UiButton9 = New Sunny.UI.UIButton()
+        UiButton选中执行 = New Sunny.UI.UIButton()
         Panel20 = New Panel()
         UiTextBox3 = New Sunny.UI.UITextBox()
         Panel19 = New Panel()
@@ -139,7 +139,6 @@ Partial Class Form服务器
         TabPage3.SuspendLayout()
         Panel10.SuspendLayout()
         Panel59.SuspendLayout()
-        Panel11.SuspendLayout()
         Panel4.SuspendLayout()
         Panel21.SuspendLayout()
         Panel20.SuspendLayout()
@@ -228,9 +227,9 @@ Partial Class Form服务器
         Label19.ForeColor = Color.Gray
         Label19.Location = New Point(0, 40)
         Label19.Name = "Label19"
-        Label19.Size = New Size(345, 20)
+        Label19.Size = New Size(387, 20)
         Label19.TabIndex = 68
-        Label19.Text = "开启后除这台设备之外的玩家可以选择单人模式的位置"
+        Label19.Text = "开启后所有玩家都可以选择单人模式的位置，否则只能本机选"
         Label19.TextAlign = ContentAlignment.BottomLeft
         ' 
         ' Label27
@@ -239,9 +238,9 @@ Partial Class Form服务器
         Label27.Dock = DockStyle.Top
         Label27.Location = New Point(0, 10)
         Label27.Name = "Label27"
-        Label27.Size = New Size(266, 21)
+        Label27.Size = New Size(154, 21)
         Label27.TabIndex = 67
-        Label27.Text = "本机之外的玩家可使用单人模式数据"
+        Label27.Text = "开放单人模式数据位"
         ' 
         ' Panel23
         ' 
@@ -810,7 +809,7 @@ Partial Class Form服务器
         UiComboBox8.ItemHeight = 30
         UiComboBox8.ItemHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
         UiComboBox8.ItemRectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiComboBox8.Items.AddRange(New Object() {"不自动踢出任何延迟的玩家", "500ms", "1000ms", "2000ms", "3000ms"})
+        UiComboBox8.Items.AddRange(New Object() {"默认（建议）", "500ms", "1000ms", "2000ms", "3000ms"})
         UiComboBox8.ItemSelectBackColor = Color.FromArgb(CByte(80), CByte(80), CByte(80))
         UiComboBox8.ItemSelectForeColor = Color.Silver
         UiComboBox8.Location = New Point(-240, 10)
@@ -903,7 +902,6 @@ Partial Class Form服务器
         ' Panel10
         ' 
         Panel10.Controls.Add(Panel59)
-        Panel10.Controls.Add(Panel11)
         Panel10.Controls.Add(Panel4)
         Panel10.Dock = DockStyle.Fill
         Panel10.Location = New Point(0, 0)
@@ -917,7 +915,7 @@ Partial Class Form服务器
         Panel59.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
         Panel59.Controls.Add(ListView1)
         Panel59.Dock = DockStyle.Fill
-        Panel59.Location = New Point(20, 276)
+        Panel59.Location = New Point(20, 220)
         Panel59.Name = "Panel59"
         Panel59.Padding = New Padding(0, 10, 0, 10)
         Panel59.Size = New Size(160, 0)
@@ -947,120 +945,6 @@ Partial Class Form服务器
         ImageList1.ImageSize = New Size(1, 30)
         ImageList1.TransparentColor = Color.Transparent
         ' 
-        ' Panel11
-        ' 
-        Panel11.Controls.Add(UiButton3)
-        Panel11.Controls.Add(Label16)
-        Panel11.Controls.Add(UiButton2)
-        Panel11.Controls.Add(Label18)
-        Panel11.Controls.Add(UiButton7)
-        Panel11.Dock = DockStyle.Top
-        Panel11.Location = New Point(20, 220)
-        Panel11.Name = "Panel11"
-        Panel11.Padding = New Padding(0, 0, 0, 20)
-        Panel11.Size = New Size(160, 56)
-        Panel11.TabIndex = 50
-        ' 
-        ' UiButton3
-        ' 
-        UiButton3.Dock = DockStyle.Left
-        UiButton3.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton3.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton3.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
-        UiButton3.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        UiButton3.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton3.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton3.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiButton3.ForeColor = Color.Silver
-        UiButton3.ForeDisableColor = Color.Gray
-        UiButton3.ForeHoverColor = Color.Silver
-        UiButton3.ForePressColor = Color.Silver
-        UiButton3.ForeSelectedColor = Color.Silver
-        UiButton3.Location = New Point(420, 0)
-        UiButton3.MinimumSize = New Size(1, 1)
-        UiButton3.Name = "UiButton3"
-        UiButton3.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton3.RectDisableColor = Color.Black
-        UiButton3.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton3.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton3.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton3.Size = New Size(200, 36)
-        UiButton3.TabIndex = 45
-        UiButton3.Text = "封禁"
-        UiButton3.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        ' 
-        ' Label16
-        ' 
-        Label16.Dock = DockStyle.Left
-        Label16.Location = New Point(410, 0)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(10, 36)
-        Label16.TabIndex = 46
-        ' 
-        ' UiButton2
-        ' 
-        UiButton2.Dock = DockStyle.Left
-        UiButton2.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton2.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton2.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
-        UiButton2.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        UiButton2.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton2.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton2.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiButton2.ForeColor = Color.Silver
-        UiButton2.ForeDisableColor = Color.Gray
-        UiButton2.ForeHoverColor = Color.Silver
-        UiButton2.ForePressColor = Color.Silver
-        UiButton2.ForeSelectedColor = Color.Silver
-        UiButton2.Location = New Point(210, 0)
-        UiButton2.MinimumSize = New Size(1, 1)
-        UiButton2.Name = "UiButton2"
-        UiButton2.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton2.RectDisableColor = Color.Black
-        UiButton2.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton2.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton2.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton2.Size = New Size(200, 36)
-        UiButton2.TabIndex = 43
-        UiButton2.Text = "移出"
-        UiButton2.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        ' 
-        ' Label18
-        ' 
-        Label18.Dock = DockStyle.Left
-        Label18.Location = New Point(200, 0)
-        Label18.Name = "Label18"
-        Label18.Size = New Size(10, 36)
-        Label18.TabIndex = 53
-        ' 
-        ' UiButton7
-        ' 
-        UiButton7.Dock = DockStyle.Left
-        UiButton7.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton7.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton7.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
-        UiButton7.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        UiButton7.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton7.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton7.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiButton7.ForeColor = Color.Silver
-        UiButton7.ForeDisableColor = Color.Gray
-        UiButton7.ForeHoverColor = Color.Silver
-        UiButton7.ForePressColor = Color.Silver
-        UiButton7.ForeSelectedColor = Color.Silver
-        UiButton7.Location = New Point(0, 0)
-        UiButton7.MinimumSize = New Size(1, 1)
-        UiButton7.Name = "UiButton7"
-        UiButton7.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton7.RectDisableColor = Color.Black
-        UiButton7.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton7.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton7.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton7.Size = New Size(200, 36)
-        UiButton7.TabIndex = 50
-        UiButton7.Text = "修改权限"
-        UiButton7.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        ' 
         ' Panel4
         ' 
         Panel4.AutoSize = True
@@ -1075,9 +959,15 @@ Partial Class Form服务器
         ' 
         ' Panel21
         ' 
-        Panel21.Controls.Add(UiButton8)
+        Panel21.Controls.Add(UiButton封禁)
+        Panel21.Controls.Add(Label16)
+        Panel21.Controls.Add(UiButton移出)
+        Panel21.Controls.Add(Label18)
+        Panel21.Controls.Add(UiButton权限)
+        Panel21.Controls.Add(Label33)
+        Panel21.Controls.Add(UiButton全部执行)
         Panel21.Controls.Add(Label12)
-        Panel21.Controls.Add(UiButton9)
+        Panel21.Controls.Add(UiButton选中执行)
         Panel21.Dock = DockStyle.Top
         Panel21.Location = New Point(0, 155)
         Panel21.Name = "Panel21"
@@ -1085,69 +975,177 @@ Partial Class Form服务器
         Panel21.Size = New Size(160, 45)
         Panel21.TabIndex = 6
         ' 
-        ' UiButton8
+        ' UiButton封禁
         ' 
-        UiButton8.Dock = DockStyle.Fill
-        UiButton8.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton8.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton8.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
-        UiButton8.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        UiButton8.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton8.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton8.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiButton8.ForeColor = Color.Silver
-        UiButton8.ForeDisableColor = Color.Gray
-        UiButton8.ForeHoverColor = Color.Silver
-        UiButton8.ForePressColor = Color.Silver
-        UiButton8.ForeSelectedColor = Color.Silver
-        UiButton8.Location = New Point(324, 0)
-        UiButton8.MinimumSize = New Size(1, 1)
-        UiButton8.Name = "UiButton8"
-        UiButton8.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton8.RectDisableColor = Color.Black
-        UiButton8.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton8.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton8.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton8.Size = New Size(1, 35)
-        UiButton8.TabIndex = 51
-        UiButton8.Text = "对全体客户端执行"
-        UiButton8.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton封禁.Dock = DockStyle.Left
+        UiButton封禁.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton封禁.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton封禁.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
+        UiButton封禁.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton封禁.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton封禁.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton封禁.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton封禁.ForeColor = Color.Silver
+        UiButton封禁.ForeDisableColor = Color.Gray
+        UiButton封禁.ForeHoverColor = Color.Silver
+        UiButton封禁.ForePressColor = Color.Silver
+        UiButton封禁.ForeSelectedColor = Color.Silver
+        UiButton封禁.Location = New Point(520, 0)
+        UiButton封禁.MinimumSize = New Size(1, 1)
+        UiButton封禁.Name = "UiButton封禁"
+        UiButton封禁.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton封禁.RectDisableColor = Color.Black
+        UiButton封禁.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton封禁.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton封禁.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton封禁.Size = New Size(120, 35)
+        UiButton封禁.TabIndex = 55
+        UiButton封禁.Text = "封禁"
+        UiButton封禁.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' Label16
+        ' 
+        Label16.Dock = DockStyle.Left
+        Label16.Location = New Point(510, 0)
+        Label16.Name = "Label16"
+        Label16.Size = New Size(10, 35)
+        Label16.TabIndex = 56
+        ' 
+        ' UiButton移出
+        ' 
+        UiButton移出.Dock = DockStyle.Left
+        UiButton移出.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton移出.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton移出.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
+        UiButton移出.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton移出.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton移出.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton移出.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton移出.ForeColor = Color.Silver
+        UiButton移出.ForeDisableColor = Color.Gray
+        UiButton移出.ForeHoverColor = Color.Silver
+        UiButton移出.ForePressColor = Color.Silver
+        UiButton移出.ForeSelectedColor = Color.Silver
+        UiButton移出.Location = New Point(390, 0)
+        UiButton移出.MinimumSize = New Size(1, 1)
+        UiButton移出.Name = "UiButton移出"
+        UiButton移出.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton移出.RectDisableColor = Color.Black
+        UiButton移出.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton移出.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton移出.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton移出.Size = New Size(120, 35)
+        UiButton移出.TabIndex = 54
+        UiButton移出.Text = "移出"
+        UiButton移出.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' Label18
+        ' 
+        Label18.Dock = DockStyle.Left
+        Label18.Location = New Point(380, 0)
+        Label18.Name = "Label18"
+        Label18.Size = New Size(10, 35)
+        Label18.TabIndex = 58
+        ' 
+        ' UiButton权限
+        ' 
+        UiButton权限.Dock = DockStyle.Left
+        UiButton权限.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton权限.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton权限.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
+        UiButton权限.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton权限.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton权限.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton权限.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton权限.ForeColor = Color.Silver
+        UiButton权限.ForeDisableColor = Color.Gray
+        UiButton权限.ForeHoverColor = Color.Silver
+        UiButton权限.ForePressColor = Color.Silver
+        UiButton权限.ForeSelectedColor = Color.Silver
+        UiButton权限.Location = New Point(260, 0)
+        UiButton权限.MinimumSize = New Size(1, 1)
+        UiButton权限.Name = "UiButton权限"
+        UiButton权限.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton权限.RectDisableColor = Color.Black
+        UiButton权限.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton权限.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton权限.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton权限.Size = New Size(120, 35)
+        UiButton权限.TabIndex = 57
+        UiButton权限.Text = "权限"
+        UiButton权限.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
+        ' Label33
+        ' 
+        Label33.Dock = DockStyle.Left
+        Label33.Location = New Point(250, 0)
+        Label33.Name = "Label33"
+        Label33.Size = New Size(10, 35)
+        Label33.TabIndex = 59
+        ' 
+        ' UiButton全部执行
+        ' 
+        UiButton全部执行.Dock = DockStyle.Left
+        UiButton全部执行.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton全部执行.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton全部执行.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
+        UiButton全部执行.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton全部执行.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton全部执行.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton全部执行.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton全部执行.ForeColor = Color.Silver
+        UiButton全部执行.ForeDisableColor = Color.Gray
+        UiButton全部执行.ForeHoverColor = Color.Silver
+        UiButton全部执行.ForePressColor = Color.Silver
+        UiButton全部执行.ForeSelectedColor = Color.Silver
+        UiButton全部执行.Location = New Point(130, 0)
+        UiButton全部执行.MinimumSize = New Size(1, 1)
+        UiButton全部执行.Name = "UiButton全部执行"
+        UiButton全部执行.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton全部执行.RectDisableColor = Color.Black
+        UiButton全部执行.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton全部执行.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton全部执行.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton全部执行.Size = New Size(120, 35)
+        UiButton全部执行.TabIndex = 51
+        UiButton全部执行.Text = "全部执行"
+        UiButton全部执行.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
         ' Label12
         ' 
         Label12.Dock = DockStyle.Left
-        Label12.Location = New Point(314, 0)
+        Label12.Location = New Point(120, 0)
         Label12.Name = "Label12"
         Label12.Size = New Size(10, 35)
         Label12.TabIndex = 52
         ' 
-        ' UiButton9
+        ' UiButton选中执行
         ' 
-        UiButton9.Dock = DockStyle.Left
-        UiButton9.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton9.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton9.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
-        UiButton9.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        UiButton9.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton9.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton9.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiButton9.ForeColor = Color.Silver
-        UiButton9.ForeDisableColor = Color.Gray
-        UiButton9.ForeHoverColor = Color.Silver
-        UiButton9.ForePressColor = Color.Silver
-        UiButton9.ForeSelectedColor = Color.Silver
-        UiButton9.Location = New Point(0, 0)
-        UiButton9.MinimumSize = New Size(1, 1)
-        UiButton9.Name = "UiButton9"
-        UiButton9.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton9.RectDisableColor = Color.Black
-        UiButton9.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton9.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton9.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton9.Size = New Size(314, 35)
-        UiButton9.TabIndex = 50
-        UiButton9.Text = "对选择的客户端执行"
-        UiButton9.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton选中执行.Dock = DockStyle.Left
+        UiButton选中执行.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton选中执行.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton选中执行.FillDisableColor = Color.FromArgb(CByte(12), CByte(12), CByte(12))
+        UiButton选中执行.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton选中执行.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton选中执行.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton选中执行.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton选中执行.ForeColor = Color.Silver
+        UiButton选中执行.ForeDisableColor = Color.Gray
+        UiButton选中执行.ForeHoverColor = Color.Silver
+        UiButton选中执行.ForePressColor = Color.Silver
+        UiButton选中执行.ForeSelectedColor = Color.Silver
+        UiButton选中执行.Location = New Point(0, 0)
+        UiButton选中执行.MinimumSize = New Size(1, 1)
+        UiButton选中执行.Name = "UiButton选中执行"
+        UiButton选中执行.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton选中执行.RectDisableColor = Color.Black
+        UiButton选中执行.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton选中执行.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton选中执行.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton选中执行.Size = New Size(120, 35)
+        UiButton选中执行.TabIndex = 50
+        UiButton选中执行.Text = "选中执行"
+        UiButton选中执行.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
         ' Panel20
         ' 
@@ -1204,6 +1202,7 @@ Partial Class Form服务器
         ' 
         UiComboBox1.DataSource = Nothing
         UiComboBox1.Dock = DockStyle.Fill
+        UiComboBox1.DropDownStyle = Sunny.UI.UIDropDownStyle.DropDownList
         UiComboBox1.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
         UiComboBox1.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
         UiComboBox1.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
@@ -1519,7 +1518,6 @@ Partial Class Form服务器
         Panel10.ResumeLayout(False)
         Panel10.PerformLayout()
         Panel59.ResumeLayout(False)
-        Panel11.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel21.ResumeLayout(False)
         Panel20.ResumeLayout(False)
@@ -1574,14 +1572,9 @@ Partial Class Form服务器
     Friend WithEvents UiComboBox8 As Sunny.UI.UIComboBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel10 As Panel
-    Friend WithEvents Panel11 As Panel
-    Friend WithEvents UiButton7 As Sunny.UI.UIButton
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Label21 As Label
-    Friend WithEvents UiButton3 As Sunny.UI.UIButton
-    Friend WithEvents Label16 As Label
-    Friend WithEvents UiButton2 As Sunny.UI.UIButton
     Friend WithEvents Label23 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Panel59 As Panel
@@ -1611,10 +1604,9 @@ Partial Class Form服务器
     Friend WithEvents UiComboBox1 As Sunny.UI.UIComboBox
     Friend WithEvents Panel20 As Panel
     Friend WithEvents Panel21 As Panel
-    Friend WithEvents UiButton8 As Sunny.UI.UIButton
-    Friend WithEvents UiButton9 As Sunny.UI.UIButton
+    Friend WithEvents UiButton全部执行 As Sunny.UI.UIButton
+    Friend WithEvents UiButton选中执行 As Sunny.UI.UIButton
     Friend WithEvents UiTextBox3 As Sunny.UI.UITextBox
-    Friend WithEvents Label18 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Panel22 As Panel
     Friend WithEvents Label19 As Label
@@ -1633,4 +1625,10 @@ Partial Class Form服务器
     Friend WithEvents Label32 As Label
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents UiButton封禁 As Sunny.UI.UIButton
+    Friend WithEvents Label16 As Label
+    Friend WithEvents UiButton移出 As Sunny.UI.UIButton
+    Friend WithEvents Label18 As Label
+    Friend WithEvents UiButton权限 As Sunny.UI.UIButton
+    Friend WithEvents Label33 As Label
 End Class
