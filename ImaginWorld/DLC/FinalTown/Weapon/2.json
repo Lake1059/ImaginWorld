@@ -1,0 +1,37 @@
+[
+    { // 结实的木棍
+        "ID": "SturdyWoodenStick", // 武器对象名称
+        "Type": 1, // 类型
+        "SpaceOccupied": 1, // 占用的空间
+        "StarRating": 2, // 星级，仅影响显示颜色
+        "CharacterProperty": {
+            "Attack": 50, // 攻击，整数
+            "Speed": 3, // 速度，整数，基准值：100
+            "CriticalHitRate": 0, //暴击率，单精度值
+            "CriticalDamage": 0, // 暴击伤害，单精度值
+            "PhysicalDamageBonus": 0.1, // 物理伤害加成，单精度值
+            "MagicDamageBonus": 0, // 法术伤害加成，单精度值
+            "BiochemicalDamageBonus": 0, // 生化伤害加成，单精度值
+            "MysticDamageBonus": 0, // 神秘伤害加成，单精度值
+            "MaterialDamageBonus": 0 // 物质伤害加成，单精度值
+        }
+    },
+    { // 武器2
+        "ID": "",
+        "Type": 0,
+        "SpaceOccupied": 0,
+        "StarRating": 2,
+        "CharacterProperty": {
+            "Attack": 80,
+            "Speed": 10,
+            "CriticalHitRate": 10,
+            "CriticalDamage": 0,
+            "PhysicalDamageBonus": 0,
+            "MagicDamageBonus": 0,
+            "BiochemicalDamageBonus": 0,
+            "MysticDamageBonus": 0,
+            "MaterialDamageBonus": 0
+        }
+    }
+    // ...
+]

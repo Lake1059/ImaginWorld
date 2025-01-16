@@ -1,0 +1,17 @@
+[
+    {
+        "ID": "Job1",
+        "ResourcesProducedPerHour": [
+            {
+                "Key": "",
+                "Value": 1.5
+            }
+        ],
+        "ResourcesConsumptionPerHour": [
+            {
+                "Key": "",
+                "Value": 1
+            }
+        ]
+    }
+]

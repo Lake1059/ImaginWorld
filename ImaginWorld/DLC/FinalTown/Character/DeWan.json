@@ -1,0 +1,105 @@
+{
+    "ID": "DeWan", // 角色对象名称
+    "StarRating": 4, // 角色的星级，最低4级，最高6级，请用5级封顶，6级应作为彩蛋或特殊内容
+    "ProfessionType": 1, // 职业类型，仅向玩家展示角色设计定位，不会影响其他内容
+    "PropertyType": 1, // 属性类型，仅向玩家展示角色的主要输出属性，实际打出的伤害属性类型由技能数据控制
+    "PropertyData": { // 角色基本属性数据结构，设定初始值
+        "Health": 2130, // 生命值，整数
+        "Attack": 820, // 攻击，整数
+        "Defense": 1720, // 防御，整数
+        "Speed": 105, // 速度，整数，基准值：100
+        "CriticalHitRate": 0, //暴击率，单精度值
+        "CriticalDamage": 0, // 暴击伤害，单精度值
+        "ResistRate": 0, // 抵抗概率，单精度值
+        "FillingEfficiency": 0, // 填充效率，单精度值
+        "ShieldBonus": 0, // 护盾加成，单精度值
+        "HealingBonus": 0, // 治疗加成，单精度值
+        "PhysicalDamageBonus": 0, // 物理伤害加成，单精度值
+        "MagicDamageBonus": 0, // 法术伤害加成，单精度值
+        "BiochemicalDamageBonus": 0, // 生化伤害加成，单精度值
+        "MysticDamageBonus": 0, // 神秘伤害加成，单精度值
+        "MaterialDamageBonus": 0, // 物质伤害加成，单精度值
+        "DarkDamageBonus": 0, // 黑暗伤害加成，单精度值
+        "PhysicalResistance": 0, // 物理抗性，单精度值
+        "MagicResistance": 0, // 法术抗性，单精度值
+        "BiochemicalResistance": 0, // 生化抗性，单精度值
+        "MysticResistance": 0, // 神秘抗性，单精度值
+        "MaterialResistance": 0, // 物质抗性，单精度值
+        "DarkResistance": 0, // 黑暗抗性，单精度值
+        "SpaceProvided": 30 // 提供的远行队容量，整数
+    },
+    "UseWeaponType": 0, // 使用的武器类型
+    "Skill_TB_Normal": [ // 回合制普通攻击的数据，类型：技能数据单级结构，列表形式
+        { // 等级1的技能数据，按照从上到下依次排序为从第一级到最后一级，数量无上限
+            "SkillContent": [
+                { // 此等级此技能的第1个动作，最多支持3个动作，多写的无效
+                    "SkillType": 0, // 技能类型，指定要执行什么操作，注意此枚举值写错不会执行
+                    "PropertyType": 0, // 属性类型，如果选定的技能要打伤害，那么指定打出什么类型的伤害
+                    "ValueType": 0, // 指定一个角色基本属性数据结构中的数值作为基础数值
+                    "Value": 0, // 百分数小数形式，指定要乘以基础数值的一个百分比
+                    "FinalValueAdd": 0 // 在最终数值（上面的相乘结果）上加上一个额外的数值
+                },
+                {}, // 第2个动作
+                {} // 第3个动作
+            ],
+            "UpgradeRequirements": [ // 升级到此等级需要消耗的材料。等级1不需要此对象，写了也不会生效
+                {
+                    "Key": "", // 物品 ID
+                    "Value": 0 // 数量
+                }
+                // 写太多会导致显示不下，但全都生效，但是真不建议写太多
+            ]
+        },
+    ],
+    "Skill_TB_Tactics": [], // 回合制战技的数据，类型：技能数据单级结构，列表形式
+    "Skill_TB_End": [], // 回合制终结技的数据，类型：技能数据单级结构，列表形式
+    "Skill_TB_NormalAddValue": 10, // 回合制的每次普通攻击能积攒多少技能槽，整数
+    "Skill_TB_TacticsCostValue": 10, // 回合制的每次战技要消耗多少技能槽，整数
+    "Skill_TB_EndCostValue": 50, // 回合制的每次终结技要消耗多少技能槽，整数
+    "Skill_RT_Normal": [], // 即时制普通攻击的数据，类型：技能数据单级结构，列表形式
+    "Skill_RT_Tactics": [], // 即时制战技的数据，类型：技能数据单级结构，列表形式
+    "Skill_RT_End": [], // 即时制终结技的数据，类型：技能数据单级结构，列表形式
+    "Skill_RT_TimeSpeed_Millisecond": 500, // 即时模式的行动速度，毫秒，指每一次行动间隔多少时间，这还会等于开始战斗后等待多长时间才打出第一次伤害
+    "Skill_RT_NormalToTacticsNumber": 2, // 即时模式中，执行几次普通攻击后执行战技
+    "Skill_RT_NormalToEnd_AddValue": 0.05, // 即时模式的每次普通攻击能够积攒多少终结技槽，百分数小数形式
+    "Skill_RT_TacticsToEnd_AddValue": 0.1, // 即时模式的每次战技能够积攒多少终结技槽，百分数小数形式
+    "Talent1": [
+        {
+            "TalentContent": {}, // 天赋内容，类型为角色基本属性数据结构
+            "UpgradeRequirements": [
+                {
+                    "Key": "",
+                    "Value": 0
+                }
+            ]
+        },
+    ],
+    "Talent2": [
+        {
+            "TalentContent": {},
+            "UpgradeRequirements": [
+                {
+                    "Key": "",
+                    "Value": 0
+                }
+            ]
+        },  
+    ],
+    "Talent3": [
+        {
+            "TalentContent": {},
+            "UpgradeRequirements": [
+                {
+                    "Key": "",
+                    "Value": 0
+                }
+            ]
+        },    
+    ],
+    "Story": [
+        {
+            "Key": "12",
+            "Value": "123"
+        }
+    ]
+}

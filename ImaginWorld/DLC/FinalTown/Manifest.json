@@ -1,0 +1,11 @@
+{
+    "ModName": "FinalTown",
+    "Author": "1059 Studio",
+    "Version": "Dev3",
+    "UniqueID": "Lake1059.FinalTown",
+    "Description": "游戏基础内容",
+    "SupportedGameVersion": ["Dev3"],
+    "UnSupportedGameVersion": [],
+    "Dependencies": [],
+    "LoadDll": []
+}

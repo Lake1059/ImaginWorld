@@ -1,0 +1,53 @@
+[
+    { // 装备1
+        "ID": "",
+        "Type": 0,
+        "UseSpace": 0,
+        "StarRating": 2,
+        "CharacterProperty": {
+            "Health": 0, // 生命值，整数
+            "Attack": 0, // 攻击，整数
+            "Defense": 0, // 防御，整数
+            "Speed": 0, // 速度，整数，基准值：100
+            "CriticalHitRate": 0, //暴击率，单精度值
+            "CriticalDamage": 0, // 暴击伤害，单精度值
+            "ResistRate": 0, // 抵抗概率，单精度值
+            "FillingEfficiency": 0, // 填充效率，单精度值
+            "ShieldBonus": 0, // 护盾加成，单精度值
+            "HealingBonus": 0, // 治疗加成，单精度值
+            "PhysicalResistance": 0, // 物理抗性，单精度值
+            "MagicResistance": 0, // 法术抗性，单精度值
+            "BiochemicalResistance": 0, // 生化抗性，单精度值
+            "MysticResistance": 0, // 神秘抗性，单精度值
+            "MaterialResistance": 0, // 物质抗性，单精度值
+            "DarkResistance": 0, // 黑暗抗性，单精度值
+            "WeightProvided": 0 // 提供的远行队负重，整数
+        }
+    },
+    { // 装备2
+        "ID": "",
+        "Type": 0,
+        "UseSpace": 0,
+        "StarRating": 2,
+        "CharacterProperty": {
+            "Health": 0, // 生命值，整数
+            "Attack": 0, // 攻击，整数
+            "Defense": 0, // 防御，整数
+            "Speed": 0, // 速度，整数，基准值：100
+            "CriticalHitRate": 0, //暴击率，单精度值
+            "CriticalDamage": 0, // 暴击伤害，单精度值
+            "ResistRate": 0, // 抵抗概率，单精度值
+            "FillingEfficiency": 0, // 填充效率，单精度值
+            "ShieldBonus": 0, // 护盾加成，单精度值
+            "HealingBonus": 0, // 治疗加成，单精度值
+            "PhysicalResistance": 0, // 物理抗性，单精度值
+            "MagicResistance": 0, // 法术抗性，单精度值
+            "BiochemicalResistance": 0, // 生化抗性，单精度值
+            "MysticResistance": 0, // 神秘抗性，单精度值
+            "MaterialResistance": 0, // 物质抗性，单精度值
+            "DarkResistance": 0, // 黑暗抗性，单精度值
+            "WeightProvided": 0 // 提供的远行队负重，整数
+        }
+    }
+    // ...
+]
