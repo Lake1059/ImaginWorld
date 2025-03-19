@@ -1,6 +1,6 @@
 ﻿Public Class 界面二层_仓库
     Private Sub UiButton返回_Click(sender As Object, e As EventArgs) Handles UiButton返回.Click
-        Me.Dispose()
+        Dispose()
     End Sub
 
     Public 是否已初始化 As Boolean = False
@@ -22,11 +22,13 @@
         Me.UiButton14.Width = 130 * Form1.DPI
         Me.UiButton返回.Width = 130 * Form1.DPI
         Me.UiTrackBar1.BarSize = 30 * Form1.DPI
-        调整界面()
         是否已初始化 = True
+        调整界面()
     End Sub
 
     Private Sub 界面二层_仓库_DpiChangedAfterParent(sender As Object, e As EventArgs) Handles Me.DpiChangedAfterParent
+        If Not 是否已初始化 Then Exit Sub
+        If Me.ParentForm.WindowState = FormWindowState.Minimized Then Exit Sub
         调整界面()
     End Sub
 
@@ -37,7 +39,7 @@
     End Sub
 
     Public Sub 调整界面()
-        Me.UiTabControlMenu1.ItemSize = New Size(Me.UiTabControlMenu1.ItemSize.Width, 50 * Form1.DPI)
+        Me.UiTabControlMenu1.ItemSize = New Size(Me.Panel14.Width - Me.Panel14.Padding.Right, 50 * Form1.DPI)
 
     End Sub
 
@@ -79,4 +81,5 @@
         End Select
         Me.UiTextBox1.Text = ""
     End Sub
+
 End Class

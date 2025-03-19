@@ -37,9 +37,7 @@ Public Class 客户端的消息响应
     Public Shared Sub 收到多人模式空位列表(消息 As List(Of String))
         客户端.是否收到响应 = True
         UI同步上下文.Post(Sub()
-                         Dim a1 As New 多项单选对话框($"连接成功，现在选择角色", {"OK"}, "因为还没做，所以先用这个对话框顶一下", 300, 500)
-                         a1.ShowDialog(Form1)
-                         界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_殖民地)
+                         界面控制.切换界面(界面控制.主界面图层.二层, New 界面二层_多人模式角色列表)
                      End Sub, Nothing)
     End Sub
 

@@ -29,7 +29,7 @@ Public Class 暗黑列表视图自绘制
         e.Graphics.DrawImage(哪个列表视图控件.BackgroundImage, remainingBounds, remainingBounds, GraphicsUnit.Pixel)
     End Sub
 
-    Public Shared Property 项被选中时的背景颜色 As Color = ColorTranslator.FromWin32(RGB(64, 64, 64))
+    Public Shared Property 项被选中时的背景颜色 As Color = ColorTranslator.FromWin32(RGB(48, 48, 48))
     Public Shared Property 项被选中时的高亮遮罩颜色 As Color = Color.FromArgb(60, 200, 200, 200)
     Public Shared Property 项图像边长 As Integer = 16
 
@@ -112,7 +112,7 @@ Public Class 暗黑列表视图自绘制
         Using brush As New SolidBrush(项背景色)
             e.Graphics.FillRectangle(brush, e.Bounds)
         End Using
-        TextRenderer.DrawText(e.Graphics, 实际要绘制的文本.Replace("&", "&&"), e.SubItem.Font, 文本绘制区, e.Item.ForeColor, 项背景色, TextFormatFlags.Default)
+        TextRenderer.DrawText(e.Graphics, 实际要绘制的文本.Replace("&", "&&"), e.SubItem.Font, 文本绘制区, e.SubItem.ForeColor, 项背景色, TextFormatFlags.Default)
     End Sub
 
     Public Shared Sub 绘制模组列表子项(哪个列表视图控件 As ListView, e As DrawListViewSubItemEventArgs)
@@ -150,7 +150,7 @@ Public Class 暗黑列表视图自绘制
                     e.Graphics.DrawImage(数据中心.所有图像("LocalMods"), 图标绘制区)
             End Select
         End If
-        TextRenderer.DrawText(e.Graphics, 实际要绘制的文本.Replace("&", "&&"), e.SubItem.Font, 文本绘制区, e.Item.ForeColor, 项背景色, TextFormatFlags.Default)
+        TextRenderer.DrawText(e.Graphics, 实际要绘制的文本.Replace("&", "&&"), e.SubItem.Font, 文本绘制区, e.SubItem.ForeColor, 项背景色, TextFormatFlags.Default)
     End Sub
 
 

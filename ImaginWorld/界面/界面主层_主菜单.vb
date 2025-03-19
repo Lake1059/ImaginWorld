@@ -27,6 +27,11 @@ Public Class 界面主层_主菜单
             Me.UiComboBox13.Items.Add(item.Key)
         Next
         AddHandler Me.UiButton17.Click, Sub() 指令系统.切换BGM(New List(Of String) From {Me.UiComboBox13.Text})
+        Me.UiComboBox16.Items.Clear()
+        For Each item In 数据中心.所有特效声音
+            Me.UiComboBox16.Items.Add(item.Key)
+        Next
+        AddHandler Me.UiButton19.Click, Sub() 声音控制.播放特效音(Me.UiComboBox16.Text)
 
         AddHandler UiButton重新扫描.Click, AddressOf 刷新模组列表
         AddHandler UiButton启用模组.Click, AddressOf 启用选中模组
@@ -74,7 +79,10 @@ Public Class 界面主层_主菜单
         AddHandler UiButton8.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://space.bilibili.com/319785096"))
         AddHandler UiButton10.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://github.com/Lake1059/ImaginWorld"))
 
-        AddHandler Me.UiButton9.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_殖民地)
+        AddHandler Me.UiButton9.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.二层, New 界面二层_即时制对局)
+
+
+
         AddHandler Me.UiButton22.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
         AddHandler Me.UiButton上传创意工坊.Click, AddressOf 上传创意工坊
         初始化设置选项卡内容()
@@ -94,6 +102,13 @@ Public Class 界面主层_主菜单
         Me.Label1.Text = $"ImaginWorld Dev3 - 已加载 {模组管理.实际加载的模组列表.Count} 个模组 - {If(状态信息.Steam_是否完成了初始化, "Steamworks 已连接", "Steamworks 未连接")}"
         Me.PictureBox2.Image = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "FinalTown.png"))
         'Me.PictureBox3.Image = LoadImageFromFile(Path.Combine(Application.StartupPath, "Image", "UnderJourney.png"))
+
+        界面控制.根据标签宽度计算并设置显示高度(Me.Label69)
+        界面控制.根据标签宽度计算并设置显示高度(Me.Label85)
+        界面控制.根据标签宽度计算并设置显示高度(Me.Label131)
+        界面控制.根据标签宽度计算并设置显示高度(Me.Label79)
+        界面控制.根据标签宽度计算并设置显示高度(Me.Label116)
+
         Me.UiComboBox1.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox2.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox3.ItemHeight = 30 * Form1.DPI
@@ -107,7 +122,9 @@ Public Class 界面主层_主菜单
         Me.UiComboBox11.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox12.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox13.ItemHeight = 30 * Form1.DPI
+        Me.UiComboBox14.ItemHeight = 30 * Form1.DPI
         Me.UiCheckBox1.CheckBoxSize = 25 * Form1.DPI
+        Me.UiCheckBox2.CheckBoxSize = 25 * Form1.DPI
         Me.UiTrackBar1.BarSize = 20 * Form1.DPI
         Me.UiTrackBar2.BarSize = 20 * Form1.DPI
         Me.UiTrackBar3.BarSize = 20 * Form1.DPI
@@ -123,6 +140,7 @@ Public Class 界面主层_主菜单
         Else
             声音控制.自动选择下一首BGM进行播放(True)
         End If
+
     End Sub
     Private Sub 模板_主菜单_DpiChangedAfterParent(sender As Object, e As EventArgs) Handles Me.DpiChangedAfterParent
         调整界面()
@@ -143,6 +161,7 @@ Public Class 界面主层_主菜单
         Select Case True
             Case 子选项卡.IsEqual(TabPage欢迎)
                 Panel模组管理顶部功能区.Visible = False
+                Panel73.Width = (Panel73.Parent.Width - Panel73.Parent.Padding.Left * 2) * 0.5
             Case 子选项卡.IsEqual(TabPage新游戏)
                 Panel模组管理顶部功能区.Visible = False
             Case 子选项卡.IsEqual(TabPage载入存档)
@@ -263,6 +282,7 @@ Public Class 界面主层_主菜单
         UiTrackBar4.Value = 游戏设置.实例对象.WorldStateCalculationThreads
         UiTrackBar5.Value = 游戏设置.实例对象.RandomEventsTriggerCalculationThreads
         UiComboBox12.SelectedIndex = 游戏设置.实例对象.BattleModeSelection
+        UiComboBox14.SelectedIndex = 游戏设置.实例对象.PlotDisplayDirection
 
         UiTextBox4.Text = 游戏设置.实例对象.Sever_Port
         UiTextBox5.Text = 游戏设置.实例对象.Sever_Name
@@ -273,6 +293,7 @@ Public Class 界面主层_主菜单
         UiComboBox10.SelectedIndex = 游戏设置.实例对象.Sever_AllowedConnection
         UiComboBox11.SelectedIndex = 游戏设置.实例对象.Sever_MessageProcessMultithread
         UiComboBox7.SelectedIndex = 游戏设置.实例对象.Sever_OpenSinglePlayerLocation
+        UiComboBox15.SelectedIndex = 游戏设置.实例对象.Client_MessageProcessMultithread
         UiTextBox3.Text = 游戏设置.实例对象.ConnectSever_IP
         UiTextBox7.Text = 游戏设置.实例对象.ConnectSever_Port
     End Sub
@@ -293,9 +314,10 @@ Public Class 界面主层_主菜单
         游戏设置.实例对象.WorldStateCalculationThreads = UiTrackBar4.Value
         游戏设置.实例对象.RandomEventsTriggerCalculationThreads = UiTrackBar5.Value
         游戏设置.实例对象.BattleModeSelection = UiComboBox12.SelectedIndex
+        游戏设置.实例对象.PlotDisplayDirection = UiComboBox14.SelectedIndex
         游戏设置.保存()
         SetControlFont(Me)
-        SetControlFont(控制台界面实例)
+        SetControlFont(控制台界面实例, {控制台界面实例.RichTextBox1})
         Form1.ClientSize = 游戏设置.实例对象.WindowSize
     End Sub
 
@@ -660,6 +682,7 @@ Public Class 界面主层_主菜单
     End Sub
 
     Sub 寻找广播服务器()
+        UI同步上下文.Post(Sub() Label101.Text = "正在你的本地网络中搜索游戏 ...", Nothing)
         While True AndAlso Not 广播接收任务取消令牌源.Token.IsCancellationRequested
             Try
                 Dim remoteEndPoint As New IPEndPoint(IPAddress.Any, 1059)
@@ -667,8 +690,7 @@ Public Class 界面主层_主菜单
                 Dim message = Encoding.UTF8.GetString(data)
                 If message.StartsWith("ImaginWorldSever") Then
                     Dim severinfo As New List(Of String)(message.Split("|"c))
-                    Form1.重新创建句柄()
-                    Form1.Invoke(Sub() 向服务器列表添加信息(severinfo))
+                    UI同步上下文.Post(Sub() 向服务器列表添加信息(severinfo), Nothing)
                 End If
                 If 广播接收计时器.Enabled = False Then Exit While
             Catch ex As SocketException When ex.SocketErrorCode = SocketError.TimedOut
@@ -694,7 +716,10 @@ Public Class 界面主层_主菜单
         广播接收端?.Dispose()
         广播接收计时器?.Dispose()
         Form1.重新创建句柄()
-        Form1.Invoke(Sub() Me.UiButton14.Enabled = True)
+        UI同步上下文.Post(Sub()
+                         Label101.Text = "搜索结束，按刷新来重新搜索"
+                         UiButton14.Enabled = True
+                     End Sub, Nothing)
     End Sub
 
     Sub 向服务器列表添加信息(info As List(Of String))
@@ -735,6 +760,22 @@ Public Class 界面主层_主菜单
             If a.ShowDialog(Form1) <> 0 Then Exit Sub
         End If
         Me.Label103.Text = "客户端服务已启动，已发送请求"
+        Select Case Me.UiComboBox15.SelectedIndex
+            Case 0
+                客户端.响应线程数量 = 1
+            Case 1
+                客户端.响应线程数量 = 2
+            Case 2
+                客户端.响应线程数量 = 4
+            Case 3
+                客户端.响应线程数量 = 8
+            Case 4
+                客户端.响应线程数量 = 16
+            Case 5
+                客户端.响应线程数量 = 32
+            Case Else
+                客户端.响应线程数量 = 1
+        End Select
         客户端.启动客户端(Me.ListView6.SelectedItems(0).Text, Me.ListView6.SelectedItems(0).SubItems(1).Text)
         客户端.发送消息(New List(Of String) From {"iw_client_login_beta3"})
         Await Task.Run(Sub()

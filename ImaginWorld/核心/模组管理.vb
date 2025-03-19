@@ -115,7 +115,7 @@ Public Class 模组管理
         End If
         Form1.Invoke(Sub() DebugPrint($"已识别模组数量：{所有模组列表.Count}，在启动列表中的模组数量：{实际加载的模组列表.Count}", Color.CornflowerBlue))
 
-        数据中心.启动时加载全部模组的数据()
+        启动流程.启动时加载全部模组的数据()
     End Sub
 
 

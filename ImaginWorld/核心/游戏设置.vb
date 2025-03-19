@@ -18,6 +18,7 @@ Public Class 游戏设置
         Public Property WorldStateCalculationThreads As Integer = 1
         Public Property RandomEventsTriggerCalculationThreads As Integer = 1
         Public Property BattleModeSelection As Integer = 0
+        Public Property PlotDisplayDirection As Integer = 0
 
         Public Property Sever_Port As String = ""
         Public Property Sever_Name As String = ""
@@ -28,6 +29,7 @@ Public Class 游戏设置
         Public Property Sever_AllowedConnection As Integer = -1
         Public Property Sever_MessageProcessMultithread As Integer = -1
         Public Property Sever_OpenSinglePlayerLocation As Integer = -1
+        Public Property Client_MessageProcessMultithread As Integer = -1
         Public Property ConnectSever_IP As String = ""
         Public Property ConnectSever_Port As String = ""
 

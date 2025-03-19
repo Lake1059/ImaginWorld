@@ -40,6 +40,27 @@
         c.Visible = True
     End Sub
 
+    Public Shared Sub 关闭顶层界面()
+        If Form1.界面图层_顶层 IsNot Nothing Then
+            If Form1.界面图层_顶层.GetType Is GetType(界面顶层_控制台) Then
+                Form1.界面图层_顶层.Visible = False
+                Form1.界面图层_顶层 = Nothing
+            Else
+                Form1.界面图层_顶层?.Dispose()
+            End If
+        End If
+    End Sub
+
+    Public Shared Sub 关闭三层界面()
+        If Form1.界面图层_三层 IsNot Nothing Then Form1.界面图层_三层.Dispose()
+    End Sub
+
+    Public Shared Sub 关闭二层界面()
+        If Form1.界面图层_二层 IsNot Nothing Then Form1.界面图层_二层.Dispose()
+    End Sub
+
+
+
     Public Shared Sub 根据宽度显示单行文本(标签控件 As Label, 文本 As String, 宽度 As Integer)
         Dim 文字显示所需尺寸 As Size = TextRenderer.MeasureText(文本, 标签控件.Font)
         Dim 实际文本 As String = 文本
@@ -63,8 +84,12 @@
         标签控件.Text = 实际文本
     End Sub
 
-
-
+    Public Shared Sub 根据标签宽度计算并设置显示高度(标签控件 As Label)
+        Dim g As Graphics = Form1.CreateGraphics()
+        Dim size As SizeF = g.MeasureString(标签控件.Text, 标签控件.Font, 标签控件.Width - 标签控件.Padding.Left - 标签控件.Padding.Right)
+        g.Dispose()
+        标签控件.Height = size.Height + 标签控件.Padding.Top + 标签控件.Padding.Bottom
+    End Sub
 
 
 

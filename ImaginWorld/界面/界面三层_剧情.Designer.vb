@@ -28,7 +28,7 @@ Partial Class 界面三层_剧情
         Label2 = New Label()
         UiButton2 = New Sunny.UI.UIButton()
         Label26 = New Label()
-        UiButton1 = New Sunny.UI.UIButton()
+        UiButton菜单 = New Sunny.UI.UIButton()
         Label1 = New Label()
         Panel2 = New Panel()
         ListView1 = New ListView()
@@ -38,21 +38,22 @@ Partial Class 界面三层_剧情
         Panel3 = New Panel()
         Label5 = New Label()
         Panel5 = New Panel()
+        Panel4 = New Panel()
+        Label9 = New Label()
+        Panel27 = New Panel()
+        Label23 = New Label()
+        Panel6 = New Panel()
         UiButton6 = New Sunny.UI.UIButton()
         Label3 = New Label()
         UiButton5 = New Sunny.UI.UIButton()
         Label4 = New Label()
         UiButton4 = New Sunny.UI.UIButton()
-        Panel4 = New Panel()
-        Label9 = New Label()
-        Panel27 = New Panel()
-        Label23 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         Panel3.SuspendLayout()
-        Panel5.SuspendLayout()
         Panel4.SuspendLayout()
         Panel27.SuspendLayout()
+        Panel6.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
@@ -61,12 +62,12 @@ Partial Class 界面三层_剧情
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(UiButton2)
         Panel1.Controls.Add(Label26)
-        Panel1.Controls.Add(UiButton1)
+        Panel1.Controls.Add(UiButton菜单)
         Panel1.Controls.Add(Label1)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(40, 40)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1170, 35)
+        Panel1.Size = New Size(1200, 35)
         Panel1.TabIndex = 0
         ' 
         ' UiButton3
@@ -84,7 +85,7 @@ Partial Class 界面三层_剧情
         UiButton3.ForeHoverColor = Color.Silver
         UiButton3.ForePressColor = Color.Silver
         UiButton3.ForeSelectedColor = Color.Silver
-        UiButton3.Location = New Point(850, 0)
+        UiButton3.Location = New Point(880, 0)
         UiButton3.MinimumSize = New Size(1, 1)
         UiButton3.Name = "UiButton3"
         UiButton3.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
@@ -100,7 +101,7 @@ Partial Class 界面三层_剧情
         ' Label2
         ' 
         Label2.Dock = DockStyle.Right
-        Label2.Location = New Point(950, 0)
+        Label2.Location = New Point(980, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(10, 35)
         Label2.TabIndex = 42
@@ -120,7 +121,7 @@ Partial Class 界面三层_剧情
         UiButton2.ForeHoverColor = Color.Silver
         UiButton2.ForePressColor = Color.Silver
         UiButton2.ForeSelectedColor = Color.Silver
-        UiButton2.Location = New Point(960, 0)
+        UiButton2.Location = New Point(990, 0)
         UiButton2.MinimumSize = New Size(1, 1)
         UiButton2.Name = "UiButton2"
         UiButton2.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
@@ -136,38 +137,38 @@ Partial Class 界面三层_剧情
         ' Label26
         ' 
         Label26.Dock = DockStyle.Right
-        Label26.Location = New Point(1060, 0)
+        Label26.Location = New Point(1090, 0)
         Label26.Name = "Label26"
         Label26.Size = New Size(10, 35)
         Label26.TabIndex = 40
         ' 
-        ' UiButton1
+        ' UiButton菜单
         ' 
-        UiButton1.Dock = DockStyle.Right
-        UiButton1.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
-        UiButton1.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        UiButton1.Font = New Font("微软雅黑", 12F)
-        UiButton1.ForeColor = Color.Silver
-        UiButton1.ForeDisableColor = Color.Silver
-        UiButton1.ForeHoverColor = Color.Silver
-        UiButton1.ForePressColor = Color.Silver
-        UiButton1.ForeSelectedColor = Color.Silver
-        UiButton1.Location = New Point(1070, 0)
-        UiButton1.MinimumSize = New Size(1, 1)
-        UiButton1.Name = "UiButton1"
-        UiButton1.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton1.Size = New Size(100, 35)
-        UiButton1.TabIndex = 39
-        UiButton1.Text = "菜单"
-        UiButton1.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton菜单.Dock = DockStyle.Right
+        UiButton菜单.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton菜单.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton菜单.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton菜单.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton菜单.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton菜单.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton菜单.Font = New Font("微软雅黑", 12F)
+        UiButton菜单.ForeColor = Color.Silver
+        UiButton菜单.ForeDisableColor = Color.Silver
+        UiButton菜单.ForeHoverColor = Color.Silver
+        UiButton菜单.ForePressColor = Color.Silver
+        UiButton菜单.ForeSelectedColor = Color.Silver
+        UiButton菜单.Location = New Point(1100, 0)
+        UiButton菜单.MinimumSize = New Size(1, 1)
+        UiButton菜单.Name = "UiButton菜单"
+        UiButton菜单.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton菜单.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton菜单.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton菜单.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton菜单.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton菜单.Size = New Size(100, 35)
+        UiButton菜单.TabIndex = 39
+        UiButton菜单.Text = "菜单"
+        UiButton菜单.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
         ' Label1
         ' 
@@ -176,7 +177,7 @@ Partial Class 界面三层_剧情
         Label1.ForeColor = Color.Gray
         Label1.Location = New Point(0, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(1170, 35)
+        Label1.Size = New Size(1200, 35)
         Label1.TabIndex = 0
         Label1.Text = "主剧情名称"
         Label1.TextAlign = ContentAlignment.MiddleLeft
@@ -187,7 +188,7 @@ Partial Class 界面三层_剧情
         Panel2.Dock = DockStyle.Fill
         Panel2.Location = New Point(40, 118)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(808, 562)
+        Panel2.Size = New Size(838, 562)
         Panel2.TabIndex = 2
         ' 
         ' ListView1
@@ -224,9 +225,10 @@ Partial Class 界面三层_剧情
         ' Panel3
         ' 
         Panel3.Controls.Add(Label5)
+        Panel3.Controls.Add(Panel6)
         Panel3.Controls.Add(Panel5)
         Panel3.Dock = DockStyle.Right
-        Panel3.Location = New Point(890, 118)
+        Panel3.Location = New Point(920, 118)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(320, 562)
         Panel3.TabIndex = 3
@@ -245,16 +247,64 @@ Partial Class 界面三层_剧情
         ' Panel5
         ' 
         Panel5.AutoSize = True
-        Panel5.Controls.Add(UiButton6)
-        Panel5.Controls.Add(Label3)
-        Panel5.Controls.Add(UiButton5)
-        Panel5.Controls.Add(Label4)
-        Panel5.Controls.Add(UiButton4)
         Panel5.Dock = DockStyle.Top
         Panel5.Location = New Point(0, 0)
         Panel5.Name = "Panel5"
-        Panel5.Size = New Size(320, 190)
+        Panel5.Size = New Size(320, 0)
         Panel5.TabIndex = 0
+        ' 
+        ' Panel4
+        ' 
+        Panel4.Controls.Add(Label9)
+        Panel4.Dock = DockStyle.Top
+        Panel4.Location = New Point(40, 75)
+        Panel4.Name = "Panel4"
+        Panel4.Padding = New Padding(0, 20, 0, 20)
+        Panel4.Size = New Size(1200, 43)
+        Panel4.TabIndex = 30
+        ' 
+        ' Label9
+        ' 
+        Label9.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Label9.Dock = DockStyle.Fill
+        Label9.Location = New Point(0, 20)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(1200, 3)
+        Label9.TabIndex = 4
+        ' 
+        ' Panel27
+        ' 
+        Panel27.Controls.Add(Label23)
+        Panel27.Dock = DockStyle.Right
+        Panel27.Location = New Point(878, 118)
+        Panel27.Name = "Panel27"
+        Panel27.Padding = New Padding(20, 0, 20, 0)
+        Panel27.Size = New Size(42, 562)
+        Panel27.TabIndex = 31
+        ' 
+        ' Label23
+        ' 
+        Label23.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        Label23.Dock = DockStyle.Fill
+        Label23.Location = New Point(20, 0)
+        Label23.Name = "Label23"
+        Label23.Size = New Size(2, 562)
+        Label23.TabIndex = 4
+        ' 
+        ' Panel6
+        ' 
+        Panel6.AutoSize = True
+        Panel6.Controls.Add(UiButton6)
+        Panel6.Controls.Add(Label3)
+        Panel6.Controls.Add(UiButton5)
+        Panel6.Controls.Add(Label4)
+        Panel6.Controls.Add(UiButton4)
+        Panel6.Dock = DockStyle.Top
+        Panel6.Location = New Point(0, 0)
+        Panel6.Name = "Panel6"
+        Panel6.Size = New Size(320, 190)
+        Panel6.TabIndex = 2
+        Panel6.Visible = False
         ' 
         ' UiButton6
         ' 
@@ -280,7 +330,7 @@ Partial Class 界面三层_剧情
         UiButton6.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton6.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton6.Size = New Size(320, 50)
-        UiButton6.TabIndex = 46
+        UiButton6.TabIndex = 51
         UiButton6.Text = "  选项3"
         UiButton6.TextAlign = ContentAlignment.MiddleLeft
         UiButton6.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
@@ -292,7 +342,7 @@ Partial Class 界面三层_剧情
         Label3.Location = New Point(0, 120)
         Label3.Name = "Label3"
         Label3.Size = New Size(320, 20)
-        Label3.TabIndex = 45
+        Label3.TabIndex = 50
         ' 
         ' UiButton5
         ' 
@@ -318,7 +368,7 @@ Partial Class 界面三层_剧情
         UiButton5.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton5.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton5.Size = New Size(320, 50)
-        UiButton5.TabIndex = 44
+        UiButton5.TabIndex = 49
         UiButton5.Text = "  选项2"
         UiButton5.TextAlign = ContentAlignment.MiddleLeft
         UiButton5.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
@@ -330,7 +380,7 @@ Partial Class 界面三层_剧情
         Label4.Location = New Point(0, 50)
         Label4.Name = "Label4"
         Label4.Size = New Size(320, 20)
-        Label4.TabIndex = 43
+        Label4.TabIndex = 48
         ' 
         ' UiButton4
         ' 
@@ -356,48 +406,10 @@ Partial Class 界面三层_剧情
         UiButton4.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton4.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton4.Size = New Size(320, 50)
-        UiButton4.TabIndex = 40
+        UiButton4.TabIndex = 47
         UiButton4.Text = "  选项1"
         UiButton4.TextAlign = ContentAlignment.MiddleLeft
         UiButton4.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        ' 
-        ' Panel4
-        ' 
-        Panel4.Controls.Add(Label9)
-        Panel4.Dock = DockStyle.Top
-        Panel4.Location = New Point(40, 75)
-        Panel4.Name = "Panel4"
-        Panel4.Padding = New Padding(0, 20, 0, 20)
-        Panel4.Size = New Size(1170, 43)
-        Panel4.TabIndex = 30
-        ' 
-        ' Label9
-        ' 
-        Label9.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Label9.Dock = DockStyle.Fill
-        Label9.Location = New Point(0, 20)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(1170, 3)
-        Label9.TabIndex = 4
-        ' 
-        ' Panel27
-        ' 
-        Panel27.Controls.Add(Label23)
-        Panel27.Dock = DockStyle.Right
-        Panel27.Location = New Point(848, 118)
-        Panel27.Name = "Panel27"
-        Panel27.Padding = New Padding(20, 0, 20, 0)
-        Panel27.Size = New Size(42, 562)
-        Panel27.TabIndex = 31
-        ' 
-        ' Label23
-        ' 
-        Label23.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        Label23.Dock = DockStyle.Fill
-        Label23.Location = New Point(20, 0)
-        Label23.Name = "Label23"
-        Label23.Size = New Size(2, 562)
-        Label23.TabIndex = 4
         ' 
         ' 界面三层_剧情
         ' 
@@ -413,14 +425,14 @@ Partial Class 界面三层_剧情
         ForeColor = Color.Silver
         Name = "界面三层_剧情"
         Padding = New Padding(40)
-        Size = New Size(1250, 720)
+        Size = New Size(1280, 720)
         Panel1.ResumeLayout(False)
         Panel2.ResumeLayout(False)
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
-        Panel5.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel27.ResumeLayout(False)
+        Panel6.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -430,7 +442,7 @@ Partial Class 界面三层_剧情
     Friend WithEvents Label2 As Label
     Friend WithEvents UiButton2 As Sunny.UI.UIButton
     Friend WithEvents Label26 As Label
-    Friend WithEvents UiButton1 As Sunny.UI.UIButton
+    Friend WithEvents UiButton菜单 As Sunny.UI.UIButton
     Friend WithEvents Panel2 As Panel
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
@@ -440,13 +452,14 @@ Partial Class 界面三层_剧情
     Friend WithEvents Label9 As Label
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents UiButton4 As Sunny.UI.UIButton
     Friend WithEvents Panel27 As Panel
     Friend WithEvents Label23 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel6 As Panel
     Friend WithEvents UiButton6 As Sunny.UI.UIButton
     Friend WithEvents Label3 As Label
     Friend WithEvents UiButton5 As Sunny.UI.UIButton
+    Friend WithEvents Label4 As Label
+    Friend WithEvents UiButton4 As Sunny.UI.UIButton
 
 End Class

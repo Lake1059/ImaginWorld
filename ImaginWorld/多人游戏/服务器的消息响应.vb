@@ -7,7 +7,7 @@ Public Class 服务器的消息响应
     Public Shared Sub 初始化()
         消息字典.Add("iw_client_receiveping", AddressOf 收到客户端Ping响应)
         消息字典.Add("iw_client_login_beta3", AddressOf 收到客户端连接请求)
-
+        消息字典.Add("iw_client_disconnect", AddressOf 收到客户端断开连接)
 
         DebugPrint($"服务器消息响应初始化完成，共计 {消息字典.Count } 个消息处理方法", Color.CornflowerBlue)
     End Sub
@@ -18,7 +18,7 @@ Public Class 服务器的消息响应
         If 消息字典.TryGetValue(消息名称, value) Then
             value(消息, 发送者地址)
         Else
-            DebugPrint("未知指令：" & 消息名称, Color.Tomato)
+            DebugPrint("未知服务器指令：" & 消息名称, Color.Tomato)
         End If
     End Sub
 
@@ -30,8 +30,12 @@ Public Class 服务器的消息响应
     End Sub
 
     Public Shared Sub 收到客户端连接请求(消息 As List(Of String), 发送者地址 As IPEndPoint)
+        DebugPrint("客户端连接请求：" & 发送者地址.ToString, Color.YellowGreen)
         服务器.发送消息(发送者地址, New List(Of String) From {"iw_sever_playerlist", ""})
     End Sub
-
+    Public Shared Sub 收到客户端断开连接(消息 As List(Of String), 发送者地址 As IPEndPoint)
+        DebugPrint("客户端主动离线：" & 发送者地址.ToString, Color.YellowGreen)
+        服务器.客户端列表.Remove(发送者地址)
+    End Sub
 
 End Class

@@ -6,10 +6,11 @@ Imports System.Threading
 Public Class 客户端
     Public Shared Property UDP客户端 As UdpClient
     Public Shared Property 服务器地址 As IPEndPoint
-    Public Shared Property 监听任务 As Task
+    Public Shared Property 监听任务列表 As New List(Of Task)
     Public Shared Property 取消令牌源 As CancellationTokenSource
     Public Shared Property 是否正在运行 As Boolean = False
     Public Shared Property 是否收到响应 As Boolean = False
+    Public Shared Property 响应线程数量 As Integer = 1
 
     Public Shared Sub 启动客户端(服务器IP As String, 服务器端口 As String)
         是否正在运行 = True
@@ -17,8 +18,12 @@ Public Class 客户端
         UDP客户端 = New UdpClient()
         服务器地址 = New IPEndPoint(IPAddress.Parse(服务器IP), 服务器端口)
         取消令牌源 = New CancellationTokenSource()
-        监听任务 = Task.Run(AddressOf 监听消息, 取消令牌源.Token)
         UDP客户端.Client.ReceiveTimeout = 10000
+
+        For i As Integer = 1 To 响应线程数量
+            Dim 监听任务 As Task = Task.Run(AddressOf 监听消息, 取消令牌源.Token)
+            监听任务列表.Add(监听任务)
+        Next
     End Sub
 
     Public Shared Sub 监听消息()
@@ -50,7 +55,7 @@ Public Class 客户端
         是否正在运行 = False
         If 取消令牌源 IsNot Nothing Then
             取消令牌源.Cancel()
-            Await 监听任务
+            Await Task.WhenAll(监听任务列表)
             If 取消令牌源 IsNot Nothing Then
                 取消令牌源.Dispose()
                 取消令牌源 = Nothing
@@ -58,5 +63,6 @@ Public Class 客户端
         End If
         UDP客户端?.Close()
         UDP客户端 = Nothing
+        监听任务列表.Clear()
     End Sub
 End Class

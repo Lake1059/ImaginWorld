@@ -26,16 +26,23 @@
         Public Property ScenarioType As 场景类型 '玩家所在场景类型
         Public Property WorldLocation As New Point(0, 0) '如果在世界地图，玩家的地图坐标
         Public Property FinishedMission As New List(Of String) '玩家已完成的任务
+        Public Property ActiveMission As New List(Of String) '玩家正在进行的任务 
+        Public Property TrackingMissionId As String '玩家正在追踪的任务ID
+
 
     End Class
 
     <Serializable>
     Public Class 远行队单片结构
-        Public Property Inventory As Dictionary(Of String, Integer) '远行队的物品库存
-        Public Property Weapon As Dictionary(Of String, String) '远行队的武器库存
-        Public Property Equipment As Dictionary(Of String, String) '远行队的装备库存
-        Public Property Characters As Dictionary(Of String, 角色单片结构) '远行队的角色数据
-
+        Public Property Inventory_ImportantSupplies As Dictionary(Of String, Integer)
+        Public Property Inventory_Materials As Dictionary(Of String, Integer)
+        Public Property Inventory_CharacterProps As Dictionary(Of String, Integer)
+        Public Property Inventory_Consumables As Dictionary(Of String, Integer)
+        Public Property Inventory_Weapon As Dictionary(Of String, String)
+        Public Property Inventory_Equipment As Dictionary(Of String, String)
+        Public Property Inventory_QuestItems As Dictionary(Of String, Integer)
+        Public Property Inventory_Collectible As Dictionary(Of String, Integer)
+        Public Property Characters As Dictionary(Of String, 角色单片结构) '远行队的角色数据  
     End Class
 
     <Serializable>

@@ -4,29 +4,8 @@
     "ProfessionType": 1, // 职业类型，仅向玩家展示角色设计定位，不会影响其他内容
     "PropertyType": 1, // 属性类型，仅向玩家展示角色的主要输出属性，实际打出的伤害属性类型由技能数据控制
     "PropertyData": { // 角色基本属性数据结构，设定初始值
-        "Health": 2130, // 生命值，整数
-        "Attack": 820, // 攻击，整数
-        "Defense": 1720, // 防御，整数
-        "Speed": 105, // 速度，整数，基准值：100
-        "CriticalHitRate": 0, //暴击率，单精度值
-        "CriticalDamage": 0, // 暴击伤害，单精度值
-        "ResistRate": 0, // 抵抗概率，单精度值
-        "FillingEfficiency": 0, // 填充效率，单精度值
-        "ShieldBonus": 0, // 护盾加成，单精度值
-        "HealingBonus": 0, // 治疗加成，单精度值
-        "PhysicalDamageBonus": 0, // 物理伤害加成，单精度值
-        "MagicDamageBonus": 0, // 法术伤害加成，单精度值
-        "BiochemicalDamageBonus": 0, // 生化伤害加成，单精度值
-        "MysticDamageBonus": 0, // 神秘伤害加成，单精度值
-        "MaterialDamageBonus": 0, // 物质伤害加成，单精度值
-        "DarkDamageBonus": 0, // 黑暗伤害加成，单精度值
-        "PhysicalResistance": 0, // 物理抗性，单精度值
-        "MagicResistance": 0, // 法术抗性，单精度值
-        "BiochemicalResistance": 0, // 生化抗性，单精度值
-        "MysticResistance": 0, // 神秘抗性，单精度值
-        "MaterialResistance": 0, // 物质抗性，单精度值
-        "DarkResistance": 0, // 黑暗抗性，单精度值
-        "SpaceProvided": 30 // 提供的远行队容量，整数
+    	"Attributes": [{"Health": 0},{"Attack": 0},{"Defense": 0},{"TB_Speed": 0},{"RT_TimeSpeed_ms": 0},{"CriticalHitRate": 0},{"CriticalDamage": 0},{"SpaceProvided": 0},{"Custom?": 0}],
+        "Resistances": [] // 百分比抗性，当受到对应属性的伤害时，自动减去这个百分比的伤害
     },
     "UseWeaponType": 0, // 使用的武器类型
     "Skill_TB_Normal": [ // 回合制普通攻击的数据，类型：技能数据单级结构，列表形式
