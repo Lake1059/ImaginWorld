@@ -30,6 +30,7 @@ Public Class Form1
     Public 界面图层_二层 As Control = Nothing
     Public 界面图层_三层 As Control = Nothing
     Public 界面图层_顶层 As Control = Nothing
+    Public 界面图层_控制台 As Control = Nothing
 
     Public 加载时间计时器 As New Stopwatch()
 

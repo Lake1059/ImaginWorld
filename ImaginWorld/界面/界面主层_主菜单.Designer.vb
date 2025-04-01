@@ -679,7 +679,7 @@ Partial Class 界面主层_主菜单
         Label131.Padding = New Padding(1, 0, 0, 0)
         Label131.Size = New Size(516, 82)
         Label131.TabIndex = 61
-        Label131.Text = "本游戏使用纯 WinForm 桌面软件技术设计，没有游戏引擎，因此在展现形式上受限，请勿要求任何高级视觉和特效。最低配置在搭载了 Intel N100 处理器的触控设备上测试。"
+        Label131.Text = "本游戏使用纯 WinForm 桌面软件技术设计，没有游戏引擎，因此在展现形式上非常受限，请勿要求任何高级视觉和特效。最低配置在搭载了 Intel N100 处理器的触控设备上测试。"
         ' 
         ' Label132
         ' 

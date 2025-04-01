@@ -18,7 +18,6 @@
         Me.ListView1.Columns(2).Width = Me.ListView1.Parent.Width * 0.15
         Me.Panel14.Width = 200 * Form1.DPI
         Me.Panel11.Width = 430 * Form1.DPI
-        Me.UiButton15.Width = 130 * Form1.DPI
         Me.UiButton14.Width = 130 * Form1.DPI
         Me.UiButton返回.Width = 130 * Form1.DPI
         Me.UiTrackBar1.BarSize = 30 * Form1.DPI

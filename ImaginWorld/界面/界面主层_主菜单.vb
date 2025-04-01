@@ -79,11 +79,11 @@ Public Class 界面主层_主菜单
         AddHandler UiButton8.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://space.bilibili.com/319785096"))
         AddHandler UiButton10.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://github.com/Lake1059/ImaginWorld"))
 
-        AddHandler Me.UiButton9.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.二层, New 界面二层_即时制对局)
+        AddHandler Me.UiButton9.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.二层, New 界面二层_决策)
 
 
 
-        AddHandler Me.UiButton22.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
+        AddHandler Me.UiButton22.Click, Sub() 界面控制.显示控制台()
         AddHandler Me.UiButton上传创意工坊.Click, AddressOf 上传创意工坊
         初始化设置选项卡内容()
 
@@ -132,8 +132,8 @@ Public Class 界面主层_主菜单
         Me.UiTrackBar5.BarSize = 20 * Form1.DPI
         是否已初始化 = True
         If 声音控制.特效声音输出设备 Is Nothing Then
-            If 数据中心.所有背景音乐.ContainsKey("WarmHome") Then
-                声音控制.切换BGM("WarmHome")
+            If 数据中心.所有背景音乐.ContainsKey("MainTheme") Then
+                声音控制.切换BGM("MainTheme")
             Else
                 声音控制.自动选择下一首BGM进行播放(True)
             End If

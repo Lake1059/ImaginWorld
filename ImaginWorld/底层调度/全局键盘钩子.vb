@@ -57,8 +57,8 @@ Public Class 全局键盘钩子
 
     Public Shared Sub 初始化全局键盘事件()
         AddHandler 自定义全局键盘事件, AddressOf 全局键盘钩子执行
-        AddHandler Application.OpenForms(0).Deactivate, AddressOf OnFormDeactivate
-        AddHandler Application.OpenForms(0).Activated, AddressOf OnFormActivated
+        AddHandler Form1.Deactivate, AddressOf OnFormDeactivate
+        AddHandler Form1.Activated, AddressOf OnFormActivated
         DebugPrint($"全局键盘钩子已初始化", Color.CornflowerBlue)
     End Sub
 
@@ -74,9 +74,9 @@ Public Class 全局键盘钩子
         Select Case Key
             Case Keys.Oemtilde
                 If 控制台界面实例.Visible Then
-                    控制台界面实例.UiButton关闭控制台.PerformClick()
+                    界面控制.隐藏控制台()
                 Else
-                    界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
+                    界面控制.显示控制台()
                 End If
             Case Keys.P
                 Dim bounds As Rectangle = Form1.ClientRectangle
@@ -87,17 +87,24 @@ Public Class 全局键盘钩子
                     End Using
                 End Using
             Case Keys.Escape
-                If Form1.界面图层_顶层 Is Nothing Then
-                    If Form1.界面图层_主层.GetType <> GetType(界面主层_主菜单) Then
-                        界面控制.切换界面(界面控制.主界面图层.顶层, New 界面顶层_暂停菜单)
-                    End If
-                Else
-                    Select Case Form1.界面图层_顶层.GetType
-                        Case GetType(界面顶层_暂停菜单)
-                            Form1.界面图层_顶层.Dispose()
-                        Case GetType(界面顶层_控制台)
-                            控制台界面实例.UiButton关闭控制台.PerformClick()
-                    End Select
+                If Form1.界面图层_控制台 IsNot Nothing Then
+                    界面控制.隐藏控制台()
+                    Exit Sub
+                End If
+                If Form1.界面图层_顶层 IsNot Nothing Then
+                    界面控制.关闭顶层界面()
+                    Exit Sub
+                End If
+                If Form1.界面图层_三层 IsNot Nothing Then
+                    界面控制.关闭三层界面()
+                    Exit Sub
+                End If
+                If Form1.界面图层_二层 IsNot Nothing Then
+                    界面控制.关闭二层界面()
+                    Exit Sub
+                End If
+                If Form1.界面图层_主层.GetType <> GetType(界面主层_主菜单) Then
+                    界面控制.切换界面(界面控制.主界面图层.顶层, New 界面顶层_暂停菜单)
                 End If
         End Select
     End Sub

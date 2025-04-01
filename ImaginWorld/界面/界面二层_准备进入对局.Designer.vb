@@ -31,6 +31,7 @@ Partial Class 界面二层_准备进入对局
         Panel4 = New Panel()
         Label2 = New Label()
         Label15 = New Label()
+        Label40 = New Label()
         Label16 = New Label()
         Panel24 = New Panel()
         LinkLabel2 = New LinkLabel()
@@ -221,6 +222,7 @@ Partial Class 界面二层_准备进入对局
         ' 
         Panel4.Controls.Add(Label2)
         Panel4.Controls.Add(Label15)
+        Panel4.Controls.Add(Label40)
         Panel4.Controls.Add(Label16)
         Panel4.Controls.Add(Panel24)
         Panel4.Controls.Add(Label36)
@@ -245,7 +247,7 @@ Partial Class 界面二层_准备进入对局
         Label2.AutoSize = True
         Label2.Dock = DockStyle.Top
         Label2.ForeColor = Color.DarkGray
-        Label2.Location = New Point(20, 602)
+        Label2.Location = New Point(20, 628)
         Label2.Name = "Label2"
         Label2.Padding = New Padding(1, 0, 0, 5)
         Label2.Size = New Size(331, 26)
@@ -257,12 +259,24 @@ Partial Class 界面二层_准备进入对局
         Label15.AutoSize = True
         Label15.Dock = DockStyle.Top
         Label15.ForeColor = Color.DarkGray
-        Label15.Location = New Point(20, 576)
+        Label15.Location = New Point(20, 602)
         Label15.Name = "Label15"
         Label15.Padding = New Padding(1, 0, 0, 5)
         Label15.Size = New Size(555, 26)
         Label15.TabIndex = 27
         Label15.Text = "若您尚未了解角色对局玩法，请到文档中先行查阅，在对局中不会有任何教程"
+        ' 
+        ' Label40
+        ' 
+        Label40.AutoSize = True
+        Label40.Dock = DockStyle.Top
+        Label40.ForeColor = Color.DarkGray
+        Label40.Location = New Point(20, 576)
+        Label40.Name = "Label40"
+        Label40.Padding = New Padding(1, 0, 0, 5)
+        Label40.Size = New Size(471, 26)
+        Label40.TabIndex = 38
+        Label40.Text = "左键 / 轻触 来选择或编入指定槽位；右键 / 长按 来从槽位中移除"
         ' 
         ' Label16
         ' 
@@ -444,7 +458,7 @@ Partial Class 界面二层_准备进入对局
         Label26.Font = New Font("微软雅黑", 11.25F)
         Label26.Location = New Point(10, 10)
         Label26.Name = "Label26"
-        Label26.Size = New Size(130, 30)
+        Label26.Size = New Size(130, 33)
         Label26.TabIndex = 8
         Label26.Text = "角色名称"
         Label26.TextAlign = ContentAlignment.TopCenter
@@ -454,13 +468,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar11.Dock = DockStyle.Bottom
         UiProcessBar11.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar11.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar11.Location = New Point(10, 40)
+        UiProcessBar11.Location = New Point(10, 43)
         UiProcessBar11.MinimumSize = New Size(3, 3)
         UiProcessBar11.Name = "UiProcessBar11"
         UiProcessBar11.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar11.RectColor = Color.Silver
         UiProcessBar11.ShowValue = False
-        UiProcessBar11.Size = New Size(130, 10)
+        UiProcessBar11.Size = New Size(130, 7)
         UiProcessBar11.TabIndex = 7
         UiProcessBar11.Text = "UiProcessBar11"
         UiProcessBar11.Value = 50
@@ -491,7 +505,7 @@ Partial Class 界面二层_准备进入对局
         Label28.Font = New Font("微软雅黑", 11.25F)
         Label28.Location = New Point(10, 10)
         Label28.Name = "Label28"
-        Label28.Size = New Size(130, 30)
+        Label28.Size = New Size(130, 33)
         Label28.TabIndex = 8
         Label28.Text = "角色名称"
         Label28.TextAlign = ContentAlignment.TopCenter
@@ -501,13 +515,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar12.Dock = DockStyle.Bottom
         UiProcessBar12.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar12.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar12.Location = New Point(10, 40)
+        UiProcessBar12.Location = New Point(10, 43)
         UiProcessBar12.MinimumSize = New Size(3, 3)
         UiProcessBar12.Name = "UiProcessBar12"
         UiProcessBar12.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar12.RectColor = Color.Silver
         UiProcessBar12.ShowValue = False
-        UiProcessBar12.Size = New Size(130, 10)
+        UiProcessBar12.Size = New Size(130, 7)
         UiProcessBar12.TabIndex = 7
         UiProcessBar12.Text = "UiProcessBar12"
         UiProcessBar12.Value = 50
@@ -538,7 +552,7 @@ Partial Class 界面二层_准备进入对局
         Label30.Font = New Font("微软雅黑", 11.25F)
         Label30.Location = New Point(10, 10)
         Label30.Name = "Label30"
-        Label30.Size = New Size(130, 30)
+        Label30.Size = New Size(130, 33)
         Label30.TabIndex = 8
         Label30.Text = "角色名称"
         Label30.TextAlign = ContentAlignment.TopCenter
@@ -548,13 +562,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar13.Dock = DockStyle.Bottom
         UiProcessBar13.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar13.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar13.Location = New Point(10, 40)
+        UiProcessBar13.Location = New Point(10, 43)
         UiProcessBar13.MinimumSize = New Size(3, 3)
         UiProcessBar13.Name = "UiProcessBar13"
         UiProcessBar13.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar13.RectColor = Color.Silver
         UiProcessBar13.ShowValue = False
-        UiProcessBar13.Size = New Size(130, 10)
+        UiProcessBar13.Size = New Size(130, 7)
         UiProcessBar13.TabIndex = 7
         UiProcessBar13.Text = "UiProcessBar13"
         UiProcessBar13.Value = 50
@@ -585,7 +599,7 @@ Partial Class 界面二层_准备进入对局
         Label32.Font = New Font("微软雅黑", 11.25F)
         Label32.Location = New Point(10, 10)
         Label32.Name = "Label32"
-        Label32.Size = New Size(130, 30)
+        Label32.Size = New Size(130, 33)
         Label32.TabIndex = 8
         Label32.Text = "角色名称"
         Label32.TextAlign = ContentAlignment.TopCenter
@@ -595,13 +609,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar14.Dock = DockStyle.Bottom
         UiProcessBar14.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar14.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar14.Location = New Point(10, 40)
+        UiProcessBar14.Location = New Point(10, 43)
         UiProcessBar14.MinimumSize = New Size(3, 3)
         UiProcessBar14.Name = "UiProcessBar14"
         UiProcessBar14.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar14.RectColor = Color.Silver
         UiProcessBar14.ShowValue = False
-        UiProcessBar14.Size = New Size(130, 10)
+        UiProcessBar14.Size = New Size(130, 7)
         UiProcessBar14.TabIndex = 7
         UiProcessBar14.Text = "UiProcessBar14"
         UiProcessBar14.Value = 50
@@ -632,7 +646,7 @@ Partial Class 界面二层_准备进入对局
         Label34.Font = New Font("微软雅黑", 11.25F)
         Label34.Location = New Point(10, 10)
         Label34.Name = "Label34"
-        Label34.Size = New Size(130, 30)
+        Label34.Size = New Size(130, 33)
         Label34.TabIndex = 8
         Label34.Text = "角色名称"
         Label34.TextAlign = ContentAlignment.TopCenter
@@ -642,13 +656,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar15.Dock = DockStyle.Bottom
         UiProcessBar15.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar15.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar15.Location = New Point(10, 40)
+        UiProcessBar15.Location = New Point(10, 43)
         UiProcessBar15.MinimumSize = New Size(3, 3)
         UiProcessBar15.Name = "UiProcessBar15"
         UiProcessBar15.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar15.RectColor = Color.Silver
         UiProcessBar15.ShowValue = False
-        UiProcessBar15.Size = New Size(130, 10)
+        UiProcessBar15.Size = New Size(130, 7)
         UiProcessBar15.TabIndex = 7
         UiProcessBar15.Text = "UiProcessBar15"
         UiProcessBar15.Value = 50
@@ -690,7 +704,7 @@ Partial Class 界面二层_准备进入对局
         Label14.Font = New Font("微软雅黑", 11.25F)
         Label14.Location = New Point(10, 10)
         Label14.Name = "Label14"
-        Label14.Size = New Size(130, 30)
+        Label14.Size = New Size(130, 33)
         Label14.TabIndex = 8
         Label14.Text = "角色名称"
         Label14.TextAlign = ContentAlignment.TopCenter
@@ -700,13 +714,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar6.Dock = DockStyle.Bottom
         UiProcessBar6.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar6.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar6.Location = New Point(10, 40)
+        UiProcessBar6.Location = New Point(10, 43)
         UiProcessBar6.MinimumSize = New Size(3, 3)
         UiProcessBar6.Name = "UiProcessBar6"
         UiProcessBar6.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar6.RectColor = Color.Silver
         UiProcessBar6.ShowValue = False
-        UiProcessBar6.Size = New Size(130, 10)
+        UiProcessBar6.Size = New Size(130, 7)
         UiProcessBar6.TabIndex = 7
         UiProcessBar6.Text = "UiProcessBar6"
         UiProcessBar6.Value = 50
@@ -737,7 +751,7 @@ Partial Class 界面二层_准备进入对局
         Label18.Font = New Font("微软雅黑", 11.25F)
         Label18.Location = New Point(10, 10)
         Label18.Name = "Label18"
-        Label18.Size = New Size(130, 30)
+        Label18.Size = New Size(130, 33)
         Label18.TabIndex = 8
         Label18.Text = "角色名称"
         Label18.TextAlign = ContentAlignment.TopCenter
@@ -747,13 +761,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar7.Dock = DockStyle.Bottom
         UiProcessBar7.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar7.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar7.Location = New Point(10, 40)
+        UiProcessBar7.Location = New Point(10, 43)
         UiProcessBar7.MinimumSize = New Size(3, 3)
         UiProcessBar7.Name = "UiProcessBar7"
         UiProcessBar7.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar7.RectColor = Color.Silver
         UiProcessBar7.ShowValue = False
-        UiProcessBar7.Size = New Size(130, 10)
+        UiProcessBar7.Size = New Size(130, 7)
         UiProcessBar7.TabIndex = 7
         UiProcessBar7.Text = "UiProcessBar7"
         UiProcessBar7.Value = 50
@@ -784,7 +798,7 @@ Partial Class 界面二层_准备进入对局
         Label20.Font = New Font("微软雅黑", 11.25F)
         Label20.Location = New Point(10, 10)
         Label20.Name = "Label20"
-        Label20.Size = New Size(130, 30)
+        Label20.Size = New Size(130, 33)
         Label20.TabIndex = 8
         Label20.Text = "角色名称"
         Label20.TextAlign = ContentAlignment.TopCenter
@@ -794,13 +808,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar8.Dock = DockStyle.Bottom
         UiProcessBar8.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar8.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar8.Location = New Point(10, 40)
+        UiProcessBar8.Location = New Point(10, 43)
         UiProcessBar8.MinimumSize = New Size(3, 3)
         UiProcessBar8.Name = "UiProcessBar8"
         UiProcessBar8.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar8.RectColor = Color.Silver
         UiProcessBar8.ShowValue = False
-        UiProcessBar8.Size = New Size(130, 10)
+        UiProcessBar8.Size = New Size(130, 7)
         UiProcessBar8.TabIndex = 7
         UiProcessBar8.Text = "UiProcessBar8"
         UiProcessBar8.Value = 50
@@ -831,7 +845,7 @@ Partial Class 界面二层_准备进入对局
         Label23.Font = New Font("微软雅黑", 11.25F)
         Label23.Location = New Point(10, 10)
         Label23.Name = "Label23"
-        Label23.Size = New Size(130, 30)
+        Label23.Size = New Size(130, 33)
         Label23.TabIndex = 8
         Label23.Text = "角色名称"
         Label23.TextAlign = ContentAlignment.TopCenter
@@ -841,13 +855,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar9.Dock = DockStyle.Bottom
         UiProcessBar9.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar9.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar9.Location = New Point(10, 40)
+        UiProcessBar9.Location = New Point(10, 43)
         UiProcessBar9.MinimumSize = New Size(3, 3)
         UiProcessBar9.Name = "UiProcessBar9"
         UiProcessBar9.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar9.RectColor = Color.Silver
         UiProcessBar9.ShowValue = False
-        UiProcessBar9.Size = New Size(130, 10)
+        UiProcessBar9.Size = New Size(130, 7)
         UiProcessBar9.TabIndex = 7
         UiProcessBar9.Text = "UiProcessBar9"
         UiProcessBar9.Value = 50
@@ -878,7 +892,7 @@ Partial Class 界面二层_准备进入对局
         Label25.Font = New Font("微软雅黑", 11.25F)
         Label25.Location = New Point(10, 10)
         Label25.Name = "Label25"
-        Label25.Size = New Size(130, 30)
+        Label25.Size = New Size(130, 33)
         Label25.TabIndex = 8
         Label25.Text = "角色名称"
         Label25.TextAlign = ContentAlignment.TopCenter
@@ -888,13 +902,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar10.Dock = DockStyle.Bottom
         UiProcessBar10.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar10.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar10.Location = New Point(10, 40)
+        UiProcessBar10.Location = New Point(10, 43)
         UiProcessBar10.MinimumSize = New Size(3, 3)
         UiProcessBar10.Name = "UiProcessBar10"
         UiProcessBar10.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar10.RectColor = Color.Silver
         UiProcessBar10.ShowValue = False
-        UiProcessBar10.Size = New Size(130, 10)
+        UiProcessBar10.Size = New Size(130, 7)
         UiProcessBar10.TabIndex = 7
         UiProcessBar10.Text = "UiProcessBar10"
         UiProcessBar10.Value = 50
@@ -907,9 +921,9 @@ Partial Class 界面二层_准备进入对局
         Label4.Location = New Point(20, 187)
         Label4.Name = "Label4"
         Label4.Padding = New Padding(0, 20, 0, 10)
-        Label4.Size = New Size(74, 51)
+        Label4.Size = New Size(138, 51)
         Label4.TabIndex = 32
-        Label4.Text = "替补角色"
+        Label4.Text = "对应槽位替补角色"
         ' 
         ' Panel5
         ' 
@@ -957,7 +971,7 @@ Partial Class 界面二层_准备进入对局
         Label12.Font = New Font("微软雅黑", 11.25F)
         Label12.Location = New Point(10, 10)
         Label12.Name = "Label12"
-        Label12.Size = New Size(130, 30)
+        Label12.Size = New Size(130, 33)
         Label12.TabIndex = 8
         Label12.Text = "角色名称"
         Label12.TextAlign = ContentAlignment.TopCenter
@@ -967,13 +981,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar5.Dock = DockStyle.Bottom
         UiProcessBar5.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar5.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar5.Location = New Point(10, 40)
+        UiProcessBar5.Location = New Point(10, 43)
         UiProcessBar5.MinimumSize = New Size(3, 3)
         UiProcessBar5.Name = "UiProcessBar5"
         UiProcessBar5.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar5.RectColor = Color.Silver
         UiProcessBar5.ShowValue = False
-        UiProcessBar5.Size = New Size(130, 10)
+        UiProcessBar5.Size = New Size(130, 7)
         UiProcessBar5.TabIndex = 7
         UiProcessBar5.Text = "UiProcessBar5"
         UiProcessBar5.Value = 50
@@ -1004,7 +1018,7 @@ Partial Class 界面二层_准备进入对局
         Label10.Font = New Font("微软雅黑", 11.25F)
         Label10.Location = New Point(10, 10)
         Label10.Name = "Label10"
-        Label10.Size = New Size(130, 30)
+        Label10.Size = New Size(130, 33)
         Label10.TabIndex = 8
         Label10.Text = "角色名称"
         Label10.TextAlign = ContentAlignment.TopCenter
@@ -1014,13 +1028,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar4.Dock = DockStyle.Bottom
         UiProcessBar4.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar4.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar4.Location = New Point(10, 40)
+        UiProcessBar4.Location = New Point(10, 43)
         UiProcessBar4.MinimumSize = New Size(3, 3)
         UiProcessBar4.Name = "UiProcessBar4"
         UiProcessBar4.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar4.RectColor = Color.Silver
         UiProcessBar4.ShowValue = False
-        UiProcessBar4.Size = New Size(130, 10)
+        UiProcessBar4.Size = New Size(130, 7)
         UiProcessBar4.TabIndex = 7
         UiProcessBar4.Text = "UiProcessBar4"
         UiProcessBar4.Value = 50
@@ -1051,7 +1065,7 @@ Partial Class 界面二层_准备进入对局
         Label7.Font = New Font("微软雅黑", 11.25F)
         Label7.Location = New Point(10, 10)
         Label7.Name = "Label7"
-        Label7.Size = New Size(130, 30)
+        Label7.Size = New Size(130, 33)
         Label7.TabIndex = 8
         Label7.Text = "角色名称"
         Label7.TextAlign = ContentAlignment.TopCenter
@@ -1061,13 +1075,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar3.Dock = DockStyle.Bottom
         UiProcessBar3.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar3.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar3.Location = New Point(10, 40)
+        UiProcessBar3.Location = New Point(10, 43)
         UiProcessBar3.MinimumSize = New Size(3, 3)
         UiProcessBar3.Name = "UiProcessBar3"
         UiProcessBar3.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar3.RectColor = Color.Silver
         UiProcessBar3.ShowValue = False
-        UiProcessBar3.Size = New Size(130, 10)
+        UiProcessBar3.Size = New Size(130, 7)
         UiProcessBar3.TabIndex = 7
         UiProcessBar3.Text = "UiProcessBar3"
         UiProcessBar3.Value = 50
@@ -1098,7 +1112,7 @@ Partial Class 界面二层_准备进入对局
         Label6.Font = New Font("微软雅黑", 11.25F)
         Label6.Location = New Point(10, 10)
         Label6.Name = "Label6"
-        Label6.Size = New Size(130, 30)
+        Label6.Size = New Size(130, 33)
         Label6.TabIndex = 8
         Label6.Text = "角色名称"
         Label6.TextAlign = ContentAlignment.TopCenter
@@ -1108,13 +1122,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar1.Dock = DockStyle.Bottom
         UiProcessBar1.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar1.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar1.Location = New Point(10, 40)
+        UiProcessBar1.Location = New Point(10, 43)
         UiProcessBar1.MinimumSize = New Size(3, 3)
         UiProcessBar1.Name = "UiProcessBar1"
         UiProcessBar1.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar1.RectColor = Color.Silver
         UiProcessBar1.ShowValue = False
-        UiProcessBar1.Size = New Size(130, 10)
+        UiProcessBar1.Size = New Size(130, 7)
         UiProcessBar1.TabIndex = 7
         UiProcessBar1.Text = "UiProcessBar1"
         UiProcessBar1.Value = 50
@@ -1145,7 +1159,7 @@ Partial Class 界面二层_准备进入对局
         Label9.Font = New Font("微软雅黑", 11.25F)
         Label9.Location = New Point(10, 10)
         Label9.Name = "Label9"
-        Label9.Size = New Size(130, 30)
+        Label9.Size = New Size(130, 33)
         Label9.TabIndex = 8
         Label9.Text = "角色名称"
         Label9.TextAlign = ContentAlignment.TopCenter
@@ -1155,13 +1169,13 @@ Partial Class 界面二层_准备进入对局
         UiProcessBar2.Dock = DockStyle.Bottom
         UiProcessBar2.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         UiProcessBar2.Font = New Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
-        UiProcessBar2.Location = New Point(10, 40)
+        UiProcessBar2.Location = New Point(10, 43)
         UiProcessBar2.MinimumSize = New Size(3, 3)
         UiProcessBar2.Name = "UiProcessBar2"
         UiProcessBar2.RadiusSides = Sunny.UI.UICornerRadiusSides.None
         UiProcessBar2.RectColor = Color.Silver
         UiProcessBar2.ShowValue = False
-        UiProcessBar2.Size = New Size(130, 10)
+        UiProcessBar2.Size = New Size(130, 7)
         UiProcessBar2.TabIndex = 7
         UiProcessBar2.Text = "UiProcessBar2"
         UiProcessBar2.Value = 50
@@ -1422,5 +1436,6 @@ Partial Class 界面二层_准备进入对局
     Friend WithEvents ListView2 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents Label39 As Label
+    Friend WithEvents Label40 As Label
 
 End Class

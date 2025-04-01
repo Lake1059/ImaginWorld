@@ -1,10 +1,12 @@
-﻿Public Class 界面控制
+﻿
+Public Class 界面控制
 
     Enum 主界面图层
         主层 = 1
         二层 = 2
         三层 = 3
         顶层 = 10
+        控制台 = 99
     End Enum
 
     Public Shared Sub 切换界面(w As 主界面图层, c As Control)
@@ -22,33 +24,46 @@
                 Form1.Controls.Add(c)
                 Form1.界面图层_主层?.SendToBack()
                 Form1.界面图层_顶层?.BringToFront()
+                Form1.界面图层_控制台?.BringToFront()
             Case 主界面图层.三层
                 If Form1.界面图层_三层 IsNot Nothing Then Form1.界面图层_三层.Dispose()
                 Form1.界面图层_三层 = c
                 c.Dock = DockStyle.Fill
                 Form1.Controls.Add(c)
                 Form1.界面图层_顶层?.BringToFront()
+                Form1.界面图层_控制台?.BringToFront()
                 Form1.界面图层_二层?.SendToBack()
                 Form1.界面图层_主层?.SendToBack()
             Case 主界面图层.顶层
-                'If Form1.界面图层_顶层 IsNot Nothing Then Form1.界面图层_顶层.Dispose()
+                If Form1.界面图层_顶层 IsNot Nothing Then Form1.界面图层_顶层.Dispose()
                 Form1.界面图层_顶层 = c
                 c.Dock = DockStyle.Fill
                 Form1.Controls.Add(c)
-                Form1.界面图层_顶层.BringToFront()
+                Form1.界面图层_控制台?.BringToFront()
+                Form1.界面图层_三层?.SendToBack()
+                Form1.界面图层_二层?.SendToBack()
+                Form1.界面图层_主层?.SendToBack()
         End Select
         c.Visible = True
     End Sub
 
+    Public Shared Sub 显示控制台()
+        Form1.界面图层_控制台 = 控制台界面实例
+        控制台界面实例.Visible = True
+        控制台界面实例.Dock = DockStyle.Fill
+        Form1.Controls.Add(Form1.界面图层_控制台)
+        Form1.界面图层_控制台.BringToFront()
+    End Sub
+
+    Public Shared Sub 隐藏控制台()
+        Form1.界面图层_控制台 = Nothing
+        控制台界面实例.Visible = False
+        Form1.Controls.Remove(Form1.界面图层_控制台)
+        控制台界面实例.UiButton关闭控制台.PerformClick()
+    End Sub
+
     Public Shared Sub 关闭顶层界面()
-        If Form1.界面图层_顶层 IsNot Nothing Then
-            If Form1.界面图层_顶层.GetType Is GetType(界面顶层_控制台) Then
-                Form1.界面图层_顶层.Visible = False
-                Form1.界面图层_顶层 = Nothing
-            Else
-                Form1.界面图层_顶层?.Dispose()
-            End If
-        End If
+        If Form1.界面图层_顶层 IsNot Nothing Then Form1.界面图层_顶层?.Dispose()
     End Sub
 
     Public Shared Sub 关闭三层界面()

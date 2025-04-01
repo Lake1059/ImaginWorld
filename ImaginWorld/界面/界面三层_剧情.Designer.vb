@@ -37,23 +37,23 @@ Partial Class 界面三层_剧情
         ImageList1 = New ImageList(components)
         Panel3 = New Panel()
         Label5 = New Label()
-        Panel5 = New Panel()
-        Panel4 = New Panel()
-        Label9 = New Label()
-        Panel27 = New Panel()
-        Label23 = New Label()
         Panel6 = New Panel()
         UiButton6 = New Sunny.UI.UIButton()
         Label3 = New Label()
         UiButton5 = New Sunny.UI.UIButton()
         Label4 = New Label()
         UiButton4 = New Sunny.UI.UIButton()
+        Panel5 = New Panel()
+        Panel4 = New Panel()
+        Label9 = New Label()
+        Panel27 = New Panel()
+        Label23 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         Panel3.SuspendLayout()
+        Panel6.SuspendLayout()
         Panel4.SuspendLayout()
         Panel27.SuspendLayout()
-        Panel6.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
@@ -173,7 +173,7 @@ Partial Class 界面三层_剧情
         ' Label1
         ' 
         Label1.Dock = DockStyle.Fill
-        Label1.Font = New Font("微软雅黑", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        Label1.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
         Label1.ForeColor = Color.Gray
         Label1.Location = New Point(0, 0)
         Label1.Name = "Label1"
@@ -243,53 +243,6 @@ Partial Class 界面三层_剧情
         Label5.TabIndex = 1
         Label5.Text = "点击继续" & vbCrLf & vbCrLf & "&&" & vbCrLf & vbCrLf & "选择选项"
         Label5.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' Panel5
-        ' 
-        Panel5.AutoSize = True
-        Panel5.Dock = DockStyle.Top
-        Panel5.Location = New Point(0, 0)
-        Panel5.Name = "Panel5"
-        Panel5.Size = New Size(320, 0)
-        Panel5.TabIndex = 0
-        ' 
-        ' Panel4
-        ' 
-        Panel4.Controls.Add(Label9)
-        Panel4.Dock = DockStyle.Top
-        Panel4.Location = New Point(40, 75)
-        Panel4.Name = "Panel4"
-        Panel4.Padding = New Padding(0, 20, 0, 20)
-        Panel4.Size = New Size(1200, 43)
-        Panel4.TabIndex = 30
-        ' 
-        ' Label9
-        ' 
-        Label9.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Label9.Dock = DockStyle.Fill
-        Label9.Location = New Point(0, 20)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(1200, 3)
-        Label9.TabIndex = 4
-        ' 
-        ' Panel27
-        ' 
-        Panel27.Controls.Add(Label23)
-        Panel27.Dock = DockStyle.Right
-        Panel27.Location = New Point(878, 118)
-        Panel27.Name = "Panel27"
-        Panel27.Padding = New Padding(20, 0, 20, 0)
-        Panel27.Size = New Size(42, 562)
-        Panel27.TabIndex = 31
-        ' 
-        ' Label23
-        ' 
-        Label23.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
-        Label23.Dock = DockStyle.Fill
-        Label23.Location = New Point(20, 0)
-        Label23.Name = "Label23"
-        Label23.Size = New Size(2, 562)
-        Label23.TabIndex = 4
         ' 
         ' Panel6
         ' 
@@ -411,6 +364,53 @@ Partial Class 界面三层_剧情
         UiButton4.TextAlign = ContentAlignment.MiddleLeft
         UiButton4.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
+        ' Panel5
+        ' 
+        Panel5.AutoSize = True
+        Panel5.Dock = DockStyle.Top
+        Panel5.Location = New Point(0, 0)
+        Panel5.Name = "Panel5"
+        Panel5.Size = New Size(320, 0)
+        Panel5.TabIndex = 0
+        ' 
+        ' Panel4
+        ' 
+        Panel4.Controls.Add(Label9)
+        Panel4.Dock = DockStyle.Top
+        Panel4.Location = New Point(40, 75)
+        Panel4.Name = "Panel4"
+        Panel4.Padding = New Padding(0, 20, 0, 20)
+        Panel4.Size = New Size(1200, 43)
+        Panel4.TabIndex = 30
+        ' 
+        ' Label9
+        ' 
+        Label9.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        Label9.Dock = DockStyle.Fill
+        Label9.Location = New Point(0, 20)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(1200, 3)
+        Label9.TabIndex = 4
+        ' 
+        ' Panel27
+        ' 
+        Panel27.Controls.Add(Label23)
+        Panel27.Dock = DockStyle.Right
+        Panel27.Location = New Point(878, 118)
+        Panel27.Name = "Panel27"
+        Panel27.Padding = New Padding(20, 0, 20, 0)
+        Panel27.Size = New Size(42, 562)
+        Panel27.TabIndex = 31
+        ' 
+        ' Label23
+        ' 
+        Label23.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        Label23.Dock = DockStyle.Fill
+        Label23.Location = New Point(20, 0)
+        Label23.Name = "Label23"
+        Label23.Size = New Size(2, 562)
+        Label23.TabIndex = 4
+        ' 
         ' 界面三层_剧情
         ' 
         AutoScaleDimensions = New SizeF(96F, 96F)
@@ -430,9 +430,9 @@ Partial Class 界面三层_剧情
         Panel2.ResumeLayout(False)
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
+        Panel6.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel27.ResumeLayout(False)
-        Panel6.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
