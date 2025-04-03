@@ -9,33 +9,53 @@ Public Class 声音控制
         AddHandler 自动播放BGM定时器.Tick, Sub() 自动选择下一首BGM进行播放(False)
     End Sub
 
+    Public Shared Property 待切换BGM名称 As String = ""
+    Public Shared Property BGM过渡时间 As Integer = 3000
+    Public Shared Property BGM正在过渡中 As Boolean = False
     Public Shared Property BGM输出设备 As WaveOutEvent
     Public Shared Property BGM音量控制器 As VolumeSampleProvider
     Public Shared Async Sub 切换BGM(BGMKey As String)
         If Not 数据中心.所有背景音乐.ContainsKey(BGMKey) Then Exit Sub
+        待切换BGM名称 = BGMKey
         Dim BGMPath = 数据中心.所有背景音乐(BGMKey)
         If Not FileExists(BGMPath) Then Exit Sub
-
-        If BGM输出设备 IsNot Nothing Then
-            If BGM输出设备.PlaybackState = PlaybackState.Playing Then
-                Await Task.Run(Sub()
-                                   Do Until BGM音量控制器.Volume <= 0.01F
-                                       BGM音量控制器.Volume -= 0.01F
-                                       Threading.Thread.Sleep(50)
-                                   Loop
-                               End Sub)
+        If BGM正在过渡中 Then Exit Sub
+        If BGM输出设备 IsNot Nothing AndAlso BGM输出设备.PlaybackState = PlaybackState.Playing Then
+            BGM正在过渡中 = True
+            Dim 初始音量 As Single = BGM音量控制器.Volume
+            Dim 递减步长 As Single
+            Dim 休眠间隔 As Integer = 50
+            If 初始音量 < 0.1F Then
+                递减步长 = 0.005F
+                休眠间隔 = 30
+            ElseIf 初始音量 < 0.3F Then
+                递减步长 = 0.01F
+                休眠间隔 = 40
+            Else
+                递减步长 = Math.Max(0.01F, 初始音量 / (BGM过渡时间 / 休眠间隔))
             End If
+            Await Task.Run(Sub()
+                               Dim 结束时间 = Now.AddMilliseconds(BGM过渡时间)
+                               Do Until BGM音量控制器.Volume <= 0.01F OrElse DateTime.Now >= 结束时间
+                                   BGM音量控制器.Volume -= 递减步长
+                                   If BGM音量控制器.Volume < 0 Then BGM音量控制器.Volume = 0
+                                   Threading.Thread.Sleep(休眠间隔)
+                               Loop
+                           End Sub)
+            BGM正在过渡中 = False
         End If
+        Dim 最终BGMPath = 数据中心.所有背景音乐(待切换BGM名称)
+        If Not FileExists(最终BGMPath) Then Exit Sub
         Application.DoEvents()
-        Dim audioFile = New AudioFileReader(BGMPath)
-
-        BGM音量控制器 = New VolumeSampleProvider(audioFile) With {
-            .Volume = 游戏设置.实例对象.BgmVolume
-        }
-        If BGM输出设备 IsNot Nothing Then BGM输出设备.Dispose()
-        BGM输出设备 = New WaveOutEvent
-        BGM输出设备.Init(BGM音量控制器)
-        BGM输出设备.Play()
+        Await Task.Run(Sub()
+                           Dim audioFile = New AudioFileReader(最终BGMPath)
+                           BGM音量控制器 = New VolumeSampleProvider(audioFile) With {.Volume = 游戏设置.实例对象.BgmVolume}
+                           If BGM输出设备 IsNot Nothing Then BGM输出设备.Dispose()
+                           BGM输出设备 = New WaveOutEvent
+                           BGM输出设备.Init(BGM音量控制器)
+                           BGM输出设备.Play()
+                           待切换BGM名称 = ""
+                       End Sub)
     End Sub
 
     Public Shared Property 特效声音输出设备 As WaveOutEvent
@@ -72,8 +92,6 @@ jx1:
 
 
         End If
-
-
     End Sub
 
 

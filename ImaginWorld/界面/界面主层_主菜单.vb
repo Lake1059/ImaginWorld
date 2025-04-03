@@ -22,6 +22,9 @@ Public Class 界面主层_主菜单
         暗黑列表视图自绘制.绑定列表视图事件(ListView5)
         暗黑列表视图自绘制.绑定列表视图事件(ListView6)
 
+        Label1.Text = "正在初始化主菜单数据 ..."
+        Application.DoEvents()
+
         Me.UiComboBox13.Items.Clear()
         For Each item In 数据中心.所有背景音乐
             Me.UiComboBox13.Items.Add(item.Key)
@@ -79,7 +82,7 @@ Public Class 界面主层_主菜单
         AddHandler UiButton8.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://space.bilibili.com/319785096"))
         AddHandler UiButton10.Click, Async Sub() Await Launcher.LaunchUriAsync(New Uri("https://github.com/Lake1059/ImaginWorld"))
 
-        AddHandler Me.UiButton9.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.二层, New 界面二层_决策)
+        AddHandler Me.UiButton9.Click, Sub() 界面控制.切换界面(界面控制.主界面图层.主层, New 界面主层_殖民地)
 
 
 
@@ -124,7 +127,9 @@ Public Class 界面主层_主菜单
         Me.UiComboBox13.ItemHeight = 30 * Form1.DPI
         Me.UiComboBox14.ItemHeight = 30 * Form1.DPI
         Me.UiCheckBox1.CheckBoxSize = 25 * Form1.DPI
-        Me.UiCheckBox2.CheckBoxSize = 25 * Form1.DPI
+        Me.UiCheckBox2.CheckBoxSize = 23 * Form1.DPI
+        Me.UiCheckBox3.CheckBoxSize = 23 * Form1.DPI
+        Me.UiCheckBox4.CheckBoxSize = 23 * Form1.DPI
         Me.UiTrackBar1.BarSize = 20 * Form1.DPI
         Me.UiTrackBar2.BarSize = 20 * Form1.DPI
         Me.UiTrackBar3.BarSize = 20 * Form1.DPI
@@ -192,7 +197,9 @@ Public Class 界面主层_主菜单
                 Me.ListView4.Width = Me.ListView4.Parent.Width + SystemInformation.VerticalScrollBarWidth * Form1.DPI
                 Me.ListView4.Columns(0).Width = Me.ListView4.Parent.Width
                 PictureBox1.Height = PictureBox1.Width
-            Case 子选项卡.IsEqual(TabPage设置)
+            Case 子选项卡.IsEqual(TabPage模组设置)
+                Panel模组管理顶部功能区.Visible = False
+            Case 子选项卡.IsEqual(TabPage游戏设置)
                 Panel模组管理顶部功能区.Visible = False
             Case 子选项卡.IsEqual(TabPageDLC)
                 Panel模组管理顶部功能区.Visible = False
@@ -220,7 +227,9 @@ Public Class 界面主层_主菜单
             Case 子选项卡.IsEqual(TabPage模组)
                 调整选项卡页面()
                 If Me.ListView3.Items.Count = 0 And Me.ListView4.Items.Count = 0 Then 刷新模组列表()
-            Case 子选项卡.IsEqual(TabPage设置)
+            Case 子选项卡.IsEqual(TabPage模组设置)
+                调整选项卡页面()
+            Case 子选项卡.IsEqual(TabPage游戏设置)
                 调整选项卡页面()
             Case 子选项卡.IsEqual(TabPageDLC)
                 调整选项卡页面()
@@ -370,6 +379,8 @@ Public Class 界面主层_主菜单
         Label模组名称.Text = ""
         Label作者.Text = ""
         LabelUniqueID.Text = ""
+        Label模组安装错误信息.Text = ""
+        Label模组安装错误信息.Visible = False
         Label简介.Text = ""
         UiButton在创意工坊中查看.Visible = False
         GC.Collect()
@@ -389,25 +400,36 @@ Public Class 界面主层_主菜单
             PictureBox1.Visible = False
         End If
         Label模组名称.Text = 模组管理.临时所有模组列表(ModString).ModName
-        If 模组管理.临时所有模组列表(ModString).Version <> "" Then Label模组名称.Text &= " - " & 模组管理.临时所有模组列表(ModString).Version
-        Label作者.Text = 模组管理.临时所有模组列表(ModString).Author
+        Label作者.Text = 模组管理.临时所有模组列表(ModString).Version & " - " & 模组管理.临时所有模组列表(ModString).Author
         LabelUniqueID.Text = 模组管理.临时所有模组列表(ModString).UniqueID
+        界面控制.根据标签宽度计算并设置显示高度(Label模组名称)
+        界面控制.根据标签宽度计算并设置显示高度(Label作者)
+        界面控制.根据标签宽度计算并设置显示高度(LabelUniqueID)
 
+        Dim 是否有安装错误 As Boolean = False
         If Installed Then
             For Each ModString In 模组管理.临时所有模组列表(ModString).Dependencies
                 Dim prefixList As String() = {"DLC.", "SteamWorkShop.", "Local."}
                 If Not prefixList.Any(Function(prefix) 已启用的模组列表.Contains(prefix & ModString)) Then
-                    If Label简介.Text = "" Then
-                        Label简介.Text = "未安装依赖：" & 模组管理.临时所有模组列表(ModString).UniqueID
+                    If Label模组安装错误信息.Text = "" Then
+                        Label模组安装错误信息.Text = "未安装依赖：" & 模组管理.临时所有模组列表(ModString).UniqueID
                     Else
-                        Label简介.Text &= vbCrLf & "未安装依赖：" & 模组管理.临时所有模组列表(ModString).UniqueID
+                        Label模组安装错误信息.Text &= vbCrLf & "未安装依赖：" & 模组管理.临时所有模组列表(ModString).UniqueID
                     End If
-                    Label简介.ForeColor = Color.Tomato
+                    是否有安装错误 = True
                 End If
             Next
+            If 是否有安装错误 Then
+                Label模组安装错误信息.Visible = True
+                界面控制.根据标签宽度计算并设置显示高度(Label模组安装错误信息)
+            Else
+                Label模组安装错误信息.Visible = False
+            End If
+        Else
+            Label模组安装错误信息.Visible = False
         End If
 
-        If Label简介.Text = "" Then Label简介.Text = 模组管理.临时所有模组列表(ModString).Description
+        Label简介.Text = 模组管理.临时所有模组列表(ModString).Description
 
         Dim 创意工坊ID文件路径 = Path.Combine(当前正在查看的模组路径, "SteamWorkShopId")
         If FileExists(创意工坊ID文件路径) Then
@@ -825,6 +847,7 @@ Public Class 界面主层_主菜单
             Me.Label103.Text = "由于没有收到服务器消息，客户端服务已自动停止"
         End If
     End Sub
+
 
 #End Region
 

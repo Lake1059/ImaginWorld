@@ -64,6 +64,10 @@ Partial Class 界面主层_地图
         Label17 = New Label()
         Label38 = New Label()
         Label16 = New Label()
+        Label13 = New Label()
+        Label14 = New Label()
+        Label6 = New Label()
+        Label7 = New Label()
         Panel35 = New Panel()
         Label32 = New Label()
         Label35 = New Label()
@@ -156,9 +160,9 @@ Partial Class 界面主层_地图
         ' Label27
         ' 
         Label27.Dock = DockStyle.Fill
-        Label27.Location = New Point(894, 10)
+        Label27.Location = New Point(978, 10)
         Label27.Name = "Label27"
-        Label27.Size = New Size(366, 35)
+        Label27.Size = New Size(282, 35)
         Label27.TabIndex = 38
         Label27.Text = "1 天 0 时 0 分 - 凌晨"
         Label27.TextAlign = ContentAlignment.MiddleRight
@@ -166,7 +170,7 @@ Partial Class 界面主层_地图
         ' Label24
         ' 
         Label24.Dock = DockStyle.Left
-        Label24.Location = New Point(744, 10)
+        Label24.Location = New Point(828, 10)
         Label24.Name = "Label24"
         Label24.Size = New Size(150, 35)
         Label24.TabIndex = 36
@@ -177,7 +181,7 @@ Partial Class 界面主层_地图
         ' 
         Panel6.Controls.Add(Label25)
         Panel6.Dock = DockStyle.Left
-        Panel6.Location = New Point(721, 10)
+        Panel6.Location = New Point(805, 10)
         Panel6.Name = "Panel6"
         Panel6.Padding = New Padding(10, 5, 10, 5)
         Panel6.Size = New Size(23, 35)
@@ -195,7 +199,7 @@ Partial Class 界面主层_地图
         ' Label10
         ' 
         Label10.Dock = DockStyle.Left
-        Label10.Location = New Point(571, 10)
+        Label10.Location = New Point(655, 10)
         Label10.Name = "Label10"
         Label10.Size = New Size(150, 35)
         Label10.TabIndex = 32
@@ -206,7 +210,7 @@ Partial Class 界面主层_地图
         ' 
         Panel4.Controls.Add(Label11)
         Panel4.Dock = DockStyle.Left
-        Panel4.Location = New Point(548, 10)
+        Panel4.Location = New Point(632, 10)
         Panel4.Name = "Panel4"
         Panel4.Padding = New Padding(10, 5, 10, 5)
         Panel4.Size = New Size(23, 35)
@@ -224,7 +228,7 @@ Partial Class 界面主层_地图
         ' Label8
         ' 
         Label8.Dock = DockStyle.Left
-        Label8.Location = New Point(398, 10)
+        Label8.Location = New Point(482, 10)
         Label8.Name = "Label8"
         Label8.Size = New Size(150, 35)
         Label8.TabIndex = 30
@@ -235,7 +239,7 @@ Partial Class 界面主层_地图
         ' 
         Panel3.Controls.Add(Label9)
         Panel3.Dock = DockStyle.Left
-        Panel3.Location = New Point(375, 10)
+        Panel3.Location = New Point(459, 10)
         Panel3.Name = "Panel3"
         Panel3.Padding = New Padding(10, 5, 10, 5)
         Panel3.Size = New Size(23, 35)
@@ -253,7 +257,7 @@ Partial Class 界面主层_地图
         ' Label4
         ' 
         Label4.Dock = DockStyle.Left
-        Label4.Location = New Point(225, 10)
+        Label4.Location = New Point(309, 10)
         Label4.Name = "Label4"
         Label4.Size = New Size(150, 35)
         Label4.TabIndex = 28
@@ -264,7 +268,7 @@ Partial Class 界面主层_地图
         ' 
         Panel2.Controls.Add(Label3)
         Panel2.Dock = DockStyle.Left
-        Panel2.Location = New Point(202, 10)
+        Panel2.Location = New Point(286, 10)
         Panel2.Name = "Panel2"
         Panel2.Padding = New Padding(10, 5, 10, 5)
         Panel2.Size = New Size(23, 35)
@@ -282,10 +286,10 @@ Partial Class 界面主层_地图
         ' Label殖民地名称
         ' 
         Label殖民地名称.Dock = DockStyle.Left
-        Label殖民地名称.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        Label殖民地名称.Font = New Font("微软雅黑", 13F, FontStyle.Bold)
         Label殖民地名称.Location = New Point(20, 10)
         Label殖民地名称.Name = "Label殖民地名称"
-        Label殖民地名称.Size = New Size(182, 35)
+        Label殖民地名称.Size = New Size(266, 35)
         Label殖民地名称.TabIndex = 25
         Label殖民地名称.Text = "地图名称"
         Label殖民地名称.TextAlign = ContentAlignment.MiddleLeft
@@ -747,6 +751,10 @@ Partial Class 界面主层_地图
         Panel7.Controls.Add(Label17)
         Panel7.Controls.Add(Label38)
         Panel7.Controls.Add(Label16)
+        Panel7.Controls.Add(Label13)
+        Panel7.Controls.Add(Label14)
+        Panel7.Controls.Add(Label6)
+        Panel7.Controls.Add(Label7)
         Panel7.Controls.Add(Panel35)
         Panel7.Controls.Add(Panel10)
         Panel7.Controls.Add(Panel15)
@@ -763,10 +771,10 @@ Partial Class 界面主层_地图
         Label17.Dock = DockStyle.Fill
         Label17.Font = New Font("微软雅黑", 10F)
         Label17.ForeColor = Color.Gray
-        Label17.Location = New Point(20, 321)
+        Label17.Location = New Point(20, 380)
         Label17.Name = "Label17"
         Label17.Padding = New Padding(0, 10, 0, 0)
-        Label17.Size = New Size(265, 324)
+        Label17.Size = New Size(265, 265)
         Label17.TabIndex = 66
         Label17.Text = "已追踪任务描述"
         ' 
@@ -775,7 +783,7 @@ Partial Class 界面主层_地图
         Label38.BackColor = Color.FromArgb(CByte(80), CByte(40), CByte(0))
         Label38.Dock = DockStyle.Top
         Label38.Font = New Font("微软雅黑", 10F)
-        Label38.Location = New Point(20, 286)
+        Label38.Location = New Point(20, 345)
         Label38.Name = "Label38"
         Label38.Padding = New Padding(5)
         Label38.Size = New Size(265, 35)
@@ -785,15 +793,62 @@ Partial Class 界面主层_地图
         ' 
         ' Label16
         ' 
+        Label16.AutoSize = True
         Label16.Dock = DockStyle.Top
         Label16.Font = New Font("微软雅黑", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
         Label16.ForeColor = Color.DarkGray
-        Label16.Location = New Point(20, 233)
+        Label16.Location = New Point(20, 303)
         Label16.Name = "Label16"
-        Label16.Padding = New Padding(0, 20, 0, 10)
-        Label16.Size = New Size(265, 53)
+        Label16.Padding = New Padding(0, 10, 0, 10)
+        Label16.Size = New Size(122, 42)
         Label16.TabIndex = 65
         Label16.Text = "已追踪任务标题"
+        ' 
+        ' Label13
+        ' 
+        Label13.Dock = DockStyle.Top
+        Label13.Font = New Font("微软雅黑", 11.25F)
+        Label13.ForeColor = Color.Gray
+        Label13.Location = New Point(20, 270)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(265, 33)
+        Label13.TabIndex = 71
+        Label13.Text = "载具 0 最快的消耗剩余 ？"
+        Label13.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' Label14
+        ' 
+        Label14.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        Label14.Dock = DockStyle.Top
+        Label14.ForeColor = Color.Gray
+        Label14.Location = New Point(20, 268)
+        Label14.Name = "Label14"
+        Label14.Size = New Size(265, 2)
+        Label14.TabIndex = 70
+        Label14.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' Label6
+        ' 
+        Label6.Dock = DockStyle.Top
+        Label6.Font = New Font("微软雅黑", 11.25F)
+        Label6.ForeColor = Color.Gray
+        Label6.Location = New Point(20, 235)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(265, 33)
+        Label6.TabIndex = 69
+        Label6.Text = "人口 0 消耗剩余 ？"
+        Label6.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' Label7
+        ' 
+        Label7.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        Label7.Dock = DockStyle.Top
+        Label7.ForeColor = Color.Gray
+        Label7.Location = New Point(20, 233)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(265, 2)
+        Label7.TabIndex = 68
+        Label7.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Panel35
         ' 
@@ -817,7 +872,7 @@ Partial Class 界面主层_地图
         Label32.Name = "Label32"
         Label32.Size = New Size(265, 33)
         Label32.TabIndex = 55
-        Label32.Text = "消耗剩余天：角色 0 / 人口 0 / 载具 0"
+        Label32.Text = "角色 0 消耗剩余 ？"
         Label32.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label35
@@ -840,7 +895,7 @@ Partial Class 界面主层_地图
         Label42.Name = "Label42"
         Label42.Size = New Size(265, 33)
         Label42.TabIndex = 53
-        Label42.Text = "未携带人口 - 货物安全"
+        Label42.Text = "货物安全"
         Label42.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Panel10
@@ -1372,5 +1427,9 @@ Partial Class 界面主层_地图
     Friend WithEvents Label16 As Label
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
 
 End Class

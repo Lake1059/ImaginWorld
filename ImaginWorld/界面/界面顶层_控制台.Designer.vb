@@ -35,15 +35,6 @@ Partial Class 界面顶层_控制台
         UiCheckBox2 = New Sunny.UI.UICheckBox()
         UiCheckBox1 = New Sunny.UI.UICheckBox()
         Panel3 = New Panel()
-        Label17 = New Label()
-        Panel12 = New Panel()
-        Label18 = New Label()
-        Label15 = New Label()
-        Panel11 = New Panel()
-        Label16 = New Label()
-        Label14 = New Label()
-        Panel10 = New Panel()
-        Label13 = New Label()
         Label2 = New Label()
         UiButton关闭控制台 = New Sunny.UI.UIButton()
         Panel2 = New Panel()
@@ -55,11 +46,10 @@ Partial Class 界面顶层_控制台
         UiTextBox1 = New Sunny.UI.UITextBox()
         Label3 = New Label()
         UiButton发送指令 = New Sunny.UI.UIButton()
+        Label1 = New Label()
+        UiButton1 = New Sunny.UI.UIButton()
         Panel1.SuspendLayout()
         Panel3.SuspendLayout()
-        Panel12.SuspendLayout()
-        Panel11.SuspendLayout()
-        Panel10.SuspendLayout()
         Panel2.SuspendLayout()
         Panel5.SuspendLayout()
         Panel6.SuspendLayout()
@@ -91,12 +81,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox11.CheckBoxSize = 20
         UiCheckBox11.Dock = DockStyle.Top
-        UiCheckBox11.Font = New Font("微软雅黑", 12F)
+        UiCheckBox11.Font = New Font("微软雅黑", 11F)
         UiCheckBox11.ForeColor = Color.DarkGray
-        UiCheckBox11.Location = New Point(20, 370)
+        UiCheckBox11.Location = New Point(20, 350)
         UiCheckBox11.MinimumSize = New Size(1, 1)
         UiCheckBox11.Name = "UiCheckBox11"
-        UiCheckBox11.Size = New Size(210, 35)
+        UiCheckBox11.Size = New Size(210, 33)
         UiCheckBox11.TabIndex = 33
         UiCheckBox11.Text = "合成无需求"
         ' 
@@ -104,12 +94,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox10.CheckBoxSize = 20
         UiCheckBox10.Dock = DockStyle.Top
-        UiCheckBox10.Font = New Font("微软雅黑", 12F)
+        UiCheckBox10.Font = New Font("微软雅黑", 11F)
         UiCheckBox10.ForeColor = Color.DarkGray
-        UiCheckBox10.Location = New Point(20, 335)
+        UiCheckBox10.Location = New Point(20, 317)
         UiCheckBox10.MinimumSize = New Size(1, 1)
         UiCheckBox10.Name = "UiCheckBox10"
-        UiCheckBox10.Size = New Size(210, 35)
+        UiCheckBox10.Size = New Size(210, 33)
         UiCheckBox10.TabIndex = 32
         UiCheckBox10.Text = "作物快速成熟"
         ' 
@@ -117,12 +107,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox9.CheckBoxSize = 20
         UiCheckBox9.Dock = DockStyle.Top
-        UiCheckBox9.Font = New Font("微软雅黑", 12F)
+        UiCheckBox9.Font = New Font("微软雅黑", 11F)
         UiCheckBox9.ForeColor = Color.DarkGray
-        UiCheckBox9.Location = New Point(20, 300)
+        UiCheckBox9.Location = New Point(20, 284)
         UiCheckBox9.MinimumSize = New Size(1, 1)
         UiCheckBox9.Name = "UiCheckBox9"
-        UiCheckBox9.Size = New Size(210, 35)
+        UiCheckBox9.Size = New Size(210, 33)
         UiCheckBox9.TabIndex = 31
         UiCheckBox9.Text = "极速运输队"
         ' 
@@ -130,12 +120,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox8.CheckBoxSize = 20
         UiCheckBox8.Dock = DockStyle.Top
-        UiCheckBox8.Font = New Font("微软雅黑", 12F)
+        UiCheckBox8.Font = New Font("微软雅黑", 11F)
         UiCheckBox8.ForeColor = Color.DarkGray
-        UiCheckBox8.Location = New Point(20, 265)
+        UiCheckBox8.Location = New Point(20, 251)
         UiCheckBox8.MinimumSize = New Size(1, 1)
         UiCheckBox8.Name = "UiCheckBox8"
-        UiCheckBox8.Size = New Size(210, 35)
+        UiCheckBox8.Size = New Size(210, 33)
         UiCheckBox8.TabIndex = 30
         UiCheckBox8.Text = "远行队无消耗"
         ' 
@@ -143,12 +133,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox7.CheckBoxSize = 20
         UiCheckBox7.Dock = DockStyle.Top
-        UiCheckBox7.Font = New Font("微软雅黑", 12F)
+        UiCheckBox7.Font = New Font("微软雅黑", 11F)
         UiCheckBox7.ForeColor = Color.DarkGray
-        UiCheckBox7.Location = New Point(20, 230)
+        UiCheckBox7.Location = New Point(20, 218)
         UiCheckBox7.MinimumSize = New Size(1, 1)
         UiCheckBox7.Name = "UiCheckBox7"
-        UiCheckBox7.Size = New Size(210, 35)
+        UiCheckBox7.Size = New Size(210, 33)
         UiCheckBox7.TabIndex = 29
         UiCheckBox7.Text = "超模副词条"
         ' 
@@ -156,12 +146,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox6.CheckBoxSize = 20
         UiCheckBox6.Dock = DockStyle.Top
-        UiCheckBox6.Font = New Font("微软雅黑", 12F)
+        UiCheckBox6.Font = New Font("微软雅黑", 11F)
         UiCheckBox6.ForeColor = Color.DarkGray
-        UiCheckBox6.Location = New Point(20, 195)
+        UiCheckBox6.Location = New Point(20, 185)
         UiCheckBox6.MinimumSize = New Size(1, 1)
         UiCheckBox6.Name = "UiCheckBox6"
-        UiCheckBox6.Size = New Size(210, 35)
+        UiCheckBox6.Size = New Size(210, 33)
         UiCheckBox6.TabIndex = 28
         UiCheckBox6.Text = "资源产出 x10"
         ' 
@@ -169,12 +159,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox5.CheckBoxSize = 20
         UiCheckBox5.Dock = DockStyle.Top
-        UiCheckBox5.Font = New Font("微软雅黑", 12F)
+        UiCheckBox5.Font = New Font("微软雅黑", 11F)
         UiCheckBox5.ForeColor = Color.DarkGray
-        UiCheckBox5.Location = New Point(20, 160)
+        UiCheckBox5.Location = New Point(20, 152)
         UiCheckBox5.MinimumSize = New Size(1, 1)
         UiCheckBox5.Name = "UiCheckBox5"
-        UiCheckBox5.Size = New Size(210, 35)
+        UiCheckBox5.Size = New Size(210, 33)
         UiCheckBox5.TabIndex = 27
         UiCheckBox5.Text = "种植收获 x10"
         ' 
@@ -182,12 +172,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox4.CheckBoxSize = 20
         UiCheckBox4.Dock = DockStyle.Top
-        UiCheckBox4.Font = New Font("微软雅黑", 12F)
+        UiCheckBox4.Font = New Font("微软雅黑", 11F)
         UiCheckBox4.ForeColor = Color.DarkGray
-        UiCheckBox4.Location = New Point(20, 125)
+        UiCheckBox4.Location = New Point(20, 119)
         UiCheckBox4.MinimumSize = New Size(1, 1)
         UiCheckBox4.Name = "UiCheckBox4"
-        UiCheckBox4.Size = New Size(210, 35)
+        UiCheckBox4.Size = New Size(210, 33)
         UiCheckBox4.TabIndex = 26
         UiCheckBox4.Text = "探索收益 x10"
         ' 
@@ -195,12 +185,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox3.CheckBoxSize = 20
         UiCheckBox3.Dock = DockStyle.Top
-        UiCheckBox3.Font = New Font("微软雅黑", 12F)
+        UiCheckBox3.Font = New Font("微软雅黑", 11F)
         UiCheckBox3.ForeColor = Color.DarkGray
-        UiCheckBox3.Location = New Point(20, 90)
+        UiCheckBox3.Location = New Point(20, 86)
         UiCheckBox3.MinimumSize = New Size(1, 1)
         UiCheckBox3.Name = "UiCheckBox3"
-        UiCheckBox3.Size = New Size(210, 35)
+        UiCheckBox3.Size = New Size(210, 33)
         UiCheckBox3.TabIndex = 25
         UiCheckBox3.Text = "必定暴击"
         ' 
@@ -208,12 +198,12 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox2.CheckBoxSize = 20
         UiCheckBox2.Dock = DockStyle.Top
-        UiCheckBox2.Font = New Font("微软雅黑", 12F)
+        UiCheckBox2.Font = New Font("微软雅黑", 11F)
         UiCheckBox2.ForeColor = Color.DarkGray
-        UiCheckBox2.Location = New Point(20, 55)
+        UiCheckBox2.Location = New Point(20, 53)
         UiCheckBox2.MinimumSize = New Size(1, 1)
         UiCheckBox2.Name = "UiCheckBox2"
-        UiCheckBox2.Size = New Size(210, 35)
+        UiCheckBox2.Size = New Size(210, 33)
         UiCheckBox2.TabIndex = 24
         UiCheckBox2.Text = "快速充能"
         ' 
@@ -221,24 +211,18 @@ Partial Class 界面顶层_控制台
         ' 
         UiCheckBox1.CheckBoxSize = 20
         UiCheckBox1.Dock = DockStyle.Top
-        UiCheckBox1.Font = New Font("微软雅黑", 12F)
+        UiCheckBox1.Font = New Font("微软雅黑", 11F)
         UiCheckBox1.ForeColor = Color.DarkGray
         UiCheckBox1.Location = New Point(20, 20)
         UiCheckBox1.MinimumSize = New Size(1, 1)
         UiCheckBox1.Name = "UiCheckBox1"
-        UiCheckBox1.Size = New Size(210, 35)
+        UiCheckBox1.Size = New Size(210, 33)
         UiCheckBox1.TabIndex = 22
         UiCheckBox1.Text = "无敌模式"
         ' 
         ' Panel3
         ' 
         Panel3.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
-        Panel3.Controls.Add(Label17)
-        Panel3.Controls.Add(Panel12)
-        Panel3.Controls.Add(Label15)
-        Panel3.Controls.Add(Panel11)
-        Panel3.Controls.Add(Label14)
-        Panel3.Controls.Add(Panel10)
         Panel3.Controls.Add(Label2)
         Panel3.Controls.Add(UiButton关闭控制台)
         Panel3.Controls.Add(Panel2)
@@ -246,105 +230,18 @@ Partial Class 界面顶层_控制台
         Panel3.Dock = DockStyle.Top
         Panel3.Location = New Point(250, 0)
         Panel3.Name = "Panel3"
-        Panel3.Padding = New Padding(20)
-        Panel3.Size = New Size(1030, 75)
+        Panel3.Padding = New Padding(10)
+        Panel3.Size = New Size(1030, 55)
         Panel3.TabIndex = 1
-        ' 
-        ' Label17
-        ' 
-        Label17.Dock = DockStyle.Left
-        Label17.Location = New Point(712, 20)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(150, 35)
-        Label17.TabIndex = 35
-        Label17.Text = "Event：0ms"
-        Label17.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' Panel12
-        ' 
-        Panel12.Controls.Add(Label18)
-        Panel12.Dock = DockStyle.Left
-        Panel12.Location = New Point(689, 20)
-        Panel12.Name = "Panel12"
-        Panel12.Padding = New Padding(10, 5, 10, 5)
-        Panel12.Size = New Size(23, 35)
-        Panel12.TabIndex = 34
-        ' 
-        ' Label18
-        ' 
-        Label18.BackColor = Color.DimGray
-        Label18.Dock = DockStyle.Fill
-        Label18.Location = New Point(10, 5)
-        Label18.Name = "Label18"
-        Label18.Size = New Size(3, 25)
-        Label18.TabIndex = 4
-        ' 
-        ' Label15
-        ' 
-        Label15.Dock = DockStyle.Left
-        Label15.Location = New Point(539, 20)
-        Label15.Name = "Label15"
-        Label15.Size = New Size(150, 35)
-        Label15.TabIndex = 33
-        Label15.Text = "World：0ms"
-        Label15.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' Panel11
-        ' 
-        Panel11.Controls.Add(Label16)
-        Panel11.Dock = DockStyle.Left
-        Panel11.Location = New Point(516, 20)
-        Panel11.Name = "Panel11"
-        Panel11.Padding = New Padding(10, 5, 10, 5)
-        Panel11.Size = New Size(23, 35)
-        Panel11.TabIndex = 32
-        ' 
-        ' Label16
-        ' 
-        Label16.BackColor = Color.DimGray
-        Label16.Dock = DockStyle.Fill
-        Label16.Location = New Point(10, 5)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(3, 25)
-        Label16.TabIndex = 4
-        ' 
-        ' Label14
-        ' 
-        Label14.Dock = DockStyle.Left
-        Label14.Location = New Point(366, 20)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(150, 35)
-        Label14.TabIndex = 31
-        Label14.Text = "Colony：0ms"
-        Label14.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' Panel10
-        ' 
-        Panel10.Controls.Add(Label13)
-        Panel10.Dock = DockStyle.Left
-        Panel10.Location = New Point(343, 20)
-        Panel10.Name = "Panel10"
-        Panel10.Padding = New Padding(10, 5, 10, 5)
-        Panel10.Size = New Size(23, 35)
-        Panel10.TabIndex = 30
-        ' 
-        ' Label13
-        ' 
-        Label13.BackColor = Color.DimGray
-        Label13.Dock = DockStyle.Fill
-        Label13.Location = New Point(10, 5)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(3, 25)
-        Label13.TabIndex = 4
         ' 
         ' Label2
         ' 
-        Label2.Dock = DockStyle.Left
-        Label2.Location = New Point(193, 20)
+        Label2.Dock = DockStyle.Fill
+        Label2.Location = New Point(183, 10)
         Label2.Name = "Label2"
-        Label2.Size = New Size(150, 35)
+        Label2.Size = New Size(712, 35)
         Label2.TabIndex = 27
-        Label2.Text = "UI Time：0ms"
+        Label2.Text = "处理器：0%   界面：0ms   据点：0ms   世界：0ms   事件：0ms"
         Label2.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' UiButton关闭控制台
@@ -362,7 +259,7 @@ Partial Class 界面顶层_控制台
         UiButton关闭控制台.ForeHoverColor = Color.Silver
         UiButton关闭控制台.ForePressColor = Color.Silver
         UiButton关闭控制台.ForeSelectedColor = Color.Silver
-        UiButton关闭控制台.Location = New Point(910, 20)
+        UiButton关闭控制台.Location = New Point(895, 10)
         UiButton关闭控制台.MinimumSize = New Size(1, 1)
         UiButton关闭控制台.Name = "UiButton关闭控制台"
         UiButton关闭控制台.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
@@ -370,7 +267,7 @@ Partial Class 界面顶层_控制台
         UiButton关闭控制台.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton关闭控制台.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         UiButton关闭控制台.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        UiButton关闭控制台.Size = New Size(100, 35)
+        UiButton关闭控制台.Size = New Size(125, 35)
         UiButton关闭控制台.TabIndex = 26
         UiButton关闭控制台.Text = "关闭"
         UiButton关闭控制台.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
@@ -379,7 +276,7 @@ Partial Class 界面顶层_控制台
         ' 
         Panel2.Controls.Add(Label4)
         Panel2.Dock = DockStyle.Left
-        Panel2.Location = New Point(170, 20)
+        Panel2.Location = New Point(160, 10)
         Panel2.Name = "Panel2"
         Panel2.Padding = New Padding(10, 5, 10, 5)
         Panel2.Size = New Size(23, 35)
@@ -397,22 +294,22 @@ Partial Class 界面顶层_控制台
         ' Label5
         ' 
         Label5.Dock = DockStyle.Left
-        Label5.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold)
-        Label5.Location = New Point(20, 20)
+        Label5.Font = New Font("微软雅黑", 13F, FontStyle.Bold)
+        Label5.Location = New Point(10, 10)
         Label5.Name = "Label5"
         Label5.Size = New Size(150, 35)
         Label5.TabIndex = 40
-        Label5.Text = "调试控制台"
+        Label5.Text = "控制台"
         Label5.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Panel5
         ' 
         Panel5.Controls.Add(RichTextBox1)
         Panel5.Dock = DockStyle.Fill
-        Panel5.Location = New Point(250, 75)
+        Panel5.Location = New Point(250, 55)
         Panel5.Name = "Panel5"
         Panel5.Padding = New Padding(15)
-        Panel5.Size = New Size(1030, 570)
+        Panel5.Size = New Size(1030, 610)
         Panel5.TabIndex = 3
         ' 
         ' RichTextBox1
@@ -420,7 +317,7 @@ Partial Class 界面顶层_控制台
         RichTextBox1.BackColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         RichTextBox1.BorderStyle = BorderStyle.None
         RichTextBox1.Dock = DockStyle.Fill
-        RichTextBox1.Font = New Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        RichTextBox1.Font = New Font("微软雅黑", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         RichTextBox1.ForeColor = Color.Silver
         RichTextBox1.HideSelection = False
         RichTextBox1.Location = New Point(15, 15)
@@ -428,7 +325,7 @@ Partial Class 界面顶层_控制台
         RichTextBox1.ReadOnly = True
         RichTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical
         RichTextBox1.ShowSelectionMargin = True
-        RichTextBox1.Size = New Size(1000, 540)
+        RichTextBox1.Size = New Size(1000, 580)
         RichTextBox1.TabIndex = 3
         RichTextBox1.Text = "在游戏中按波浪键可快速打开控制台"
         ' 
@@ -438,11 +335,13 @@ Partial Class 界面顶层_控制台
         Panel6.Controls.Add(UiTextBox1)
         Panel6.Controls.Add(Label3)
         Panel6.Controls.Add(UiButton发送指令)
+        Panel6.Controls.Add(Label1)
+        Panel6.Controls.Add(UiButton1)
         Panel6.Dock = DockStyle.Bottom
-        Panel6.Location = New Point(250, 645)
+        Panel6.Location = New Point(250, 665)
         Panel6.Name = "Panel6"
-        Panel6.Padding = New Padding(20)
-        Panel6.Size = New Size(1030, 75)
+        Panel6.Padding = New Padding(10)
+        Panel6.Size = New Size(1030, 55)
         Panel6.TabIndex = 4
         ' 
         ' UiTextBox1
@@ -452,11 +351,11 @@ Partial Class 界面顶层_控制台
         UiTextBox1.FillColor2 = Color.FromArgb(CByte(36), CByte(36), CByte(36))
         UiTextBox1.FillDisableColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
         UiTextBox1.FillReadOnlyColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
-        UiTextBox1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiTextBox1.Font = New Font("微软雅黑", 11F)
         UiTextBox1.ForeColor = Color.DarkGray
         UiTextBox1.ForeDisableColor = Color.DarkGray
         UiTextBox1.ForeReadOnlyColor = Color.DarkGray
-        UiTextBox1.Location = New Point(20, 20)
+        UiTextBox1.Location = New Point(10, 10)
         UiTextBox1.Margin = New Padding(4, 5, 4, 5)
         UiTextBox1.MinimumSize = New Size(1, 16)
         UiTextBox1.Name = "UiTextBox1"
@@ -468,17 +367,17 @@ Partial Class 界面顶层_控制台
         UiTextBox1.ScrollBarColor = Color.DimGray
         UiTextBox1.ScrollBarStyleInherited = False
         UiTextBox1.ShowText = False
-        UiTextBox1.Size = New Size(855, 35)
+        UiTextBox1.Size = New Size(740, 35)
         UiTextBox1.TabIndex = 31
         UiTextBox1.TextAlignment = ContentAlignment.MiddleLeft
-        UiTextBox1.Watermark = "输入指令，按 Enter 键确认，按 <上箭头> 键显示上一次的发送"
+        UiTextBox1.Watermark = "输入指令，按 Enter 键发送，按 <上箭头> 键显示上一次的发送"
         UiTextBox1.WatermarkActiveColor = Color.DimGray
         UiTextBox1.WatermarkColor = Color.DimGray
         ' 
         ' Label3
         ' 
         Label3.Dock = DockStyle.Right
-        Label3.Location = New Point(875, 20)
+        Label3.Location = New Point(750, 10)
         Label3.Name = "Label3"
         Label3.Size = New Size(10, 35)
         Label3.TabIndex = 30
@@ -498,7 +397,7 @@ Partial Class 界面顶层_控制台
         UiButton发送指令.ForeHoverColor = Color.Silver
         UiButton发送指令.ForePressColor = Color.Silver
         UiButton发送指令.ForeSelectedColor = Color.Silver
-        UiButton发送指令.Location = New Point(885, 20)
+        UiButton发送指令.Location = New Point(760, 10)
         UiButton发送指令.MinimumSize = New Size(1, 1)
         UiButton发送指令.Name = "UiButton发送指令"
         UiButton发送指令.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
@@ -511,6 +410,42 @@ Partial Class 界面顶层_控制台
         UiButton发送指令.Text = "发送"
         UiButton发送指令.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
+        ' Label1
+        ' 
+        Label1.Dock = DockStyle.Right
+        Label1.Location = New Point(885, 10)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(10, 35)
+        Label1.TabIndex = 33
+        ' 
+        ' UiButton1
+        ' 
+        UiButton1.Dock = DockStyle.Right
+        UiButton1.FillColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton1.FillColor2 = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton1.FillDisableColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton1.FillHoverColor = Color.FromArgb(CByte(56), CByte(56), CByte(56))
+        UiButton1.FillPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton1.FillSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        UiButton1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiButton1.ForeColor = Color.Silver
+        UiButton1.ForeDisableColor = Color.Silver
+        UiButton1.ForeHoverColor = Color.Silver
+        UiButton1.ForePressColor = Color.Silver
+        UiButton1.ForeSelectedColor = Color.Silver
+        UiButton1.Location = New Point(895, 10)
+        UiButton1.MinimumSize = New Size(1, 1)
+        UiButton1.Name = "UiButton1"
+        UiButton1.RectColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton1.RectDisableColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton1.RectHoverColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton1.RectPressColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton1.RectSelectedColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        UiButton1.Size = New Size(125, 35)
+        UiButton1.TabIndex = 32
+        UiButton1.Text = "修改器"
+        UiButton1.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        ' 
         ' 界面顶层_控制台
         ' 
         AutoScaleDimensions = New SizeF(96F, 96F)
@@ -520,15 +455,12 @@ Partial Class 界面顶层_控制台
         Controls.Add(Panel6)
         Controls.Add(Panel3)
         Controls.Add(Panel1)
-        Font = New Font("微软雅黑", 12F)
+        Font = New Font("微软雅黑", 11F)
         ForeColor = Color.Silver
         Name = "界面顶层_控制台"
         Size = New Size(1280, 720)
         Panel1.ResumeLayout(False)
         Panel3.ResumeLayout(False)
-        Panel12.ResumeLayout(False)
-        Panel11.ResumeLayout(False)
-        Panel10.ResumeLayout(False)
         Panel2.ResumeLayout(False)
         Panel5.ResumeLayout(False)
         Panel6.ResumeLayout(False)
@@ -551,15 +483,6 @@ Partial Class 界面顶层_控制台
     Friend WithEvents UiCheckBox11 As Sunny.UI.UICheckBox
     Friend WithEvents UiCheckBox10 As Sunny.UI.UICheckBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Panel11 As Panel
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents Label13 As Label
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label3 As Label
@@ -568,5 +491,7 @@ Partial Class 界面顶层_控制台
     Friend WithEvents Label4 As Label
     Friend WithEvents UiTextBox1 As Sunny.UI.UITextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents UiButton1 As Sunny.UI.UIButton
 
 End Class

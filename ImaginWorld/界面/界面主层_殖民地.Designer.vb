@@ -42,6 +42,11 @@ Partial Class 界面主层_殖民地
         Label殖民地名称 = New Label()
         Panel8 = New Panel()
         Panel21 = New Panel()
+        Panel29 = New Panel()
+        Label41 = New Label()
+        Panel30 = New Panel()
+        UiProcessBar1 = New Sunny.UI.UIProcessBar()
+        Label40 = New Label()
         Panel22 = New Panel()
         Label47 = New Label()
         Panel26 = New Panel()
@@ -78,7 +83,6 @@ Partial Class 界面主层_殖民地
         UiButton决策 = New Sunny.UI.UIButton()
         Label7 = New Label()
         Panel14 = New Panel()
-        Label40 = New Label()
         Panel17 = New Panel()
         UiButton建筑 = New Sunny.UI.UIButton()
         Label19 = New Label()
@@ -138,6 +142,8 @@ Partial Class 界面主层_殖民地
         Panel2.SuspendLayout()
         Panel8.SuspendLayout()
         Panel21.SuspendLayout()
+        Panel29.SuspendLayout()
+        Panel30.SuspendLayout()
         Panel22.SuspendLayout()
         Panel26.SuspendLayout()
         Panel45.SuspendLayout()
@@ -188,15 +194,15 @@ Partial Class 界面主层_殖民地
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
         Panel1.Padding = New Padding(20, 10, 20, 10)
-        Panel1.Size = New Size(1280, 60)
+        Panel1.Size = New Size(1280, 55)
         Panel1.TabIndex = 0
         ' 
         ' Label27
         ' 
         Label27.Dock = DockStyle.Fill
-        Label27.Location = New Point(837, 10)
+        Label27.Location = New Point(905, 10)
         Label27.Name = "Label27"
-        Label27.Size = New Size(423, 40)
+        Label27.Size = New Size(355, 35)
         Label27.TabIndex = 38
         Label27.Text = "1 天 0 时 0 分 - 凌晨"
         Label27.TextAlign = ContentAlignment.MiddleRight
@@ -204,9 +210,9 @@ Partial Class 界面主层_殖民地
         ' Label24
         ' 
         Label24.Dock = DockStyle.Left
-        Label24.Location = New Point(737, 10)
+        Label24.Location = New Point(805, 10)
         Label24.Name = "Label24"
-        Label24.Size = New Size(100, 40)
+        Label24.Size = New Size(100, 35)
         Label24.TabIndex = 36
         Label24.Text = "环境事件"
         Label24.TextAlign = ContentAlignment.MiddleLeft
@@ -215,10 +221,10 @@ Partial Class 界面主层_殖民地
         ' 
         Panel6.Controls.Add(Label25)
         Panel6.Dock = DockStyle.Left
-        Panel6.Location = New Point(714, 10)
+        Panel6.Location = New Point(782, 10)
         Panel6.Name = "Panel6"
         Panel6.Padding = New Padding(10, 5, 10, 5)
-        Panel6.Size = New Size(23, 40)
+        Panel6.Size = New Size(23, 35)
         Panel6.TabIndex = 35
         ' 
         ' Label25
@@ -227,15 +233,15 @@ Partial Class 界面主层_殖民地
         Label25.Dock = DockStyle.Fill
         Label25.Location = New Point(10, 5)
         Label25.Name = "Label25"
-        Label25.Size = New Size(3, 30)
+        Label25.Size = New Size(3, 25)
         Label25.TabIndex = 4
         ' 
         ' Label12
         ' 
         Label12.Dock = DockStyle.Left
-        Label12.Location = New Point(614, 10)
+        Label12.Location = New Point(682, 10)
         Label12.Name = "Label12"
-        Label12.Size = New Size(100, 40)
+        Label12.Size = New Size(100, 35)
         Label12.TabIndex = 34
         Label12.Text = "防守力"
         Label12.TextAlign = ContentAlignment.MiddleLeft
@@ -244,10 +250,10 @@ Partial Class 界面主层_殖民地
         ' 
         Panel5.Controls.Add(Label13)
         Panel5.Dock = DockStyle.Left
-        Panel5.Location = New Point(591, 10)
+        Panel5.Location = New Point(659, 10)
         Panel5.Name = "Panel5"
         Panel5.Padding = New Padding(10, 5, 10, 5)
-        Panel5.Size = New Size(23, 40)
+        Panel5.Size = New Size(23, 35)
         Panel5.TabIndex = 33
         ' 
         ' Label13
@@ -256,27 +262,27 @@ Partial Class 界面主层_殖民地
         Label13.Dock = DockStyle.Fill
         Label13.Location = New Point(10, 5)
         Label13.Name = "Label13"
-        Label13.Size = New Size(3, 30)
+        Label13.Size = New Size(3, 25)
         Label13.TabIndex = 4
         ' 
         ' Label10
         ' 
         Label10.Dock = DockStyle.Left
-        Label10.Location = New Point(491, 10)
+        Label10.Location = New Point(559, 10)
         Label10.Name = "Label10"
-        Label10.Size = New Size(100, 40)
+        Label10.Size = New Size(100, 35)
         Label10.TabIndex = 32
-        Label10.Text = "生产力"
+        Label10.Text = "产出速度"
         Label10.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Panel4
         ' 
         Panel4.Controls.Add(Label11)
         Panel4.Dock = DockStyle.Left
-        Panel4.Location = New Point(468, 10)
+        Panel4.Location = New Point(536, 10)
         Panel4.Name = "Panel4"
         Panel4.Padding = New Padding(10, 5, 10, 5)
-        Panel4.Size = New Size(23, 40)
+        Panel4.Size = New Size(23, 35)
         Panel4.TabIndex = 31
         ' 
         ' Label11
@@ -285,15 +291,15 @@ Partial Class 界面主层_殖民地
         Label11.Dock = DockStyle.Fill
         Label11.Location = New Point(10, 5)
         Label11.Name = "Label11"
-        Label11.Size = New Size(3, 30)
+        Label11.Size = New Size(3, 25)
         Label11.TabIndex = 4
         ' 
         ' Label8
         ' 
         Label8.Dock = DockStyle.Left
-        Label8.Location = New Point(348, 10)
+        Label8.Location = New Point(416, 10)
         Label8.Name = "Label8"
-        Label8.Size = New Size(120, 40)
+        Label8.Size = New Size(120, 35)
         Label8.TabIndex = 30
         Label8.Text = "物种（数量）"
         Label8.TextAlign = ContentAlignment.MiddleLeft
@@ -302,10 +308,10 @@ Partial Class 界面主层_殖民地
         ' 
         Panel3.Controls.Add(Label9)
         Panel3.Dock = DockStyle.Left
-        Panel3.Location = New Point(325, 10)
+        Panel3.Location = New Point(393, 10)
         Panel3.Name = "Panel3"
         Panel3.Padding = New Padding(10, 5, 10, 5)
-        Panel3.Size = New Size(23, 40)
+        Panel3.Size = New Size(23, 35)
         Panel3.TabIndex = 29
         ' 
         ' Label9
@@ -314,15 +320,15 @@ Partial Class 界面主层_殖民地
         Label9.Dock = DockStyle.Fill
         Label9.Location = New Point(10, 5)
         Label9.Name = "Label9"
-        Label9.Size = New Size(3, 30)
+        Label9.Size = New Size(3, 25)
         Label9.TabIndex = 4
         ' 
         ' Label4
         ' 
         Label4.Dock = DockStyle.Left
-        Label4.Location = New Point(225, 10)
+        Label4.Location = New Point(293, 10)
         Label4.Name = "Label4"
-        Label4.Size = New Size(100, 40)
+        Label4.Size = New Size(100, 35)
         Label4.TabIndex = 28
         Label4.Text = "控制权"
         Label4.TextAlign = ContentAlignment.MiddleLeft
@@ -331,10 +337,10 @@ Partial Class 界面主层_殖民地
         ' 
         Panel2.Controls.Add(Label3)
         Panel2.Dock = DockStyle.Left
-        Panel2.Location = New Point(202, 10)
+        Panel2.Location = New Point(270, 10)
         Panel2.Name = "Panel2"
         Panel2.Padding = New Padding(10, 5, 10, 5)
-        Panel2.Size = New Size(23, 40)
+        Panel2.Size = New Size(23, 35)
         Panel2.TabIndex = 27
         ' 
         ' Label3
@@ -343,16 +349,16 @@ Partial Class 界面主层_殖民地
         Label3.Dock = DockStyle.Fill
         Label3.Location = New Point(10, 5)
         Label3.Name = "Label3"
-        Label3.Size = New Size(3, 30)
+        Label3.Size = New Size(3, 25)
         Label3.TabIndex = 4
         ' 
         ' Label殖民地名称
         ' 
         Label殖民地名称.Dock = DockStyle.Left
-        Label殖民地名称.Font = New Font("微软雅黑", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(134))
+        Label殖民地名称.Font = New Font("微软雅黑", 13F, FontStyle.Bold)
         Label殖民地名称.Location = New Point(20, 10)
         Label殖民地名称.Name = "Label殖民地名称"
-        Label殖民地名称.Size = New Size(182, 40)
+        Label殖民地名称.Size = New Size(250, 35)
         Label殖民地名称.TabIndex = 25
         Label殖民地名称.Text = "殖民地名称"
         Label殖民地名称.TextAlign = ContentAlignment.MiddleLeft
@@ -365,25 +371,91 @@ Partial Class 界面主层_殖民地
         Panel8.Controls.Add(Panel24)
         Panel8.Controls.Add(Panel12)
         Panel8.Dock = DockStyle.Left
-        Panel8.Location = New Point(0, 60)
+        Panel8.Location = New Point(0, 55)
         Panel8.Name = "Panel8"
         Panel8.Padding = New Padding(20)
-        Panel8.Size = New Size(420, 660)
+        Panel8.Size = New Size(420, 665)
         Panel8.TabIndex = 2
         ' 
         ' Panel21
         ' 
         Panel21.AutoSize = True
+        Panel21.Controls.Add(Panel29)
+        Panel21.Controls.Add(Label40)
         Panel21.Controls.Add(Panel22)
         Panel21.Controls.Add(Label46)
         Panel21.Controls.Add(Panel45)
         Panel21.Controls.Add(Panel34)
         Panel21.Controls.Add(Label6)
         Panel21.Dock = DockStyle.Top
-        Panel21.Location = New Point(20, 469)
+        Panel21.Location = New Point(20, 434)
         Panel21.Name = "Panel21"
-        Panel21.Size = New Size(380, 167)
+        Panel21.Size = New Size(380, 204)
         Panel21.TabIndex = 16
+        ' 
+        ' Panel29
+        ' 
+        Panel29.Controls.Add(Label41)
+        Panel29.Controls.Add(Panel30)
+        Panel29.Dock = DockStyle.Top
+        Panel29.Location = New Point(0, 169)
+        Panel29.Name = "Panel29"
+        Panel29.Padding = New Padding(0, 5, 0, 5)
+        Panel29.Size = New Size(380, 35)
+        Panel29.TabIndex = 53
+        ' 
+        ' Label41
+        ' 
+        Label41.Dock = DockStyle.Fill
+        Label41.Font = New Font("微软雅黑", 11F)
+        Label41.ForeColor = Color.Gray
+        Label41.Location = New Point(0, 5)
+        Label41.Name = "Label41"
+        Label41.Size = New Size(260, 25)
+        Label41.TabIndex = 0
+        Label41.Text = "预计袭击倒计时"
+        Label41.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' Panel30
+        ' 
+        Panel30.Controls.Add(UiProcessBar1)
+        Panel30.Dock = DockStyle.Right
+        Panel30.Location = New Point(260, 5)
+        Panel30.Name = "Panel30"
+        Panel30.Padding = New Padding(0, 3, 0, 3)
+        Panel30.Size = New Size(120, 25)
+        Panel30.TabIndex = 1
+        ' 
+        ' UiProcessBar1
+        ' 
+        UiProcessBar1.DecimalPlaces = 0
+        UiProcessBar1.Dock = DockStyle.Fill
+        UiProcessBar1.FillColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
+        UiProcessBar1.Font = New Font("微软雅黑", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
+        UiProcessBar1.ForeColor = Color.Silver
+        UiProcessBar1.Location = New Point(0, 3)
+        UiProcessBar1.MinimumSize = New Size(3, 3)
+        UiProcessBar1.Name = "UiProcessBar1"
+        UiProcessBar1.Radius = 4
+        UiProcessBar1.RadiusSides = Sunny.UI.UICornerRadiusSides.None
+        UiProcessBar1.RectColor = Color.FromArgb(CByte(64), CByte(128), CByte(64))
+        UiProcessBar1.RectSize = 2
+        UiProcessBar1.ShowValue = False
+        UiProcessBar1.Size = New Size(120, 19)
+        UiProcessBar1.Style = Sunny.UI.UIStyle.Custom
+        UiProcessBar1.TabIndex = 2
+        UiProcessBar1.Value = 50
+        ' 
+        ' Label40
+        ' 
+        Label40.BackColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
+        Label40.Dock = DockStyle.Top
+        Label40.ForeColor = Color.Gray
+        Label40.Location = New Point(0, 167)
+        Label40.Name = "Label40"
+        Label40.Size = New Size(380, 2)
+        Label40.TabIndex = 52
+        Label40.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Panel22
         ' 
@@ -399,13 +471,13 @@ Partial Class 界面主层_殖民地
         ' Label47
         ' 
         Label47.Dock = DockStyle.Fill
-        Label47.Font = New Font("微软雅黑", 11.25F)
+        Label47.Font = New Font("微软雅黑", 11F)
         Label47.ForeColor = Color.Gray
         Label47.Location = New Point(0, 5)
         Label47.Name = "Label47"
         Label47.Size = New Size(260, 25)
         Label47.TabIndex = 0
-        Label47.Text = "预计袭击倒计时"
+        Label47.Text = "田地概况"
         Label47.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Panel26
@@ -430,7 +502,7 @@ Partial Class 界面主层_殖民地
         UiProcessBar6.Name = "UiProcessBar6"
         UiProcessBar6.Radius = 4
         UiProcessBar6.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        UiProcessBar6.RectColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
+        UiProcessBar6.RectColor = Color.FromArgb(CByte(64), CByte(128), CByte(64))
         UiProcessBar6.RectSize = 2
         UiProcessBar6.ShowValue = False
         UiProcessBar6.Size = New Size(120, 19)
@@ -463,7 +535,7 @@ Partial Class 界面主层_殖民地
         ' Label50
         ' 
         Label50.Dock = DockStyle.Fill
-        Label50.Font = New Font("微软雅黑", 11.25F)
+        Label50.Font = New Font("微软雅黑", 11F)
         Label50.ForeColor = Color.Gray
         Label50.Location = New Point(0, 5)
         Label50.Name = "Label50"
@@ -494,7 +566,7 @@ Partial Class 界面主层_殖民地
         UiProcessBar11.Name = "UiProcessBar11"
         UiProcessBar11.Radius = 4
         UiProcessBar11.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        UiProcessBar11.RectColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
+        UiProcessBar11.RectColor = Color.FromArgb(CByte(64), CByte(128), CByte(64))
         UiProcessBar11.RectSize = 2
         UiProcessBar11.ShowValue = False
         UiProcessBar11.Size = New Size(120, 19)
@@ -646,7 +718,7 @@ Partial Class 界面主层_殖民地
         Panel7.Controls.Add(Panel15)
         Panel7.Controls.Add(Label7)
         Panel7.Dock = DockStyle.Top
-        Panel7.Location = New Point(20, 265)
+        Panel7.Location = New Point(20, 230)
         Panel7.Name = "Panel7"
         Panel7.Size = New Size(380, 204)
         Panel7.TabIndex = 14
@@ -665,7 +737,7 @@ Partial Class 界面主层_殖民地
         ' Label49
         ' 
         Label49.Dock = DockStyle.Fill
-        Label49.Font = New Font("微软雅黑", 11.25F)
+        Label49.Font = New Font("微软雅黑", 11F)
         Label49.ForeColor = Color.Gray
         Label49.Location = New Point(0, 5)
         Label49.Name = "Label49"
@@ -696,7 +768,7 @@ Partial Class 界面主层_殖民地
         UiProcessBar10.Name = "UiProcessBar10"
         UiProcessBar10.Radius = 4
         UiProcessBar10.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        UiProcessBar10.RectColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
+        UiProcessBar10.RectColor = Color.FromArgb(CByte(64), CByte(128), CByte(64))
         UiProcessBar10.RectSize = 2
         UiProcessBar10.ShowValue = False
         UiProcessBar10.Size = New Size(120, 19)
@@ -729,7 +801,7 @@ Partial Class 界面主层_殖民地
         ' Label34
         ' 
         Label34.Dock = DockStyle.Fill
-        Label34.Font = New Font("微软雅黑", 11.25F)
+        Label34.Font = New Font("微软雅黑", 11F)
         Label34.ForeColor = Color.Gray
         Label34.Location = New Point(0, 5)
         Label34.Name = "Label34"
@@ -760,7 +832,7 @@ Partial Class 界面主层_殖民地
         UiProcessBar9.Name = "UiProcessBar9"
         UiProcessBar9.Radius = 4
         UiProcessBar9.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        UiProcessBar9.RectColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
+        UiProcessBar9.RectColor = Color.FromArgb(CByte(64), CByte(128), CByte(64))
         UiProcessBar9.RectSize = 2
         UiProcessBar9.ShowValue = False
         UiProcessBar9.Size = New Size(120, 19)
@@ -793,7 +865,7 @@ Partial Class 界面主层_殖民地
         ' Label33
         ' 
         Label33.Dock = DockStyle.Fill
-        Label33.Font = New Font("微软雅黑", 11.25F)
+        Label33.Font = New Font("微软雅黑", 11F)
         Label33.ForeColor = Color.Gray
         Label33.Location = New Point(0, 5)
         Label33.Name = "Label33"
@@ -824,7 +896,7 @@ Partial Class 界面主层_殖民地
         UiProcessBar8.Name = "UiProcessBar8"
         UiProcessBar8.Radius = 4
         UiProcessBar8.RadiusSides = Sunny.UI.UICornerRadiusSides.None
-        UiProcessBar8.RectColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
+        UiProcessBar8.RectColor = Color.FromArgb(CByte(64), CByte(128), CByte(64))
         UiProcessBar8.RectSize = 2
         UiProcessBar8.ShowValue = False
         UiProcessBar8.Size = New Size(120, 19)
@@ -910,32 +982,19 @@ Partial Class 界面主层_殖民地
         Label7.Name = "Label7"
         Label7.Size = New Size(380, 45)
         Label7.TabIndex = 42
-        Label7.Text = "殖民地经营系统"
+        Label7.Text = "经营管理"
         Label7.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Panel14
         ' 
         Panel14.AutoSize = True
-        Panel14.Controls.Add(Label40)
         Panel14.Controls.Add(Panel17)
         Panel14.Controls.Add(Label19)
         Panel14.Dock = DockStyle.Top
         Panel14.Location = New Point(20, 145)
         Panel14.Name = "Panel14"
-        Panel14.Size = New Size(380, 120)
+        Panel14.Size = New Size(380, 85)
         Panel14.TabIndex = 13
-        ' 
-        ' Label40
-        ' 
-        Label40.Dock = DockStyle.Top
-        Label40.Font = New Font("微软雅黑", 11.25F)
-        Label40.ForeColor = Color.Gray
-        Label40.Location = New Point(0, 85)
-        Label40.Name = "Label40"
-        Label40.Size = New Size(380, 35)
-        Label40.TabIndex = 43
-        Label40.Text = "时产 1145 - 增 0 种 / 减 0 种"
-        Label40.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Panel17
         ' 
@@ -984,7 +1043,7 @@ Partial Class 界面主层_殖民地
         Label19.Name = "Label19"
         Label19.Size = New Size(380, 45)
         Label19.TabIndex = 42
-        Label19.Text = "建筑和资源生产系统"
+        Label19.Text = "建筑和资源"
         Label19.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Panel24
@@ -1033,7 +1092,7 @@ Partial Class 界面主层_殖民地
         UiButton仓库.RectSelectedColor = Color.FromArgb(CByte(48), CByte(48), CByte(48))
         UiButton仓库.Size = New Size(380, 40)
         UiButton仓库.TabIndex = 37
-        UiButton仓库.Text = "仓库   0 / 10000"
+        UiButton仓库.Text = "仓库 0 / 10000"
         UiButton仓库.TipsFont = New Font("宋体", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         ' 
         ' Label1
@@ -1045,7 +1104,7 @@ Partial Class 界面主层_殖民地
         Label1.Name = "Label1"
         Label1.Size = New Size(380, 45)
         Label1.TabIndex = 42
-        Label1.Text = "仓储和运输系统"
+        Label1.Text = "仓储和运输"
         Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Panel12
@@ -1171,10 +1230,10 @@ Partial Class 界面主层_殖民地
         Panel11.Controls.Add(Panel18)
         Panel11.Controls.Add(Panel20)
         Panel11.Dock = DockStyle.Right
-        Panel11.Location = New Point(860, 60)
+        Panel11.Location = New Point(860, 55)
         Panel11.Name = "Panel11"
         Panel11.Padding = New Padding(20)
-        Panel11.Size = New Size(420, 660)
+        Panel11.Size = New Size(420, 665)
         Panel11.TabIndex = 3
         ' 
         ' Panel9
@@ -1186,7 +1245,7 @@ Partial Class 界面主层_殖民地
         Panel9.Dock = DockStyle.Fill
         Panel9.Location = New Point(20, 328)
         Panel9.Name = "Panel9"
-        Panel9.Size = New Size(380, 312)
+        Panel9.Size = New Size(380, 317)
         Panel9.TabIndex = 46
         ' 
         ' Label36
@@ -1197,7 +1256,7 @@ Partial Class 界面主层_殖民地
         Label36.Location = New Point(0, 112)
         Label36.Name = "Label36"
         Label36.Padding = New Padding(0, 10, 0, 0)
-        Label36.Size = New Size(380, 200)
+        Label36.Size = New Size(380, 205)
         Label36.TabIndex = 61
         Label36.Text = "已追踪任务描述"
         ' 
@@ -1273,13 +1332,13 @@ Partial Class 界面主层_殖民地
         ' Label32
         ' 
         Label32.Dock = DockStyle.Top
-        Label32.Font = New Font("微软雅黑", 11.25F)
+        Label32.Font = New Font("微软雅黑", 11F)
         Label32.ForeColor = Color.Gray
         Label32.Location = New Point(0, 140)
         Label32.Name = "Label32"
         Label32.Size = New Size(380, 33)
         Label32.TabIndex = 55
-        Label32.Text = "消耗剩余天：角色 0 / 人口 0 / 载具 0"
+        Label32.Text = "消耗剩余：角色 0 / 人口 0 / 载具 0"
         Label32.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label35
@@ -1296,13 +1355,13 @@ Partial Class 界面主层_殖民地
         ' Label42
         ' 
         Label42.Dock = DockStyle.Top
-        Label42.Font = New Font("微软雅黑", 11.25F)
+        Label42.Font = New Font("微软雅黑", 11F)
         Label42.ForeColor = Color.Gray
         Label42.Location = New Point(0, 105)
         Label42.Name = "Label42"
         Label42.Size = New Size(380, 33)
         Label42.TabIndex = 53
-        Label42.Text = "未携带人口 - 货物安全"
+        Label42.Text = "未携带人口"
         Label42.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label22
@@ -1319,13 +1378,13 @@ Partial Class 界面主层_殖民地
         ' Label30
         ' 
         Label30.Dock = DockStyle.Top
-        Label30.Font = New Font("微软雅黑", 11.25F)
+        Label30.Font = New Font("微软雅黑", 11F)
         Label30.ForeColor = Color.Gray
         Label30.Location = New Point(0, 70)
         Label30.Name = "Label30"
         Label30.Size = New Size(380, 33)
         Label30.TabIndex = 51
-        Label30.Text = "远行队空间：0 / ？"
+        Label30.Text = "远行队空间：0 / ？货物安全"
         Label30.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label17
@@ -1342,7 +1401,7 @@ Partial Class 界面主层_殖民地
         ' Label18
         ' 
         Label18.Dock = DockStyle.Top
-        Label18.Font = New Font("微软雅黑", 11.25F)
+        Label18.Font = New Font("微软雅黑", 11F)
         Label18.ForeColor = Color.Gray
         Label18.Location = New Point(0, 35)
         Label18.Name = "Label18"
@@ -1365,7 +1424,7 @@ Partial Class 界面主层_殖民地
         ' Label14
         ' 
         Label14.Dock = DockStyle.Top
-        Label14.Font = New Font("微软雅黑", 11.25F)
+        Label14.Font = New Font("微软雅黑", 11F)
         Label14.ForeColor = Color.Gray
         Label14.Location = New Point(0, 0)
         Label14.Name = "Label14"
@@ -1563,10 +1622,10 @@ Partial Class 界面主层_殖民地
         Panel16.Controls.Add(Label70)
         Panel16.Controls.Add(Panel10)
         Panel16.Dock = DockStyle.Fill
-        Panel16.Location = New Point(422, 60)
+        Panel16.Location = New Point(422, 55)
         Panel16.Name = "Panel16"
         Panel16.Padding = New Padding(20)
-        Panel16.Size = New Size(436, 660)
+        Panel16.Size = New Size(436, 665)
         Panel16.TabIndex = 4
         ' 
         ' Panel28
@@ -1574,7 +1633,7 @@ Partial Class 界面主层_殖民地
         Panel28.Dock = DockStyle.Fill
         Panel28.Location = New Point(20, 105)
         Panel28.Name = "Panel28"
-        Panel28.Size = New Size(396, 535)
+        Panel28.Size = New Size(396, 540)
         Panel28.TabIndex = 32
         ' 
         ' Label70
@@ -1606,7 +1665,6 @@ Partial Class 界面主层_殖民地
         Label26.ForeColor = Color.Gray
         Label26.Location = New Point(100, 0)
         Label26.Name = "Label26"
-        Label26.Padding = New Padding(0, 0, 10, 0)
         Label26.Size = New Size(196, 40)
         Label26.TabIndex = 40
         Label26.Text = "运行态"
@@ -1672,10 +1730,10 @@ Partial Class 界面主层_殖民地
         ' 
         Panel38.Controls.Add(Label39)
         Panel38.Dock = DockStyle.Left
-        Panel38.Location = New Point(420, 60)
+        Panel38.Location = New Point(420, 55)
         Panel38.Name = "Panel38"
         Panel38.Padding = New Padding(0, 20, 0, 20)
-        Panel38.Size = New Size(2, 660)
+        Panel38.Size = New Size(2, 665)
         Panel38.TabIndex = 5
         ' 
         ' Label39
@@ -1684,17 +1742,17 @@ Partial Class 界面主层_殖民地
         Label39.Dock = DockStyle.Fill
         Label39.Location = New Point(0, 20)
         Label39.Name = "Label39"
-        Label39.Size = New Size(2, 620)
+        Label39.Size = New Size(2, 625)
         Label39.TabIndex = 4
         ' 
         ' Panel27
         ' 
         Panel27.Controls.Add(Label23)
         Panel27.Dock = DockStyle.Right
-        Panel27.Location = New Point(858, 60)
+        Panel27.Location = New Point(858, 55)
         Panel27.Name = "Panel27"
         Panel27.Padding = New Padding(0, 20, 0, 20)
-        Panel27.Size = New Size(2, 660)
+        Panel27.Size = New Size(2, 665)
         Panel27.TabIndex = 6
         ' 
         ' Label23
@@ -1703,7 +1761,7 @@ Partial Class 界面主层_殖民地
         Label23.Dock = DockStyle.Fill
         Label23.Location = New Point(0, 20)
         Label23.Name = "Label23"
-        Label23.Size = New Size(2, 620)
+        Label23.Size = New Size(2, 625)
         Label23.TabIndex = 4
         ' 
         ' 界面主层_殖民地
@@ -1730,6 +1788,8 @@ Partial Class 界面主层_殖民地
         Panel8.ResumeLayout(False)
         Panel8.PerformLayout()
         Panel21.ResumeLayout(False)
+        Panel29.ResumeLayout(False)
+        Panel30.ResumeLayout(False)
         Panel22.ResumeLayout(False)
         Panel26.ResumeLayout(False)
         Panel45.ResumeLayout(False)
@@ -1871,6 +1931,10 @@ Partial Class 界面主层_殖民地
     Friend WithEvents Label36 As Label
     Friend WithEvents Label37 As Label
     Friend WithEvents Label38 As Label
+    Friend WithEvents Panel29 As Panel
+    Friend WithEvents Label41 As Label
+    Friend WithEvents Panel30 As Panel
+    Friend WithEvents UiProcessBar1 As Sunny.UI.UIProcessBar
     Friend WithEvents Label40 As Label
 
 End Class

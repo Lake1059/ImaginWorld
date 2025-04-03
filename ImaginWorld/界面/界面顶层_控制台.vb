@@ -44,11 +44,11 @@
     Dim 上一次发送的指令 As String = ""
 
     Private Sub UiButton发送指令_Click(sender As Object, e As EventArgs) Handles UiButton发送指令.Click
-        If Me.UiTextBox1.Text.Replace(" ", "") = "" Then Exit Sub
-        上一次发送的指令 = Me.UiTextBox1.Text
-        DebugPrint(Me.UiTextBox1.Text, Color.Silver, False)
-        指令系统.执行(Me.UiTextBox1.Text)
-        Me.UiTextBox1.Text = ""
+        If UiTextBox1.Text.Replace(" ", "") = "" Then Exit Sub
+        上一次发送的指令 = UiTextBox1.Text
+        DebugPrint(UiTextBox1.Text, Color.Silver, False)
+        指令系统.执行(UiTextBox1.Text)
+        UiTextBox1.Text = ""
     End Sub
 
 

@@ -249,7 +249,6 @@ Partial Class 界面二层_决策
         ' 
         ' UiRadioButton5
         ' 
-        UiRadioButton5.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
         UiRadioButton5.Dock = DockStyle.Top
         UiRadioButton5.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         UiRadioButton5.ForeColor = Color.Silver
@@ -264,7 +263,6 @@ Partial Class 界面二层_决策
         ' 
         ' UiRadioButton4
         ' 
-        UiRadioButton4.BackColor = Color.FromArgb(CByte(30), CByte(30), CByte(30))
         UiRadioButton4.Dock = DockStyle.Top
         UiRadioButton4.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         UiRadioButton4.ForeColor = Color.Silver
@@ -279,7 +277,6 @@ Partial Class 界面二层_决策
         ' 
         ' UiRadioButton3
         ' 
-        UiRadioButton3.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
         UiRadioButton3.Dock = DockStyle.Top
         UiRadioButton3.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         UiRadioButton3.ForeColor = Color.Silver
@@ -294,7 +291,6 @@ Partial Class 界面二层_决策
         ' 
         ' UiRadioButton2
         ' 
-        UiRadioButton2.BackColor = Color.FromArgb(CByte(30), CByte(30), CByte(30))
         UiRadioButton2.Dock = DockStyle.Top
         UiRadioButton2.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         UiRadioButton2.ForeColor = Color.Silver
@@ -309,7 +305,6 @@ Partial Class 界面二层_决策
         ' 
         ' UiRadioButton1
         ' 
-        UiRadioButton1.BackColor = Color.FromArgb(CByte(36), CByte(36), CByte(36))
         UiRadioButton1.Dock = DockStyle.Top
         UiRadioButton1.Font = New Font("微软雅黑", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(134))
         UiRadioButton1.ForeColor = Color.Silver
