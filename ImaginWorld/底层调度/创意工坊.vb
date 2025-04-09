@@ -69,28 +69,6 @@ Class 创意工坊
         End Select
     End Sub
 
-    'Public Sub 创建新的创意工坊物品并上传(物品标题 As String, 物品描述 As String, 包含内容的文件夹 As String, 标签 As List(Of String), 预览图路径 As String, 可见性 As ERemoteStoragePublishedFileVisibility)
-    '    当前创意工坊物品对象 = New SteamWorkshopItem With {
-    '        .Title = 物品标题,
-    '        .Description = 物品描述,
-    '        .ContentFolderPath = 包含内容的文件夹,
-    '        .Tags = 标签,
-    '        .PreviewImagePath = 预览图路径,
-    '        .Visibility = 可见性
-    '    }
-    '    CreateItem()
-    'End Sub
-
-    'Public Sub 更新创意工坊物品并上传(创意工坊物品ID As ULong, 物品标题 As String, 包含内容的文件夹 As String, 标签 As List(Of String), 预览图路径 As String)
-    '    当前创意工坊物品对象 = New SteamWorkshopItem With {
-    '        .Title = 物品标题,
-    '        .ContentFolderPath = 包含内容的文件夹,
-    '        .Tags = 标签,
-    '        .PreviewImagePath = 预览图路径
-    '    }
-    '    当前创意工坊物品ID对象 = New PublishedFileId_t With {.m_PublishedFileId = 创意工坊物品ID}
-    '    UpdateItem2()
-    'End Sub
 
     Private Sub CreateItem()
         Dim steamAPICall = SteamUGC.CreateItem(SteamUtils.GetAppID(), EWorkshopFileType.k_EWorkshopFileTypeCommunity)

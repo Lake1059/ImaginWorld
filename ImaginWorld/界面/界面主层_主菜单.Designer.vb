@@ -972,7 +972,7 @@ Partial Class 界面主层_主菜单
         Label128.BackColor = Color.Transparent
         Label128.Dock = DockStyle.Bottom
         Label128.Font = New Font("微软雅黑", 13F, FontStyle.Bold)
-        Label128.Location = New Point(0, 515)
+        Label128.Location = New Point(0, 525)
         Label128.Name = "Label128"
         Label128.Size = New Size(84, 25)
         Label128.TabIndex = 56
@@ -983,10 +983,10 @@ Partial Class 界面主层_主菜单
         Label127.AutoSize = True
         Label127.Dock = DockStyle.Bottom
         Label127.ForeColor = Color.FromArgb(CByte(255), CByte(102), CByte(153))
-        Label127.Location = New Point(0, 540)
+        Label127.Location = New Point(0, 550)
         Label127.Name = "Label127"
-        Label127.Padding = New Padding(0, 10, 0, 0)
-        Label127.Size = New Size(174, 30)
+        Label127.Padding = New Padding(0, 5, 0, 0)
+        Label127.Size = New Size(174, 25)
         Label127.TabIndex = 55
         Label127.Text = "哔哩哔哩：@湖边的稻草"
         ' 
@@ -995,10 +995,10 @@ Partial Class 界面主层_主菜单
         Label126.AutoSize = True
         Label126.Dock = DockStyle.Bottom
         Label126.ForeColor = Color.FromArgb(CByte(15), CByte(118), CByte(211))
-        Label126.Location = New Point(0, 570)
+        Label126.Location = New Point(0, 575)
         Label126.Name = "Label126"
-        Label126.Padding = New Padding(0, 10, 0, 0)
-        Label126.Size = New Size(261, 30)
+        Label126.Padding = New Padding(0, 5, 0, 0)
+        Label126.Size = New Size(261, 25)
         Label126.TabIndex = 54
         Label126.Text = "开发者邮箱：vb1059@outlook.com"
         ' 
@@ -1023,9 +1023,9 @@ Partial Class 界面主层_主菜单
         Label82.Location = New Point(0, 142)
         Label82.Name = "Label82"
         Label82.Padding = New Padding(0, 20, 0, 10)
-        Label82.Size = New Size(138, 55)
+        Label82.Size = New Size(48, 55)
         Label82.TabIndex = 50
-        Label82.Text = "操作和机制教程"
+        Label82.Text = "教程"
         ' 
         ' Label107
         ' 

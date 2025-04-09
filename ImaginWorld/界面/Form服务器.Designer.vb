@@ -1358,7 +1358,6 @@ Partial Class Form服务器
         UiRoundProcess3.ForeColor2 = Color.Silver
         UiRoundProcess3.Inner = 40
         UiRoundProcess3.Location = New Point(0, 21)
-        UiRoundProcess3.Maximum = 1000
         UiRoundProcess3.MinimumSize = New Size(1, 1)
         UiRoundProcess3.Name = "UiRoundProcess3"
         UiRoundProcess3.Outer = 60
@@ -1375,9 +1374,9 @@ Partial Class Form服务器
         Label31.Dock = DockStyle.Top
         Label31.Location = New Point(0, 0)
         Label31.Name = "Label31"
-        Label31.Size = New Size(85, 21)
+        Label31.Size = New Size(99, 21)
         Label31.TabIndex = 3
-        Label31.Text = "CPU Time"
+        Label31.Text = "Physic RAM"
         ' 
         ' Panel15
         ' 
@@ -1414,9 +1413,9 @@ Partial Class Form服务器
         Label24.Dock = DockStyle.Top
         Label24.Location = New Point(0, 0)
         Label24.Name = "Label24"
-        Label24.Size = New Size(47, 21)
+        Label24.Size = New Size(93, 21)
         Label24.TabIndex = 3
-        Label24.Text = "RAM"
+        Label24.Text = "CPU Game"
         ' 
         ' Panel14
         ' 
@@ -1453,9 +1452,9 @@ Partial Class Form服务器
         Label20.Dock = DockStyle.Top
         Label20.Location = New Point(0, 0)
         Label20.Name = "Label20"
-        Label20.Size = New Size(43, 21)
+        Label20.Size = New Size(102, 21)
         Label20.TabIndex = 3
-        Label20.Text = "CPU"
+        Label20.Text = "CPU System"
         ' 
         ' Panel1
         ' 

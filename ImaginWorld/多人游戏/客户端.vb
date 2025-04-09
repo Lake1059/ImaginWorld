@@ -2,6 +2,7 @@
 Imports System.Net.Sockets
 Imports System.Text
 Imports System.Threading
+Imports ImaginWorld.多人模式通信数据类
 
 Public Class 客户端
     Public Shared Property UDP客户端 As UdpClient
@@ -11,6 +12,7 @@ Public Class 客户端
     Public Shared Property 是否正在运行 As Boolean = False
     Public Shared Property 是否收到响应 As Boolean = False
     Public Shared Property 响应线程数量 As Integer = 1
+    Public Shared Property 接收到的玩家角色位信息表 As New 玩家角色位信息表
 
     Public Shared Sub 启动客户端(服务器IP As String, 服务器端口 As String)
         是否正在运行 = True
@@ -31,18 +33,21 @@ Public Class 客户端
             Try
                 Dim 数据_接收到的字节 = UDP客户端.Receive(服务器地址)
                 Dim 数据_文本 = Encoding.UTF8.GetString(数据_接收到的字节)
-                Dim 数据_消息列表 As List(Of String) = 数据_文本.Split("<iw_separator>", StringSplitOptions.None).ToList()
+                Dim 数据_消息列表 As List(Of String) = 数据_文本.Split(通信指令.数据分隔符, StringSplitOptions.None).ToList()
                 客户端的消息响应.执行消息(数据_消息列表)
+            Catch ex As TimeoutException
+                DebugPrint($"[Client] 接收消息超时，请关注网络波动", Color.Yellow)
+            Catch ex As SocketException When ex.SocketErrorCode = SocketError.TimedOut
             Catch ex As Exception
                 DebugPrint(ex.Message, Color.Tomato)
             End Try
         End While
-        UI同步上下文.Post(Sub() DebugPrint("客户端消息处理线程已停止运行", Color.Tomato), Nothing)
+        UI同步上下文.Post(Sub() DebugPrint("[Client] 客户端消息处理线程已停止运行", Color.Tomato), Nothing)
     End Sub
 
     Public Shared Sub 发送消息(message As List(Of String))
         Try
-            Dim combinedMessage As String = String.Join("<iw_separator>", message)
+            Dim combinedMessage As String = String.Join(通信指令.数据分隔符, message)
             Dim data = Encoding.UTF8.GetBytes(combinedMessage)
             UDP客户端.Send(data, data.Length, 服务器地址)
         Catch ex As Exception

@@ -316,6 +316,8 @@ Public Class 数据中心
 
 
 
+    Public Shared Property 所有世界地图 As New Dictionary(Of String, Object)
+    Public Shared Property 所有殖民地 As New Dictionary(Of String, Object)
 
 
 
@@ -330,5 +332,4 @@ Public Class 数据中心
 
 
 
-
-    End Class
+End Class

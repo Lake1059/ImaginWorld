@@ -15,6 +15,10 @@ Module Module1
 
     Public UI同步上下文 As SynchronizationContext = SynchronizationContext.Current
 
+    Public Sub 界面线程执行(d As SendOrPostCallback)
+        UI同步上下文.Post(d, Nothing)
+    End Sub
+
 
     <Extension>
     Public Sub DoubleBuffer(control As Control)

@@ -1,12 +1,11 @@
 ﻿Public Class 存档系统
 
-    Public Shared Property 实例对象 As 存档结构
+    Public Shared Property GameSave As New 存档结构
 
     <Serializable>
     Public Class 存档结构
         Public Property SinglePlayerData As New 玩家数据单片结构 '单人模式玩家数据 
-
-        Public Property MultiPlayerColonyList As New List(Of String) '多人模式可用的殖民地列表
+        Public Property MultiPlayerColonyNameList As New List(Of String) '多人模式可用的殖民地列表
         Public Property MultiPlayerData As New Dictionary(Of String, 玩家数据单片结构) '多人模式玩家数据
         Public Property ColonyData As New Dictionary(Of String, 殖民地单片结构) '所有殖民地数据
 
@@ -20,16 +19,17 @@
     <Serializable>
     Public Class 玩家数据单片结构
         Public Property PlayerName As String '玩家名称
+        Public Property PlayerPassword As String '玩家密码
+        Public Property IsHide As Boolean '玩家是否在登录列表中隐藏
         Public Property TravelData As New 远行队单片结构 '玩家的远行队数据
-        Public Property OwnColony As List(Of String) '玩家拥有的殖民地名称 
+        Public Property OwnColony As New List(Of String) '玩家拥有的殖民地名称 
         Public Property Scenario As String '玩家所在场景名称
         Public Property ScenarioType As 场景类型 '玩家所在场景类型
         Public Property WorldLocation As New Point(0, 0) '如果在世界地图，玩家的地图坐标
         Public Property FinishedMission As New List(Of String) '玩家已完成的任务
         Public Property ActiveMission As New List(Of String) '玩家正在进行的任务 
         Public Property TrackingMissionId As String '玩家正在追踪的任务ID
-
-
+        Public Property Tag  As New Dictionary(Of String, Object)
     End Class
 
     <Serializable>
@@ -42,13 +42,13 @@
         Public Property Inventory_Equipment As Dictionary(Of String, String)
         Public Property Inventory_QuestItems As Dictionary(Of String, Integer)
         Public Property Inventory_Collectible As Dictionary(Of String, Integer)
-        Public Property Characters As Dictionary(Of String, 角色单片结构) '远行队的角色数据  
+        Public Property Characters As New Dictionary(Of String, 角色单片结构) '远行队的角色数据  
     End Class
 
     <Serializable>
     Public Class 殖民地单片结构
-        Public Property Inventory As Dictionary(Of String, Integer) '殖民地的物品库存
-        Public Property Characters As Dictionary(Of String, 角色单片结构) '殖民地的角色数据
+        Public Property Inventory As New Dictionary(Of String, Integer) '殖民地的物品库存
+        Public Property Characters As New Dictionary(Of String, 角色单片结构) '殖民地的角色数据
 
 
     End Class

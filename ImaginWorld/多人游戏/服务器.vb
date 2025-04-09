@@ -34,9 +34,6 @@ Public Class 服务器
     Public Shared Property 已发送个数 As Long = 0
     Public Shared Property 已接收个数 As Long = 0
 
-    Public Shared Property 最近处理时长 As New List(Of Integer)
-
-
     Class 玩家信息单片结构
         Public Property IP As IPEndPoint
         Public Property 权限 As 玩家权限类型
@@ -45,7 +42,7 @@ Public Class 服务器
         Public Property 心跳包接收时间 As Date = Nothing
         Public Property 连续超时次数 As Integer = 0
         Public Property 玩家对象名称 As String = ""
-        Public Property 玩家所在主场景 As String = "等待角色选择"
+        Public Property 玩家所在主场景 As String = "等待角色"
     End Class
 
     Enum 玩家权限类型
@@ -75,9 +72,8 @@ Public Class 服务器
             已接收字节 = 0
             已发送个数 = 0
             已接收个数 = 0
-            最近处理时长.Clear()
             Ping任务 = Task.Run(AddressOf 计算所有客户端的延迟并发送下一次Ping, 取消令牌源.Token)
-            DebugPrint($"服务器已在 {获取本地IPv4()}:{服务器端口} 上启动", Color.YellowGreen)
+            DebugPrint($"[Sever] 服务器已在 {获取本地IPv4()}:{服务器端口} 上启动", Color.YellowGreen)
             Form服务器.Show()
         Catch ex As Exception
             DebugPrint(ex.Message, Color.Tomato,, True)
@@ -107,67 +103,78 @@ Public Class 服务器
                 If 数据_接收到的字节.Length = 0 Then Continue While
                 已接收字节 += 数据_接收到的字节.LongLength
                 已接收个数 += 1
-                SyncLock 黑名单
-                    If 黑名单.Contains(发送者地址.Address.ToString) Then
-                        发送消息(发送者地址, New List(Of String) From {"iw_sever_message", "你已被此服务器封禁"})
-                        DebugPrint($"已拒绝黑名单 {发送者地址} 的请求", Color.YellowGreen)
-                        Continue While
-                    End If
-                End SyncLock
+                If 验证是否被封禁(发送者地址) Then Continue While
                 Dim 数据_文本 = Encoding.UTF8.GetString(数据_接收到的字节)
-                Dim 数据_消息列表 As List(Of String) = 数据_文本.Split("<iw_separator>", StringSplitOptions.None).ToList()
+                Dim 数据_消息列表 As List(Of String) = 数据_文本.Split(通信指令.数据分隔符, StringSplitOptions.None).ToList()
                 If 数据_消息列表.Count = 0 Then Continue While
-                SyncLock 客户端列表
-                    If 是否允许新地址加入 Then
-                        If Not 客户端列表.ContainsKey(发送者地址) Then
-                            If 数据_消息列表(0) = "iw_client_login_beta3" Then
-                                客户端列表(发送者地址) = New 玩家信息单片结构 With {.IP = 发送者地址, .权限 = 玩家默认权限, .心跳包接收时间 = Now, .心跳包发送时间 = Now}
-                            Else
-                                Continue While
-                            End If
-                        End If
-                    Else
-                        If Not 保留的客户端列表.Contains(发送者地址.Address.ToString) Then
-                            发送消息(发送者地址, New List(Of String) From {"iw_sever_message", "此服务器已禁止新玩家加入，而您不在设备列表中，所以无法加入此服务器"})
-                            DebugPrint($"已拒绝 {发送者地址} 的请求", Color.YellowGreen)
-                            Continue While
-                        Else
-                            If 数据_消息列表(0) = "iw_client_login_beta3" Then
-                                客户端列表(发送者地址) = New 玩家信息单片结构 With {.IP = 发送者地址, .权限 = 玩家默认权限, .心跳包接收时间 = Now, .心跳包发送时间 = Now}
-                            End If
-                        End If
-                    End If
-                End SyncLock
-                SyncLock 最近处理时长
-                    Dim 计时器 As New Stopwatch()
-                    计时器.Start()
-                    服务器的消息响应.执行消息(数据_消息列表, 发送者地址)
-                    计时器.Stop()
-                    最近处理时长.Add(计时器.ElapsedMilliseconds)
-                    If 最近处理时长.Count > 10 Then 最近处理时长.RemoveRange(0, 最近处理时长.Count - 10)
-                End SyncLock
+                If 验证是否被限行(发送者地址, 数据_消息列表(0)) Then Continue While
+                服务器的消息响应.执行消息(数据_消息列表, 发送者地址)
+            Catch ex As TimeoutException
+                DebugPrint($"[Sever] 接收消息超时，服务器的网络连接可能不稳定", Color.Yellow)
             Catch ex As SocketException When ex.SocketErrorCode = SocketError.TimedOut
             Catch ex As Exception
                 DebugPrint(ex.Message, Color.Tomato)
             End Try
         End While
-        UI同步上下文.Post(Sub() DebugPrint("服务器消息处理线程已停止运行", Color.Tomato), Nothing)
+        界面线程执行(Sub() DebugPrint("[Sever] 服务器消息处理线程已停止运行", Color.Tomato))
     End Sub
+
+    Public Shared Function 验证是否被封禁(发送者地址 As IPEndPoint) As Boolean
+        SyncLock 黑名单
+            If 黑名单.Contains(发送者地址.Address.ToString) Then
+                发送消息(发送者地址, New List(Of String) From {通信指令.服务器发送模式对话框消息, "你已被此服务器封禁"})
+                DebugPrint($"[Sever] 已拒绝黑名单 {发送者地址} 的请求", Color.YellowGreen)
+                Return True
+            Else
+                Return False
+            End If
+        End SyncLock
+    End Function
+
+    Public Shared Function 验证是否被限行(发送者地址 As IPEndPoint, 客户端的通信指令 As String) As Boolean
+        SyncLock 客户端列表
+            If 是否允许新地址加入 Then
+                If Not 客户端列表.ContainsKey(发送者地址) Then
+                    If 客户端的通信指令 = 通信指令.客户端请求连接服务器 Then 客户端列表(发送者地址) = New 玩家信息单片结构 With {.IP = 发送者地址, .权限 = 玩家默认权限, .心跳包接收时间 = Now, .心跳包发送时间 = Now}
+                End If
+                Return False
+            Else
+                If Not 保留的客户端列表.Contains(发送者地址.Address.ToString) Then
+                    发送消息(发送者地址, New List(Of String) From {通信指令.服务器发送模式对话框消息, "此服务器已禁止新玩家加入，而您不在设备列表中，所以无法加入此服务器"})
+                    DebugPrint($"[Sever] 已拒绝 {发送者地址} 的请求", Color.YellowGreen)
+                    Return True
+                Else
+                    If 客户端的通信指令 = 通信指令.客户端请求连接服务器 Then 客户端列表(发送者地址) = New 玩家信息单片结构 With {.IP = 发送者地址, .权限 = 玩家默认权限, .心跳包接收时间 = Now, .心跳包发送时间 = Now}
+                    Return False
+                End If
+            End If
+        End SyncLock
+    End Function
 
     Public Shared Sub 发送消息(IP As IPEndPoint, message As List(Of String))
         Try
-            Dim combinedMessage As String = String.Join("<iw_separator>", message)
+            Dim combinedMessage As String = String.Join(通信指令.数据分隔符, message)
             Dim data = Encoding.UTF8.GetBytes(combinedMessage)
             UDP服务器.Send(data, data.Length, IP)
             已发送字节 += data.Length
             已发送个数 += 1
-
+        Catch ex As Exception
+            DebugPrint(ex.Message, Color.Tomato)
+        End Try
+    End Sub
+    Public Shared Sub 发送消息(IP As IPEndPoint, message As String())
+        Try
+            Dim combinedMessage As String = String.Join(通信指令.数据分隔符, message)
+            Dim data = Encoding.UTF8.GetBytes(combinedMessage)
+            UDP服务器.Send(data, data.Length, IP)
+            已发送字节 += data.Length
+            已发送个数 += 1
         Catch ex As Exception
             DebugPrint(ex.Message, Color.Tomato)
         End Try
     End Sub
 
-    Shared ReadOnly 心跳包数据 As Byte() = Encoding.UTF8.GetBytes(String.Join("<iw_separator>", {"iw_sever_ping"}))
+    Shared ReadOnly 心跳包数据 As Byte() = Encoding.UTF8.GetBytes(String.Join(通信指令.数据分隔符, {通信指令.服务器发送Ping}))
 
     Public Shared Sub 计算所有客户端的延迟并发送下一次Ping()
         While 是否正在运行 AndAlso Not 取消令牌源.Token.IsCancellationRequested
@@ -185,7 +192,7 @@ Public Class 服务器
                     客户端信息.Value.连续超时次数 += 1
                     If 客户端信息.Value.连续超时次数 >= 10 Then
                         客户端列表.Remove(客户端信息.Key)
-                        DebugPrint($"玩家 {客户端信息.Key} 由于延迟过高已被自动踢出", Color.Tomato)
+                        DebugPrint($"[Sever] 玩家 {客户端信息.Key.Address} {客户端信息.Key} 由于延迟过高已被自动踢出", Color.Tomato)
                     End If
                 Else
                     客户端信息.Value.连续超时次数 = 0
@@ -208,7 +215,7 @@ Public Class 服务器
     End Sub
 
     Public Shared Sub 广播全体消息(message As List(Of String))
-        Dim combinedMessage As String = String.Join("<iw_separator>", message)
+        Dim combinedMessage As String = String.Join(通信指令.数据分隔符, message)
         Dim data = Encoding.UTF8.GetBytes(combinedMessage)
         For Each clientKey In 客户端列表.Keys
             UDP服务器.Send(data, data.Length, clientKey)
@@ -218,10 +225,10 @@ Public Class 服务器
     End Sub
 
     Public Shared Async Sub 停止服务器()
-        DebugPrint("已开始进行服务器停止流程，网络上的任务可能不会立即停止", Color.Gold)
-        DebugPrint("请在再次启动服务器之前耐心等待其超时自动停止", Color.Gold)
+        DebugPrint("[Sever] 已开始进行服务器停止流程，网络上的任务可能不会立即停止", Color.Gold)
+        DebugPrint("[Sever] 请在再次启动服务器之前耐心等待其超时自动停止", Color.Gold)
         是否正在运行 = False
-        Await Task.Run(Sub() 广播全体消息(New List(Of String) From {"iw_sever_powerdown"}))
+        Await Task.Run(Sub() 广播全体消息(New List(Of String) From {通信指令.服务器主动关机}))
         If 取消广播任务令牌源 IsNot Nothing Then
             取消广播任务令牌源.Cancel()
             Await 广播任务
@@ -255,7 +262,7 @@ Public Class 服务器
 
         Dim 黑名单文件 = Path.Combine(Application.StartupPath, "PlayerData", "SeverBan.json")
         WriteAllText(黑名单文件, JsonSerializer.Serialize(黑名单, JSON序列化选项), False)
-        DebugPrint("服务器已停止", Color.Tomato)
+        DebugPrint("[Sever] 服务器已停止", Color.Tomato)
         GC.Collect()
     End Sub
 

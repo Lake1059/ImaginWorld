@@ -600,7 +600,7 @@ Public Class 界面主层_主菜单
         If m1.ShowDialog(Form1) <> 0 Then Exit Sub
         Dim a As New 创意工坊
         a.上传(Me.ListView5.SelectedItems(0).Text)
-        界面控制.切换界面(界面控制.主界面图层.顶层, 控制台界面实例)
+        界面控制.显示控制台()
     End Sub
 
 #End Region
@@ -799,7 +799,7 @@ Public Class 界面主层_主菜单
                 客户端.响应线程数量 = 1
         End Select
         客户端.启动客户端(Me.ListView6.SelectedItems(0).Text, Me.ListView6.SelectedItems(0).SubItems(1).Text)
-        客户端.发送消息(New List(Of String) From {"iw_client_login_beta3"})
+        客户端.发送消息(New List(Of String) From {通信指令.客户端请求连接服务器})
         Await Task.Run(Sub()
                            Thread.Sleep(5000)
                        End Sub)
@@ -836,7 +836,7 @@ Public Class 界面主层_主菜单
         游戏设置.实例对象.ConnectSever_Port = UiTextBox7.Text
         游戏设置.保存()
         客户端.启动客户端(Me.UiTextBox3.Text, Me.UiTextBox7.Text)
-        客户端.发送消息(New List(Of String) From {"iw_client_login_beta3"})
+        客户端.发送消息(New List(Of String) From {通信指令.客户端请求连接服务器})
         Await Task.Run(Sub()
                            Thread.Sleep(5000)
                        End Sub)

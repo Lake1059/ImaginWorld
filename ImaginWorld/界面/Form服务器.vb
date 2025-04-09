@@ -37,7 +37,8 @@ Public Class Form服务器
     Public 网络适配器每秒发送 As Long
     Public 网络适配器每秒接收 As Long
 
-    Public CPU性能计数器 As PerformanceCounter
+    Public CPU系统性能计数器 As PerformanceCounter
+    Public CPU游戏性能计数器 As PerformanceCounter
 
     Private Sub Form服务器_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetControlFont(Me)
@@ -81,8 +82,8 @@ Public Class Form服务器
     End Sub
 
     Private Async Sub Form服务器_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-
-        Await Task.Run(Sub() CPU性能计数器 = New PerformanceCounter("Process", "% Processor Time", Process.GetCurrentProcess().ProcessName, True))
+        Await Task.Run(Sub() CPU系统性能计数器 = New PerformanceCounter("Processor", "% Processor Time", "_Total", True))
+        Await Task.Run(Sub() CPU游戏性能计数器 = New PerformanceCounter("Process", "% Processor Time", Process.GetCurrentProcess().ProcessName, True))
     End Sub
 
     Private Sub Form服务器_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
@@ -98,8 +99,10 @@ Public Class Form服务器
             每秒刷新计时器.Dispose()
             成员列表刷新计时器.Close()
             成员列表刷新计时器.Dispose()
-            CPU性能计数器?.Close()
-            CPU性能计数器?.Dispose()
+            CPU系统性能计数器?.Close()
+            CPU系统性能计数器?.Dispose()
+            CPU游戏性能计数器?.Close()
+            CPU游戏性能计数器?.Dispose()
             服务器.停止服务器()
             e.Cancel = False
         Else
@@ -181,14 +184,23 @@ Public Class Form服务器
                       Me.Label22.Text = $"服务器消息 接收速度：{要显示的服务器接收速度}"
                       Me.Label23.Text = $"网络适配器 发送速度：{要显示的网络适配器发送速度}"
                       Me.Label25.Text = $"网络适配器 接收速度：{要显示的网络适配器接收速度}"
-                      Me.Label3.Text = $"服务器发送总量：{服务器.已发送个数} 个 - {服务器.已发送字节} 字节"
-                      Me.Label29.Text = $"服务器接收总量：{服务器.已接收个数} 个 - {服务器.已接收字节} 字节"
+                      Me.Label3.Text = $"服务器发送总量：{服务器.已发送个数} 个 - {Format(服务器.已发送字节 / 1024 / 1024, "0.00")} MB"
+                      Me.Label29.Text = $"服务器接收总量：{服务器.已接收个数} 个 - {Format(服务器.已接收字节 / 1024 / 1024, "0.00")} MB"
 
                       Try
-                          If CPU性能计数器 IsNot Nothing Then
-                              Me.UiRoundProcess1.Value = Math.Truncate(CPU性能计数器.NextValue)
+                          If CPU系统性能计数器 IsNot Nothing Then
+                              Me.UiRoundProcess1.Value = Math.Truncate(CPU系统性能计数器.NextValue)
                           Else
                               Me.UiRoundProcess1.Value = 0
+                          End If
+                      Catch ex As Exception
+                          DebugPrint(ex.Message, Color.Tomato)
+                      End Try
+                      Try
+                          If CPU游戏性能计数器 IsNot Nothing Then
+                              Me.UiRoundProcess2.Value = Math.Truncate(CPU游戏性能计数器.NextValue / Environment.ProcessorCount)
+                          Else
+                              Me.UiRoundProcess2.Value = 0
                           End If
                       Catch ex As Exception
                           DebugPrint(ex.Message, Color.Tomato)
@@ -197,45 +209,31 @@ Public Class Form服务器
                       Dim 总内存 As Long = My.Computer.Info.TotalPhysicalMemory
                       Dim 可用内存 As Long = My.Computer.Info.AvailablePhysicalMemory
                       Dim 内存占用率 As Double = 1 - 可用内存 / 总内存
-                      Me.UiRoundProcess2.Value = 内存占用率 * 100
-
-                      If 服务器.最近处理时长.Count > 0 Then
-                          Dim 平均处理时长 As Integer = 服务器.最近处理时长.Average
-                          Me.UiRoundProcess3.Value = 平均处理时长
-                          Me.UiRoundProcess3.Text = 平均处理时长 & "ms"
-                      Else
-                          Me.UiRoundProcess3.Value = 0
-                      End If
+                      Me.UiRoundProcess3.Value = 内存占用率 * 100
 
                       Select Case Me.UiRoundProcess1.Value
                           Case > 90
-                              Me.UiRoundProcess1.ProcessColor = Color.DarkRed
+                              Me.UiRoundProcess1.ProcessColor = ColorTranslator.FromWin32(RGB(128, 64, 64))
                           Case > 75
                               Me.UiRoundProcess1.ProcessColor = Color.DarkOrange
-                          Case > 50
-                              Me.UiRoundProcess1.ProcessColor = Color.DarkBlue
                           Case Else
-                              Me.UiRoundProcess1.ProcessColor = Color.DarkGreen
+                              Me.UiRoundProcess1.ProcessColor = ColorTranslator.FromWin32(RGB(64, 128, 64))
                       End Select
                       Select Case Me.UiRoundProcess2.Value
                           Case > 90
-                              Me.UiRoundProcess2.ProcessColor = Color.DarkRed
+                              Me.UiRoundProcess2.ProcessColor = ColorTranslator.FromWin32(RGB(128, 64, 64))
                           Case > 75
                               Me.UiRoundProcess2.ProcessColor = Color.DarkOrange
-                          Case > 50
-                              Me.UiRoundProcess2.ProcessColor = Color.DarkBlue
                           Case Else
-                              Me.UiRoundProcess2.ProcessColor = Color.DarkGreen
+                              Me.UiRoundProcess2.ProcessColor = ColorTranslator.FromWin32(RGB(64, 128, 64))
                       End Select
                       Select Case Me.UiRoundProcess3.Value
-                          Case > 750
-                              Me.UiRoundProcess3.ProcessColor = Color.DarkRed
-                          Case > 500
+                          Case > 90
+                              Me.UiRoundProcess3.ProcessColor = ColorTranslator.FromWin32(RGB(128, 64, 64))
+                          Case > 75
                               Me.UiRoundProcess3.ProcessColor = Color.DarkOrange
-                          Case > 100
-                              Me.UiRoundProcess3.ProcessColor = Color.DarkBlue
                           Case Else
-                              Me.UiRoundProcess3.ProcessColor = Color.DarkGreen
+                              Me.UiRoundProcess3.ProcessColor = ColorTranslator.FromWin32(RGB(64, 128, 64))
                       End Select
                   End Sub)
     End Sub
@@ -258,7 +256,7 @@ Public Class Form服务器
                               item.SubItems(1).Text = client.权限.ToString
                               If client.延迟 >= 服务器.自动踢出延迟 Then
                                   item.SubItems(2).Text = $"已超时 ({client.连续超时次数})"
-                              Else
+                      Else
                                   item.SubItems(2).Text = client.延迟 & "ms"
                               End If
                               item.SubItems(3).Text = client.玩家所在主场景
